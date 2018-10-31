@@ -19,7 +19,7 @@
 
 # -- Project information -----------------------------------------------------
 
-project = u'CitizenOne-Documentation'
+project = u'CitizenOne'
 copyright = u'2018, Jamie Jamieson'
 author = u'Jamie Jamieson'
 
@@ -40,10 +40,6 @@ release = u'0.0.1'
 # ones.
 extensions = [
     'sphinx.ext.autodoc',
-    'sphinx.ext.doctest',
-    'sphinx.ext.todo',
-    'sphinx.ext.ifconfig',
-    'sphinx.ext.githubpages',
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -79,7 +75,7 @@ pygments_style = None
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-html_theme = 'alabaster'
+html_theme = 'sphinx_rtd_theme'
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
@@ -106,7 +102,7 @@ html_static_path = ['_static']
 # -- Options for HTMLHelp output ---------------------------------------------
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'CitizenOne-Documentationdoc'
+htmlhelp_basename = 'CitizenOnedoc'
 
 
 # -- Options for LaTeX output ------------------------------------------------
@@ -133,7 +129,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'CitizenOne-Documentation.tex', u'CitizenOne-Documentation Documentation',
+    (master_doc, 'CitizenOne.tex', u'CitizenOne Documentation',
      u'Jamie Jamieson', 'manual'),
 ]
 
@@ -143,7 +139,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'citizenone-documentation', u'CitizenOne-Documentation Documentation',
+    (master_doc, 'citizenone', u'CitizenOne Documentation',
      [author], 1)
 ]
 
@@ -154,8 +150,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'CitizenOne-Documentation', u'CitizenOne-Documentation Documentation',
-     author, 'CitizenOne-Documentation', 'One line description of project.',
+    (master_doc, 'CitizenOne', u'CitizenOne Documentation',
+     author, 'CitizenOne', 'One line description of project.',
      'Miscellaneous'),
 ]
 
@@ -179,8 +175,3 @@ epub_exclude_files = ['search.html']
 
 
 # -- Extension configuration -------------------------------------------------
-
-# -- Options for todo extension ----------------------------------------------
-
-# If true, `todo` and `todoList` produce output, else they produce nothing.
-todo_include_todos = True
