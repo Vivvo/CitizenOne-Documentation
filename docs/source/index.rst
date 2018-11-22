@@ -7,13 +7,21 @@ CitizenOne is an e-services platform designed to help government manage the deli
 
 Guides
 ^^^^^^
+
 .. toctree::
+   :caption: General Information
    :maxdepth: 2
 
-   Contact   
+   Contact
+
+.. toctree::
+   :caption: Business Documentation
+   :maxdepth: 2
+
    Registration
    Tenant Management
    Privacy and Consent
+
 
 Indices and tables
 ==================
