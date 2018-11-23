@@ -6,21 +6,21 @@ For the people contributing to this documentation, please refer to the instructi
 
 ## Start Contributing to Documentation
 
-#### Create a Branch
+#### 1. Create a Branch
 1. On GitHub, navigate to the main page of the repository.
 2. Type a unique name for your new branch.
 3. Press Enter.
 
 [Read more on creating a branch here](https://help.github.com/articles/creating-and-deleting-branches-within-your-repository/).
 
-#### Editing Documentation
+#### 2. Editing Documentation
 
 1. Go to [docs/source](docs/source) to view exist documents.
 2. Create and Edit the files that you want to update.
 
 [Read more on creating and editing files here](docs/source).
 
-#### Create a Pull Request
+#### 3. Create a Pull Request
 
 You can open a pull request to the upstream repository from any branch or commit in your fork.
 
@@ -33,7 +33,7 @@ You can open a pull request to the upstream repository from any branch or commit
 
 [Read more on creating a pull request here](https://help.github.com/articles/creating-a-pull-request/).
 
-#### Create a Pull Request from Fork
+#### 3. Create a Pull Request from Fork
 
 You can open a pull request to the upstream repository from any branch or commit in your fork.
 
