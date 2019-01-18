@@ -20,6 +20,7 @@ Guides
 
    Registration
    Tenant Management
+   Service Card Management
    Privacy and Consent
 
 
