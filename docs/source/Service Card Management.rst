@@ -39,7 +39,10 @@ Creating Service Cards
 Step 1
 ~~~~~~
 
-- Select an application for which the service card is to be tied to from the application select box.  Only applications of relying parties that do not currently have a service card will be available for selection.
+- Select an application for which the service card is to be tied to from the application select box.  
+
+.. note::
+    Only applications of relying parties that do not currently have a service card will be available for selection.
 
 // TODO: Picture
 
