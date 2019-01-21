@@ -10,15 +10,17 @@ Viewing Service Cards
 
 - From the management dashboard, select the "Service Cards" tile.
 
-// TODO: Picture
+.. image:: images/dashboard-service-cards.png
+   :width: 400pt
 
-- You will be presented with a list of service cards.  You can filter service cards by
+- You will be presented with a list of service cards.  You can filter service cards by beginning to type any of the following fields:
 
     - Title
     - Application name 
     - Provider
 
-// TODO: Picture
+.. image:: images/service-cards-filter.png
+   :width: 400pt
 
 What Are Relying Parties? Providers?
 ************************************
@@ -51,11 +53,7 @@ Step 2
 
 - Fill out the name & description of your service card.  This information will be visible to your users from their dashboard and from the service card details page.
 
-// TODO: Picture
-
 - Select a provider for this service card.  A provider defines where the service card will be visible to your users (e.g. Business Connect)
-
-// TODO: Picture
 
 // TODO: Better description?
 
@@ -80,9 +78,10 @@ Service Card Tasks
 Adding a Service Card Task
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- To create a new service card task select the "+ Create Service Card Task" button below the service card preview
+- To create a new service card task select the "Create Service Card Task" button below the service card preview
 
-// TODO: Picture
+.. image:: images/service-card-task-create.png
+   :width: 400pt
 
 - Give the task a title and description.  These will be displayed to your users on the service card's details page under "Tasks"
 
@@ -118,18 +117,21 @@ Changing the Default Providers
 
 - After creating a new provider application go to the "Application Edit" page, note the application ID in the URL
 
-// TODO: Picture
+.. image:: images/application-provider-url-id.png
+   :width: 400pt
 
 - Go to the "Configuration" page 
 
-// TODO: Picture
+.. image:: images/application-go-to-configuration.png
+   :width: 400pt
 
 - Select the "Edit" option to enable the configuration inputs
 
 - To update the citizen service card provider, update the "Citizen Provider" field with the application ID noted earlier.
 - To update the business service card provider, update the "Business Provider" instead.
 
-// TODO: Picture
+.. image:: images/configuration-providers.png
+   :width: 400pt
 
 - Be sure to save your changes by pressing the "Save" button at the bottom of the page.  
 
