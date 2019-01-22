@@ -36,8 +36,6 @@ Creating Service Cards
 
 - From the Service Cards page, select the "Create New Service Card" button
 
-// TODO: Picture
-
 Step 1
 ~~~~~~
 
@@ -46,7 +44,6 @@ Step 1
 .. note::
     Only applications of relying parties that do not currently have a service card will be available for selection.
 
-// TODO: Picture
 
 Step 2
 ~~~~~~
@@ -67,8 +64,6 @@ Step 3
 ~~~~~~
 
 - If applicable, attach a form to be used when onboarding the service card for your users.
-
-// TODO: Picture
 
 Service Card Tasks
 ******************
@@ -94,7 +89,8 @@ Reordering Service Card Tasks
 
 - When there are more than one tasks on a service card, the tasks may be reordered by clicking and dragging the task into the desired order.
 
-// TODO: Gif
+.. image:: images/service-card-task-reorder.gif
+   :width: 400pt
 
 Removing Service Card Tasks
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
