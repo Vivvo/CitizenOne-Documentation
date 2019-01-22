@@ -52,8 +52,6 @@ Step 2
 
 - Select a provider for this service card.  A provider defines where the service card will be visible to your users (e.g. Business Connect)
 
-// TODO: Better description?
-
 - Specify how a service card may be interacted with from the service card dashboard
 
     - **No** indicates the service card is available to be added by a user from their dashboard
