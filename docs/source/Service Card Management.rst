@@ -3,7 +3,7 @@
 Service Card Management
 =======================
 
-//TODO: Description
+This module provides “Digital Service Cards”, a usability and service delivery component of CitizenOne that enhances the citizen experience.  Service Cards enhance the citizen experience when accessing digital services from government by providing a highly usable method for finding out about and accessing all digital services.
 
 Viewing Service Cards
 *********************
