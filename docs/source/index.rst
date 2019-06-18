@@ -22,6 +22,12 @@ Guides
    Tenant Management
    Privacy and Consent
 
+.. toctree::
+   :caption: Technical Documentation
+   :maxdepth: 2
+
+   Federation
+
 
 Indices and tables
 ==================
