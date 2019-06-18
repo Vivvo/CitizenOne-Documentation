@@ -1,11 +1,55 @@
-# Citizenone-Documentation
+# CitizenOne Documentation
 
 This docuumentation is built with Sphinx and the compiled version can be found on http://docs.vivvo.com
 
-For the people contributing to this documentation, please refer to the instructions below for adding content.  
+For the people contributing to this documentation, please refer to the instructions below for adding content.
 
-Getting Started with Sphinx
-===========================
+## Start Contributing to Documentation
+
+#### 1. Create a Branch
+1. On GitHub, navigate to the main page of the repository.
+2. Type a unique name for your new branch.
+3. Press Enter.
+
+[Read more on creating a branch here](https://help.github.com/articles/creating-and-deleting-branches-within-your-repository/).
+
+#### 2. Editing Documentation
+
+1. Go to [docs/source](docs/source) to view exist documents.
+2. Create and Edit the files that you want to update.
+
+[Read more on creating and editing files here](docs/source).
+
+#### 3. Create a Pull Request
+
+You can open a pull request to the upstream repository from any branch or commit in your fork.
+
+1. On GitHub, navigate to the [main page](/) of the repository.
+2. Branch dropdown menuIn the "Branch" menu, choose the branch that contains your commits.
+3. To the right of the Branch menu, click New pull request.
+4. Use the base branch dropdown menu to select the branch you'd like to merge your changes into, then use the compare branch drop-down menu to choose the topic branch you made your changes in.
+5. Type a title and description for your pull request.
+6. Click Create pull request.
+
+[Read more on creating a pull request here](https://help.github.com/articles/creating-a-pull-request/).
+
+#### 3. Create a Pull Request from Fork
+
+You can open a pull request to the upstream repository from any branch or commit in your fork.
+
+1. Navigate to the original repository you created your fork from.
+2. To the right of the Branch menu, click New pull request.
+3. On the Compare page, click compare across forks.
+4. Confirm that the base fork is the repository you'd like to merge changes into. Use the base branch drop-down menu to select the branch of the upstream repository you'd like to merge changes into.
+5. Drop-down menus for choosing the head fork and compare branchUse the head fork drop-down menu to select your fork, then use the compare branch drop-down menu to select the branch you made your changes in.
+6. Type a title and description for your pull request.
+7. If you do not want to allow anyone with push access to the upstream repository to make changes to your PR, unselect Allow edits from maintainers.
+8. Click Create pull request.
+
+[Read more on creating a pull request from a fork here](https://help.github.com/articles/creating-a-pull-request-from-a-fork/).
+
+
+## Getting Development Started with Sphinx
 
 Sphinx is a powerful documentation generator that
 has many great features for writing technical documentation including:
@@ -21,8 +65,7 @@ has many great features for writing technical documentation including:
 .. _extensions: http://www.sphinx-doc.org/en/master/ext/builtins.html#builtin-sphinx-extensions
 
 
-Quick start video
------------------
+#### Quick start video
 
 This screencast will help you get started or you can
 :ref:`read our guide below <intro/getting-started-with-sphinx:Quick start>`.
@@ -34,8 +77,7 @@ This screencast will help you get started or you can
     </div>
 
 
-Quick start
------------
+#### Quick start
 
 Assuming you have Python already, `install Sphinx`_:
 
@@ -119,8 +161,7 @@ Then in your ``conf.py``:
 .. _this blog post: http://ericholscher.com/blog/2016/mar/15/dont-use-markdown-for-technical-docs/
 
 
-External resources
-------------------
+#### External resources
 
 Here are some external resources to help you learn more about Sphinx.
 
