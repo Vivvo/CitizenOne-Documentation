@@ -1,0 +1,241 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Privacy and Consent Management &mdash; CitizenOne 0.0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Federation" href="Federation.html" />
+    <link rel="prev" title="Tenant Management" href="Tenant Management.html" />
+    <link href="_static/style.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> CitizenOne
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">General Information</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Contact.html">Contact</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Business Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Registration.html">Registration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Tenant Management.html">Tenant Management</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Privacy and Consent Management</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Technical Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Federation.html">Federation</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">CitizenOne</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Privacy and Consent Management</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/Privacy and Consent.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="privacy-and-consent-management">
+<h1>Privacy and Consent Management<a class="headerlink" href="#privacy-and-consent-management" title="Permalink to this headline">¶</a></h1>
+<p>Provides users with privacy and consent management tools; and connects the citizen to any set of digital services presenting policy to the citizen that they must agree to access the service. CitizenOne was developed with user privacy at the forefront of the design ensuring the citizen is always in control of their confidential information.</p>
+<p>This module provides ongoing transparency to the citizen, informing them what services they have connected to their profile, and providing the ability to manage the connection at their discretion. For instance, it presents policy updates and allows for revocation of consent if the user chooses to unlink themselves from the service.</p>
+<p>In the CitizenOne management console, a service provider or SP (a connected application that uses a federated identity from CitizenOne, and accesses the CitizenOne API for profile access) defines their service by creating the following artifacts in the console.</p>
+<ul class="simple">
+<li>A privacy policy that explains how the citizens information is used in the service providers application.</li>
+<li>Application access that allows the service provider to manage the API security</li>
+<li>Rules and assurance required to engage this service application</li>
+<li>A service card representation of the application that pulls together all the artifacts in a presentation that the citizen can add to their dashboard.</li>
+</ul>
+<p>When a citizen adds the service card from the catalog, it creates a managed instance of this service interaction where the following items are tracked and presented to the citizen.</p>
+<ul class="simple">
+<li>The current consent state.  That they have been enrolled or not.</li>
+<li>Notifications sent from the service application</li>
+<li>Invoices that have been issued from the service</li>
+<li>Context relevant links in the application (e.g. Apply now or Renew your application)</li>
+<li>Contact information for the connected application</li>
+<li>An option to opt out or “Unlink” the service.</li>
+</ul>
+<p>During enrollment after adding the service card, the user is challenged to provide any further information to use the service.  For example, if the rules where:</p>
+<ul class="simple">
+<li>Must be 19</li>
+<li>Must be a verified user</li>
+<li>Must have a primary address</li>
+</ul>
+<p>A workflow is provided so the user can comply with the service application rules to use this service.  After conforming to all site rules, the user can select how they wish to be communicated to (SMS, email or none). finally on the last step there is an opportunity to review all the information that you are consenting to share, and a button to express your consent.</p>
+<p>If the service application provides a consent endpoint, CitizenOne will call out and send the users identifier, and notice of consent.  The service application now has access to the users profile.  At anytime the user can elect to negate consent by clicking “Unlink Service”, this action calls out to the service applications endpoint and sends the users identifier, and notice of revoking consent.</p>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Federation.html" class="btn btn-neutral float-right" title="Federation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Tenant Management.html" class="btn btn-neutral float-left" title="Tenant Management" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Jamie Jamieson
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
