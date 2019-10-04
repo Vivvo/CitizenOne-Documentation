@@ -1,3 +1,5 @@
+.. _tenant-management:
+
 Tenant Management
 =================
 
