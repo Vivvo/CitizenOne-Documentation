@@ -49,7 +49,7 @@ This trust provider uses the onboarding form `create-sms-auth-method` and simply
 Verify SMS Authentication Method
 #########
 
-This provider will be offered to the user if they have a PENDING SMS method. Using ClaimProvider.OnboardingContext, it passes ``identityId`` and ``mfaId`` to the frontend which is injected into the nocode form which finally POSTs to ``https://authentication-service/api/v1/authentication/users/$identityId/mfa/$mfaId/resendSMS`` to generate and text a fresh 6-digit verification to the user onload. It has a single input for the 6-digit verification code. Side-effect: this claim provider attempts to activate the 2fa method.
+This provider will be offered to the user if they have a PENDING SMS method. Using ClaimProviderDto.onboardingContext, it passes ``identityId`` and ``mfaId`` to the frontend which is injected into the nocode form which finally POSTs to ``https://authentication-service/api/v1/authentication/users/$identityId/mfa/$mfaId/resendSMS`` to generate and text a fresh 6-digit verification to the user onload. It has a single input for the 6-digit verification code. Side-effect: this claim provider attempts to activate the 2fa method.
 
 Challenge SMS Authenticator
 ###########
