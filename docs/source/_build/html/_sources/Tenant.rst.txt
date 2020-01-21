@@ -1,0 +1,4 @@
+Organizations
+=============
+
+Introduction to Organizations within the CitizenOne platform.

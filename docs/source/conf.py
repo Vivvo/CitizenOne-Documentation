@@ -20,8 +20,8 @@
 # -- Project information -----------------------------------------------------
 
 project = u'CitizenOne'
-copyright = u'2018, Jamie Jamieson'
-author = u'Jamie Jamieson'
+copyright = u'2020, Vivvo'
+author = u'Vivvo Application Studios'
 
 # The short X.Y version
 version = u''

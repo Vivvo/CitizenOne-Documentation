@@ -1,0 +1,5 @@
+Organizations
+=============
+
+What are Organizations?
+~~~~~~~~~~~~~~~~~~~~~~~

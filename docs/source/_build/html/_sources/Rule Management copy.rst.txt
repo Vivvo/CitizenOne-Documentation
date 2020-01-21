@@ -1,0 +1,10 @@
+Rule Management
+=======================
+
+Introduction to the Organizations Management tab.
+
+Viewing Rules
+*************
+
+Creating Rules
+**************
