@@ -41,8 +41,10 @@ Guides
    :caption: Technical Documentation
    :maxdepth: 2
 
-   PolicyHierarchy
-   Federation
+   Technical/Authentication
+   Technical/PolicyHierarchy
+   Technical/Federation
+   Technical/MFA Rule Evaluation
 
 .. toctree::
    :caption: General Information

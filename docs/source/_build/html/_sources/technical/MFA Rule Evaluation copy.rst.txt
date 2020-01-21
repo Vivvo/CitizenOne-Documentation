@@ -1,0 +1,13 @@
+Authentication
+================
+
+Unlike typical rules and trust providers, evaluation and onboarding is handled completely within CitizenOne.
+
+
+Removing Service Card Tasks
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- To remove a service card task, click the X on the task.
+
+.. warning::
+    Be sure you want to remove the task.  This cannot be undone.
