@@ -35,8 +35,6 @@
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Federation" href="Federation.html" />
-    <link rel="prev" title="Service Card Management" href="Service Card Management.html" />
     <link href="_static/style.css" rel="stylesheet" type="text/css">
 
 </head>
@@ -82,20 +80,38 @@
               
             
             
-              <p class="caption"><span class="caption-text">General Information</span></p>
+              <p class="caption"><span class="caption-text">The CitizenOne Platform</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="Contact.html">Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Tenants.html">Tenants</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Organizations.html">Organizations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Applications.html">Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Service Cards.html">Service Cards</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Rules.html">Rules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Providers.html">Providers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Policies.html">Policies</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Business Documentation</span></p>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="Registration.html">Registration</a></li>
+<p class="caption"><span class="caption-text">Managing CitizenOne</span></p>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="Tenant Management.html">Tenant Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Organization Management.html">Organization Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Application Management.html">Application Management</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Service Card Management.html">Service Card Management</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Privacy and Consent Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Rule Management.html">Rule Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Provider Management.html">Provider Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Policy Management.html">Policy Management</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Eeze</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Eeze.html">Accessing CitizenOne Service Cards</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Technical Documentation</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="PolicyHierarchy.html">Policy Hierarchy</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Federation.html">Federation</a></li>
+</ul>
+<p class="caption"><span class="caption-text">General Information</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Contact.html">Contact</a></li>
 </ul>
 
             
@@ -166,25 +182,25 @@
 <p>This module provides ongoing transparency to the citizen, informing them what services they have connected to their profile, and providing the ability to manage the connection at their discretion. For instance, it presents policy updates and allows for revocation of consent if the user chooses to unlink themselves from the service.</p>
 <p>In the CitizenOne management console, a service provider or SP (a connected application that uses a federated identity from CitizenOne, and accesses the CitizenOne API for profile access) defines their service by creating the following artifacts in the console.</p>
 <ul class="simple">
-<li>A privacy policy that explains how the citizens information is used in the service providers application.</li>
-<li>Application access that allows the service provider to manage the API security</li>
-<li>Rules and assurance required to engage this service application</li>
-<li>A service card representation of the application that pulls together all the artifacts in a presentation that the citizen can add to their dashboard.</li>
+<li><p>A privacy policy that explains how the citizens information is used in the service providers application.</p></li>
+<li><p>Application access that allows the service provider to manage the API security</p></li>
+<li><p>Rules and assurance required to engage this service application</p></li>
+<li><p>A service card representation of the application that pulls together all the artifacts in a presentation that the citizen can add to their dashboard.</p></li>
 </ul>
 <p>When a citizen adds the service card from the catalog, it creates a managed instance of this service interaction where the following items are tracked and presented to the citizen.</p>
 <ul class="simple">
-<li>The current consent state.  That they have been enrolled or not.</li>
-<li>Notifications sent from the service application</li>
-<li>Invoices that have been issued from the service</li>
-<li>Context relevant links in the application (e.g. Apply now or Renew your application)</li>
-<li>Contact information for the connected application</li>
-<li>An option to opt out or “Unlink” the service.</li>
+<li><p>The current consent state.  That they have been enrolled or not.</p></li>
+<li><p>Notifications sent from the service application</p></li>
+<li><p>Invoices that have been issued from the service</p></li>
+<li><p>Context relevant links in the application (e.g. Apply now or Renew your application)</p></li>
+<li><p>Contact information for the connected application</p></li>
+<li><p>An option to opt out or “Unlink” the service.</p></li>
 </ul>
 <p>During enrollment after adding the service card, the user is challenged to provide any further information to use the service.  For example, if the rules where:</p>
 <ul class="simple">
-<li>Must be 19</li>
-<li>Must be a verified user</li>
-<li>Must have a primary address</li>
+<li><p>Must be 19</p></li>
+<li><p>Must be a verified user</p></li>
+<li><p>Must have a primary address</p></li>
 </ul>
 <p>A workflow is provided so the user can comply with the service application rules to use this service.  After conforming to all site rules, the user can select how they wish to be communicated to (SMS, email or none). finally on the last step there is an opportunity to review all the information that you are consenting to share, and a button to express your consent.</p>
 <p>If the service application provides a consent endpoint, CitizenOne will call out and send the users identifier, and notice of consent.  The service application now has access to the users profile.  At anytime the user can elect to negate consent by clicking “Unlink Service”, this action calls out to the service applications endpoint and sends the users identifier, and notice of revoking consent.</p>
@@ -196,21 +212,12 @@
           </div>
           <footer>
   
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="Federation.html" class="btn btn-neutral float-right" title="Federation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="Service Card Management.html" class="btn btn-neutral float-left" title="Service Card Management" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
-    </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2018, Jamie Jamieson
+        &copy; Copyright 2020, Vivvo
 
     </p>
   </div>

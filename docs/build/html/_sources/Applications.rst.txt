@@ -1,0 +1,5 @@
+Applications
+============
+
+What are Applications?
+~~~~~~~~~~~~~~~~~~~~~~
