@@ -38,6 +38,12 @@ Guides
    Eeze
 
 .. toctree::
+   :caption: Creating Service Cards
+   :maxdepth: 2
+
+   Creating Service Cards
+
+.. toctree::
    :caption: Technical Documentation
    :maxdepth: 2
 
