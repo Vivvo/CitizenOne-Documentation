@@ -1,4 +1,4 @@
-Adding a Service Card in Portal
+Creating a Service Card
 ===============================
 
 .. _policy:
