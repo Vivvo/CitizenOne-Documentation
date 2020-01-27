@@ -30,6 +30,7 @@ Guides
    Rule Management
    Provider Management
    Policy Management
+   Creating Service Cards
 
 .. toctree::
    :caption: Eeze
