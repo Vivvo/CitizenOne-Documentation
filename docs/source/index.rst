@@ -37,6 +37,8 @@ Guides
    Management/Provider Management
    Management/Policy Management
    Management/Creating Service Cards
+   Management/Platform Configuration
+   Management/Layouts
 
 .. toctree::
    :caption: Technical Documentation
@@ -46,6 +48,7 @@ Guides
    Technical/PolicyHierarchy
    Technical/Federation
    Technical/MFA Rule Evaluation
+   Technical/DynamicIdentityProviders
 
 .. toctree::
    :caption: General Information
