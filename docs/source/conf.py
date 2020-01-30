@@ -16,6 +16,7 @@
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
 
+from pygments.styles import get_all_styles
 
 # -- Project information -----------------------------------------------------
 
@@ -68,7 +69,7 @@ language = None
 exclude_patterns = []
 
 # The name of the Pygments (syntax highlighting) style to use.
-pygments_style = None
+pygments_style = ('solarized-dark')
 
 
 # -- Options for HTML output -------------------------------------------------

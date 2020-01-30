@@ -20,23 +20,23 @@ Guides
    Policies
 
 .. toctree::
-   :caption: Managing CitizenOne
-   :maxdepth: 2
-
-   Tenant Management
-   Organization Management
-   Application Management
-   Service Card Management
-   Rule Management
-   Provider Management
-   Policy Management
-   Creating Service Cards
-
-.. toctree::
    :caption: Eeze
    :maxdepth: 2
 
    Eeze
+
+.. toctree::
+   :caption: Managing CitizenOne
+   :maxdepth: 2
+
+   Management/Tenant Management
+   Management/Organization Management
+   Management/Application Management
+   Management/Service Card Management
+   Management/Rule Management
+   Management/Provider Management
+   Management/Policy Management
+   Management/Creating Service Cards
 
 .. toctree::
    :caption: Technical Documentation

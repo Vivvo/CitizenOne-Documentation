@@ -1,0 +1,289 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Service Card Management &mdash; CitizenOne 0.0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Rule Management" href="Rule Management.html" />
+    <link rel="prev" title="Application Management" href="Application Management.html" />
+    <link href="../_static/style.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> CitizenOne
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">The CitizenOne Platform</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Tenants.html">Tenants</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Organizations.html">Organizations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Applications.html">Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Service Cards.html">Service Cards</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Rules.html">Rules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Providers.html">Providers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Policies.html">Policies</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Eeze</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Eeze.html">Accessing CitizenOne Service Cards</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Managing CitizenOne</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Tenant Management.html">Tenant Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Organization Management.html">Organization Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Application Management.html">Application Management</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Service Card Management</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#viewing-service-cards">Viewing Service Cards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#creating-service-cards">Creating Service Cards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#service-card-tasks">Service Card Tasks</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#adding-a-service-card-task">Adding a Service Card Task</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#reordering-service-card-tasks">Reordering Service Card Tasks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#removing-service-card-tasks">Removing Service Card Tasks</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#extra-service-card-details">Extra Service Card Details</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#additional-details">Additional Details</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#contacts">Contacts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#taxonomy">Taxonomy</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#linking-service-cards-to-applications">Linking Service Cards to Applications</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Rule Management.html">Rule Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Provider Management.html">Provider Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Policy Management.html">Policy Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Creating Service Cards.html">Creating a Service Card</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Technical Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Technical/Authentication.html">Authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Technical/Authentication.html#multi-factor-authentication">Multi-factor Authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Technical/PolicyHierarchy.html">Policy Hierarchy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Technical/Federation.html">Federation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Technical/MFA Rule Evaluation.html">MFA Rule Evaluation</a></li>
+</ul>
+<p class="caption"><span class="caption-text">General Information</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Contact.html">Contact</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">CitizenOne</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Service Card Management</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/Management/Service Card Management.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="service-card-management">
+<span id="id1"></span><h1>Service Card Management<a class="headerlink" href="#service-card-management" title="Permalink to this headline">¶</a></h1>
+<p>Introduction to the Service Cards Management tab.</p>
+<div class="section" id="viewing-service-cards">
+<h2>Viewing Service Cards<a class="headerlink" href="#viewing-service-cards" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="creating-service-cards">
+<h2>Creating Service Cards<a class="headerlink" href="#creating-service-cards" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="service-card-tasks">
+<h2>Service Card Tasks<a class="headerlink" href="#service-card-tasks" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="adding-a-service-card-task">
+<h3>Adding a Service Card Task<a class="headerlink" href="#adding-a-service-card-task" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="reordering-service-card-tasks">
+<h3>Reordering Service Card Tasks<a class="headerlink" href="#reordering-service-card-tasks" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="removing-service-card-tasks">
+<h3>Removing Service Card Tasks<a class="headerlink" href="#removing-service-card-tasks" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<div class="section" id="extra-service-card-details">
+<h2>Extra Service Card Details<a class="headerlink" href="#extra-service-card-details" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="additional-details">
+<h3>Additional Details<a class="headerlink" href="#additional-details" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="contacts">
+<h3>Contacts<a class="headerlink" href="#contacts" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="taxonomy">
+<h3>Taxonomy<a class="headerlink" href="#taxonomy" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<div class="section" id="linking-service-cards-to-applications">
+<h2>Linking Service Cards to Applications<a class="headerlink" href="#linking-service-cards-to-applications" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Rule Management.html" class="btn btn-neutral float-right" title="Rule Management" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Application Management.html" class="btn btn-neutral float-left" title="Application Management" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Vivvo
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
