@@ -49,6 +49,7 @@ Guides
    Technical/Federation
    Technical/MFA Rule Evaluation
    Technical/DynamicIdentityProviders
+   Technical/eHealthSplunkService
 
 .. toctree::
    :caption: General Information
