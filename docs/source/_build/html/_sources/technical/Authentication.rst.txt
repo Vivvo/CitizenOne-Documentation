@@ -15,7 +15,8 @@ The JWT contains a key-value mapping of Claims that assert information about the
 
     {
     "mfaRequired": {user must pass mfa},
-    "isMfa": {session is mfa verified},
+    "isMfa": {session is mfa verified OR session started using did-auth},
+    "isDidAuth": {session started using did-auth}
     "exp": {expiry},
     "jti": {unique session id},
     "iat": {time of issuance},
@@ -33,6 +34,24 @@ Multi-factor Authentication
 =============
 
 CitizenOne supports multi-factor authentication in the form of SMS and TOTP authenticators.
+
+Eeze Authentication
+~~~~~~~~~~
+
+Users may use their Eeze profile on their mobile device to sign into CitizenOne.
+
+Eeze is treated as an LoA2 Authenticator, so logging in with Eeze sets `isMfa` AND `isDidAuth` to true in the cookie.
+
+.. code-block:: JSON
+
+    {
+    ...
+    "isMfa": true,
+    "isDidAuth": true
+    ...
+    }
+
+When logged in with Eeze, adding additional MFA methods is unnecessary, so the option is removed from the user's Security view on their profile.
 
 SMS multi-factor authentication
 ~~~~~~~~~~

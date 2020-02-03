@@ -117,6 +117,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="#multi-factor-authentication">Multi-factor Authentication</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#eeze-authentication">Eeze Authentication</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#sms-multi-factor-authentication">SMS multi-factor authentication</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#totp-mutli-factor-authentication">TOTP mutli-factor authentication</a></li>
 </ul>
@@ -125,6 +126,7 @@
 <li class="toctree-l1"><a class="reference internal" href="Federation.html">Federation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="MFA Rule Evaluation.html">MFA Rule Evaluation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="DynamicIdentityProviders.html">Dynamic Identity Providers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="eHealthSplunkService.html">eHealth Splunk Service</a></li>
 </ul>
 <p class="caption"><span class="caption-text">General Information</span></p>
 <ul>
@@ -205,7 +207,8 @@
 <p>The JWT contains a key-value mapping of Claims that assert information about the current user and their session. The JWT body conforms to the following schema:</p>
 <div class="highlight-JSON notranslate"><div class="highlight"><pre><span></span>{
 &quot;mfaRequired&quot;: {user must pass mfa},
-&quot;isMfa&quot;: {session is mfa verified},
+&quot;isMfa&quot;: {session is mfa verified OR session started using did-auth},
+&quot;isDidAuth&quot;: {session started using did-auth}
 &quot;exp&quot;: {expiry},
 &quot;jti&quot;: {unique session id},
 &quot;iat&quot;: {time of issuance},
@@ -221,6 +224,20 @@
 <div class="section" id="multi-factor-authentication">
 <span id="id1"></span><h1>Multi-factor Authentication<a class="headerlink" href="#multi-factor-authentication" title="Permalink to this headline">¶</a></h1>
 <p>CitizenOne supports multi-factor authentication in the form of SMS and TOTP authenticators.</p>
+<div class="section" id="eeze-authentication">
+<h2>Eeze Authentication<a class="headerlink" href="#eeze-authentication" title="Permalink to this headline">¶</a></h2>
+<p>Users may use their Eeze profile on their mobile device to sign into CitizenOne.</p>
+<p>Eeze is treated as an LoA2 Authenticator, so logging in with Eeze sets <cite>isMfa</cite> AND <cite>isDidAuth</cite> to true in the cookie.</p>
+<div class="highlight-JSON notranslate"><div class="highlight"><pre><span></span>{
+...
+&quot;isMfa&quot;: true,
+&quot;isDidAuth&quot;: true
+...
+}
+</pre></div>
+</div>
+<p>When logged in with Eeze, adding additional MFA methods is unnecessary, so the option is removed from the user’s Security view on their profile.</p>
+</div>
 <div class="section" id="sms-multi-factor-authentication">
 <h2>SMS multi-factor authentication<a class="headerlink" href="#sms-multi-factor-authentication" title="Permalink to this headline">¶</a></h2>
 <p>Users with SMS 2fa enabled will be prompted for a 6 digit verification code upon successful password login. This 6 digit verificaion code will be sent to the users mobile device via a phone number they have specified.</p>
