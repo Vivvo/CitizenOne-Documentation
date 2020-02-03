@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Authentication &mdash; CitizenOne 0.0.1 documentation</title>
+  <title>MFA Rule Evaluation &mdash; CitizenOne 0.0.1 documentation</title>
   
 
   
@@ -90,25 +90,32 @@
 <li class="toctree-l1"><a class="reference internal" href="../Providers.html">Providers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Policies.html">Policies</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Managing CitizenOne</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../Tenant Management.html">Tenant Management</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Organization Management.html">Organization Management</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Application Management.html">Application Management</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Service Card Management.html">Service Card Management</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Rule Management.html">Rule Management</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Provider Management.html">Provider Management</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Policy Management.html">Policy Management</a></li>
-</ul>
 <p class="caption"><span class="caption-text">Eeze</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../Eeze.html">Accessing CitizenOne Service Cards</a></li>
 </ul>
+<p class="caption"><span class="caption-text">Managing CitizenOne</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Management/Tenant Management.html">Tenant Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Management/Organization Management.html">Organization Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Management/Application Management.html">Application Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Management/Service Card Management.html">Service Card Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Management/Rule Management.html">Rule Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Management/Provider Management.html">Provider Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Management/Policy Management.html">Policy Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Management/Creating Service Cards.html">Creating a Service Card</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Management/Platform Configuration.html">Platform Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Management/Layouts.html">Layout Management</a></li>
+</ul>
 <p class="caption"><span class="caption-text">Technical Documentation</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="Authentication.html">Authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Authentication.html#multi-factor-authentication">Multi-factor Authentication</a></li>
 <li class="toctree-l1"><a class="reference internal" href="PolicyHierarchy.html">Policy Hierarchy</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Federation.html">Federation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="MFA Rule Evaluation.html">MFA Rule Evaluation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DynamicIdentityProviders.html">Dynamic Identity Providers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="eHealthSplunkService.html">eHealth Splunk Service</a></li>
 </ul>
 <p class="caption"><span class="caption-text">General Information</span></p>
 <ul>
@@ -158,7 +165,7 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-      <li>Authentication</li>
+      <li>MFA Rule Evaluation</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -177,17 +184,53 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="authentication">
-<h1>Authentication<a class="headerlink" href="#authentication" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="mfa-rule-evaluation">
+<h1>MFA Rule Evaluation<a class="headerlink" href="#mfa-rule-evaluation" title="Permalink to this headline">¶</a></h1>
 <p>Unlike typical rules and trust providers, evaluation and onboarding is handled completely within CitizenOne.</p>
-<div class="section" id="removing-service-card-tasks">
-<h2>Removing Service Card Tasks<a class="headerlink" href="#removing-service-card-tasks" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><p>To remove a service card task, click the X on the task.</p></li>
-</ul>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Be sure you want to remove the task.  This cannot be undone.</p>
+<p>The MFA Rule may be applied to any policy and will require the user’s session to be authenticated with a <a class="reference internal" href="Authentication.html#multi-factor-authentication"><span class="std std-ref">Multi-Factor Authentication</span></a> method.</p>
+<div class="section" id="evaluation-steps">
+<h2>Evaluation Steps<a class="headerlink" href="#evaluation-steps" title="Permalink to this headline">¶</a></h2>
+<p>When evaluating this rule it checks the user’s JWT and authenticators. The claim providers offered to the user will be filtered depending on the following cases:</p>
+<dl class="simple">
+<dt>Session is MFA:</dt><dd><p>Rule Passed</p>
+</dd>
+<dt>Session is not MFA:</dt><dd><dl class="simple">
+<dt>User has an ACTIVE MFA:</dt><dd><p>Prompt user to complete MFA challenge</p>
+</dd>
+<dt>User has a PENDING SMS:</dt><dd><p>Send SMS code and prompt user to verify</p>
+</dd>
+<dt>User has no MFA:</dt><dd><p>Offer user to create TOTP or SMS</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</div>
+<div class="section" id="totp">
+<h2>TOTP<a class="headerlink" href="#totp" title="Permalink to this headline">¶</a></h2>
+<p>The TOTP flow is the simplest, requiring two internal trust providers. These are <cite>Add an Authenticator App</cite> and <cite>Challenge TOTP</cite>.</p>
+<div class="section" id="add-an-authenticator-app">
+<h3>Add an Authenticator App<a class="headerlink" href="#add-an-authenticator-app" title="Permalink to this headline">¶</a></h3>
+<p>This will be offered to the user if they have no PENDING or ACTIVE MFA strategies. This trust provider uses the onboarding form: <cite>create-totp-auth-method</cite>. The form contains a QR Code component with a dataURL of <code class="docutils literal notranslate"><span class="pre">https://authentication-service/api/v1/authentication/users/$identityId/mfa/createTOTP</span></code>. This creates a pending TOTP upon form load which the user can complete and enter their 6-digit code on the form. Side-effect: this claim provider attempts to activate the 2fa method.</p>
+</div>
+<div class="section" id="challenge-totp-trust-provider">
+<h3>Challenge TOTP Trust Provider<a class="headerlink" href="#challenge-totp-trust-provider" title="Permalink to this headline">¶</a></h3>
+<p>This will be offered to users with an ACTIVE TOTP authenticator. It simply prompts for their 6-digit verification code.</p>
+</div>
+</div>
+<div class="section" id="sms">
+<h2>SMS<a class="headerlink" href="#sms" title="Permalink to this headline">¶</a></h2>
+<p>This requires 3 internal trust providers, these being <cite>Setup SMS Verification</cite>, <cite>Verify SMS Authentication Method</cite>, and <cite>Challenge SMS Authenticator</cite>.</p>
+<div class="section" id="setup-sms-verification">
+<h3>Setup SMS Verification<a class="headerlink" href="#setup-sms-verification" title="Permalink to this headline">¶</a></h3>
+<p>This trust provider uses the onboarding form <cite>create-sms-auth-method</cite> and simply asks the user for their phoneNumber and creates a PENDING SMS authenticator. Note this has a special case of NOT sending out a text message.</p>
+</div>
+<div class="section" id="verify-sms-authentication-method">
+<h3>Verify SMS Authentication Method<a class="headerlink" href="#verify-sms-authentication-method" title="Permalink to this headline">¶</a></h3>
+<p>This provider will be offered to the user if they have a PENDING SMS method. Using ClaimProviderDto.onboardingContext, it passes <code class="docutils literal notranslate"><span class="pre">identityId</span></code> and <code class="docutils literal notranslate"><span class="pre">mfaId</span></code> to the frontend which is injected into the nocode form which finally POSTs to <code class="docutils literal notranslate"><span class="pre">https://authentication-service/api/v1/authentication/users/$identityId/mfa/$mfaId/resendSMS</span></code> to generate and text a fresh 6-digit verification to the user onload. It has a single input for the 6-digit verification code. Side-effect: this claim provider attempts to activate the 2fa method.</p>
+</div>
+<div class="section" id="challenge-sms-authenticator">
+<h3>Challenge SMS Authenticator<a class="headerlink" href="#challenge-sms-authenticator" title="Permalink to this headline">¶</a></h3>
+<p>This claim provider uses form <cite>challenge-sms-auth-method</cite> which onload texts the user a 6-digit code using the strategy defined in Verify SMS Authentication Method. It contains a single input for the 6-digit verification code.</p>
 </div>
 </div>
 </div>

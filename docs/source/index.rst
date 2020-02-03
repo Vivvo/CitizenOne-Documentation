@@ -50,6 +50,7 @@ Guides
    Technical/MFA Rule Evaluation
    Technical/DynamicIdentityProviders
    Technical/eHealthSplunkService
+   Technical/Data Bundles
 
 .. toctree::
    :caption: General Information

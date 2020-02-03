@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>eHealth Splunk Service &mdash; CitizenOne 0.0.1 documentation</title>
+  <title>Data Bundles &mdash; CitizenOne 0.0.1 documentation</title>
   
 
   
@@ -35,8 +35,6 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Data Bundles" href="Data Bundles.html" />
-    <link rel="prev" title="Dynamic Identity Providers" href="DynamicIdentityProviders.html" />
     <link href="../_static/style.css" rel="stylesheet" type="text/css">
 
 </head>
@@ -110,21 +108,14 @@
 <li class="toctree-l1"><a class="reference internal" href="../Management/Layouts.html">Layout Management</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Technical Documentation</span></p>
-<ul class="current">
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="Authentication.html">Authentication</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Authentication.html#multi-factor-authentication">Multi-factor Authentication</a></li>
 <li class="toctree-l1"><a class="reference internal" href="PolicyHierarchy.html">Policy Hierarchy</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Federation.html">Federation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="MFA Rule Evaluation.html">MFA Rule Evaluation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="DynamicIdentityProviders.html">Dynamic Identity Providers</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">eHealth Splunk Service</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#glossary">Glossary</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#splunk-service">Splunk Service</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="Data Bundles.html">Data Bundles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="eHealthSplunkService.html">eHealth Splunk Service</a></li>
 </ul>
 <p class="caption"><span class="caption-text">General Information</span></p>
 <ul>
@@ -174,13 +165,13 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-      <li>eHealth Splunk Service</li>
+      <li>Data Bundles</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/Technical/eHealthSplunkService.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/Technical/Data Bundles.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -193,19 +184,48 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="ehealth-splunk-service">
-<h1>eHealth Splunk Service<a class="headerlink" href="#ehealth-splunk-service" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="glossary">
-<h2>Glossary<a class="headerlink" href="#glossary" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><p><strong>SPLUNK:</strong> Software used for searching monitoring and analyzing big data.</p></li>
-<li><p><strong>HEC:</strong> HTTP Event Controller enables you to send data events to splunk deployments over https using a token-based authentication model.</p></li>
-<li><p><strong>TLS:</strong> Transport Layer Security is a cryptographic protocol that provides end-to-end communications security over networks and is widely used for internet communications and online transactions.</p></li>
-<li><p><strong>AUDIT DATABASE:</strong> Holds all audited events in a given C1 instance.</p></li>
-</ul>
-<div class="section" id="splunk-service">
-<h3>Splunk Service<a class="headerlink" href="#splunk-service" title="Permalink to this headline">¶</a></h3>
-<p>We created a service which pushes new logs to eHealths Splunk instance. The service itself is fairly straightforward. It simply polls the Audit Database for new logs every 5 seconds. Upon a new log, the service wraps the logs into a Splunk Event Dto and forwards to eHealths EventCollector. Of course all the communication TLS’d. Meaning, we communicate with eHealth via a certificate provided by eHealth. The call also needs a HEC key or token as authorization for token Splunk.</p>
+  <div class="section" id="data-bundles">
+<h1>Data Bundles<a class="headerlink" href="#data-bundles" title="Permalink to this headline">¶</a></h1>
+<p>Data bundles are an end-to-end encrypted solution for keeping information about a user in sync between different datastores.</p>
+<div class="section" id="lifecycle">
+<h2>Lifecycle<a class="headerlink" href="#lifecycle" title="Permalink to this headline">¶</a></h2>
+<p>The lifecycle of a data bundle begins with a <a class="reference external" href="http://www.python.org/">Trust Provider</a> which is the creator and owner of a data bundle. A data bundle can be instatiated during one of the two events:</p>
+<ol class="arabic simple">
+<li><p>A trust provider would like to publish a bundle of data</p></li>
+<li><p>A service requesting a data bundle</p></li>
+</ol>
+<div class="section" id="scenario-1">
+<h3>Scenario 1<a class="headerlink" href="#scenario-1" title="Permalink to this headline">¶</a></h3>
+<p>A trust provider MUST first ask CitizenOne for the public keys belonging to all of the subscribers of the specific bundleType and identityId. The request to <code class="docutils literal notranslate"><span class="pre">/id1/api/v1/identities/{identityId}/policies/callbacks/{dataBundleType}/publicKeys</span></code> will return:</p>
+<div class="highlight-JSON notranslate"><div class="highlight"><pre><span></span>{
+  publicKeys: [
+    {
+      policyId: &#39;A guid to identify this subscriber&#39;,
+      publicKey: &#39;The subscriber&#39;s publicKey PEM&#39;
+    }
+  ]
+}
+</pre></div>
+</div>
+<p>The trust provider will loop over the publicKeys array and encrypt the data bundle for each one.</p>
+<p>The trust provider will then publish the data bundle by making a <cite>POST</cite> request to <code class="docutils literal notranslate"><span class="pre">/id1/api/v1/identities/{identityId}/dataBundle/{dataBundle}</span></code>. This request specifies <cite>Who</cite> (identityId) the data is about, and <cite>What</cite> (dataBundle) the data is.
+The request body MUST be:</p>
+<div class="highlight-JSON notranslate"><div class="highlight"><pre><span></span>{
+  bundles: [
+    {
+      policyId: &#39;The guid of matching the publicKey this bundle was encrypted for&#39;,
+      encryptedBundle: &#39;Base64 standard encoded encrypted json representation of the dataBundle&#39;
+    }
+  ]
+}
+</pre></div>
+</div>
+<p>Identity-server will iterate over each bundle object and push it on to a RabbitMQ queue. A simple microservice (publish-service) will pop any pending messages from the outgoing message queue, check for consent, and find the destination <cite>url</cite> specified by the subscriber. Finally, publish-service will send the encrypted bundle to the specified url.</p>
+<p>The subscriber will then decrypt the data bundle using its RSA private key and unmarshal the json string into an object for use.</p>
+</div>
+<div class="section" id="scenario-2">
+<h3>Scenario 2<a class="headerlink" href="#scenario-2" title="Permalink to this headline">¶</a></h3>
+<p>To be built</p>
 </div>
 </div>
 </div>
@@ -215,15 +235,6 @@
            
           </div>
           <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="Data Bundles.html" class="btn btn-neutral float-right" title="Data Bundles" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="DynamicIdentityProviders.html" class="btn btn-neutral float-left" title="Dynamic Identity Providers" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
-    </div>
   
 
   <hr/>
