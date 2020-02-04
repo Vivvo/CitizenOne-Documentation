@@ -205,29 +205,29 @@
 <li><p>A service requesting a data bundle</p></li>
 </ol>
 <div class="section" id="scenario-1">
-<h3>Scenario 1<a class="headerlink" href="#scenario-1" title="Permalink to this headline">¶</a></h3>
+<span id="data-bundles-scenario-1"></span><h3>Scenario 1<a class="headerlink" href="#scenario-1" title="Permalink to this headline">¶</a></h3>
 <p>A trust provider MUST first ask CitizenOne for the public keys belonging to all of the subscribers of the specific bundleType and identityId. The request to <code class="docutils literal notranslate"><span class="pre">/id1/api/v1/identities/{identityId}/policies/callbacks/{dataBundleType}/publicKeys</span></code> will return:</p>
-<div class="highlight-JSON notranslate"><div class="highlight"><pre><span></span>{
-  publicKeys: [
-    {
-      policyId: &#39;A guid to identify this subscriber&#39;,
-      publicKey: &#39;The subscriber&#39;s publicKey PEM&#39;
-    }
-  ]
-}
+<div class="highlight-JSON notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="nt">&quot;publicKeys&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;policyId&quot;</span><span class="p">:</span> <span class="s2">&quot;A guid to identify this subscriber&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;publicKey&quot;</span><span class="p">:</span> <span class="s2">&quot;The subscriber&#39;s publicKey PEM&quot;</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>The trust provider will loop over the publicKeys array and encrypt the data bundle for each one.</p>
 <p>The trust provider will then publish the data bundle by making a <cite>POST</cite> request to <code class="docutils literal notranslate"><span class="pre">/id1/api/v1/identities/{identityId}/dataBundle/{dataBundle}</span></code>. This request specifies <cite>Who</cite> (identityId) the data is about, and <cite>What</cite> (dataBundle) the data is.
 The request body MUST be:</p>
-<div class="highlight-JSON notranslate"><div class="highlight"><pre><span></span>{
-  bundles: [
-    {
-      policyId: &#39;The guid of matching the publicKey this bundle was encrypted for&#39;,
-      encryptedBundle: &#39;Base64 standard encoded encrypted json representation of the dataBundle&#39;
-    }
-  ]
-}
+<div class="highlight-JSON notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="nt">&quot;bundles&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;policyId&quot;</span><span class="p">:</span> <span class="s2">&quot;The guid of matching the publicKey this bundle was encrypted for&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;encryptedBundle&quot;</span><span class="p">:</span> <span class="s2">&quot;Base64 standard encoded encrypted json representation of the dataBundle&quot;</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>Identity-server will iterate over each bundle object and push it on to a RabbitMQ queue. A simple microservice (publish-service) will pop any pending messages from the outgoing message queue, check for consent, and find the destination <cite>url</cite> specified by the subscriber. Finally, publish-service will send the encrypted bundle to the specified url.</p>

@@ -11,6 +11,8 @@ The lifecycle of a data bundle begins with a `Trust Provider <http://www.python.
 1. A trust provider would like to publish a bundle of data
 2. A service requesting a data bundle
 
+.. _data-bundles-scenario-1:
+
 Scenario 1
 ##########
 
@@ -19,10 +21,10 @@ A trust provider MUST first ask CitizenOne for the public keys belonging to all 
 .. code-block:: JSON
 
   {
-    publicKeys: [
+    "publicKeys": [
       { 
-        policyId: 'A guid to identify this subscriber',
-        publicKey: 'The subscriber's publicKey PEM'
+        "policyId": "A guid to identify this subscriber",
+        "publicKey": "The subscriber's publicKey PEM"
       }
     ]
   }
@@ -35,10 +37,10 @@ The request body MUST be:
 .. code-block:: JSON
 
   {
-    bundles: [
+    "bundles": [
       {
-        policyId: 'The guid of matching the publicKey this bundle was encrypted for',
-        encryptedBundle: 'Base64 standard encoded encrypted json representation of the dataBundle'
+        "policyId": "The guid of matching the publicKey this bundle was encrypted for",
+        "encryptedBundle": "Base64 standard encoded encrypted json representation of the dataBundle"
       }
     ]
   }

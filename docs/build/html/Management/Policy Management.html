@@ -106,7 +106,11 @@
 <li class="toctree-l1"><a class="reference internal" href="Provider Management.html">Provider Management</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Policy Management</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#viewing-policies">Viewing Policies</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#creating-policies">Creating Policies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#creating-policies">Creating Policies</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#subscribing-to-data-bundles">Subscribing to Data Bundles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#uploading-a-public-key">Uploading a public key</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="Creating Service Cards.html">Creating a Service Card</a></li>
@@ -199,6 +203,19 @@
 </div>
 <div class="section" id="creating-policies">
 <h2>Creating Policies<a class="headerlink" href="#creating-policies" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="subscribing-to-data-bundles">
+<h3>Subscribing to Data Bundles<a class="headerlink" href="#subscribing-to-data-bundles" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference internal" href="../Technical/Data Bundles.html#data-bundles-scenario-1"><span class="std std-ref">Data Bundles</span></a> enable your services to recieve updates when your user’s data changes in another place. They allow your services to stay in sync without maintaining backchannel communication.</p>
+</div>
+<div class="section" id="uploading-a-public-key">
+<h3>Uploading a public key<a class="headerlink" href="#uploading-a-public-key" title="Permalink to this headline">¶</a></h3>
+<p>All data bundles are end-to-end encrypted so you can be confident the CitizenOne platform, or anyone else, can see information about your users. When you first create a policy you will have the option to upload an RSA public key. This is required to subscribe to data bundles. You can follow the commands given to assist you in generating an appropriate key.</p>
+<a class="reference internal image-reference" href="../_images/policy-public-key.png"><img alt="../_images/policy-public-key.png" class="align-left" src="../_images/policy-public-key.png" style="width: 500pt;" /></a>
+<p>During policy revision creation you are able to choose from a list of provided data bundles you can subscribe to. When a data/trust provider publishes a data change, they will specify a type. You as a consumer will then receive the encrypted bundle at the url you specify.</p>
+<a class="reference internal image-reference" href="../_images/policy-revision-data-bundle.png"><img alt="../_images/policy-revision-data-bundle.png" class="align-left" src="../_images/policy-revision-data-bundle.png" style="width: 500pt;" /></a>
+<p>Clicking the ‘eye’ icon next to the data bundle type will show you the <a class="reference external" href="https://json-schema.org/">JSON Schema</a> of that bundle type. All data bundles you receive will be in this format so you can predictably parse the data contained in the data bundle.</p>
+<p>It is your responsibility as a data consumer to decrypt data bundles you receive using the private key pair to the public key you specified.</p>
+</div>
 </div>
 </div>
 
