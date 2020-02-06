@@ -121,9 +121,11 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Data Bundles</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#lifecycle">Lifecycle</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#scenario-1">Scenario 1</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#scenario-2">Scenario 2</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#bundle-encryption">Bundle Encryption</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#data-sent-from-id1">Data Sent from ID1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#receiving-a-bundle">Receiving a Bundle</a></li>
 </ul>
 </li>
 </ul>
@@ -197,6 +199,22 @@
   <div class="section" id="data-bundles">
 <h1>Data Bundles<a class="headerlink" href="#data-bundles" title="Permalink to this headline">¶</a></h1>
 <p>Data bundles are an end-to-end encrypted solution for keeping information about a user in sync between different datastores.</p>
+<p>A Data Bundle is a block of data with a structure that is defined by
+the consumers and providers of said data. The bundles are used to keep
+downstream service providers up to date and aware of changes made to
+an Identity’s profile without the need for CitizenOne to oversee the
+changes themselves.</p>
+<p>The example we like to use revolves around an Identity’s banking info.
+If an Identity updates their bank data in App A, it can send a banking
+data bundle to CitizenOne where the bundle is then sent to any applications
+that the Identity has given consent to watch their banking data.</p>
+<p>If App B has a policy that also wants baking data, and the Identity has
+consented, the bundle will be encrypted using a public key attached to
+the policy on App B, where the private key is also owned by App B.
+When they receive it, they will then be able to decrypt the Bundle’s <cite>key</cite>, and
+<cite>nonce</cite> (a one time code created when encrypting the payload), which can then
+be used to decrypt the payload.</p>
+<p>This all happens without Identity needing to view the contents of the databundle.</p>
 <div class="section" id="lifecycle">
 <h2>Lifecycle<a class="headerlink" href="#lifecycle" title="Permalink to this headline">¶</a></h2>
 <p>The lifecycle of a data bundle begins with a <a class="reference external" href="http://www.python.org/">Trust Provider</a> which is the creator and owner of a data bundle. A data bundle can be instatiated during one of the two events:</p>
@@ -233,9 +251,62 @@ The request body MUST be:</p>
 <p>Identity-server will iterate over each bundle object and push it on to a RabbitMQ queue. A simple microservice (publish-service) will pop any pending messages from the outgoing message queue, check for consent, and find the destination <cite>url</cite> specified by the subscriber. Finally, publish-service will send the encrypted bundle to the specified url.</p>
 <p>The subscriber will then decrypt the data bundle using its RSA private key and unmarshal the json string into an object for use.</p>
 </div>
-<div class="section" id="scenario-2">
-<h3>Scenario 2<a class="headerlink" href="#scenario-2" title="Permalink to this headline">¶</a></h3>
-<p>To be built</p>
+</div>
+<div class="section" id="bundle-encryption">
+<h2>Bundle Encryption<a class="headerlink" href="#bundle-encryption" title="Permalink to this headline">¶</a></h2>
+<p>Due to not always knowing the size of bundles, straight RSA encryption cannot be used.
+So, instead, the payload itself is AES-256 encrypted with a randomly generated
+key, and then - for each bundle - the <cite>key</cite> and a <cite>nonce</cite> that is created during the AES
+encryption are both RSA encrypted using the consumer’s public key. All of the encrypted
+values are then Base64 encoded, and added to the message, then published or put back on
+a queue.</p>
+<p>Data Bundle providers must implement this however they wish on their end.</p>
+</div>
+<div class="section" id="data-sent-from-id1">
+<h2>Data Sent from ID1<a class="headerlink" href="#data-sent-from-id1" title="Permalink to this headline">¶</a></h2>
+<p>Not all Data Bundles come from external applications, some come from the
+Identity server. Thes bundles are treated slightly differently, so their
+Callback type and PolicyId are checked to determine which bundles come from ID1, and which
+come from external sources.</p>
+<p>PolicyId is set to <cite>nil</cite> when the message from ID1 is ready to be sent out to
+consumers, since it is not critical data.</p>
+<div class="highlight-Go notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="nx">cb</span> <span class="o">==</span> <span class="nb">string</span><span class="p">(</span><span class="nx">models</span><span class="p">.</span><span class="nx">CallbackTypeName</span><span class="p">)</span> <span class="o">||</span>
+    <span class="nx">cb</span> <span class="o">==</span> <span class="nb">string</span><span class="p">(</span><span class="nx">models</span><span class="p">.</span><span class="nx">CallbackTypeAddress</span><span class="p">)</span> <span class="o">||</span>
+    <span class="nx">cb</span> <span class="o">==</span> <span class="nb">string</span><span class="p">(</span><span class="nx">models</span><span class="p">.</span><span class="nx">CallbackTypeEmail</span><span class="p">)</span> <span class="o">||</span>
+    <span class="nx">cb</span> <span class="o">==</span> <span class="nb">string</span><span class="p">(</span><span class="nx">models</span><span class="p">.</span><span class="nx">CallbackTypePhone</span><span class="p">))</span> <span class="o">&amp;&amp;</span> <span class="nx">msg</span><span class="p">.</span><span class="nx">PolicyId</span> <span class="o">==</span> <span class="nx">uuid</span><span class="p">.</span><span class="nx">Nil</span> <span class="p">{</span>
+    <span class="o">...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The different types of ID1 callbacks and events are:</p>
+<ul class="simple">
+<li><p>model.identity.update, model.email.update, model.phone.update, model.address.update</p></li>
+<li><p>model.identity.create, model.email.create, model.phone.create, model.address.create</p></li>
+<li><p>model.identity.delete, model.email.delete, model.phone.delete, model.address.delete</p></li>
+</ul>
+</div>
+<p>The main difference between data sent from ID1 versus data sent from a publisher is that
+data from ID1 is not yet encrypted, and must be encrypted in the same fashion
+that we require of the publishers. After it has been encrypted, the message is put
+back onto the incoming queue, and will be read and published to the consumers in the same
+way that outside messages are sent.</p>
+</div>
+<div class="section" id="receiving-a-bundle">
+<h2>Receiving a Bundle<a class="headerlink" href="#receiving-a-bundle" title="Permalink to this headline">¶</a></h2>
+<p>In the interest of making decryption as easy as possible for consumers, a <cite>DecryptPayload</cite>
+method has been made available through the Vivvo <cite>go-sdk</cite>. It would be possible to decrypt
+in other languages, but as of now, our only officially supported language is Golang.</p>
+<p>The consumer will simply receive a post request with a body of type <cite>PublishWrapperDto</cite> to the endpoint specified in the Policy,
+and can then decrypt the payload into whatever structure they are expecting. An example of this
+is shown below.</p>
+<div class="highlight-Go notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">db</span> <span class="nx">models</span><span class="p">.</span><span class="nx">PublishWrapperDto</span>
+<span class="nx">utils</span><span class="p">.</span><span class="nx">ReadBody</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">db</span><span class="p">,</span> <span class="nx">r</span><span class="p">)</span> <span class="c1">// Reads the body of the request into a PublishWrapperDto variable</span>
+
+<span class="kd">var</span> <span class="nx">address</span> <span class="nx">models</span><span class="p">.</span><span class="nx">Address</span> <span class="c1">// The expected type of bundle</span>
+<span class="nx">err</span> <span class="o">:=</span> <span class="nx">trustprovider</span><span class="p">.</span><span class="nx">DecryptPayload</span><span class="p">(</span><span class="nx">db</span><span class="p">,</span> <span class="nx">privateKey</span><span class="p">,</span> <span class="o">&amp;</span><span class="nx">address</span><span class="p">)</span> <span class="c1">// Pass in the full request body, with the private key and destination object</span>
+</pre></div>
 </div>
 </div>
 </div>
