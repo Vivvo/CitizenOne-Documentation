@@ -126,6 +126,12 @@ The data bundle fields for a Trust Provider are:
 **Notes**:
 
 1. Clicking the **[Eye]** icon will give you the schema of the data bundle
+
+.. image:: ../images/tenants/providers/tab/bundles/schema.png
+      :width: 500pt
+      :align: left
+..
+
 2. The notifiy url must be of type **HTTPS**.
 3. Clicking the **[Edit]** will add a **[Add Data Bundle]** button.  This button can be used to add new Data Bundles.
 4. Currently you can only add one bundle for a particular type.

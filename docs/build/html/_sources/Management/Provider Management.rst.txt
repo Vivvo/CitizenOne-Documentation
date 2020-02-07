@@ -106,7 +106,12 @@ approved by the provider.
 **Providing Bundles** - This tab is used for creating data bundles for pushing
 updates to clients
 
-If you would like to publish to changes about your users, such as when their
+.. image:: ../images/tenants/providers/tab/bundles/default.png
+      :width: 500pt
+      :align: left
+..
+
+**Note:** If you would like to publish to changes about your users, such as when their
 address or email changes, add those here.
 
 The data bundle fields for a Trust Provider are:
@@ -115,10 +120,7 @@ The data bundle fields for a Trust Provider are:
 2. **Notify Url**: The url (must be **https**) to push data bundles to.
 
 
-.. image:: ../images/tenants/providers/tab/bundles/default.png
-      :width: 500pt
-      :align: left
-..
+
 
 
 **Notes**:
