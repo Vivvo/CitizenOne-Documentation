@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Provider Management &mdash; CitizenOne 0.0.1 documentation</title>
+  <title>Trust Provider Management &mdash; CitizenOne 0.0.1 documentation</title>
   
 
   
@@ -103,9 +103,10 @@
 <li class="toctree-l1"><a class="reference internal" href="Application Management.html">Application Management</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Service Card Management.html">Service Card Management</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Rule Management.html">Rule Management</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Provider Management</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#viewing-providers">Viewing Providers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#creating-providers">Creating Providers</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Trust Provider Management</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#creating-trust-providers">Creating Trust Providers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#editing-trust-providers">Editing Trust Providers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#deleting-trust-providers">Deleting Trust Providers</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="Policy Management.html">Policy Management</a></li>
@@ -172,7 +173,7 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-      <li>Provider Management</li>
+      <li>Trust Provider Management</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -191,14 +192,83 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="provider-management">
-<h1>Provider Management<a class="headerlink" href="#provider-management" title="Permalink to this headline">¶</a></h1>
-<p>Introduction to the Providers Management tab.</p>
-<div class="section" id="viewing-providers">
-<h2>Viewing Providers<a class="headerlink" href="#viewing-providers" title="Permalink to this headline">¶</a></h2>
+  <div class="section" id="trust-provider-management">
+<h1>Trust Provider Management<a class="headerlink" href="#trust-provider-management" title="Permalink to this headline">¶</a></h1>
+<p>A trust provider faciltiates providing onboarding
+rules and data intergrations for policies.</p>
+<a class="reference internal image-reference" href="../_images/initial.png"><img alt="../_images/initial.png" class="align-left" src="../_images/initial.png" style="width: 500pt;" /></a>
+<div class="section" id="creating-trust-providers">
+<h2>Creating Trust Providers<a class="headerlink" href="#creating-trust-providers" title="Permalink to this headline">¶</a></h2>
+<p>A trust provider can be created in Management by going to
+Tenants -&gt; Trust Providers -&gt; Clicking the <strong>[Create]</strong> button</p>
+<a class="reference internal image-reference" href="../_images/create.png"><img alt="../_images/create.png" class="align-left" src="../_images/create.png" style="width: 500pt;" /></a>
+<p>The general fields for a Trust Provider are:</p>
+<ol class="arabic simple">
+<li><p><strong>Name</strong>: The name of the trust provider</p></li>
+<li><p><strong>Description</strong>: The optional description of the trust provider</p></li>
+<li><p><strong>Level of Assurance</strong>: The level of assurance (<a class="reference external" href="https://en.wikipedia.org/wiki/Identity_assurance">https://en.wikipedia.org/wiki/Identity_assurance</a>)</p></li>
+</ol>
+<a class="reference internal image-reference" href="../_images/create-1.png"><img alt="../_images/create-1.png" class="align-left" src="../_images/create-1.png" style="width: 500pt;" /></a>
 </div>
-<div class="section" id="creating-providers">
-<h2>Creating Providers<a class="headerlink" href="#creating-providers" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="editing-trust-providers">
+<h2>Editing Trust Providers<a class="headerlink" href="#editing-trust-providers" title="Permalink to this headline">¶</a></h2>
+<p>Editing Trust Providers can be done in Management under:
+<em>Tenants -&gt; Trust Providers -&gt;</em> Clicking the <em>Trust
+Provider</em></p>
+<p><strong>Note:</strong> You must click <strong>[Edit]</strong> in order to edit a
+Trust Provider in each tab.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/create-1.png"><img alt="../_images/create-1.png" class="align-left" src="../_images/create-1.png" style="width: 500pt;" /></a>
+</div></blockquote>
+<p><strong>General</strong> - This tab is used for general information of Trust Providers</p>
+<a class="reference internal image-reference" href="../_images/default.png"><img alt="../_images/default.png" class="align-left" src="../_images/default.png" style="width: 500pt;" /></a>
+<p>The general fields for a Trust Provider are:</p>
+<ol class="arabic simple">
+<li><p><strong>Name</strong>: The name of the trust provider</p></li>
+<li><p><strong>Description</strong>: The optional description of the trust provider</p></li>
+<li><p><strong>Level of Assurance</strong>: The level of assurance (<a class="reference external" href="https://en.wikipedia.org/wiki/Identity_assurance">https://en.wikipedia.org/wiki/Identity_assurance</a>)</p></li>
+</ol>
+<a class="reference internal image-reference" href="../_images/edit.png"><img alt="../_images/edit.png" class="align-left" src="../_images/edit.png" style="width: 500pt;" /></a>
+<p><strong>Onboarding</strong> - This tab is used for onboarding details of Trust Providers</p>
+<a class="reference internal image-reference" href="../_images/default1.png"><img alt="../_images/default1.png" class="align-left" src="../_images/default1.png" style="width: 500pt;" /></a>
+<p>The onboarding fields for a Trust Provider are:</p>
+<ol class="arabic simple">
+<li><p><strong>Base Url</strong>: The url for onboarding</p></li>
+<li><p><strong>Onboarding Path</strong>: The path for the onboarding url</p></li>
+<li><p><strong>Onboarding Form</strong>: The NoCode form for onboarding</p></li>
+<li><p><strong>Arguments</strong> (e.g., Argument 1, Argument 2) - Arguments to send to the onboarding form</p></li>
+</ol>
+<p><strong>Note:</strong> To add more arguments you can click the <em>[Add Argument]</em>
+button below the last argument.</p>
+<a class="reference internal image-reference" href="../_images/edit1.png"><img alt="../_images/edit1.png" class="align-left" src="../_images/edit1.png" style="width: 500pt;" /></a>
+<p><strong>Rules</strong> - This tab is used for creating rules of Trust Providers</p>
+<p>Rules are sets of requirements that users must meet in order to by
+approved by the provider.</p>
+<a class="reference internal image-reference" href="../_images/default2.png"><img alt="../_images/default2.png" class="align-left" src="../_images/default2.png" style="width: 500pt;" /></a>
+<p><strong>Providing Bundles</strong> - This tab is used for creating data bundles for pushing
+updates to clients</p>
+<p>If you would like to publish to changes about your users, such as when their
+address or email changes, add those here.</p>
+<p>The data bundle fields for a Trust Provider are:</p>
+<ol class="arabic simple">
+<li><p><strong>Data Bundle Type</strong>: The type of updates to push to clients</p></li>
+<li><p><strong>Notify Url</strong>: The url (must be <strong>https</strong>) to push data bundles to.</p></li>
+</ol>
+<a class="reference internal image-reference" href="../_images/default3.png"><img alt="../_images/default3.png" class="align-left" src="../_images/default3.png" style="width: 500pt;" /></a>
+<p><strong>Notes</strong>:</p>
+<ol class="arabic simple">
+<li><p>Clicking the <strong>[Eye]</strong> icon will give you the schema of the data bundle</p></li>
+<li><p>The notifiy url must be of type <strong>HTTPS</strong>.</p></li>
+<li><p>Clicking the <strong>[Edit]</strong> will add a <strong>[Add Data Bundle]</strong> button.  This button can be used to add new Data Bundles.</p></li>
+<li><p>Currently you can only add one bundle for a particular type.</p></li>
+</ol>
+<a class="reference internal image-reference" href="../_images/edit2.png"><img alt="../_images/edit2.png" class="align-left" src="../_images/edit2.png" style="width: 500pt;" /></a>
+</div>
+<div class="section" id="deleting-trust-providers">
+<h2>Deleting Trust Providers<a class="headerlink" href="#deleting-trust-providers" title="Permalink to this headline">¶</a></h2>
+<p>Deleting a Trust Provider can be done by going to the <strong>[General]</strong> tab, clicking <strong>[Edit]</strong>, then clicking <strong>[Delete Provider]</strong>.
+When deleting a trust provider you must accept a confirmation box asking you whether you want to delete the Trust Provider.</p>
+<a class="reference internal image-reference" href="../_images/delete.png"><img alt="../_images/delete.png" class="align-left" src="../_images/delete.png" style="width: 500pt;" /></a>
 </div>
 </div>
 
