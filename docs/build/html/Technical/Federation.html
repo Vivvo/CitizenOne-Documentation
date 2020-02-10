@@ -21,10 +21,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -36,7 +36,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="MFA Rule Evaluation" href="MFA Rule Evaluation.html" />
-    <link rel="prev" title="Policy Hierarchy" href="PolicyHierarchy.html" />
+    <link rel="prev" title="eHealth Splunk Service" href="eHealthSplunkService.html" />
     <link href="../_static/style.css" rel="stylesheet" type="text/css">
 
 </head>
@@ -113,18 +113,19 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="Authentication.html">Authentication</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Authentication.html#multi-factor-authentication">Multi-factor Authentication</a></li>
-<li class="toctree-l1"><a class="reference internal" href="PolicyHierarchy.html">Policy Hierarchy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Data Bundles.html">Data Bundles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DynamicIdentityProviders.html">Dynamic Identity Providers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="eHealthSplunkService.html">eHealth Splunk Service</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Federation</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#glossary">Glossary</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#as-a-identity-provider">As a Identity Provider</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#as-a-service-provider">As a Service Provider</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#service-card-federation">Service Card Federation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#identity-provider">Identity Provider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#service-provider">Service Provider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#service-card">Service Card</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="MFA Rule Evaluation.html">MFA Rule Evaluation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="DynamicIdentityProviders.html">Dynamic Identity Providers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="eHealthSplunkService.html">eHealth Splunk Service</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Data Bundles.html">Data Bundles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="OpenID Connect.html">OpenID Connect (OIDC)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PolicyHierarchy.html">Policy Hierarchy</a></li>
 </ul>
 <p class="caption"><span class="caption-text">General Information</span></p>
 <ul>
@@ -197,29 +198,34 @@
 <h1>Federation<a class="headerlink" href="#federation" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="glossary">
 <h2>Glossary<a class="headerlink" href="#glossary" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><p><strong>Identity Provider (or IDP)</strong> A service offering credentials to a service provider (SP).  There is an agreement between the IDP and SP to trust authenticated credentials.</p></li>
-<li><p><strong>Service Provider (or SP)</strong> A service that uses another trusted services credentials.</p></li>
-<li><p><strong>Oauth2</strong> is an open standard for access delegation, commonly used as a way for Internet users to grant websites or applications access to their information on other websites but without giving them the passwords.</p></li>
-<li><p><strong>SAMLv2</strong>   is an XML-based protocol. SAML 2.0 is an OASIS Standard which specifies a protocol for enabling cross-domain single sign-on (SSO). SAML 2.0 uses security tokens containing assertions to pass information about an end user between an identity provider, and a service provider.</p></li>
-<li><p><strong>Service Card</strong> is a UX/application component that controls consent, privacy and building the federation event.</p></li>
-</ul>
-<p>CitizenOne can perform the role of identity provider and identity consumer using both protocols Oauth2 and SAMLv2.</p>
+<dl class="simple">
+<dt>Identity Provider (IdP)</dt><dd><p>A service offering credentials to a service provider (SP).  There is an agreement between the IDP and SP to trust authenticated credentials.</p>
+</dd>
+<dt>Service Provider (SP)</dt><dd><p>A service that uses another trusted services credentials.</p>
+</dd>
+<dt>OAuth2</dt><dd><p>An open standard for access delegation, commonly used as a way for Internet users to grant websites or applications access to their information on other websites but without giving them the passwords.</p>
+</dd>
+<dt>SAML 2.0</dt><dd><p>An XML-based protocol. SAML 2.0 is an OASIS Standard which specifies a protocol for enabling cross-domain single sign-on (SSO). SAML 2.0 uses security tokens containing assertions to pass information about an end user between an identity provider, and a service provider.</p>
+</dd>
+<dt>Service</dt><dd><p>A UX/application component that controls consent, privacy and building the federation event.</p>
+</dd>
+</dl>
+<p>CitizenOne can perform the role of identity provider and identity consumer using both protocols Oauth2 and SAML 2.0.</p>
 </div>
-<div class="section" id="as-a-identity-provider">
-<h2>As a Identity Provider<a class="headerlink" href="#as-a-identity-provider" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="identity-provider">
+<h2>Identity Provider<a class="headerlink" href="#identity-provider" title="Permalink to this headline">¶</a></h2>
 <p>As a modern credential provider, CitizenOne provides all the UI interfaces for profile registration, login and recovery methods.  On top of this credential repository is a full IDP service, so the credential can be shared with authorized services.</p>
 <p>The CitizenOne IDP ( Identity Provider) service allows for modern protocols both SAML v2 and Oauth2 supporting OpenIDConnect.  Connections to and from CitizenOne are independently established.  For example, the user may authenticate to CitizenOne with a SAMLv2 based bank credential, and then be federated to a service providers service using CitizenOnes Oauth2 service.</p>
 <p>CitizenOne keeps track of all the connected services and federated connections, so the user may transverse across services without having to re-authenticate.</p>
 <a class="reference internal image-reference" href="Technical/images/idpsp.png"><img alt="Technical/images/idpsp.png" src="Technical/images/idpsp.png" style="width: 400pt;" /></a>
 <p>The protocol chosen is a decision the provider or service provider.  This is usually influenced by the technology they generally use.  Supporting both federation protocols allows the flexibility of the organizations to pick which fits their organization best.</p>
 </div>
-<div class="section" id="as-a-service-provider">
-<h2>As a Service Provider<a class="headerlink" href="#as-a-service-provider" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="service-provider">
+<h2>Service Provider<a class="headerlink" href="#service-provider" title="Permalink to this headline">¶</a></h2>
 <p>The CitizenOne SP interface allows consumption of credentials from other credential providers (e.g.  Banks, Social, ADFS ).  The user authentication interface in CitizenOne can be set to use a credential provider, be the credential provider or function is a hybrid mode where the user can choose witch credential they are familiar with.</p>
 </div>
-<div class="section" id="service-card-federation">
-<h2>Service Card Federation<a class="headerlink" href="#service-card-federation" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="service-card">
+<h2>Service Card<a class="headerlink" href="#service-card" title="Permalink to this headline">¶</a></h2>
 <p>A unique feature of CitizenOne is the ability to build a federated credential only when certain criteria is met.  For example:  If the service behind the service card has the following requirements that must be met before the service can be used:</p>
 <ul class="simple">
 <li><p>Must be a verified user</p></li>
@@ -243,7 +249,7 @@
         <a href="MFA Rule Evaluation.html" class="btn btn-neutral float-right" title="MFA Rule Evaluation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="PolicyHierarchy.html" class="btn btn-neutral float-left" title="Policy Hierarchy" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="eHealthSplunkService.html" class="btn btn-neutral float-left" title="eHealth Splunk Service" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
