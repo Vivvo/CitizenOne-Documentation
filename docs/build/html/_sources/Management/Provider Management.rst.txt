@@ -103,7 +103,7 @@ approved by the provider.
 ..
 
 
-**Providing Bundles** - This tab is used for creating data bundles for pushing
+**Providing (Data) Bundles** - This tab is used for creating data bundles for pushing
 updates to clients
 
 .. image:: ../images/tenants/providers/tab/bundles/default.png
@@ -111,21 +111,26 @@ updates to clients
       :align: left
 ..
 
-**Note:** If you would like to publish to changes about your users, such as when their
+**Notes:** 
+
+1. If you would like to publish to changes about your users, such as when their
 address or email changes, add those here.
 
-The data bundle fields for a Trust Provider are:
+2. Data Bundles are encrypted if public key is provided on the policy.
+
+3. A more technical description can be found here: :ref:`data-bundles`.
+
+
+
+The data bundle fields for a Trust Provider are: 
 
 1. **Data Bundle Type**: The type of updates to push to clients
 2. **Notify Url**: The url (must be **https**) to push data bundles to.
 
 
-
-
-
 **Notes**:
 
-1. Clicking the **[Eye]** icon will give you the schema of the data bundle
+1. Clicking the **[Eye]** icon will present you with the schema of the data bundle
 
 .. image:: ../images/tenants/providers/tab/bundles/schema.png
       :width: 500pt
