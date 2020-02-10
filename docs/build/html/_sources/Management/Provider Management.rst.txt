@@ -113,8 +113,7 @@ updates to clients
 
 **Notes:** 
 
-1. If you would like to publish to changes about your users, such as when their
-address or email changes, add those here.
+1. If you would like to publish to changes about your users, such as when their address or email changes, add those here.
 
 2. Data Bundles are encrypted if public key is provided on the policy.
 
