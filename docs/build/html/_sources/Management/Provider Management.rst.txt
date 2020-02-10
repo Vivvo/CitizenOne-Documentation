@@ -59,7 +59,7 @@ The general fields for a Trust Provider are:
 
 1. **Name**: The name of the trust provider
 2. **Description**: The optional description of the trust provider
-3. **Level of Assurance**: The level of assurance (https://en.wikipedia.org/wiki/Identity_assurance)
+3. **Level of Assurance**: The level of assurance (https://github.com/canada-ca/PCTF-CCP/blob/master/verified-person/verified-person.md)
 
 .. image:: ../images/tenants/providers/tab/general/edit.png
    :width: 500pt
