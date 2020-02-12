@@ -3,17 +3,21 @@ Federation
 
 Glossary
 ********
-- **Identity Provider (or IDP)** A service offering credentials to a service provider (SP).  There is an agreement between the IDP and SP to trust authenticated credentials.
-- **Service Provider (or SP)** A service that uses another trusted services credentials.
-- **Oauth2** is an open standard for access delegation, commonly used as a way for Internet users to grant websites or applications access to their information on other websites but without giving them the passwords.
-- **SAMLv2**   is an XML-based protocol. SAML 2.0 is an OASIS Standard which specifies a protocol for enabling cross-domain single sign-on (SSO). SAML 2.0 uses security tokens containing assertions to pass information about an end user between an identity provider, and a service provider.
-- **Service Card** is a UX/application component that controls consent, privacy and building the federation event.
+Identity Provider (IdP)
+    A service offering credentials to a service provider (SP).  There is an agreement between the IDP and SP to trust authenticated credentials.
+Service Provider (SP)
+    A service that uses another trusted services credentials.
+OAuth2
+    An open standard for access delegation, commonly used as a way for Internet users to grant websites or applications access to their information on other websites but without giving them the passwords.
+SAML 2.0
+    An XML-based protocol. SAML 2.0 is an OASIS Standard which specifies a protocol for enabling cross-domain single sign-on (SSO). SAML 2.0 uses security tokens containing assertions to pass information about an end user between an identity provider, and a service provider.
+Service
+    A UX/application component that controls consent, privacy and building the federation event.
 
-CitizenOne can perform the role of identity provider and identity consumer using both protocols Oauth2 and SAMLv2.
+CitizenOne can perform the role of identity provider and identity consumer using both protocols Oauth2 and SAML 2.0.
 
-As a Identity Provider
-**********************
-
+Identity Provider
+*****************
 As a modern credential provider, CitizenOne provides all the UI interfaces for profile registration, login and recovery methods.  On top of this credential repository is a full IDP service, so the credential can be shared with authorized services.
 
 
@@ -27,13 +31,12 @@ CitizenOne keeps track of all the connected services and federated connections, 
 
 The protocol chosen is a decision the provider or service provider.  This is usually influenced by the technology they generally use.  Supporting both federation protocols allows the flexibility of the organizations to pick which fits their organization best.
 
-As a Service Provider
-*********************
-
+Service Provider
+****************
 The CitizenOne SP interface allows consumption of credentials from other credential providers (e.g.  Banks, Social, ADFS ).  The user authentication interface in CitizenOne can be set to use a credential provider, be the credential provider or function is a hybrid mode where the user can choose witch credential they are familiar with.
 
-Service Card Federation
-***********************
+Service Card
+************
 
 A unique feature of CitizenOne is the ability to build a federated credential only when certain criteria is met.  For example:  If the service behind the service card has the following requirements that must be met before the service can be used:
 

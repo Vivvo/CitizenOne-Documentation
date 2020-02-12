@@ -21,10 +21,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -108,13 +108,17 @@
 <li class="toctree-l1"><a class="reference internal" href="Creating Service Cards.html">Creating a Service Card</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Platform Configuration</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#identity-providers">Identity Providers</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#setting-up-an-identity-provider">Setting up an Identity Provider</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#setting-up-an-identity-provider-openid-connect-oidc">Setting up an Identity Provider OpenID Connect (oidc)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#setting-up-an-identity-provider-with-saml-saml">Setting up an Identity Provider with SAML (saml)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#setting-up-a-passwordless-identity-provider-did-auth">Setting up a Passwordless Identity Provider (did-auth)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#setting-up-another-citizenone-instance-as-an-identity-provider-c1-deprecated">Setting up another CitizenOne instance as an Identity Provider (c1 - Deprecated)</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#as-the-service-provider-citizenone-federal">As the Service Provider, CitizenOne Federal</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#as-the-identity-provider-citizenone-provincial">As the Identity Provider, CitizenOne Provincial</a></li>
 </ul>
 </li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#identity-providers-on-the-login-screen">Identity Providers on the Login Screen</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="Layouts.html">Layout Management</a></li>
@@ -207,15 +211,6 @@ necessary details needed in order to sign users into CitizenOne, connecting the 
 accounts.</p>
 <p>For example, you’d be able to sign into the Federal version of CitizenOne with any
 Provincal version’s portal, so long as the integration is set up on both sides.</p>
-<div class="section" id="setting-up-an-identity-provider">
-<h3>Setting up an Identity Provider<a class="headerlink" href="#setting-up-an-identity-provider" title="Permalink to this headline">¶</a></h3>
-<p>Just as there are two sides to any coin, there are two sides to any SAML transaction.
-In order to connect two platforms to allow for Federation, both sides require the
-other side’s SAML metadata in order to authenticate with one another.</p>
-<p>In this walkthrough, we will configure CitizenOne Federal such that it is able to
-federate using another platform, CitizenOne Provincial.</p>
-<div class="section" id="as-the-service-provider-citizenone-federal">
-<h4>As the Service Provider, CitizenOne Federal<a class="headerlink" href="#as-the-service-provider-citizenone-federal" title="Permalink to this headline">¶</a></h4>
 <p>When logged into management, you can click “Configuration” to drop down a list,
 where you will be able to find the link to the “Identity Providers” tab.</p>
 <a class="reference internal image-reference" href="../_images/identity-providers-list.png"><img alt="../_images/identity-providers-list.png" class="align-center" src="../_images/identity-providers-list.png" style="width: 500pt;" /></a>
@@ -223,48 +218,77 @@ where you will be able to find the link to the “Identity Providers” tab.</p>
 Identity Provider integrations. The one we will be aiming to replicate is <cite>C1_PROV</cite>.</p>
 <p>Clicking “+ Add Identity Provider” will bring you to the setup screen for new
 integrations.</p>
-<a class="reference internal image-reference" href="../_images/new-identity-provider.png"><img alt="../_images/new-identity-provider.png" class="align-center" src="../_images/new-identity-provider.png" style="width: 500pt;" /></a>
+<p>All Identity Providers share some of the fields, these fields are:</p>
 <ul class="simple">
 <li><p><strong>Enabled</strong>: Enables and disabled the Identity Provider. Disabling this here, will not remove the link on the login screen, however only enabled Identity Providers can be used to create links on the login page.</p></li>
 <li><p><strong>Provider Name</strong>: The desired name of the Identity Provider you are setting up. This name is used in the launch URL, which we will be configuring later.</p></li>
 <li><p><strong>Provider Strategy</strong>: There are varying methods of integrating with Identity Providers, but currently we only support dynamic SAML integrations, which is the <cite>C1</cite> strategy.</p></li>
-<li><p><strong>Client ID</strong>: The public Client ID or Application Key of the Provider application.</p></li>
-<li><p><strong>Client Secret</strong>: The private Client Secret or API Key of the Provider application.</p></li>
-<li><p><strong>“Me” Endpoind</strong>: This is the endpoint with which the Service Provider, Federal, can call to retrieve the user’s details from the Identity Provider, Provincial.</p></li>
-<li><p><strong>Cookie Domain</strong>: The Service Provider’s cookie domain.</p></li>
-<li><p><strong>EntityID</strong>: (This field is filled in automatically) Globally unique name for the Identity Provider’s SAML entity.</p></li>
-<li><p><strong>Metadata URL</strong>: (NYI) A URL to call out to to retrieve the Identity Provider’s SAML metdata.</p></li>
-<li><p><strong>SAML Metadata</strong>: The SAML metadata, with a valid EntityID, supplied by the Identity Provider, Provincial. Filling out this field will automaticlaly populate the <cite>EntityID</cite> field.</p></li>
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>If you forget what each of these fields are for, you can hover over the small <cite>(i)</cite> next to the field labels to get a short description of each.</p>
+<p>If you forget what any of the fields are for, you can hover over the small <cite>(i)</cite> next to the field labels to get a short description of each.</p>
 </div>
-<p>Once all of the fields are filled out and valid, click “Save”.</p>
-<p>To set up the link to the Identity Provider on the login screen, drop down “Configuration” in the sidebar again,
-but click into “Login Layout”. For a full overview on this screen, please see <a class="reference internal" href="Layouts.html#layout-management"><span class="std std-ref">Layout Management</span></a>.
-In this tutorial, the assumption will be made that you have familiarized yourself with the Layout</p>
-<a class="reference internal image-reference" href="../_images/login-layout.png"><img alt="../_images/login-layout.png" class="align-center" src="../_images/login-layout.png" style="width: 500pt;" /></a>
-<p>If you have the correct permissions, click into the dropdown box at the top
-of the display, select “Identity Providers” and click “+ Add Widget” to add the
-“Identity Providers” widget to the layout.</p>
-<a class="reference internal image-reference" href="../_images/new-idp-widget.png"><img alt="../_images/new-idp-widget.png" class="align-center" src="../_images/new-idp-widget.png" style="width: 500pt;" /></a>
-<p>The widget will be selected by default, so feel free to resize it to your desired look.
-Click “+ Identity Provider” to add an Identity Provider card to the widget.</p>
-<a class="reference internal image-reference" href="../_images/new-idp-card.png"><img alt="../_images/new-idp-card.png" class="align-center" src="../_images/new-idp-card.png" style="width: 500pt;" /></a>
-<p>A preview of the card is available in the display.</p>
+<div class="section" id="setting-up-an-identity-provider-openid-connect-oidc">
+<h3>Setting up an Identity Provider OpenID Connect (oidc)<a class="headerlink" href="#setting-up-an-identity-provider-openid-connect-oidc" title="Permalink to this headline">¶</a></h3>
+<p>OpenID Connect allows a range of clients, including Web-based, mobile, and JavaScript clients, to request and receive information about authenticated sessions and end-users.</p>
+<a class="reference internal image-reference" href="../_images/new-oidc-idp.png"><img alt="../_images/new-oidc-idp.png" class="align-center" src="../_images/new-oidc-idp.png" style="width: 500pt;" /></a>
 <ul class="simple">
-<li><p><strong>Provider Width</strong>: <strong>Applies to ALL Identity Provider Cards</strong> the width of each Provider card within the Identity Providers widget.</p></li>
-<li><p><strong>Identity Provider</strong>: The desired Identity Provider you wish to link to with this card. Only <cite>enabled</cite> Identity Providers can be used.</p></li>
-<li><p><strong>Icon URL</strong>: A link to the image to be displayed at the top of the card.</p></li>
-<li><p><strong>Launch URL</strong>: The URL used to kick of the transaction. (Typically, <cite>http://my.service.com/saml/launch/IDENITY_PROVIDER_NAME</cite>)</p></li>
-<li><p><strong>Colour</strong>: The accent color of the Identity Provider card.</p></li>
+<li><p><strong>OAuth2 Strategy</strong>: The desired OAuth provider.</p></li>
+<li><p><strong>Issuer</strong>: The ‘issuer’ identifier of the Identity Provider.</p></li>
+<li><p><strong>Client ID</strong>: The public Client ID or Application Key of the Provider application.</p></li>
+<li><p><strong>Client Secret</strong>: The private Client Secret or API Key of the Provider application.</p></li>
+<li><p><strong>Scope</strong>: The scopes that CitizenOne™ should request - this will impact what data gets populated in the user’s CitizenOne™ profile after successfully authenticating.</p></li>
+<li><p><strong>Authorization URL</strong>: The User Agent is sent to the Authorization URL for Authentication and Authorization.</p></li>
+<li><p><strong>Token URL</strong>: To obtain an Access Token, an ID Token, and optionally a Refresh Token, Client sends a Token Request to the Token URL to obtain a Token Response.</p></li>
+<li><p><strong>User Info URL</strong>: The UserInfo URL is an OAuth 2.0 Protected Resource that returns Claims about the authenticated User.</p></li>
 </ul>
-<p>When the fields are filled in, you will be able to see a preview of the Provider’s card.</p>
-<p><cite>Here is an example where all of the widgets have a width of 4, and the Provider Width is set to 12 (full):</cite></p>
-<a class="reference internal image-reference" href="../_images/idp-card-preview.png"><img alt="../_images/idp-card-preview.png" class="align-center" src="../_images/idp-card-preview.png" style="width: 500pt;" /></a>
-<p>Review your changes, and then hit save at the bottom of the page in order to set the layout.
-Navigate to the login page of the service to see the changes.</p>
+<p>Once all of the fields are filled out and valid, click “Save”.</p>
+</div>
+<div class="section" id="setting-up-an-identity-provider-with-saml-saml">
+<h3>Setting up an Identity Provider with SAML (saml)<a class="headerlink" href="#setting-up-an-identity-provider-with-saml-saml" title="Permalink to this headline">¶</a></h3>
+<p>Security Assertion Markup Language (SAML) is an open standard that allows Identity Providers to pass authorization credentials to Service Providers.
+SAML transactions use Extensible Markup Language (XML) for standardized communications between the identity provider and service providers. SAML is the link between the authentication of a user’s identity and the authorization to use a service.
+SAML enables Single-Sign On (SSO), a term that means users can log in once, and those same credentials can be reused to log into other service providers.</p>
+<a class="reference internal image-reference" href="../_images/new-saml-idp.png"><img alt="../_images/new-saml-idp.png" class="align-center" src="../_images/new-saml-idp.png" style="width: 500pt;" /></a>
+<ul class="simple">
+<li><p><strong>Metadata URL</strong>: (NYI) A URL to call out to to retrieve the Identity Provider’s SAML metdata.</p></li>
+<li><p><strong>SAML Metadata</strong>: The SAML metadata, with a valid EntityID, supplied by the Identity Provider.</p></li>
+</ul>
+<p>Once all of the fields are filled out and valid, click “Save”.</p>
+</div>
+<div class="section" id="setting-up-a-passwordless-identity-provider-did-auth">
+<h3>Setting up a Passwordless Identity Provider (did-auth)<a class="headerlink" href="#setting-up-a-passwordless-identity-provider-did-auth" title="Permalink to this headline">¶</a></h3>
+<p>A Decentralized Identifier (DID) is a new type of identifier that is globally unique, resolveable with high
+availability, and cryptographically verifiable. DIDs are typically associated with cryptographic material, such as public keys, and service endpoints, for establishing secure communication channels.</p>
+<a class="reference internal image-reference" href="../_images/new-did-auth-idp.png"><img alt="../_images/new-did-auth-idp.png" class="align-center" src="../_images/new-did-auth-idp.png" style="width: 500pt;" /></a>
+<ul class="simple">
+<li><p><strong>Client ID</strong>: The public Client ID or Application Key of the Provider application.</p></li>
+<li><p><strong>Client Secret</strong>: The private Client Secret or API Key of the Provider application.</p></li>
+<li><p><strong>Base URL</strong>: The host URL of the Identity Provider to verify the DID with.</p></li>
+</ul>
+</div>
+<div class="section" id="setting-up-another-citizenone-instance-as-an-identity-provider-c1-deprecated">
+<h3>Setting up another CitizenOne instance as an Identity Provider (c1 - Deprecated)<a class="headerlink" href="#setting-up-another-citizenone-instance-as-an-identity-provider-c1-deprecated" title="Permalink to this headline">¶</a></h3>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This method of configuring CitizenOne as an Identity Provider is deprecated, and only remains to keep backwards compatability.</p>
+</div>
+<p>In order to connect two platforms to allow for Federation, both sides require the
+other side’s SAML metadata in order to authenticate with one another.</p>
+<p>In this walkthrough, we will configure CitizenOne Federal such that it is able to
+federate using another platform, CitizenOne Provincial.</p>
+<div class="section" id="as-the-service-provider-citizenone-federal">
+<h4>As the Service Provider, CitizenOne Federal<a class="headerlink" href="#as-the-service-provider-citizenone-federal" title="Permalink to this headline">¶</a></h4>
+<a class="reference internal image-reference" href="../_images/new-c1-idp.png"><img alt="../_images/new-c1-idp.png" class="align-center" src="../_images/new-c1-idp.png" style="width: 500pt;" /></a>
+<ul class="simple">
+<li><p><strong>Client ID</strong>: The public Client ID or Application Key of the Provider application.</p></li>
+<li><p><strong>Client Secret</strong>: The private Client Secret or API Key of the Provider application.</p></li>
+<li><p><strong>“Me” Endpoint</strong>: This is the endpoint with which the Service Provider, Federal, can call to retrieve the user’s details from the Identity Provider, Provincial.</p></li>
+<li><p><strong>Cookie Domain</strong>: The Service Provider’s cookie domain.</p></li>
+<li><p><strong>Metadata URL</strong>: (NYI) A URL to call out to to retrieve the Identity Provider’s SAML metdata.</p></li>
+<li><p><strong>SAML Metadata</strong>: The SAML metadata, with a valid EntityID, supplied by the Identity Provider, Provincial. Filling out this field will automaticlaly populate the <cite>EntityID</cite> field.</p></li>
+</ul>
+<p>Once all of the fields are filled out and valid, click “Save”.</p>
 </div>
 <div class="section" id="as-the-identity-provider-citizenone-provincial">
 <h4>As the Identity Provider, CitizenOne Provincial<a class="headerlink" href="#as-the-identity-provider-citizenone-provincial" title="Permalink to this headline">¶</a></h4>
@@ -283,6 +307,32 @@ into the box. The SAML metadata must have a valid <cite>EntityID</cite>, or it w
 <a class="reference internal image-reference" href="../_images/service-provider-configuration-edit.png"><img alt="../_images/service-provider-configuration-edit.png" class="align-center" src="../_images/service-provider-configuration-edit.png" style="width: 500pt;" /></a>
 </div>
 </div>
+</div>
+<div class="section" id="identity-providers-on-the-login-screen">
+<h2>Identity Providers on the Login Screen<a class="headerlink" href="#identity-providers-on-the-login-screen" title="Permalink to this headline">¶</a></h2>
+<p>To set up the link to an Identity Provider on the login screen, drop down “Configuration” in the sidebar again,
+but click into “Login Layout”. For a full overview on this screen, please see <a class="reference internal" href="Layouts.html#layout-management"><span class="std std-ref">Layout Management</span></a>.
+In this tutorial, the assumption will be made that you have familiarized yourself with the Layout</p>
+<a class="reference internal image-reference" href="../_images/login-layout.png"><img alt="../_images/login-layout.png" class="align-center" src="../_images/login-layout.png" style="width: 500pt;" /></a>
+<p>If you have the correct permissions, click into the dropdown box at the top
+of the display, select “Identity Providers” and click “+ Add Widget” to add the
+“Identity Providers” widget to the layout.</p>
+<a class="reference internal image-reference" href="../_images/new-idp-widget.png"><img alt="../_images/new-idp-widget.png" class="align-center" src="../_images/new-idp-widget.png" style="width: 500pt;" /></a>
+<p>The widget will be selected by default, so feel free to resize it to your desired look.
+Click “+ Identity Provider” to add an Identity Provider card to the widget.</p>
+<a class="reference internal image-reference" href="../_images/new-idp-card.png"><img alt="../_images/new-idp-card.png" class="align-center" src="../_images/new-idp-card.png" style="width: 500pt;" /></a>
+<p>A preview of the card is available in the display.</p>
+<ul class="simple">
+<li><p><strong>Provider Width</strong>: <strong>Applies to ALL Identity Provider Cards</strong> the width of each Provider card within the Identity Providers widget.</p></li>
+<li><p><strong>Identity Provider</strong>: The desired Identity Provider you wish to link to with this card. Only <cite>enabled</cite> Identity Providers can be used.</p></li>
+<li><p><strong>Icon URL</strong>: A link to the image to be displayed at the top of the card.</p></li>
+<li><p><strong>Colour</strong>: The accent color of the Identity Provider card.</p></li>
+</ul>
+<p>When the fields are filled in, you will be able to see a preview of the Provider’s card.</p>
+<p><cite>Here is an example where the Login widget has a width of 4, the Identity Providers widget has a width of 8, and the Provider Width is set to 6 (half):</cite></p>
+<a class="reference internal image-reference" href="../_images/idp-card-preview.png"><img alt="../_images/idp-card-preview.png" class="align-center" src="../_images/idp-card-preview.png" style="width: 500pt;" /></a>
+<p>Review your changes, and then hit save at the bottom of the page in order to set the layout.
+Navigate to the login page of the service to see the changes.</p>
 </div>
 </div>
 

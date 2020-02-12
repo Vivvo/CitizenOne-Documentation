@@ -45,12 +45,13 @@ Guides
    :maxdepth: 2
 
    Technical/Authentication
-   Technical/PolicyHierarchy
-   Technical/Federation
-   Technical/MFA Rule Evaluation
+   Technical/Data Bundles
    Technical/DynamicIdentityProviders
    Technical/eHealthSplunkService
-   Technical/Data Bundles
+   Technical/Federation
+   Technical/MFA Rule Evaluation
+   Technical/OpenID Connect
+   Technical/PolicyHierarchy
 
 .. toctree::
    :caption: General Information

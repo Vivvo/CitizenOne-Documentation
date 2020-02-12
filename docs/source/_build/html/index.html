@@ -112,12 +112,13 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="Technical/Authentication.html">Authentication</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Technical/Authentication.html#multi-factor-authentication">Multi-factor Authentication</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Technical/PolicyHierarchy.html">Policy Hierarchy</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Technical/Federation.html">Federation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Technical/MFA Rule Evaluation.html">MFA Rule Evaluation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Technical/Data Bundles.html">Data Bundles</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Technical/DynamicIdentityProviders.html">Dynamic Identity Providers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Technical/eHealthSplunkService.html">eHealth Splunk Service</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Technical/Data Bundles.html">Data Bundles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Technical/Federation.html">Federation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Technical/MFA Rule Evaluation.html">MFA Rule Evaluation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Technical/OpenID Connect.html">OpenID Connect (OIDC)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Technical/PolicyHierarchy.html">Policy Hierarchy</a></li>
 </ul>
 <p class="caption"><span class="caption-text">General Information</span></p>
 <ul>
@@ -288,6 +289,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="Management/Platform Configuration.html">Platform Configuration</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="Management/Platform Configuration.html#identity-providers">Identity Providers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Management/Platform Configuration.html#identity-providers-on-the-login-screen">Identity Providers on the Login Screen</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="Management/Layouts.html">Layout Management</a></li>
@@ -307,17 +309,23 @@
 <li class="toctree-l2"><a class="reference internal" href="Technical/Authentication.html#totp-mutli-factor-authentication">TOTP mutli-factor authentication</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="Technical/PolicyHierarchy.html">Policy Hierarchy</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="Technical/PolicyHierarchy.html#how-consent-used-to-work">How Consent Used to Work</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Technical/PolicyHierarchy.html#how-consent-works-in-the-policy-hierarchy">How Consent Works in the Policy Hierarchy</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Technical/PolicyHierarchy.html#service-card-to-application-relationship">Service Card to Application Relationship</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Technical/Data Bundles.html">Data Bundles</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Technical/Data Bundles.html#lifecycle">Lifecycle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Technical/Data Bundles.html#bundle-encryption">Bundle Encryption</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Technical/Data Bundles.html#data-sent-from-id1">Data Sent from ID1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Technical/Data Bundles.html#receiving-a-bundle">Receiving a Bundle</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Technical/DynamicIdentityProviders.html">Dynamic Identity Providers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Technical/eHealthSplunkService.html">eHealth Splunk Service</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Technical/eHealthSplunkService.html#glossary">Glossary</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="Technical/Federation.html">Federation</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="Technical/Federation.html#glossary">Glossary</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Technical/Federation.html#as-a-identity-provider">As a Identity Provider</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Technical/Federation.html#as-a-service-provider">As a Service Provider</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Technical/Federation.html#service-card-federation">Service Card Federation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Technical/Federation.html#identity-provider">Identity Provider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Technical/Federation.html#service-provider">Service Provider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Technical/Federation.html#service-card">Service Card</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="Technical/MFA Rule Evaluation.html">MFA Rule Evaluation</a><ul>
@@ -326,16 +334,15 @@
 <li class="toctree-l2"><a class="reference internal" href="Technical/MFA Rule Evaluation.html#sms">SMS</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="Technical/DynamicIdentityProviders.html">Dynamic Identity Providers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Technical/eHealthSplunkService.html">eHealth Splunk Service</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="Technical/eHealthSplunkService.html#glossary">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Technical/OpenID Connect.html">OpenID Connect (OIDC)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Technical/OpenID Connect.html#citizenone-as-an-identity-provider-idp">CitizenOne™ as an Identity Provider (IdP)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Technical/OpenID Connect.html#citizenone-as-a-relying-party-rp">CitizenOne™ as a Relying Party (RP)</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="Technical/Data Bundles.html">Data Bundles</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="Technical/Data Bundles.html#lifecycle">Lifecycle</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Technical/Data Bundles.html#bundle-encryption">Bundle Encryption</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Technical/Data Bundles.html#data-sent-from-id1">Data Sent from ID1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Technical/Data Bundles.html#receiving-a-bundle">Receiving a Bundle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Technical/PolicyHierarchy.html">Policy Hierarchy</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Technical/PolicyHierarchy.html#how-consent-used-to-work">How Consent Used to Work</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Technical/PolicyHierarchy.html#how-consent-works-in-the-policy-hierarchy">How Consent Works in the Policy Hierarchy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Technical/PolicyHierarchy.html#service-card-to-application-relationship">Service Card to Application Relationship</a></li>
 </ul>
 </li>
 </ul>
