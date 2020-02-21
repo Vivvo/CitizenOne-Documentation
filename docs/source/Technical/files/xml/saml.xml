@@ -15,4 +15,3 @@
 			<saml:AttributeValue xsi:type="xs:anyType">Tue Feb 11 2020 20:05:41 GMT+0000 (Coordinated Universal Time)</saml:AttributeValue>
 		</saml:Attribute>
 	</saml:AttributeStatement>
-
