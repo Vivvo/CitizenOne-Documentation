@@ -62,7 +62,7 @@ The request body MUST be:
   {
     "bundles": [
       {
-        "policyId": "The guid of matching the publicKey this bundle was encrypt        ed for",
+        "policyId": "The guid of matching the publicKey this bundle was encrypted for",
         "encryptedBundle": "Base64 standard encoded encrypted json representation of the dataBundle"
       }
     ]

@@ -39,7 +39,6 @@ Guides
    Management/Creating Service Cards
    Management/Platform Configuration
    Management/Layouts
-   Management/Data Bundles
 
 .. toctree::
    :caption: Technical Documentation
@@ -54,7 +53,6 @@ Guides
    Technical/OpenID Connect
    Technical/PolicyHierarchy
    Technical/SAML
-   Technical/Consents
 
 .. toctree::
    :caption: General Information
