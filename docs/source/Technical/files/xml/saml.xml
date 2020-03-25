@@ -1,0 +1,17 @@
+.. code-block:: xml
+
+
+	<saml:AttributeStatement xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+		<saml:Attribute Name="http://schemas.auth0.com/email_verified" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri">
+			<saml:AttributeValue xsi:type="xs:boolean">false</saml:AttributeValue>
+		</saml:Attribute>
+		<saml:Attribute Name="http://schemas.auth0.com/nickname" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri">
+			<saml:AttributeValue xsi:type="xs:string">testy</saml:AttributeValue> 
+		</saml:Attribute>
+		<saml:Attribute Name="http://schemas.auth0.com/picture" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri">
+			<saml:AttributeValue xsi:type="xs:string"> https://s.gravatar.com/avatar/16f3771e3e92248287dce288b6d871ba?s=480&amp;r=pg&amp;d=https%3A%2F%2Fcdn.auth0.com%2Favatars%2Fte.png</saml:AttributeValue>
+		</saml:Attribute> 
+		<saml:Attribute Name="http://schemas.auth0.com/updated_at" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri">
+			<saml:AttributeValue xsi:type="xs:anyType">Tue Feb 11 2020 20:05:41 GMT+0000 (Coordinated Universal Time)</saml:AttributeValue>
+		</saml:Attribute>
+	</saml:AttributeStatement>

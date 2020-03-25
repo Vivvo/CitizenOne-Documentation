@@ -52,7 +52,7 @@ Guides
    Technical/MFA Rule Evaluation
    Technical/OpenID Connect
    Technical/PolicyHierarchy
-   Technical/SAML Single Logout
+   Technical/SAML
 
 .. toctree::
    :caption: General Information

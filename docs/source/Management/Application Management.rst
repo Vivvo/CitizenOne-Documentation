@@ -16,6 +16,8 @@ Creating Applications
 Application Policy
 ******************
 
+.. _application_service_cards:
+
 Application Service Cards
 *************************
 
