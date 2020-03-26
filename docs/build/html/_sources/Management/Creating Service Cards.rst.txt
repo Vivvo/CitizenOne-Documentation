@@ -1,3 +1,5 @@
+.. _createServiceCard:
+
 Creating a Service Card
 ===============================
 
