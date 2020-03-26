@@ -11,7 +11,7 @@ Viewing Service Cards
 You will be able to view a list of service cards in Management by going to
 Tenants -> Service Cards
 
-.. image:: ../images/servicecard-view.png
+.. image:: ../images/tenants/serviceCards/servicecard-view.png
    :width: 500pt
    :align: left
 
@@ -21,7 +21,7 @@ Creating Service Cards
 A service card is able to be created in Management by going to
 Tenants -> Service Cards -> Clicking the **[Create]** button
 
-.. image:: ../images/servicecard-create.png
+.. image:: ../images/tenants/serviceCards/servicecard-create.png
    :width: 500pt
    :align: left
 
@@ -40,7 +40,7 @@ The general fields for the details of service card are:
 3. **Description**: It's optional to describe the service card
 4. **Pilot**: Pilot Mode will remove the service card from the service catalog, but remain available through direct access.
 
-.. image:: ../images/servicecard-create-details.png
+.. image:: ../images/tenants/serviceCards/servicecard-create-details.png
    :width: 500pt
    :align: left
 
@@ -49,7 +49,7 @@ Service Card Policy
 
 The policy of service card is optional, user must consent to upon first use of the Service Card, a Policy may be applied later, as well.
 
-.. image:: ../images/servicecard-create-policy.png
+.. image:: ../images/tenants/serviceCards/servicecard-create-policy.png
    :width: 500pt
    :align: left
 
@@ -58,7 +58,7 @@ Service Card Review
 
 The service card review tab will show all service card information including basic details, pilot mode, tasks and policy, if you have any concerns about the information, just clicking the 'back' button, if all information are correct, by clicking the 'confirm' button you will create a new servic card.
 
-.. image:: ../images/servicecard-create-review.png
+.. image:: ../images/tenants/serviceCards/servicecard-create-review.png
    :width: 500pt
    :align: left
 
@@ -71,7 +71,7 @@ Adding a Service Card Task
 A service card task can be created in Management by going to
 Tenants -> Service Card -> Tasks -> Clicking the **[Add Service Card Task]** button ->
 
-.. image:: ../images/servicecard-create-tasks.png
+.. image:: ../images/tenants/serviceCards/servicecard-create-tasks.png
    :width: 500pt
    :align: left
 
@@ -86,7 +86,7 @@ Reordering Service Card Tasks
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 The service card tasks are able to be re-ordered through draging the task.
 
-image:: ../images/servicecard-tasks-reordering.png
+image:: ../images/tenants/serviceCards/servicecard-tasks-reordering.png
    :width: 500pt
    :align: left
 
@@ -95,7 +95,7 @@ Removing Service Card Tasks
 
 You have to find the service card in Management by going to Tenants -> Service Card, then open the service card and click the tasks tab. you can remove the service card task by clicking the red close button on right top corner.
 
-image:: ../images/servicecard-tasks-remove.png
+image:: ../images/tenants/serviceCards/servicecard-tasks-remove.png
    :width: 500pt
    :align: left
 
