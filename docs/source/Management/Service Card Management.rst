@@ -35,6 +35,7 @@ Service Card Details
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The general fields for the details of service card are:
+
 1. **Title**: The title of the service card
 2. **Service Card Type**: The type of service card
 3. **Description**: It's optional to describe the service card
