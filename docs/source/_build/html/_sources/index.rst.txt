@@ -52,6 +52,7 @@ Guides
    Technical/MFA Rule Evaluation
    Technical/OpenID Connect
    Technical/PolicyHierarchy
+   Technical/SAML
 
 .. toctree::
    :caption: General Information

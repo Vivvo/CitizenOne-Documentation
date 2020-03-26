@@ -100,9 +100,10 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="Tenant Management.html">Tenant Management</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Organization Management</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#viewing-organizations">Viewing Organizations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#viewing-all-organizations">Viewing All Organizations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#creating-organizations">Creating Organizations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#organization-applications">Organization Applications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#viewing-an-organization">Viewing an Organization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#organization-general-tab">Organization General Tab</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#organization-policy">Organization Policy</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#organizations-users">Organizations Users</a></li>
 </ul>
@@ -127,6 +128,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../Technical/MFA Rule Evaluation.html">MFA Rule Evaluation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Technical/OpenID Connect.html">OpenID Connect (OIDC)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Technical/PolicyHierarchy.html">Policy Hierarchy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Technical/SAML.html">SAML</a></li>
 </ul>
 <p class="caption"><span class="caption-text">General Information</span></p>
 <ul>
@@ -197,21 +199,84 @@
             
   <div class="section" id="organization-management">
 <h1>Organization Management<a class="headerlink" href="#organization-management" title="Permalink to this headline">¶</a></h1>
-<p>Introduction to the Organizations Management tab.</p>
-<div class="section" id="viewing-organizations">
-<h2>Viewing Organizations<a class="headerlink" href="#viewing-organizations" title="Permalink to this headline">¶</a></h2>
+<p>Organizations are, primarily, a way of categorizing and organizing your Applications.
+The CitizenOne Management Application allows you to configure settings such as policies and
+user access to said your organizations.</p>
+<p>The list of all available organizations can be accessed by clicking “Organizations” under the
+“Tenants” tab of the sidebar.</p>
+<a class="reference internal image-reference" href="../_images/sidebar.png"><img alt="Sidebar with the organizations tab selected" class="align-center" src="../_images/sidebar.png" style="width: 100pt;" /></a>
+<div class="section" id="viewing-all-organizations">
+<h2>Viewing All Organizations<a class="headerlink" href="#viewing-all-organizations" title="Permalink to this headline">¶</a></h2>
+<p>The initial Organizations page displays a list of all of the Organizations
+that have been created for your instance of CitizenOne. Here, you can see a small
+preview of the Organization’s data, namely the name and if the “Privacy Scope” option
+has been enabled.</p>
+<p>From this screen, you are able to filter the displayed list of Organizations by their name
+click on an Organization in the list for a more detailed view, or create a new Organization.</p>
+<p>If you have only been granted “READ” access to Organizations, you will not be able to create new Organizations,
+nor will you be able to modify existing Organizations.</p>
+<a class="reference internal image-reference" href="../_images/organizations-list.png"><img alt="Sidebar with the organizations tab selected" class="align-center" src="../_images/organizations-list.png" style="width: 500pt;" /></a>
 </div>
 <div class="section" id="creating-organizations">
 <h2>Creating Organizations<a class="headerlink" href="#creating-organizations" title="Permalink to this headline">¶</a></h2>
+<p>When you’ve determined that a new Organization is needed, you can click the “+ Create” button
+in the top right of the Organization listing page.</p>
+<a class="reference internal image-reference" href="../_images/create-button.png"><img alt="Sidebar with the organizations tab selected" class="align-center" src="../_images/create-button.png" style="width: 500pt;" /></a>
+<p>This will bring you to a new view where you will be asked to fill out only the vital information
+needed to create the Organization. Any fields not seen here will be configurable after the Organization has
+successfully been created.</p>
+<p>For Organizations, the only field required is the name of your new Organization.</p>
+<a class="reference internal image-reference" href="../_images/create1.png"><img alt="Sidebar with the organizations tab selected" class="align-center" src="../_images/create1.png" style="width: 500pt;" /></a>
+<p>Clicking “Cancel” will throw away any changes you made to the form, and you will be taken back to the
+Organization listing screen.</p>
+<p>Clicking “Save” will then attempt to make a new Organization with your given name, and you will be taken
+to the new Organization’s details page.</p>
 </div>
-<div class="section" id="organization-applications">
-<h2>Organization Applications<a class="headerlink" href="#organization-applications" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="viewing-an-organization">
+<h2>Viewing an Organization<a class="headerlink" href="#viewing-an-organization" title="Permalink to this headline">¶</a></h2>
+<p>When you click on or create an Organization, you will be taken to a view with multiple tabs.
+Each tab contains information that you can fill out to help define and customize your Organization.</p>
+<a class="reference internal image-reference" href="../_images/organization-tabs.png"><img alt="Sidebar with the organizations tab selected" class="align-center" src="../_images/organization-tabs.png" style="width: 500pt;" /></a>
+<p>Clicking on these tabs changes the view. As such, if you are editing any forms on a page, ensure
+that you save any changes, or they will be lost on navigation.</p>
+</div>
+<div class="section" id="organization-general-tab">
+<h2>Organization General Tab<a class="headerlink" href="#organization-general-tab" title="Permalink to this headline">¶</a></h2>
+<p>The General tab of an Organization contains the basic details that define the Organization itself.
+The two fields that primarily define an Organization are its name and if the “Policy Scope” has been enabled.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The “Policy Scope” toggle determines whether the unique idenfifier that is assigned to users (of CitizenOne, not Management)
+will be shared between Organizations.</p>
+<p><strong>Example)</strong> <em>If a user accesses Organization A’s application and provides data, the data that the application recieves will not contain the users orignal identifer, but a new one.
+If that same user accesses Organization B’s application and provides data, again, a new identifer will be issued.</em></p>
+<p>This is done to ensure that data cannot be cross-referenced and compiled to form a single profile on an individual.</p>
+</div>
+<a class="reference internal image-reference" href="../_images/general.png"><img alt="Sidebar with the organizations tab selected" class="align-center" src="../_images/general.png" style="width: 500pt;" /></a>
+<p>Clicking “Edit” will enable the fields in the view for change. Ensure your changes are saved before navigating away from the page.</p>
 </div>
 <div class="section" id="organization-policy">
 <h2>Organization Policy<a class="headerlink" href="#organization-policy" title="Permalink to this headline">¶</a></h2>
+<p>Organizations, like both Applications and Service Cards, are Policy holders. Policies applied to an Organization
+apply to all Applications that belong to the Organization, and likewise all of the Service Cards linked to those Applications.</p>
+<p>A policy can be chosen by navigating to the Policies tab, and clicking “Edit”.</p>
+<a class="reference internal image-reference" href="../_images/policy.png"><img alt="Sidebar with the organizations tab selected" class="align-center" src="../_images/policy.png" style="width: 500pt;" /></a>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If a Policy is selected, a preview of the Policy text will be displayed on this screen, below the Policy selection dropdown.</p>
+</div>
 </div>
 <div class="section" id="organizations-users">
 <h2>Organizations Users<a class="headerlink" href="#organizations-users" title="Permalink to this headline">¶</a></h2>
+<p>By clicking on the Users tab, you will be shown a list of all users that have been assigned to an Organization.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>“Users” in this section refers to those that have been given access to the CitizenOne Management application.</p>
+</div>
+<a class="reference internal image-reference" href="../_images/users.png"><img alt="Sidebar with the organizations tab selected" class="align-center" src="../_images/users.png" style="width: 500pt;" /></a>
+<p>Users that have access to the Management application will only be able to see the details of any Organization that they belong to.
+This includes Applicatons, <strong>if they have also been given the correct permissions to view Applications</strong>.
+Users of an Organization may be added or removed from this screen.</p>
 </div>
 </div>
 

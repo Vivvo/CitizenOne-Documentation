@@ -103,8 +103,9 @@
 <li class="toctree-l1"><a class="reference internal" href="Application Management.html">Application Management</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Service Card Management.html">Service Card Management</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Rule Management</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#viewing-rules">Viewing Rules</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#creating-rules">Creating Rules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#editing-rules">Editing Rules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#deleting-rules">Deleting Rules</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="Provider Management.html">Trust Provider Management</a></li>
@@ -124,6 +125,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../Technical/MFA Rule Evaluation.html">MFA Rule Evaluation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Technical/OpenID Connect.html">OpenID Connect (OIDC)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Technical/PolicyHierarchy.html">Policy Hierarchy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Technical/SAML.html">SAML</a></li>
 </ul>
 <p class="caption"><span class="caption-text">General Information</span></p>
 <ul>
@@ -194,12 +196,42 @@
             
   <div class="section" id="rule-management">
 <h1>Rule Management<a class="headerlink" href="#rule-management" title="Permalink to this headline">¶</a></h1>
-<p>Introduction to the Rule Management tab.</p>
-<div class="section" id="viewing-rules">
-<h2>Viewing Rules<a class="headerlink" href="#viewing-rules" title="Permalink to this headline">¶</a></h2>
-</div>
+<p>Rule defines for specific verification requirements and can be added onto Trust Provider or Policy. The ‘Callout Path’ is the api to implement the rule with ‘Rule Parameters’. For example when a service card has a rule added, the rule will be checked every time launching the service card.</p>
+<a class="reference internal image-reference" href="../_images/rule-list.png"><img alt="../_images/rule-list.png" class="align-left" src="../_images/rule-list.png" style="width: 500pt;" /></a>
 <div class="section" id="creating-rules">
 <h2>Creating Rules<a class="headerlink" href="#creating-rules" title="Permalink to this headline">¶</a></h2>
+<p>A rule can be created in Management by going to
+Tenants -&gt; Rules -&gt; Clicking the <strong>[Create]</strong> button</p>
+<a class="reference internal image-reference" href="../_images/rule-create-main.png"><img alt="../_images/rule-create-main.png" class="align-left" src="../_images/rule-create-main.png" style="width: 500pt;" /></a>
+<p>The general fields for a rule are:</p>
+<ol class="arabic simple">
+<li><p><strong>Name</strong>: The name of the rule</p></li>
+<li><p><strong>Description</strong>: The optional description of the rule</p></li>
+<li><p><strong>Callout Path</strong>: the api path for implementing the rule</p></li>
+</ol>
+<a class="reference internal image-reference" href="../_images/rule-create-general.png"><img alt="../_images/rule-create-general.png" class="align-left" src="../_images/rule-create-general.png" style="width: 500pt;" /></a>
+</div>
+<div class="section" id="editing-rules">
+<h2>Editing Rules<a class="headerlink" href="#editing-rules" title="Permalink to this headline">¶</a></h2>
+<p>Editing Rule can be done in Management under:
+<em>Tenants -&gt; Rules -&gt;</em> Clicking the <em>Rule</em></p>
+<p><strong>Note:</strong> You must click <strong>[Edit]</strong> in order to edit a
+Rule in each tab.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/rule-edit.png"><img alt="../_images/rule-edit.png" class="align-left" src="../_images/rule-edit.png" style="width: 500pt;" /></a>
+</div></blockquote>
+<p>The general fields for a rule are:</p>
+<ol class="arabic simple">
+<li><p><strong>Name</strong>: The name of the rule</p></li>
+<li><p><strong>Description</strong>: The optional description of the rule</p></li>
+<li><p><strong>Callout Path</strong>: The rule’s callout path</p></li>
+</ol>
+</div>
+<div class="section" id="deleting-rules">
+<h2>Deleting Rules<a class="headerlink" href="#deleting-rules" title="Permalink to this headline">¶</a></h2>
+<p>Deleting a rule can be done by going to the <strong>[General]</strong> tab, clicking <strong>[Edit]</strong>, then clicking <strong>[Delete Rule]</strong>.
+When deleting a rule you must accept a confirmation box asking you whether you want to delete the rule.</p>
+<a class="reference internal image-reference" href="../_images/rule-delete.png"><img alt="../_images/rule-delete.png" class="align-left" src="../_images/rule-delete.png" style="width: 500pt;" /></a>
 </div>
 </div>
 

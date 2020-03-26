@@ -52,6 +52,17 @@ OpenID Connect allows a range of clients, including Web-based, mobile, and JavaS
 
 Once all of the fields are filled out and valid, click "Save".
 
+Social Login
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+Many modern Identity Providers have implemented their own proprietary OAuth2.0 based protocol with varying levels of similarity to OpenID Connect. Those that fully support OpenID Connect don't need any special handling in CitizenOne™ and you can select *OpenID Connect* as the OAuth2 Strategy when setting it up. Google is an example of a social login provider that fully supports OIDC.
+
+As of right now, GitHub is the only proprietary social login provider that we support but we are working on supporting other social login providers. There is no extra information required to use GitHub, simply fill out the form and select *GitHub* as your OAuth2 Strategy.
+
+.. image:: ../images/provider-strategy.png
+   :width: 500pt
+   :align: center
+
 Setting up an Identity Provider with SAML (saml)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Security Assertion Markup Language (SAML) is an open standard that allows Identity Providers to pass authorization credentials to Service Providers.

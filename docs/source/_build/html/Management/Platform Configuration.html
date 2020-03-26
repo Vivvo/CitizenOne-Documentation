@@ -108,14 +108,13 @@
 <li class="toctree-l1"><a class="reference internal" href="Creating Service Cards.html">Creating a Service Card</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Platform Configuration</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#identity-providers">Identity Providers</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#setting-up-an-identity-provider-openid-connect-oidc">Setting up an Identity Provider OpenID Connect (oidc)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#setting-up-an-identity-provider-with-saml-saml">Setting up an Identity Provider with SAML (saml)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#setting-up-a-passwordless-identity-provider-did-auth">Setting up a Passwordless Identity Provider (did-auth)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#setting-up-another-citizenone-instance-as-an-identity-provider-c1-deprecated">Setting up another CitizenOne instance as an Identity Provider (c1 - Deprecated)</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#as-the-service-provider-citizenone-federal">As the Service Provider, CitizenOne Federal</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#as-the-identity-provider-citizenone-provincial">As the Identity Provider, CitizenOne Provincial</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#setting-up-an-identity-provider-openid-connect-oidc">Setting up an Identity Provider OpenID Connect (oidc)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#social-login">Social Login</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="#setting-up-an-identity-provider-with-saml-saml">Setting up an Identity Provider with SAML (saml)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#setting-up-a-passwordless-identity-provider-did-auth">Setting up a Passwordless Identity Provider (did-auth)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#setting-up-another-citizenone-instance-as-an-identity-provider-c1-deprecated">Setting up another CitizenOne instance as an Identity Provider (c1 - Deprecated)</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#identity-providers-on-the-login-screen">Identity Providers on the Login Screen</a></li>
@@ -135,6 +134,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../Technical/MFA Rule Evaluation.html">MFA Rule Evaluation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Technical/OpenID Connect.html">OpenID Connect (OIDC)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Technical/PolicyHierarchy.html">Policy Hierarchy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Technical/SAML.html">SAML</a></li>
 </ul>
 <p class="caption"><span class="caption-text">General Information</span></p>
 <ul>
@@ -244,6 +244,12 @@ integrations.</p>
 <li><p><strong>User Info URL</strong>: The UserInfo URL is an OAuth 2.0 Protected Resource that returns Claims about the authenticated User.</p></li>
 </ul>
 <p>Once all of the fields are filled out and valid, click “Save”.</p>
+<div class="section" id="social-login">
+<h4>Social Login<a class="headerlink" href="#social-login" title="Permalink to this headline">¶</a></h4>
+<p>Many modern Identity Providers have implemented their own proprietary OAuth2.0 based protocol with varying levels of similarity to OpenID Connect. Those that fully support OpenID Connect don’t need any special handling in CitizenOne™ and you can select <em>OpenID Connect</em> as the OAuth2 Strategy when setting it up. Google is an example of a social login provider that fully supports OIDC.</p>
+<p>As of right now, GitHub is the only proprietary social login provider that we support but we are working on supporting other social login providers. There is no extra information required to use GitHub, simply fill out the form and select <em>GitHub</em> as your OAuth2 Strategy.</p>
+<a class="reference internal image-reference" href="../_images/provider-strategy.png"><img alt="../_images/provider-strategy.png" class="align-center" src="../_images/provider-strategy.png" style="width: 500pt;" /></a>
+</div>
 </div>
 <div class="section" id="setting-up-an-identity-provider-with-saml-saml">
 <h3>Setting up an Identity Provider with SAML (saml)<a class="headerlink" href="#setting-up-an-identity-provider-with-saml-saml" title="Permalink to this headline">¶</a></h3>
@@ -278,8 +284,6 @@ availability, and cryptographically verifiable. DIDs are typically associated wi
 other side’s SAML metadata in order to authenticate with one another.</p>
 <p>In this walkthrough, we will configure CitizenOne Federal such that it is able to
 federate using another platform, CitizenOne Provincial.</p>
-<div class="section" id="as-the-service-provider-citizenone-federal">
-<h4>As the Service Provider, CitizenOne Federal<a class="headerlink" href="#as-the-service-provider-citizenone-federal" title="Permalink to this headline">¶</a></h4>
 <a class="reference internal image-reference" href="../_images/new-c1-idp.png"><img alt="../_images/new-c1-idp.png" class="align-center" src="../_images/new-c1-idp.png" style="width: 500pt;" /></a>
 <ul class="simple">
 <li><p><strong>Client ID</strong>: The public Client ID or Application Key of the Provider application.</p></li>
@@ -290,9 +294,6 @@ federate using another platform, CitizenOne Provincial.</p>
 <li><p><strong>SAML Metadata</strong>: The SAML metadata, with a valid EntityID, supplied by the Identity Provider, Provincial. Filling out this field will automaticlaly populate the <cite>EntityID</cite> field.</p></li>
 </ul>
 <p>Once all of the fields are filled out and valid, click “Save”.</p>
-</div>
-<div class="section" id="as-the-identity-provider-citizenone-provincial">
-<h4>As the Identity Provider, CitizenOne Provincial<a class="headerlink" href="#as-the-identity-provider-citizenone-provincial" title="Permalink to this headline">¶</a></h4>
 <p>When logged into management, click “Tenants” to drop down a list,
 where you will be able to find the link to the “Applications” tab.</p>
 <p>For more information on this screen, please see <a class="reference internal" href="Application Management.html#application-management"><span class="std std-ref">Application Management</span></a></p>
@@ -306,7 +307,6 @@ and <strong>make sure you copy the Client Secret!</strong></p>
 <p>Click “Edit”, and paste the SAML metadata provided by the Service Provider, CitizenOne Federal,
 into the box. The SAML metadata must have a valid <cite>EntityID</cite>, or it will not be accepted.</p>
 <a class="reference internal image-reference" href="../_images/service-provider-configuration-edit.png"><img alt="../_images/service-provider-configuration-edit.png" class="align-center" src="../_images/service-provider-configuration-edit.png" style="width: 500pt;" /></a>
-</div>
 </div>
 </div>
 <div class="section" id="identity-providers-on-the-login-screen">
