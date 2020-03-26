@@ -219,8 +219,8 @@ be used to decrypt the payload.</p>
 <h2>Lifecycle<a class="headerlink" href="#lifecycle" title="Permalink to this headline">¶</a></h2>
 <p>The lifecycle of a data bundle begins with a <a class="reference external" href="http://www.python.org/">Trust Provider</a> which is the creator and owner of a data bundle. A data bundle can be instatiated during one of the two events:</p>
 <ol class="arabic simple">
-<li><p>A trust provider would like to publish a bundle of data</p></li>
-<li><p>A service requesting a data bundle</p></li>
+<li>A trust provider would like to publish a bundle of data</li>
+<li>A service requesting a data bundle</li>
 </ol>
 <div class="section" id="scenario-1">
 <span id="data-bundles-scenario-1"></span><h3>Scenario 1<a class="headerlink" href="#scenario-1" title="Permalink to this headline">¶</a></h3>
@@ -279,12 +279,12 @@ consumers, since it is not critical data.</p>
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
+<p class="first admonition-title">Note</p>
 <p>The different types of ID1 callbacks and events are:</p>
-<ul class="simple">
-<li><p>model.identity.update, model.email.update, model.phone.update, model.address.update</p></li>
-<li><p>model.identity.create, model.email.create, model.phone.create, model.address.create</p></li>
-<li><p>model.identity.delete, model.email.delete, model.phone.delete, model.address.delete</p></li>
+<ul class="last simple">
+<li>model.identity.update, model.email.update, model.phone.update, model.address.update</li>
+<li>model.identity.create, model.email.create, model.phone.create, model.address.create</li>
+<li>model.identity.delete, model.email.delete, model.phone.delete, model.address.delete</li>
 </ul>
 </div>
 <p>The main difference between data sent from ID1 versus data sent from a publisher is that

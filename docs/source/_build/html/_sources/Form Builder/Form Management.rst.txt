@@ -9,6 +9,9 @@ Steps to create a form include:
 
 Creating the form
 ****************************
+.. image:: images/createForm.png
+   :width: 500pt
+   :align: left
 
 In order to create a form you do the following:
 
@@ -23,6 +26,8 @@ In order to create a form you do the following:
     c. **Organization** - The forms organization
     d. **Application** - The application to tie it to in CitizenOne
 
+.. image:: images/3.png
+
 4. Add the details of the form
 
 
@@ -34,51 +39,73 @@ Adding Controls (Fields) to the form
 A control/field is how a user will enter information on the form.
 The current list of controls are:
 
-+------------+------------+-----------+
-Form Structure | Text Controls | Typed Controls | Date And Time Controls | Selection Controls | Buttons | Speciality
-+============+============+===========+
-+------------+------------+-----------+
 
-1. Step
-2. Fomatted Text
+**Form Structure** |
+Step | FormattedText
 
+.. image:: images/formStructure.png
+    :width: 150pt  
 
-1. Input
-2  Multi Line Input
-3. Password
+**Text Controls** | 
+Input | Multi Line Input | Password
 
+.. image:: images/textControls.png
+    :width: 150pt
 
-1. Number
-2. Email Address
-3. Phone Number
+**Typed Controls** | 
+Number | Email Address | Phone Number
 
+.. image:: images/typedControls.png
+    :width: 150pt
 
+**Date And Time Controls** | 
+Date | Type | Date and Time
 
-1. Date
-2. Time
-3. Date and Time
+.. image:: images/dateTimeControls.png
+    :width: 150pt
 
+**Selection Controls** | 
+Dropdown | Radio Buttons | Checkboxes | Yes/No Question 
 
-1. Dropdown
-2. Radio Buttons
-3. Checkboxes
-4. Yes/No Question
+.. image:: images/selectionControls.png
+    :width: 150pt
 
+**Buttons** | 
+Button | Link
 
+.. image:: images/buttons.png
+    :width: 150pt
 
-1. Button
-2. Link
+**Speciality** |
+QR Code | Hidden Field
 
-1. QR Code
-2. Hidden Field
+.. image:: images/specialty.png
+    :width: 150pt
+
 
 Adding controls to the forms happens when doing the following:
 
 1. Creating a step.  Forms in CitizenOne can be multi-step forms.  So each **Step** in a form relates to a step in a form.
 
+.. image:: images/5.png
+
+
 2. Adding Fields to the step. 
 
+- Select control on a left side panel
+
+.. image:: images/selectionControls.png
+    :width: 150pt
+
+
+- Edit choosen control
+
+    .. image:: images/addingControl.png
+
 See the attributes for fields available here
+
+.. image:: images/8a.png
+.. image:: images/8b.png
 
 3. Clicking **[Save]**
 
@@ -87,5 +114,16 @@ See the attributes for fields available here
 Viewing Forms
 =============
 
+viewing forms happens on portal or on business server
+
 Deleting Forms
 ==============
+Click the **[Forms -> Form Builder]** link
+
+.. image:: images/formBuilderPanel.png
+    :width: 150pt
+
+Check the box beside the form you want to delete and click the garbage icon at the top of the table
+
+.. image:: images/deleting.png
+    :width: 500pt

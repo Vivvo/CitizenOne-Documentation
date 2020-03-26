@@ -224,20 +224,20 @@ Identity Provider integrations. The one we will be aiming to replicate is <cite>
 integrations.</p>
 <a class="reference internal image-reference" href="../_images/new-identity-provider.png"><img alt="../_images/new-identity-provider.png" class="align-center" src="../_images/new-identity-provider.png" style="width: 500pt;" /></a>
 <ul class="simple">
-<li><p><strong>Enabled</strong>: Enables and disabled the Identity Provider. Disabling this here, will not remove the link on the login screen, however only enabled Identity Providers can be used to create links on the login page.</p></li>
-<li><p><strong>Provider Name</strong>: The desired name of the Identity Provider you are setting up. This name is used in the launch URL, which we will be configuring later.</p></li>
-<li><p><strong>Provider Strategy</strong>: There are varying methods of integrating with Identity Providers, but currently we only support dynamic SAML integrations, which is the <cite>C1</cite> strategy.</p></li>
-<li><p><strong>Client ID</strong>: The public Client ID or Application Key of the Provider application.</p></li>
-<li><p><strong>Client Secret</strong>: The private Client Secret or API Key of the Provider application.</p></li>
-<li><p><strong>“Me” Endpoind</strong>: This is the endpoint with which the Service Provider, Federal, can call to retrieve the user’s details from the Identity Provider, Provincial.</p></li>
-<li><p><strong>Cookie Domain</strong>: The Service Provider’s cookie domain.</p></li>
-<li><p><strong>EntityID</strong>: (This field is filled in automatically) Globally unique name for the Identity Provider’s SAML entity.</p></li>
-<li><p><strong>Metadata URL</strong>: (NYI) A URL to call out to to retrieve the Identity Provider’s SAML metdata.</p></li>
-<li><p><strong>SAML Metadata</strong>: The SAML metadata, with a valid EntityID, supplied by the Identity Provider, Provincial. Filling out this field will automaticlaly populate the <cite>EntityID</cite> field.</p></li>
+<li><strong>Enabled</strong>: Enables and disabled the Identity Provider. Disabling this here, will not remove the link on the login screen, however only enabled Identity Providers can be used to create links on the login page.</li>
+<li><strong>Provider Name</strong>: The desired name of the Identity Provider you are setting up. This name is used in the launch URL, which we will be configuring later.</li>
+<li><strong>Provider Strategy</strong>: There are varying methods of integrating with Identity Providers, but currently we only support dynamic SAML integrations, which is the <cite>C1</cite> strategy.</li>
+<li><strong>Client ID</strong>: The public Client ID or Application Key of the Provider application.</li>
+<li><strong>Client Secret</strong>: The private Client Secret or API Key of the Provider application.</li>
+<li><strong>“Me” Endpoind</strong>: This is the endpoint with which the Service Provider, Federal, can call to retrieve the user’s details from the Identity Provider, Provincial.</li>
+<li><strong>Cookie Domain</strong>: The Service Provider’s cookie domain.</li>
+<li><strong>EntityID</strong>: (This field is filled in automatically) Globally unique name for the Identity Provider’s SAML entity.</li>
+<li><strong>Metadata URL</strong>: (NYI) A URL to call out to to retrieve the Identity Provider’s SAML metdata.</li>
+<li><strong>SAML Metadata</strong>: The SAML metadata, with a valid EntityID, supplied by the Identity Provider, Provincial. Filling out this field will automaticlaly populate the <cite>EntityID</cite> field.</li>
 </ul>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>If you forget what each of these fields are for, you can hover over the small <cite>(i)</cite> next to the field labels to get a short description of each.</p>
+<p class="first admonition-title">Note</p>
+<p class="last">If you forget what each of these fields are for, you can hover over the small <cite>(i)</cite> next to the field labels to get a short description of each.</p>
 </div>
 <p>Once all of the fields are filled out and valid, click “Save”.</p>
 <p>To set up the link to the Identity Provider on the login screen, drop down “Configuration” in the sidebar again,
@@ -253,11 +253,11 @@ Click “+ Identity Provider” to add an Identity Provider card to the widget.<
 <a class="reference internal image-reference" href="../_images/new-idp-card.png"><img alt="../_images/new-idp-card.png" class="align-center" src="../_images/new-idp-card.png" style="width: 500pt;" /></a>
 <p>A preview of the card is available in the display.</p>
 <ul class="simple">
-<li><p><strong>Provider Width</strong>: <strong>Applies to ALL Identity Provider Cards</strong> the width of each Provider card within the Identity Providers widget.</p></li>
-<li><p><strong>Identity Provider</strong>: The desired Identity Provider you wish to link to with this card. Only <cite>enabled</cite> Identity Providers can be used.</p></li>
-<li><p><strong>Icon URL</strong>: A link to the image to be displayed at the top of the card.</p></li>
-<li><p><strong>Launch URL</strong>: The URL used to kick of the transaction. (Typically, <cite>http://my.service.com/saml/launch/IDENITY_PROVIDER_NAME</cite>)</p></li>
-<li><p><strong>Colour</strong>: The accent color of the Identity Provider card.</p></li>
+<li><strong>Provider Width</strong>: <strong>Applies to ALL Identity Provider Cards</strong> the width of each Provider card within the Identity Providers widget.</li>
+<li><strong>Identity Provider</strong>: The desired Identity Provider you wish to link to with this card. Only <cite>enabled</cite> Identity Providers can be used.</li>
+<li><strong>Icon URL</strong>: A link to the image to be displayed at the top of the card.</li>
+<li><strong>Launch URL</strong>: The URL used to kick of the transaction. (Typically, <cite>http://my.service.com/saml/launch/IDENITY_PROVIDER_NAME</cite>)</li>
+<li><strong>Colour</strong>: The accent color of the Identity Provider card.</li>
 </ul>
 <p>When the fields are filled in, you will be able to see a preview of the Provider’s card.</p>
 <p><cite>Here is an example where all of the widgets have a width of 4, and the Provider Width is set to 12 (full):</cite></p>

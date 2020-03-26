@@ -198,11 +198,11 @@
 <div class="section" id="glossary">
 <h2>Glossary<a class="headerlink" href="#glossary" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p><strong>Identity Provider (or IDP)</strong> A service offering credentials to a service provider (SP).  There is an agreement between the IDP and SP to trust authenticated credentials.</p></li>
-<li><p><strong>Service Provider (or SP)</strong> A service that uses another trusted services credentials.</p></li>
-<li><p><strong>Oauth2</strong> is an open standard for access delegation, commonly used as a way for Internet users to grant websites or applications access to their information on other websites but without giving them the passwords.</p></li>
-<li><p><strong>SAMLv2</strong>   is an XML-based protocol. SAML 2.0 is an OASIS Standard which specifies a protocol for enabling cross-domain single sign-on (SSO). SAML 2.0 uses security tokens containing assertions to pass information about an end user between an identity provider, and a service provider.</p></li>
-<li><p><strong>Service Card</strong> is a UX/application component that controls consent, privacy and building the federation event.</p></li>
+<li><strong>Identity Provider (or IDP)</strong> A service offering credentials to a service provider (SP).  There is an agreement between the IDP and SP to trust authenticated credentials.</li>
+<li><strong>Service Provider (or SP)</strong> A service that uses another trusted services credentials.</li>
+<li><strong>Oauth2</strong> is an open standard for access delegation, commonly used as a way for Internet users to grant websites or applications access to their information on other websites but without giving them the passwords.</li>
+<li><strong>SAMLv2</strong>   is an XML-based protocol. SAML 2.0 is an OASIS Standard which specifies a protocol for enabling cross-domain single sign-on (SSO). SAML 2.0 uses security tokens containing assertions to pass information about an end user between an identity provider, and a service provider.</li>
+<li><strong>Service Card</strong> is a UX/application component that controls consent, privacy and building the federation event.</li>
 </ul>
 <p>CitizenOne can perform the role of identity provider and identity consumer using both protocols Oauth2 and SAMLv2.</p>
 </div>
@@ -222,10 +222,10 @@
 <h2>Service Card Federation<a class="headerlink" href="#service-card-federation" title="Permalink to this headline">¶</a></h2>
 <p>A unique feature of CitizenOne is the ability to build a federated credential only when certain criteria is met.  For example:  If the service behind the service card has the following requirements that must be met before the service can be used:</p>
 <ul class="simple">
-<li><p>Must be a verified user</p></li>
-<li><p>Must be 19 years of age</p></li>
-<li><p>Must have accepted the current privacy policy</p></li>
-<li><p>Must have accepted consent</p></li>
+<li>Must be a verified user</li>
+<li>Must be 19 years of age</li>
+<li>Must have accepted the current privacy policy</li>
+<li>Must have accepted consent</li>
 </ul>
 <p>And only once all of these conditions are met, CitizenOne will build a federation response and direct the user to the service, otherwise the credential is not shared with the service.  This is done on a service by service basis.</p>
 <p>This granular control, allows relying services (service providers) to have the confidence that only authorized users can arrive at their front door.</p>

@@ -208,16 +208,17 @@
 <div class="section" id="evaluation-steps">
 <h2>Evaluation Steps<a class="headerlink" href="#evaluation-steps" title="Permalink to this headline">¶</a></h2>
 <p>When evaluating this rule it checks the user’s JWT and authenticators. The claim providers offered to the user will be filtered depending on the following cases:</p>
-<dl class="simple">
-<dt>Session is MFA:</dt><dd><p>Rule Passed</p>
-</dd>
-<dt>Session is not MFA:</dt><dd><dl class="simple">
-<dt>User has an ACTIVE MFA:</dt><dd><p>Prompt user to complete MFA challenge</p>
-</dd>
-<dt>User has a PENDING SMS:</dt><dd><p>Send SMS code and prompt user to verify</p>
-</dd>
-<dt>User has no MFA:</dt><dd><p>Offer user to create TOTP or SMS</p>
-</dd>
+<dl class="docutils">
+<dt>Session is MFA:</dt>
+<dd>Rule Passed</dd>
+<dt>Session is not MFA:</dt>
+<dd><dl class="first last docutils">
+<dt>User has an ACTIVE MFA:</dt>
+<dd>Prompt user to complete MFA challenge</dd>
+<dt>User has a PENDING SMS:</dt>
+<dd>Send SMS code and prompt user to verify</dd>
+<dt>User has no MFA:</dt>
+<dd>Offer user to create TOTP or SMS</dd>
 </dl>
 </dd>
 </dl>

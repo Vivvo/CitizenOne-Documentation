@@ -191,25 +191,25 @@
 <p>This module provides ongoing transparency to the citizen, informing them what services they have connected to their profile, and providing the ability to manage the connection at their discretion. For instance, it presents policy updates and allows for revocation of consent if the user chooses to unlink themselves from the service.</p>
 <p>In the CitizenOne management console, a service provider or SP (a connected application that uses a federated identity from CitizenOne, and accesses the CitizenOne API for profile access) defines their service by creating the following artifacts in the console.</p>
 <ul class="simple">
-<li><p>A privacy policy that explains how the citizens information is used in the service providers application.</p></li>
-<li><p>Application access that allows the service provider to manage the API security</p></li>
-<li><p>Rules and assurance required to engage this service application</p></li>
-<li><p>A service card representation of the application that pulls together all the artifacts in a presentation that the citizen can add to their dashboard.</p></li>
+<li>A privacy policy that explains how the citizens information is used in the service providers application.</li>
+<li>Application access that allows the service provider to manage the API security</li>
+<li>Rules and assurance required to engage this service application</li>
+<li>A service card representation of the application that pulls together all the artifacts in a presentation that the citizen can add to their dashboard.</li>
 </ul>
 <p>When a citizen adds the service card from the catalog, it creates a managed instance of this service interaction where the following items are tracked and presented to the citizen.</p>
 <ul class="simple">
-<li><p>The current consent state.  That they have been enrolled or not.</p></li>
-<li><p>Notifications sent from the service application</p></li>
-<li><p>Invoices that have been issued from the service</p></li>
-<li><p>Context relevant links in the application (e.g. Apply now or Renew your application)</p></li>
-<li><p>Contact information for the connected application</p></li>
-<li><p>An option to opt out or “Unlink” the service.</p></li>
+<li>The current consent state.  That they have been enrolled or not.</li>
+<li>Notifications sent from the service application</li>
+<li>Invoices that have been issued from the service</li>
+<li>Context relevant links in the application (e.g. Apply now or Renew your application)</li>
+<li>Contact information for the connected application</li>
+<li>An option to opt out or “Unlink” the service.</li>
 </ul>
 <p>During enrollment after adding the service card, the user is challenged to provide any further information to use the service.  For example, if the rules where:</p>
 <ul class="simple">
-<li><p>Must be 19</p></li>
-<li><p>Must be a verified user</p></li>
-<li><p>Must have a primary address</p></li>
+<li>Must be 19</li>
+<li>Must be a verified user</li>
+<li>Must have a primary address</li>
 </ul>
 <p>A workflow is provided so the user can comply with the service application rules to use this service.  After conforming to all site rules, the user can select how they wish to be communicated to (SMS, email or none). finally on the last step there is an opportunity to review all the information that you are consenting to share, and a button to express your consent.</p>
 <p>If the service application provides a consent endpoint, CitizenOne will call out and send the users identifier, and notice of consent.  The service application now has access to the users profile.  At anytime the user can elect to negate consent by clicking “Unlink Service”, this action calls out to the service applications endpoint and sends the users identifier, and notice of revoking consent.</p>
