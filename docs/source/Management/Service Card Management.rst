@@ -87,7 +87,7 @@ Reordering Service Card Tasks
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 The service card tasks are able to be re-ordered through draging the task.
 
-image:: ../images/tenants/serviceCards/servicecard-tasks-reordering.png
+.. image:: ../images/tenants/serviceCards/servicecard-tasks-reordering.png
    :width: 500pt
    :align: left
 
@@ -96,7 +96,7 @@ Removing Service Card Tasks
 
 You have to find the service card in Management by going to Tenants -> Service Card, then open the service card and click the tasks tab. you can remove the service card task by clicking the red close button on right top corner.
 
-image:: ../images/tenants/serviceCards/servicecard-tasks-remove.png
+.. image:: ../images/tenants/serviceCards/servicecard-tasks-remove.png
    :width: 500pt
    :align: left
 
