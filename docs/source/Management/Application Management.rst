@@ -13,6 +13,8 @@ Viewing Applications
 Creating Applications
 **********************
 
+.. _application_policy:
+
 Application Policy
 ******************
 

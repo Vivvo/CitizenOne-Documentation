@@ -1,5 +1,0 @@
-Policies
-========
-
-What are Policies?
-~~~~~~~~~~~~~~~~~~
