@@ -1,17 +1,29 @@
+.. _organization_management:
+
 Organization Management
 =======================
 
 Organizations are, primarily, a way of categorizing and organizing your Applications.
+<<<<<<< HEAD
 The CitizenOne Management application allows you to configure settings such as Policies and
 user access to your Organizations.
 
 The list of all available Organizations can be accessed by clicking [**Organizations**] under the
 [**Tenants**] tab of the sidebar.
+=======
+The CitizenOne Management Application allows you to configure settings such as policies and
+user access for your Organizations.
 
-.. image:: ../images/Management/Organizations/sidebar.png
+The list of all available Organizations can be accessed by clicking "Organizations" under the
+"Tenants" tab of the sidebar.
+>>>>>>> 9ee4f6e1177c4fc279578a702da926ad9ca645e6
+
+.. image:: ../images/Management/organizations/sidebar.png
    :width: 100pt
    :alt: Sidebar with the Organizations tab selected
    :align: center
+
+.. _viewing_organizations:
 
 Viewing All Organizations
 *************************
@@ -21,16 +33,26 @@ that have been created for your instance of CitizenOne. Here, you can see a smal
 preview of the Organization's data, namely the name and if the "Privacy Scope" option
 has been enabled.
 
+<<<<<<< HEAD
 From this page, you are able to filter the displayed list of Organizations by their name,
+=======
+From this screen, you are able to filter the displayed list of Organizations by their name,
+>>>>>>> 9ee4f6e1177c4fc279578a702da926ad9ca645e6
 click on an Organization in the list for a more detailed view, or create a new Organization.
 
 If you have only been granted "READ" access to Organizations, you will not be able to create new Organizations,
 nor will you be able to modify existing Organizations.
 
-.. image:: ../images/Management/Organizations/organizations-list.png
+.. image:: ../images/Management/organizations/organizations-list.png
    :width: 500pt
+<<<<<<< HEAD
    :alt: List of Organizations in CitizenOne
+=======
+   :alt: Sidebar with the Organizations tab selected
+>>>>>>> 9ee4f6e1177c4fc279578a702da926ad9ca645e6
    :align: center
+
+.. _creating_organizations:
 
 Creating Organizations
 **********************
@@ -38,9 +60,13 @@ Creating Organizations
 When you've determined that a new Organization is needed, you can click the [**+ Create**] button
 in the top right of the Organization listing page.
 
-.. image:: ../images/Management/Organizations/create-button.png
+.. image:: ../images/Management/organizations/create-button.png
    :width: 500pt
+<<<<<<< HEAD
    :alt: Creating a new Organization
+=======
+   :alt: Sidebar with the Organizations tab selected
+>>>>>>> 9ee4f6e1177c4fc279578a702da926ad9ca645e6
    :align: center
 
 This will bring you to a new view where you will be asked to fill out only the vital information
@@ -49,9 +75,13 @@ successfully been created.
 
 For Organizations, the only field required is the name of your new Organization.
 
-.. image:: ../images/Management/Organizations/create.png
+.. image:: ../images/Management/organizations/create.png
    :width: 500pt
+<<<<<<< HEAD
    :alt: Form to create a new Organization
+=======
+   :alt: Sidebar with the Organizations tab selected
+>>>>>>> 9ee4f6e1177c4fc279578a702da926ad9ca645e6
    :align: center
 
 Clicking [**Cancel**] will not save any changes you made to the form, and you will be taken back to the
@@ -60,19 +90,32 @@ Organization listing page.
 Clicking [**Save**] will then attempt to make a new Organization with your given name, and you will be taken
 to the new Organization's details page.
 
+<<<<<<< HEAD
 Viewing and Editing an Organization
 ******************************
+=======
+.. _viewing_an_organization:
+
+Viewing an Organization
+***********************
+>>>>>>> 9ee4f6e1177c4fc279578a702da926ad9ca645e6
 
 When you click on or create an Organization, you will be taken to a view with multiple tabs.
 Each tab contains information that you can fill out to help define and customize your Organization.
 
-.. image:: ../images/Management/Organizations/organization-tabs.png
+.. image:: ../images/Management/organizations/organization-tabs.png
    :width: 500pt
+<<<<<<< HEAD
    :alt: Viewing Organization details
+=======
+   :alt: Sidebar with the Organizations tab selected
+>>>>>>> 9ee4f6e1177c4fc279578a702da926ad9ca645e6
    :align: center
 
 Clicking on these tabs changes the view so if you are editing any forms on a page, ensure
 that you save any changes, or they will be lost on navigation.
+
+.. _organization_general:
 
 Organization General Tab
 ************************
@@ -89,12 +132,18 @@ The two fields that primarily define an Organization are its Name and if the "Po
 
     This is done to ensure that data cannot be cross-referenced across organizations and compiled to form a single profile on a citizen.
 
-.. image:: ../images/Management/Organizations/general.png
+.. image:: ../images/Management/organizations/general.png
    :width: 500pt
+<<<<<<< HEAD
    :alt: Viewing general information about an Organization
+=======
+   :alt: Screen showing the basic detail fields of an Organization
+>>>>>>> 9ee4f6e1177c4fc279578a702da926ad9ca645e6
    :align: center
 
 Clicking [*Edit*] will enable the fields in the view for change. Ensure your changes are saved before navigating away from the page.
+
+.. _organization_policy:
 
 Organization Policy
 *******************
@@ -104,15 +153,25 @@ apply to all Applications that belong to the Organization, and likewise all of t
 
 A Policy can be chosen by navigating to the Policies tab, and clicking [**Edit**].
 
-.. image:: ../images/Management/Organizations/policy.png
+.. image:: ../images/Management/organizations/policy.png
    :width: 500pt
+<<<<<<< HEAD
    :alt: Viewing the Policy for an Organization
+=======
+   :alt: Screen showing an empty Policy selection field
+>>>>>>> 9ee4f6e1177c4fc279578a702da926ad9ca645e6
    :align: center
 
 .. note::
     If a Policy is selected, a preview of the Policy text will be displayed on this page, below the Policy selection dropdown.
 
+<<<<<<< HEAD
 Organization Users
+=======
+.. _organization_users:
+
+Organizations Users
+>>>>>>> 9ee4f6e1177c4fc279578a702da926ad9ca645e6
 *******************
 
 By clicking on the Users tab, you will be shown a list of all users that have been assigned to an Organization.
@@ -120,9 +179,13 @@ By clicking on the Users tab, you will be shown a list of all users that have be
 .. note::
     **Users** in this section refers to those that have been given access to the CitizenOne Management application.
 
-.. image:: ../images/Management/Organizations/users.png
+.. image:: ../images/Management/organizations/users.png
    :width: 500pt
+<<<<<<< HEAD
    :alt: Viewing the users for an Organization
+=======
+   :alt: Screen showing an empty list of users
+>>>>>>> 9ee4f6e1177c4fc279578a702da926ad9ca645e6
    :align: center
 
 Users that have access to the Management application will only be able to see the details of any Organization that they belong to.
