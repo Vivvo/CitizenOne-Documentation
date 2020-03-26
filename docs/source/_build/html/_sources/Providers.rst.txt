@@ -1,5 +1,0 @@
-Providers
-=========
-
-What are Providers?
-~~~~~~~~~~~~~~~~~~~

@@ -1,5 +1,0 @@
-Tenants
-=======
-
-What are Tenants?
-~~~~~~~~~~~~~~~~~
