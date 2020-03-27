@@ -66,6 +66,8 @@ Organization listing page.
 Clicking [**Save**] will then attempt to make a new Organization with your given name, and you will be taken
 to the new Organization's details page.
 
+.. _viewing_editing_organization:
+
 Viewing and Editing an Organization
 ******************************
 
@@ -102,7 +104,7 @@ The two fields that primarily define an Organization are its Name and if the "Po
    :alt: Viewing general information about an Organization
    :align: center
 
-Clicking [*Edit*] will enable the fields in the view for change. Ensure your changes are saved before navigating away from the page.
+Clicking [**Edit**] will enable the fields in the view for change. Ensure your changes are saved before navigating away from the page.
 
 .. _organization_policy:
 
@@ -122,6 +124,8 @@ A Policy can be chosen by navigating to the Policies tab, and clicking [**Edit**
 .. note::
     If a Policy is selected, a preview of the Policy text will be displayed on this page, below the Policy selection dropdown.
 
+.. _organization_users:
+
 Organization Users
 *******************
 
@@ -138,6 +142,8 @@ By clicking on the Users tab, you will be shown a list of all users that have be
 Users that have access to the Management application will only be able to see the details of any Organization that they belong to.
 This includes Applicatons, **if they have also been given the correct permissions to view Applications**.
 Users of an Organization may be added or removed from this page.
+
+.. _removing_organization:
 
 Removing an Organization
 ******************************

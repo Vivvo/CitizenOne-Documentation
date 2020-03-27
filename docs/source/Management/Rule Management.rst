@@ -1,3 +1,5 @@
+.. _rule_management:
+
 Rule Management
 =======================
 
@@ -10,6 +12,8 @@ The list of all available Rules can be accessed by clicking [**Rules**] under th
    :width: 100pt
    :alt: Sidebar with the Rules tab selected
    :align: center
+
+.. _viewing_rules:
 
 Viewing All Rules
 *************************
@@ -26,6 +30,8 @@ nor will you be able to modify existing Rules.
    :width: 500pt
    :alt: List of Rules in CitizenOne
    :align: center
+
+.. _creating_rules:
 
 Creating Rules
 **************
@@ -49,6 +55,8 @@ Rules listing page.
 Clicking [**Save**] will attempt to make a new Rule and you will be taken
 to the Rule listings page.
 
+.. _creating_rules:
+
 Viewing and Editing a Rule
 ******************************
 
@@ -62,6 +70,8 @@ Each tab contains information that you can fill out to help define and customize
 
 Clicking on these tabs changes the view so if you are editing any forms on a page, ensure
 that you save any changes, or they will be lost on navigation.
+
+.. _rules_general:
 
 Rules General Tab
 ************************
@@ -82,6 +92,8 @@ The general fields for a Rule are:
 3. **Callout Path**: The api path for implementing the rule
 
 Clicking [*Edit*] will enable the fields in the view for change. Ensure your changes are saved before navigating away from the page.
+
+.. _rules_parameters:
 
 Rules Parameters Tab
 ************************
@@ -105,6 +117,8 @@ Clicking [*Edit*] will enable the fields in the view for change. Ensure your cha
 New Parameters can be added while in Edit mode by clicking the [**+ Add Parameter**] button. The only field required for a Parameter is the Name.
 
 Parameters can also be removed while in Edit mode by clicking the [**X**] button next to a Parameter.
+
+.. _removing_rules:
 
 Removing a Rule
 ******************************
