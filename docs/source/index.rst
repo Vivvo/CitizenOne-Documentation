@@ -30,7 +30,6 @@ Guides
    :caption: Managing CitizenOne
    :maxdepth: 2
 
-   Management/Tenant Management
    Management/Organization Management
    Management/Application Management
    Management/Service Card Management
