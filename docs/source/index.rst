@@ -30,13 +30,13 @@ Guides
    :caption: Managing CitizenOne
    :maxdepth: 2
 
+   Management/Creating Service Cards
    Management/Organization Management
    Management/Application Management
    Management/Service Card Management
    Management/Rule Management
    Management/Provider Management
    Management/Policy Management
-   Management/Creating Service Cards
    Management/Platform Configuration
    Management/Layouts
 

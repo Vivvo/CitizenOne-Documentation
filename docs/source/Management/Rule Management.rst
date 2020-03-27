@@ -55,7 +55,7 @@ Rules listing page.
 Clicking [**Save**] will attempt to make a new Rule and you will be taken
 to the Rule listings page.
 
-.. _creating_rules:
+.. _viewing_editing_rules:
 
 Viewing and Editing a Rule
 ******************************
