@@ -18,6 +18,7 @@ Guides
    Rules
    Providers
    Policies
+   Email Templates
 
 .. toctree::
    :caption: Eeze

@@ -21,10 +21,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -118,6 +118,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#identity-providers-on-the-login-screen">Identity Providers on the Login Screen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#external-apis">External APIs</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="Layouts.html">Layout Management</a></li>
@@ -133,6 +134,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../Technical/MFA Rule Evaluation.html">MFA Rule Evaluation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Technical/OpenID Connect.html">OpenID Connect (OIDC)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Technical/PolicyHierarchy.html">Policy Hierarchy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Technical/SAML.html">SAML</a></li>
 </ul>
 <p class="caption"><span class="caption-text">General Information</span></p>
 <ul>
@@ -332,6 +334,25 @@ Click “+ Identity Provider” to add an Identity Provider card to the widget.<
 <a class="reference internal image-reference" href="../_images/idp-card-preview.png"><img alt="../_images/idp-card-preview.png" class="align-center" src="../_images/idp-card-preview.png" style="width: 500pt;" /></a>
 <p>Review your changes, and then hit save at the bottom of the page in order to set the layout.
 Navigate to the login page of the service to see the changes.</p>
+</div>
+<div class="section" id="external-apis">
+<h2>External APIs<a class="headerlink" href="#external-apis" title="Permalink to this headline">¶</a></h2>
+<p>To set up and manage APIs that Applications may communicate with, navigate to the “External APIs” tab.</p>
+<a class="reference internal image-reference" href="../_images/api-nav.png"><img alt="../_images/api-nav.png" class="align-center" src="../_images/api-nav.png" style="width: 100pt;" /></a>
+<p>You’ll be greeted with a list of configured APIs.</p>
+<a class="reference internal image-reference" href="../_images/api-list.png"><img alt="../_images/api-list.png" class="align-center" src="../_images/api-list.png" style="width: 500pt;" /></a>
+<p>To add a new API to the platform, click the “+ Add API” button in the top right.
+You’ll be taken to the configuration screen, where you can fill out the required fields
+with data pertaining to your API.</p>
+<a class="reference internal image-reference" href="../_images/api-new.png"><img alt="../_images/api-new.png" class="align-center" src="../_images/api-new.png" style="width: 500pt;" /></a>
+<p>Once successfully created, you’ll be automatically navigated to the view page of the created API.</p>
+<a class="reference internal image-reference" href="../_images/api-view.png"><img alt="../_images/api-view.png" class="align-center" src="../_images/api-view.png" style="width: 500pt;" /></a>
+<p>Notice, there are currently no Applications that are authorized to connect with this API.
+To add Applications, click the “Edit” button in the top right - if you have the required persmission -
+to enter editing mode, where you may select which Applications to allow from the list on the right.</p>
+<a class="reference internal image-reference" href="../_images/api-edit.png"><img alt="../_images/api-edit.png" class="align-center" src="../_images/api-edit.png" style="width: 500pt;" /></a>
+<p>Once you are satisfied with your changes, hit save and your API will be updated.</p>
+<a class="reference internal image-reference" href="../_images/api-view-with-apps.png"><img alt="../_images/api-view-with-apps.png" class="align-center" src="../_images/api-view-with-apps.png" style="width: 500pt;" /></a>
 </div>
 </div>
 

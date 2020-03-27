@@ -78,3 +78,31 @@ The following schemas are provided which link to the trust framework that Citize
 - `https://schemas.vivvocloud.com/assurance/loa1 <https://schemas.vivvocloud.com/assurance/loa1>`_
 - `https://schemas.vivvocloud.com/assurance/loa2 <https://schemas.vivvocloud.com/assurance/loa2>`_
 - `https://schemas.vivvocloud.com/assurance/loa3 <https://schemas.vivvocloud.com/assurance/loa3>`_
+
+SAML Attribute Mapping
+======================
+
+SAML contains attributes in the SamlAttributeStatement structure that we map to CitizenOne™'s Identity.  Here is a sample AttributeStatement:
+
+.. include:: files/xml/saml.xml
+
+
+SAML allows attributes to have a FriendlyName and Name associated with each Attribute. Different IdPs use different attribute schemas which makes adding new SAML IdPs troublesome because
+code must change in order to accommodate any attributes not accounted for.
+
+
+In order to solve this problem we have decided to do the following:
+
+1. Add an saml_to_attribute_map table which maintains a mapping of known SAML attributes to where they fit in the CitizenOne™ profile. The schema is defined as:
+
+.. include:: files/sql/saml_assertion_name_id.sql
+
+2. For every attribute in the attribute statement, see if we have defined a mapping to the CitizenOne™ profile.
+
+Adding new attributes
+*********************
+
+Adding new attributes are as simple as:
+
+1. Adding a row to *saml_assertion_name_id*
+2. Restarting the *vivvo-sp* micro-service.
