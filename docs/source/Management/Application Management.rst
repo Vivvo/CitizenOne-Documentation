@@ -3,13 +3,11 @@
 Application Management
 =======================
 
-//TODO: Define Applications
-
-The CitizenOne Management Application allows you to configure settings such as policies, linked Service Cards,
+The CitizenOne Management application allows you to configure settings such as Policies, linked Service Cards,
 and Service Provider information for your Applications.
 
-The list of all available Applications can be accessed by clicking "Applications" under the
-"Tenants" tab of the sidebar.
+The list of all available Applications can be accessed by clicking [**Applications**] under the
+[**Tenants**] tab of the sidebar.
 
 .. image:: ../images/Management/applications/sidebar.png
    :width: 100pt
@@ -24,7 +22,7 @@ that have been created for your instance of CitizenOne. Here, you can see a smal
 preview of the Applications's data, namely the name and if the Application has a 
 Policy attached.
 
-From this screen, you are able to filter the displayed list of Applications by their name,
+From this page, you are able to filter the displayed list of Applications by their name,
 click on an Application in the list for a more detailed view, or create a new Application.
 
 If you have only been granted "READ" access to Applications, you will not be able to create,
@@ -40,7 +38,7 @@ modify, or delete any Applications.
 Creating Applications
 **********************
 
-When you need to set up a new Application, you can click the "+ Create" button in the top right of
+When you need to set up a new Application, you can click the [**+ Create**] button in the top right of
 the initial Application listing page.
 
 .. image:: ../images/Management/applications/create-button.png
@@ -56,27 +54,27 @@ For Applications, the only field required is the name of your new Application, a
 
 .. image:: ../images/Management/applications/create.png
    :width: 500pt
-   :alt: Screen showing the name and Organization fields for creating an Application
+   :alt: Page showing the name and Organization fields for creating an Application
    :align: center
    
-Clicking "Cancel" will throw away any changes you made to the form, and you will be taken back to the
-Application listing screen.
+Clicking the [**Cancel**] button will not save any changes you made to the form, and you will be taken back to the
+Application listing page.
 
-Clicking "Save" will then attempt to make a new Application with your provided details.
+Clicking the [**Save**] button will then attempt to make a new Application with your provided details.
 
 Upon success, you will be shown two values: your Client ID and Client Secret. Ensure that you save your Client Secret
-somewhere secure, as you will not be able to see it again after leaving this screen.
+somewhere secure, as you will not be able to see it again after leaving this page.
 
 .. image:: ../images/Management/applications/create-success.png
    :width: 500pt
    :alt: 
    :align: center
 
-Clicking "Continue" will then take you to the new Applications's details page.
+Clicking the [**Continue**] button will then take you to the new Applications's details page.
 
 .. _viewing_an_application:
 
-Viewing an Applicaton
+Viewing an Application
 *********************
 
 When you click on or create an Application, you will be taken to a view with multiple tabs.
@@ -117,7 +115,7 @@ have lost the original, and it will again be displayed one time to you.
    :alt:
    :align: center
 
-Clicking "Edit" will enable the fields in the view for change. Ensure your changes are saved before navigating away from the page.
+Clicking the [**Edit**] button will enable the fields in the view for change. Ensure your changes are saved before navigating away from the page.
 
 .. _application_service_cards:
 
@@ -127,12 +125,12 @@ Application Service Cards Tab
 The job of any application is to provide specific services to the end users. Attaching Service Cards
 to a CitizenOne Application is how you define the services that an Application has available for use.
 
-To link a Service Card, click "Edit", then "+ Add Service Card". From the dropdown that appears, select your desired Service Card
+To link a Service Card, click the [**Edit**] button, then the [**+ Add Service Card**] button. From the dropdown that appears, select your desired Service Card
 and then either add another Service Card, remove any existing Service Card, and then save or cancel your changes.
 
-If you have the permissions to do so, clicking the blue icon on a Service Card will take your to that Service Card's page.
+If you have the permissions to do so, clicking the blue icon on a Service Card will take you to that Service Card's page.
 
-.. image:: ../images/Management/application/service-cards.png
+.. image:: ../images/Management/applications/service-cards.png
    :width: 500pt
    :alt:
    :align: center
@@ -153,15 +151,15 @@ Application Policy Tab
 Applications, like both Organizations and Service Cards, are Policy holders. Policies applied to an Application
 apply to all Service Cards that belong to the Application.
 
-A policy can be chosen by navigating to the Policies tab, and clicking "Edit".
+A Policy can be chosen by navigating to the Policies tab, and clicking the [**Edit**].
 
 .. image:: ../images/Management/applications/policy.png
    :width: 500pt
-   :alt: Screen showing an empty Policy selection field
+   :alt: Page showing an empty Policy selection field
    :align: center
 
 .. note::
-    If a Policy is selected, a preview of the Policy text will be displayed on this screen, below the Policy selection dropdown.
+    If a Policy is selected, a preview of the Policy text will be displayed on this page, below the Policy selection dropdown.
 
 .. _application_provider_configuration:
 
@@ -172,10 +170,10 @@ Some services require more advanced authentication that is provided by the host 
 CitizenOne allows for SAML configuration to be set up on the CitizenOne Application so that it may
 properly integrate with third party services.
 
-To add a SAML configuration for your Application, click "Edit" and then "+ Add Config".
+To add a SAML configuration for your Application, click the [**Edit**] and then the [**+ Add Config**].
 From here, you may upload the valid SAML metadata needed to authenticate with the downstream services.
 
 .. image:: ../images/Management/applications/provider-configuration.png
    :width: 500pt
-   :alt: Screen showing an empty Policy selection field
+   :alt: Page showing an empty Policy selection field
    :align: center

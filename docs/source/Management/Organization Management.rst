@@ -60,10 +60,10 @@ For Organizations, the only field required is the name of your new Organization.
    :alt: Form to create a new Organization
    :align: center
 
-Clicking [**Cancel**] will not save any changes you made to the form, and you will be taken back to the
+Clicking the [**Cancel**] button will not save any changes you made to the form, and you will be taken back to the
 Organization listing page.
 
-Clicking [**Save**] will then attempt to make a new Organization with your given name, and you will be taken
+Clicking the [**Save**] button will then attempt to make a new Organization with your given name, and you will be taken
 to the new Organization's details page.
 
 .. _viewing_editing_organization:
@@ -104,7 +104,7 @@ The two fields that primarily define an Organization are its Name and if the "Po
    :alt: Viewing general information about an Organization
    :align: center
 
-Clicking [**Edit**] will enable the fields in the view for change. Ensure your changes are saved before navigating away from the page.
+Clicking the [**Edit**] button will enable the fields in the view for change. Ensure your changes are saved before navigating away from the page.
 
 .. _organization_policy:
 
