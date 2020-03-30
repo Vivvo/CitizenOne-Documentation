@@ -28,7 +28,7 @@ Guides
 
 .. toctree::
    :caption: Managing CitizenOne
-   :maxdepth: 2
+   :maxdepth: 3
 
    Management/Creating Service Cards
    Management/Organization Management

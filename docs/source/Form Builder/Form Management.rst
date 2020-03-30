@@ -1,13 +1,7 @@
-Creating Forms
+Form Management
 ==============
 
-Creating forms in Form Management is a multi-step process.  
-Steps to create a form include:
-
-1. Creating the form
-2. Adding controls to the form
-
-Creating the form
+Creating Forms
 ****************************
 .. image:: images/createForm.png
    :width: 500pt
@@ -110,14 +104,17 @@ See the attributes for fields available here
 3. Clicking **[Save]**
 
 
+.. _viewing_forms:
 
 Viewing Forms
-=============
+****************************
 
-viewing forms happens on portal or on business server
+Viewing forms happens on portal or on business server
+
+.. _deleting_forms:
 
 Deleting Forms
-==============
+****************************
 Click the **[Forms -> Form Builder]** link
 
 .. image:: images/formBuilderPanel.png
