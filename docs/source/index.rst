@@ -28,7 +28,7 @@ Guides
 
 .. toctree::
    :caption: Managing CitizenOne
-   :maxdepth: 2
+   :maxdepth: 3
 
    Management/Creating Service Cards
    Management/Organization Management
@@ -39,6 +39,8 @@ Guides
    Management/Policy Management
    Management/Platform Configuration
    Management/Layouts
+   Form Builder/Form Management
+   Form Builder/Form Responses
 
 .. toctree::
    :caption: Technical Documentation

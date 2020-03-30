@@ -3,3 +3,4 @@
 **/*.html
 _build/
 **/*.DS_Store
+/docs/build/html/
