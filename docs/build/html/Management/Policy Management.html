@@ -35,7 +35,7 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Creating a Service Card" href="Creating Service Cards.html" />
+    <link rel="next" title="Platform Configuration" href="Platform Configuration.html" />
     <link rel="prev" title="Trust Provider Management" href="Provider Management.html" />
     <link href="../_static/style.css" rel="stylesheet" type="text/css">
 
@@ -89,8 +89,9 @@
 <li class="toctree-l1"><a class="reference internal" href="../Applications.html">Applications</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Service Cards.html">Service Cards</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Rules.html">Rules</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Providers.html">Providers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Providers.html">Trust Providers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Policies.html">Policies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Email Templates.html">Email Templates</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Eeze</span></p>
 <ul>
@@ -98,7 +99,7 @@
 </ul>
 <p class="caption"><span class="caption-text">Managing CitizenOne</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="Tenant Management.html">Tenant Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Creating Service Cards.html">Creating a Service Card</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Organization Management.html">Organization Management</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Application Management.html">Application Management</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Service Card Management.html">Service Card Management</a></li>
@@ -106,14 +107,14 @@
 <li class="toctree-l1"><a class="reference internal" href="Provider Management.html">Trust Provider Management</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Policy Management</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#viewing-policies">Viewing Policies</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#creating-policies">Creating Policies</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#creating-a-policy">Creating a Policy</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#creating-a-revision">Creating a Revision</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#subscribing-to-data-bundles">Subscribing to Data Bundles</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#uploading-a-public-key">Uploading a public key</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="Creating Service Cards.html">Creating a Service Card</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Platform Configuration.html">Platform Configuration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Layouts.html">Layout Management</a></li>
 </ul>
@@ -203,8 +204,30 @@
 <div class="section" id="viewing-policies">
 <h2>Viewing Policies<a class="headerlink" href="#viewing-policies" title="Permalink to this headline">¶</a></h2>
 </div>
-<div class="section" id="creating-policies">
-<h2>Creating Policies<a class="headerlink" href="#creating-policies" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="creating-a-policy">
+<span id="creating-policies"></span><h2>Creating a Policy<a class="headerlink" href="#creating-a-policy" title="Permalink to this headline">¶</a></h2>
+<p>We can create a new Policy by clicking on the Policies tab.</p>
+<a class="reference internal image-reference" href="../_images/policy-create-tab.png"><img alt="../_images/policy-create-tab.png" class="align-left" src="../_images/policy-create-tab.png" style="width: 500pt;" /></a>
+<p>We can click on the Create button on the top right to create a Policy.</p>
+<a class="reference internal image-reference" href="../_images/policy-create-revision.png"><img alt="../_images/policy-create-revision.png" class="align-left" src="../_images/policy-create-revision.png" style="width: 500pt;" /></a>
+<p>The general view allows you to maintain the policy details.</p>
+<a class="reference internal image-reference" href="../_images/policy-create-manage-revision.png"><img alt="../_images/policy-create-manage-revision.png" class="align-left" src="../_images/policy-create-manage-revision.png" style="width: 500pt;" /></a>
+<p>The Revision view is used to maintain policy revisions. Let go ahead and create a new revivsion for our policy.</p>
+<div class="section" id="creating-a-revision">
+<h3>Creating a Revision<a class="headerlink" href="#creating-a-revision" title="Permalink to this headline">¶</a></h3>
+<a class="reference internal image-reference" href="../_images/revision-create-main.png"><img alt="../_images/revision-create-main.png" class="align-left" src="../_images/revision-create-main.png" style="width: 500pt;" /></a>
+<p>Here, we can either create an entirely new revision or use an old revision as a starting point to base our new revision off of.</p>
+<a class="reference internal image-reference" href="../_images/revision-policy-text.png"><img alt="../_images/revision-policy-text.png" class="align-left" src="../_images/revision-policy-text.png" style="width: 500pt;" /></a>
+<p>Text view allows you to add and update the policy text.</p>
+<a class="reference internal image-reference" href="../_images/revision-create-callbacks.png"><img alt="../_images/revision-create-callbacks.png" class="align-left" src="../_images/revision-create-callbacks.png" style="width: 500pt;" /></a>
+<p>Next, we add callbacks to our policy.</p>
+<a class="reference internal image-reference" href="../_images/revision-create-scopes.png"><img alt="../_images/revision-create-scopes.png" class="align-left" src="../_images/revision-create-scopes.png" style="width: 500pt;" /></a>
+<p>Create scopes for our policy.</p>
+<a class="reference internal image-reference" href="../_images/revision-create-rule.png"><img alt="../_images/revision-create-rule.png" class="align-left" src="../_images/revision-create-rule.png" style="width: 500pt;" /></a>
+<p>Add rules to our policy. If you want to create a new rule, please refer to <span class="xref std std-ref">rule</span>.</p>
+<a class="reference internal image-reference" href="../_images/revision-create-review.png"><img alt="../_images/revision-create-review.png" class="align-left" src="../_images/revision-create-review.png" style="width: 500pt;" /></a>
+<p>This view allows you to review your revision and comfirm your changes. Here is where you can make the revision active.</p>
+</div>
 <div class="section" id="subscribing-to-data-bundles">
 <h3>Subscribing to Data Bundles<a class="headerlink" href="#subscribing-to-data-bundles" title="Permalink to this headline">¶</a></h3>
 <p><a class="reference internal" href="../Technical/Data Bundles.html#data-bundles-scenario-1"><span class="std std-ref">Data Bundles</span></a> enable your services to recieve updates when your user’s data changes in another place. They allow your services to stay in sync without maintaining backchannel communication.</p>
@@ -229,7 +252,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="Creating Service Cards.html" class="btn btn-neutral float-right" title="Creating a Service Card" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="Platform Configuration.html" class="btn btn-neutral float-right" title="Platform Configuration" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="Provider Management.html" class="btn btn-neutral float-left" title="Trust Provider Management" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

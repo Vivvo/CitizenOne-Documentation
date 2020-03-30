@@ -146,6 +146,8 @@ into the box. The SAML metadata must have a valid `EntityID`, or it will not be 
    :width: 500pt
    :align: center
 
+.. _identity_provider_login_screen:
+
 Identity Providers on the Login Screen
 **************************************
 

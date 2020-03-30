@@ -8,6 +8,8 @@ rules and data intergrations for policies.
    :width: 500pt
    :align: left                                                             
 
+.. _creating_providers:
+
 Creating Trust Providers
 **********************************************************************
 

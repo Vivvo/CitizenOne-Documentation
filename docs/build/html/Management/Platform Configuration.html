@@ -36,7 +36,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Layout Management" href="Layouts.html" />
-    <link rel="prev" title="Creating a Service Card" href="Creating Service Cards.html" />
+    <link rel="prev" title="Policy Management" href="Policy Management.html" />
     <link href="../_static/style.css" rel="stylesheet" type="text/css">
 
 </head>
@@ -89,8 +89,9 @@
 <li class="toctree-l1"><a class="reference internal" href="../Applications.html">Applications</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Service Cards.html">Service Cards</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Rules.html">Rules</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Providers.html">Providers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Providers.html">Trust Providers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Policies.html">Policies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Email Templates.html">Email Templates</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Eeze</span></p>
 <ul>
@@ -98,14 +99,13 @@
 </ul>
 <p class="caption"><span class="caption-text">Managing CitizenOne</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="Tenant Management.html">Tenant Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Creating Service Cards.html">Creating a Service Card</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Organization Management.html">Organization Management</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Application Management.html">Application Management</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Service Card Management.html">Service Card Management</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Rule Management.html">Rule Management</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Provider Management.html">Trust Provider Management</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Policy Management.html">Policy Management</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Creating Service Cards.html">Creating a Service Card</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Platform Configuration</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#identity-providers">Identity Providers</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#setting-up-an-identity-provider-openid-connect-oidc">Setting up an Identity Provider OpenID Connect (oidc)</a><ul>
@@ -117,7 +117,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#setting-up-another-citizenone-instance-as-an-identity-provider-c1-deprecated">Setting up another CitizenOne instance as an Identity Provider (c1 - Deprecated)</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#identity-providers-on-the-login-screen">Identity Providers on the Login Screen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#identity-provider-login-screen">Identity Providers on the Login Screen</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#external-apis">External APIs</a></li>
 </ul>
 </li>
@@ -309,8 +309,8 @@ into the box. The SAML metadata must have a valid <cite>EntityID</cite>, or it w
 <a class="reference internal image-reference" href="../_images/service-provider-configuration-edit.png"><img alt="../_images/service-provider-configuration-edit.png" class="align-center" src="../_images/service-provider-configuration-edit.png" style="width: 500pt;" /></a>
 </div>
 </div>
-<div class="section" id="identity-providers-on-the-login-screen">
-<h2>Identity Providers on the Login Screen<a class="headerlink" href="#identity-providers-on-the-login-screen" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="identity-provider-login-screen">
+<span id="identity-providers-on-the-login-screen"></span><h2>Identity Providers on the Login Screen<a class="headerlink" href="#identity-provider-login-screen" title="Permalink to this headline">¶</a></h2>
 <p>To set up the link to an Identity Provider on the login screen, drop down “Configuration” in the sidebar again,
 but click into “Login Layout”. For a full overview on this screen, please see <a class="reference internal" href="Layouts.html#layout-management"><span class="std std-ref">Layout Management</span></a>.
 In this tutorial, the assumption will be made that you have familiarized yourself with the Layout</p>
@@ -367,7 +367,7 @@ to enter editing mode, where you may select which Applications to allow from the
         <a href="Layouts.html" class="btn btn-neutral float-right" title="Layout Management" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="Creating Service Cards.html" class="btn btn-neutral float-left" title="Creating a Service Card" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="Policy Management.html" class="btn btn-neutral float-left" title="Policy Management" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

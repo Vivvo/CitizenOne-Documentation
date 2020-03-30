@@ -39,6 +39,8 @@ Guides
    Management/Policy Management
    Management/Platform Configuration
    Management/Layouts
+   Form Builder/Form Management
+   Form Builder/Form Responses
 
 .. toctree::
    :caption: Technical Documentation

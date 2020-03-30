@@ -35,7 +35,7 @@
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Providers" href="Providers.html" />
+    <link rel="next" title="Trust Providers" href="Providers.html" />
     <link rel="prev" title="Service Cards" href="Service Cards.html" />
     <link href="_static/style.css" rel="stylesheet" type="text/css">
 
@@ -92,8 +92,9 @@
 <li class="toctree-l2"><a class="reference internal" href="#what-are-rules">What are Rules?</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="Providers.html">Providers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Providers.html">Trust Providers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Policies.html">Policies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Email Templates.html">Email Templates</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Eeze</span></p>
 <ul>
@@ -101,14 +102,13 @@
 </ul>
 <p class="caption"><span class="caption-text">Managing CitizenOne</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="Management/Tenant Management.html">Tenant Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Management/Creating Service Cards.html">Creating a Service Card</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Management/Organization Management.html">Organization Management</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Management/Application Management.html">Application Management</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Management/Service Card Management.html">Service Card Management</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Management/Rule Management.html">Rule Management</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Management/Provider Management.html">Trust Provider Management</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Management/Policy Management.html">Policy Management</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Management/Creating Service Cards.html">Creating a Service Card</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Management/Platform Configuration.html">Platform Configuration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Management/Layouts.html">Layout Management</a></li>
 </ul>
@@ -193,9 +193,10 @@
            <div itemprop="articleBody">
             
   <div class="section" id="rules">
-<h1>Rules<a class="headerlink" href="#rules" title="Permalink to this headline">¶</a></h1>
+<span id="id1"></span><h1>Rules<a class="headerlink" href="#rules" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="what-are-rules">
 <h2>What are Rules?<a class="headerlink" href="#what-are-rules" title="Permalink to this headline">¶</a></h2>
+<p>A Rule is a particular requirement a service has that the citizen must pass in order to access the service. A Rule may have more than one <a class="reference internal" href="Providers.html#providers"><span class="std std-ref">Trust Provider</span></a> that can be used to pass the Rule if multiple authoritative sources exist that can fulfill the same claim about the citizen. Rules to access a service are checked every time a citizen accesses a service to ensure they are still passed successfully before proceeding to the service.</p>
 </div>
 </div>
 
@@ -207,7 +208,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="Providers.html" class="btn btn-neutral float-right" title="Providers" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="Providers.html" class="btn btn-neutral float-right" title="Trust Providers" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="Service Cards.html" class="btn btn-neutral float-left" title="Service Cards" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

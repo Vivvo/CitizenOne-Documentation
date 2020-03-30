@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Providers &mdash; CitizenOne 0.0.1 documentation</title>
+  <title>Trust Providers &mdash; CitizenOne 0.0.1 documentation</title>
   
 
   
@@ -89,11 +89,12 @@
 <li class="toctree-l1"><a class="reference internal" href="Applications.html">Applications</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Service Cards.html">Service Cards</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Rules.html">Rules</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Providers</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#what-are-providers">What are Providers?</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Trust Providers</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#what-are-trust-providers">What are Trust Providers?</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="Policies.html">Policies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Email Templates.html">Email Templates</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Eeze</span></p>
 <ul>
@@ -101,14 +102,13 @@
 </ul>
 <p class="caption"><span class="caption-text">Managing CitizenOne</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="Management/Tenant Management.html">Tenant Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Management/Creating Service Cards.html">Creating a Service Card</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Management/Organization Management.html">Organization Management</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Management/Application Management.html">Application Management</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Management/Service Card Management.html">Service Card Management</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Management/Rule Management.html">Rule Management</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Management/Provider Management.html">Trust Provider Management</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Management/Policy Management.html">Policy Management</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Management/Creating Service Cards.html">Creating a Service Card</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Management/Platform Configuration.html">Platform Configuration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Management/Layouts.html">Layout Management</a></li>
 </ul>
@@ -173,7 +173,7 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>Providers</li>
+      <li>Trust Providers</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -192,10 +192,11 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="providers">
-<h1>Providers<a class="headerlink" href="#providers" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="what-are-providers">
-<h2>What are Providers?<a class="headerlink" href="#what-are-providers" title="Permalink to this headline">¶</a></h2>
+  <div class="section" id="trust-providers">
+<span id="providers"></span><h1>Trust Providers<a class="headerlink" href="#trust-providers" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="what-are-trust-providers">
+<h2>What are Trust Providers?<a class="headerlink" href="#what-are-trust-providers" title="Permalink to this headline">¶</a></h2>
+<p>A Trust Provider is an authoritative source that can provide verified credential(s) (additional pieces of information) about the citizen. This is used to establish a greater identity certainty and in building a trusted profile. Services with access to sensitive information may require a higher level of certainty in the citizen’s identity in order to access the service. These are defined as <a class="reference internal" href="Rules.html#rules"><span class="std std-ref">Rules</span></a> in CitizenOne. No information provided to and from the Trust Provider is stored in CitizenOne. Rather, once the citizen has onboarded with the Trust Provider, a tokenized representation of the citizen is stored that allows CitizenOne to perform specific pre-defined requests about the citizen.</p>
 </div>
 </div>
 
