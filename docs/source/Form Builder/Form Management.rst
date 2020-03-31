@@ -1,34 +1,54 @@
+.. _form_management:
+
 Form Management
 ==============
 
-Creating Forms
-****************************
+CitizenOne features a robust No-Code Form Builder that allows forms to be created without the need to write and deploy code. Forms can be attached a Service Card allowing citizens to complete and submit the form.
+
+The list of all available Applications can be accessed by clicking [**Form Builder**] under the
+[**Forms**] tab of the sidebar.
+
+.. image:: ../images/forms-sidebar.png
+   :width: 100pt
+   :alt: Sidebar with the Form Builder tab selected
+   :align: center
+
+Viewing All Forms
+*************************
+
+The initial Form Builder page displays a list of all of the Forms
+that have been created for your instance of CitizenOne.
+
+From this page, you are able to click on a Form in the list for a more detailed view, or create a new Form.
+
 .. image:: images/createForm.png
    :width: 500pt
-   :align: left
+   :alt: List of Forms in CitizenOne
+   :align: center
 
-In order to create a form you do the following:
+.. _creating_forms:
 
-1. Log into Management
+Creating Forms
+****************************
 
-2. Click the **[Forms -> Form Builder]** link
-
-3. Click the **[+Create Form]** button
-   The fields in order to create a form are:
-    a. **Name** - The forms name
-    b. **Description** - The forms description
-    c. **Organization** - The forms organization
-    d. **Application** - The application to tie it to in CitizenOne
+When a new form needs to be created, click the [**+ Create Form**] button.
 
 .. image:: images/3.png
+   :width: 500pt
+   :alt: Create a new Form
+   :align: center
 
-4. Add the details of the form
+The fields in order to create a form are:
+1. **Name** - The name of the form
+2. **Description** - A brief description of the form
+3. **Organization** - The Organization that the form belongs to
+4. **Application** - The Application to tie it to in CitizenOne
 
+Clicking the [**Submit**] button will take you to a page to create the content on the form.
 
-5. Click **[Submit]**
 
 Adding Controls (Fields) to the form
-****************************
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 A control/field is how a user will enter information on the form.
 The current list of controls are:
@@ -101,7 +121,7 @@ See the attributes for fields available here
 .. image:: images/8a.png
 .. image:: images/8b.png
 
-3. Clicking **[Save]**
+3. Clicking the [**Save**] button.
 
 
 .. _viewing_forms:
@@ -115,12 +135,8 @@ Viewing forms happens on portal or on business server
 
 Deleting Forms
 ****************************
-Click the **[Forms -> Form Builder]** link
 
-.. image:: images/formBuilderPanel.png
-    :width: 150pt
-
-Check the box beside the form you want to delete and click the garbage icon at the top of the table
+Check the box beside the form you want to delete and click the garbage icon at the top of the table.
 
 .. image:: images/deleting.png
     :width: 500pt
