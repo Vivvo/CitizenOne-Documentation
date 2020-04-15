@@ -49,12 +49,13 @@ Guides
    Technical/Authentication
    Technical/Data Bundles
    Technical/DynamicIdentityProviders
-   Technical/eHealthSplunkService
+   Technical/Feature Toggles
    Technical/Federation
    Technical/MFA Rule Evaluation
    Technical/OpenID Connect
    Technical/PolicyHierarchy
    Technical/SAML
+   Technical/eHealthSplunkService
 
 .. toctree::
    :caption: General Information
