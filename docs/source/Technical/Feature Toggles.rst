@@ -12,22 +12,25 @@ HTML Templates
 
 Show different UI elements when a toggle is on/off.
 
-.. code-block:: HTML
+.. code-block::
+
     <toggles feature="my-feature-toggle">
-    <ng-template #active>
-      <!-- This is what the user sees when the toggle is active. -->
-    </ng-template>
-    <ng-template #else>
-      <!-- This is what the user sees when the toggle is not active. -->
-    </ng-template>
+        <ng-template #active>
+          <!-- This is what the user sees when the toggle is active. -->
+        </ng-template>
+        <ng-template #else>
+          <!-- This is what the user sees when the toggle is not active. -->
+        </ng-template>
     </toggles>
+
 
 Typescript
 ~~~~~~~~~~
 
 Execute different Angular Controller code if a toggle is on/off.
 
-.. code-block:: Typescript
+.. code-block::
+
     this.toggleService.toggleWrapper('my-feature-toggle', (): Observable<any> => {
               // Run this function if the toggle is active
             },
@@ -41,7 +44,8 @@ Angular Routes
 
 Guard an angular route depending on if a toggle is on/off.
 
-.. code-block:: JSON
+.. code-block::
+
     {
         path: 'featureToggles',
         pathMatch: 'full',
