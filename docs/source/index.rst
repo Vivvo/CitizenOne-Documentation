@@ -30,6 +30,7 @@ Guides
    :caption: Managing CitizenOne
    :maxdepth: 3
 
+   Management/CitizenOne Support
    Management/Creating Service Cards
    Management/Organization Management
    Management/Application Management
