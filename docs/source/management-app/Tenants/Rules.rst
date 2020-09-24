@@ -17,7 +17,7 @@ From this page, you are able to filter the displayed list of Rules by their name
 .. note::
     Users who only have the “READ Rules” role will not be able to create new Rules, nor will they be able to modify existing Rules.
  
-.. image:: /images/managementapp/view-rules.png
+.. image:: ../images/managementapp/view-rules.png
    :width: 500pt
    :alt: View all Rules
    :align: center
@@ -28,7 +28,7 @@ Creating Rules
 
 A rule can be created in the management app by clicking the [**+ Create**] button
 
-.. image:: /images/managementapp/create-rule.png
+.. image:: ../images/managementapp/create-rule.png
    :width: 200pt
    :alt: Create Rule
    :align: center
@@ -49,7 +49,7 @@ Viewing and Editing a Rule
 
 When you click on a Rule, you will be taken to a view with multiple tabs. Each tab contains information that you can fill out to help define and customize your Rules.
 
-.. image:: /images/managementapp/edit-rule.png
+.. image:: ../images/managementapp/edit-rule.png
    :width: 300pt
    :alt: Edit Rule
    :align: center 
@@ -62,7 +62,7 @@ Rules General Tab
 
 The General tab of a Rule contains the basic details that define the Rule itself. The three fields that primarily define a Rule are its *Name*, *Description* and the *Callout Path*.
  
-.. image:: /images/managementapp/rules-general-tab.png
+.. image:: ../images/managementapp/rules-general-tab.png
   :width: 300pt
   :alt: Rules General tab
   :align: center
@@ -75,14 +75,14 @@ Rules Parameters Tab
 
 The Parameters tab of a Rule contains optional parameters that can be set when added to a :ref:`Policy <policies>`.
 
-.. image:: /images/managementapp/view-rule-parameters.png
+.. image:: ../images/managementapp/view-rule-parameters.png
    :width: 300pt
    :alt: View Rule parameters
    :align: center
 
 Clicking [**Edit**] will enable the fields in the view for change. Ensure your changes are saved before navigating away from the page.
 
-.. image:: /images/managementapp/edit-rule-parameter.png
+.. image:: ../images/managementapp/edit-rule-parameter.png
    :width: 300pt
    :alt: Edit Rule parameter
    :align: center
@@ -96,7 +96,7 @@ Removing a Rule
 
 When you are on the General tab, click the [**Edit**] button.
 
-.. image:: /images/managementapp/remove-rule.png
+.. image:: ../images/managementapp/remove-rule.png
    :width: 300pt
    :alt: Remove Rules
    :align: center

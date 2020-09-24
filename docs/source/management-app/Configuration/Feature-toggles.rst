@@ -46,7 +46,7 @@ Guard an angular route depending on if a toggle is on/off::
         data: {requiredRoles: ['SYSTEM_ADMIN'], feature: 'feature-toggles'}
     }
 
-.. image:: /images/managementapp/feature-toggle.png
+.. image:: ../images/managementapp/feature-toggle.png
    :width: 400pt
    :alt: Feature toggles
    :align: center 

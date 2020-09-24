@@ -21,7 +21,7 @@ It is also possible to create context specific messages with variables and media
 
 The Body field on the Create Email Template page also features a rich text editor which allows the addition of links, tables images, videos and more to the templates. 
 
-.. image:: /images/create-email-template.png
+.. image:: ../images/managementapp/create-email-template.png
    :width: 300pt
    :alt: Create Email template
    :align: center

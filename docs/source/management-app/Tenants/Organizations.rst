@@ -17,7 +17,7 @@ From this page, you are able to filter the displayed list of Organizations by th
 .. note::
     Users that only have the “READ Organizations” role will not be able to create new Organizations or modify existing Organizations.
 
-.. image:: /images/managementapp/view-all-orgs.png
+.. image:: ../images/managementapp/view-all-orgs.png
    :width: 300pt
    :alt: View all organizations
    :align: center
@@ -28,7 +28,7 @@ Creating Organizations
 
 When you’ve determined that a new Organization is needed, you can click the [**+ Create**] button in the top right of the Organization listing page.
 
-.. image:: /images/managementapp/create-org.png
+.. image:: ../images/managementapp/create-org.png
    :width: 300pt
    :alt: Create an organization
    :align: center
@@ -37,7 +37,7 @@ This will bring you to a new view where you will be asked to fill out only the v
 
 For Organizations, the only field required is the name of your new Organization.
 
-.. image:: /images/managementapp/create-org-field.png
+.. image:: ../images/managementapp/create-org-field.png
    :width: 300pt
    :alt: Create an organization (fields)
    :align: center
@@ -52,7 +52,7 @@ Viewing and Editing an Organization
 
 When you click on or create an Organization, you will be taken to a view with multiple tabs. Each tab contains information that you can fill out to help define and customize your Organization.
 
-.. image:: /images/managementapp/edit-org.png
+.. image:: ../images/managementapp/edit-org.png
    :width: 300pt
    :alt: Edit an organization
    :align: center
@@ -72,7 +72,7 @@ The General tab of an Organization contains the basic details that define the Or
     
     This is done to ensure that data cannot be cross-referenced across organizations and compiled to form a single profile on a citizen.
 
-.. image:: /images/managementapp/org-general-tab.png
+.. image:: ../images/managementapp/org-general-tab.png
    :width: 300pt
    :alt: Organization general tab
    :align: center
@@ -86,7 +86,7 @@ Organization Policy Tab
 Organizations, like both :ref:`Applications <applications>` and :ref:`Service Cards <service-cards>`, are Policy holders. Policies applied to an Organization apply to all Applications that belong to the Organization, and likewise all of the Service Cards linked to those Applications.
 A Policy can be chosen by navigating to the Policies tab and clicking [**Edit**].
  
-.. image:: /images/managementapp/org-policy-tab.png
+.. image:: ../images/managementapp/org-policy-tab.png
    :width: 300pt
    :alt: Organization policy tab
    :align: center
@@ -103,7 +103,7 @@ By clicking on the Users tab, you will be shown a list of all users that have be
 .. note::
     Users in this section refers to those that have been given access to the Vivvo Trust Platform Management application.
 
-.. image:: /images/managementapp/org-users-tab.png
+.. image:: ../images/managementapp/org-users-tab.png
    :width: 300pt
    :alt: Organization users tab
    :align: center
@@ -116,7 +116,7 @@ Removing an Organization
 
 When you are on the General tab, click the [**Edit**] button.
 
-.. image:: /images/managementapp/remove-org.png
+.. image:: ../images/managementapp/remove-org.png
    :width: 300pt
    :alt: Remove an organization
    :align: center

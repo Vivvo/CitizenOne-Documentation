@@ -7,7 +7,7 @@ A citizen’s information can be accessed by clicking **Citizen Lookup** under t
 
 You can look up and modify the citizen’s information here. Simply search for the citizen by typing in the email or username and support code, then click on [**Search**].
 
- .. image:: /images/citizen-lookup.png
+.. image:: ../images/managementapp/citizen-lookup.png
     :width: 400pt
     :alt: Citizen Lookup
     :align: center
@@ -22,14 +22,14 @@ Viewing and Editing User Details
 
 You can view the user’s personal details on the account by clicking on the **Details** tab.
 
-.. image:: /images/view-user-profile.png
+.. image:: ../images/managementapp/view-user-profile.png
    :width: 500pt
    :alt: View User Profile Details
    :align: center 
 
 After clicking on [**Search**], you will land on the profile details page (shown above). To modify any of the details, click on [**Edit**] in the top right corner of the page. You will then be able to change the Account Status (Active, Archived or Disabled), First Name, Middle Name and Last Name and Reset Password.
 
-.. image:: /images/edit-user-profile.png
+.. image:: ../images/managementapp/edit-user-profile.png
    :width: 300pt
    :alt: Edit User Profile Details
    :align: center  
@@ -46,14 +46,14 @@ As an admin, you can reset the password of a citizen. A TOTP (Time-based One Tim
 
 After clicking the [**Edit**] button, and then clicking the [**Reset Password**] button, click the [**Reset**] button on the dialog box that pops up on the page. 
 
-.. image:: /images/reset-pwd.png
+.. image:: ../images/managementapp/reset-pwd.png
    :width: 300pt
    :alt: Reset Password
    :align: center 
 
 Another dialog box displaying the 6-digit TOTP will pop up. Click on the blue [**Copy**] icon to the right of the TOTP to copy and send it to the user within 10 minutes.
 
-.. image:: /images/totp.png
+.. image:: ../images/managementapp/totp.png
    :width: 300pt
    :alt: Copy and send TOTP to user
    :align: center 
@@ -67,7 +67,7 @@ You can view all email addresses on the user account by clicking on the **Emails
  
 You can add more email addresses to a user’s account by simply clicking [**+ Add Email**]. You may also choose the primary email by clicking on the [**Make Primary**] button to the right of the email address.
 
-.. image:: /images/edit-user-email.png
+.. image:: ../images/managementapp/edit-user-email.png
    :width: 300pt
    :alt: Edit User Email Address
    :align: center 
@@ -79,7 +79,7 @@ Viewing and Editing User Phone Numbers
 
 You can view all phone numbers on the user account by clicking on the **Phone Numbers** tab.
  
-.. image:: /images/edit-user-phone.png
+.. image:: ../images/managementapp/edit-user-phone.png
    :width: 300pt
    :alt: Edit User Phone Numbers
    :align: center 
@@ -93,7 +93,7 @@ Viewing and Editing User Addresses
 
 You can view all addresses on the user account by clicking on the **Addresses** tab.
 
-.. image:: /images/edit-user-address.png
+.. image:: ../images/managementapp/edit-user-address.png
    :width: 300pt
    :alt: Edit User Addresses
    :align: center 
@@ -104,14 +104,14 @@ You can add an address to the user’s account by clicking on [**+Add Address**]
 Resetting Claim Provider Tokens
 You can view all claim provider tokens on a user account by clicking on the Claim Providers tab
 
- .. image:: /images/claim-providers.png
+.. image:: ../images/managementapp/claim-providers.png
    :width: 300pt
    :alt: View User Claim Providers
    :align: center 
 
 To remove any of the tokens, simply click on the [**Edit**] button, click on [**Remove Token**], and then click [**Done**].
  
-.. image:: /images/remove-token.png
+.. image:: ../images/managementapp/remove-token.png
    :width: 300pt
    :alt: Remove Claim Provider Tokens
    :align: center 

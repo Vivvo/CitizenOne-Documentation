@@ -9,7 +9,7 @@ Form-based service cards can also be integrated to a downstream application like
 
 These form responses are visually presented when you click on **Form Responses** under the **Forms** tab of the sidebar.
 
-.. image:: /images/managementapp/form-responses.png
+.. image:: ../images/managementapp/form-responses.png
    :width: 300pt
    :alt: Form responses
    :align: center 

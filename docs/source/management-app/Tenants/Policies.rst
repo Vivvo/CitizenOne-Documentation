@@ -20,7 +20,7 @@ From this page, you are able to filter the displayed list of Policies by their n
 .. note::
     Users that only have the “READ Policies” will not be able to create new Policies or modify existing Policies.
 
-.. image:: /images/managementapp/view-all-policies.png
+.. image:: ../images/managementapp/view-all-policies.png
    :width: 300pt
    :alt: View all Policies
    :align: center 
@@ -31,7 +31,7 @@ Creating a Policy
 
 When you’ve determined that a new Policy is needed, you can click the [**+ Create**] button in the top right of the Policies listing page.
 
-.. image:: /images/managementapp/create-policy.png
+.. image:: ../images/managementapp/create-policy.png
    :width: 300pt
    :alt: Create a Policy
    :align: center
@@ -45,7 +45,7 @@ For Policies, the required fields are:
 3.	**RSA Public Key**: If part of this policy is to get consent to subscribe to Data Bundle changes, specify the RSA Public Key in PEM format. If this does not apply, leave blank.
 4.	**Default Consent Length in Days**: If you would like to set a default value for the duration in which consent is granted, specify the number of days. Citizens can override this value when consenting to the policy. If no default is required, leave the field set to 0 or blank.
 
-.. image:: /images/managementapp/create-policy-fields.png
+.. image:: ../images/managementapp/create-policy-fields.png
    :width: 300pt
    :alt: Create a Policy (fields)
    :align: center
@@ -60,7 +60,7 @@ Viewing and Editing a Policy
 
 When you click on or create a Policy, you will be taken to a view with multiple tabs. Each tab contains information that you can fill out to help define and customize your Policy.
 
-.. image:: /images/managementapp/edit-policy.png
+.. image:: ../images/managementapp/edit-policy.png
    :width: 300pt
    :alt: Edit a Policy
    :align: center
@@ -83,7 +83,7 @@ The content of a policy is contained in a Revision. This allows Vivvo Trust Plat
 
 The Revisions tab of a Policy contains the history of Revisions for a policy as well as shows the current active Revision.
 
-.. image:: /images/managementapp/policy-revisions-tab.png
+.. image:: ../images/managementapp/policy-revisions-tab.png
    :width: 300pt
    :alt: Policy Revisions tab
    :align: center
@@ -94,7 +94,7 @@ To create a new revision, click the [**+ Create Revision**] button. Creating a n
 1. Base
 ---------
 
-.. image:: /images/managementapp/policy-revision-base.png
+.. image:: ../images/managementapp/policy-revision-base.png
    :width: 300pt
    :alt: Edit Policy revision base
    :align: center
@@ -109,7 +109,7 @@ To create a new revision based on a previous revision, click the [**Create from 
 2. Text
 ---------
 
-.. image:: /images/managementapp/policy-revision-text.png
+.. image:: ../images/managementapp/policy-revision-text.png
    :width: 300pt
    :alt: Edit policy revision text
    :align: center
@@ -125,7 +125,7 @@ Click the [**Next Step**] button to go to the Data Bundles step.
 3. Data Bundles
 -----------------
 
-.. image:: /images/managementapp/policy-revision-bundles.png
+.. image:: ../images/managementapp/policy-revision-bundles.png
    :width: 300pt
    :alt: Edit policy revision data bundles
    :align: center
@@ -142,7 +142,7 @@ Click the [**Next Step**] button to go to the Scopes step.
 4. Scopes
 ----------
 
-.. image:: /images/managementapp/policy-revision-scopes.png
+.. image:: ../images/managementapp/policy-revision-scopes.png
    :width: 300pt
    :alt: Edit policy revision scopes
    :align: center
@@ -162,7 +162,7 @@ Click the [**Next Step**] button to go to the Rules step.
 5. Rules
 ---------
 
-.. image:: /images/managementapp/policy-revision-rules.png
+.. image:: ../images/managementapp/policy-revision-rules.png
    :width: 300pt
    :alt: Edit policy revision rules
    :align: center
@@ -181,7 +181,7 @@ Click the [**Next Step**] button to go to the Review step.
 6. Review
 ----------
 
-.. image:: /images/managementapp/policy-revision-review.png
+.. image:: ../images/managementapp/policy-revision-review.png
    :width: 300pt
    :alt: Review all details of the policy revision
    :align: center
@@ -198,7 +198,7 @@ Policy Public Key Tab
 Data Bundles enable your services to receive updates when your user’s data changes in another service. They allow your services to stay in sync without maintaining backchannel communication.
 All data bundles are end-to-end encrypted and require a Public Key to subscribe to data bundles. You can follow the commands given to assist you in generating an appropriate key.
 
-.. image:: /images/managementapp/policy-public-key-tab.png
+.. image:: ../images/managementapp/policy-public-key-tab.png
    :width: 300pt
    :alt: Policy public key tab
    :align: center

@@ -25,7 +25,7 @@ Adding a Widget to the Layout
 
 To add a Widget to the login page, select a Widget that hasn’t been added and click the [**+ Add Widget**} button.
 
-.. image:: /images/managementapp/add-widget.png
+.. image:: ../images/managementapp/add-widget.png
    :width: 300pt
    :alt:  Add widget to login layout
    :align: center 
@@ -42,7 +42,7 @@ To edit a Widget in the layout, click on the Widget in the preview and a configu
 1. Basic Login Widget
 ======================
 
-.. image:: /images/managementapp/basic-login-widget.png
+.. image:: ../images/managementapp/basic-login-widget.png
    :width: 300pt
    :alt:  Basic login widget
    :align: center 
@@ -59,7 +59,7 @@ The configuration options for the Basic Login Widget are:
 2. Eeze Login Widget
 =====================
 
-.. image:: /images/managementapp/eeze-login-widget.png
+.. image:: ../images/managementapp/eeze-login-widget.png
    :width: 300pt
    :alt:  Eeze login widget
    :align: center 
@@ -76,7 +76,7 @@ The configuration options for the Eeze Login Widget are:
 3. Identity Providers Widget
 =============================
 
-.. image:: /images/managementapp/idp-widget.png
+.. image:: ../images/managementapp/idp-widget.png
    :width: 300pt
    :alt:  Identity providers widget
    :align: center 
@@ -94,7 +94,7 @@ The configuration options for the Identity Providers Widget are:
 4. Account Benefits Widget
 ===========================
 
-.. image:: /images/managementapp/account-benefits-widget.png
+.. image:: ../images/managementapp/account-benefits-widget.png
    :width: 300pt
    :alt:  Accounts benefit widget
    :align: center 
@@ -111,7 +111,7 @@ The configuration options for the Eeze Login Widget are:
 Deleting a Widget in the Layout
 ================================
 
-.. image:: /images/managementapp/delete-widget.png
+.. image:: ../images/managementapp/delete-widget.png
    :width: 300pt
    :alt:  Delete widget from login layout
    :align: center 

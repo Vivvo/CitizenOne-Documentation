@@ -16,7 +16,7 @@ From this page, you are able to filter the displayed list of Trust Providers by 
 .. note::
     Users that have only the “READ Trust Providers” role will not be able to create new Trust Providers or modify existing Trust Providers.
  
-.. image:: /images/managementapp/view-trust-providers.png
+.. image:: ../images/managementapp/view-trust-providers.png
    :width: 300pt
    :alt: View All Trust providers
    :align: center
@@ -27,7 +27,7 @@ Creating Trust Providers
 
 When you’ve determined that a new Trust Provider is needed, you can click the [**+ Create**] button in the top right of the Trust Providers listing page.
 
-.. image:: /images/managementapp/create-trust-provider.png
+.. image:: ../images/managementapp/create-trust-provider.png
   :width: 300pt
   :alt: Create Trust Provider
   :align: center
@@ -42,7 +42,7 @@ The general fields for a Trust Provider are:
 2.	**Description**: The optional description of the trust provider
 3.	**Level of Assurance**: The level of assurance this trust provider provides. See the `Guidelines on Identity Assurance`_ webpage for more information.
  
-.. image:: /images/managementapp/create-tp-fields.png
+.. image:: ../images/managementapp/create-tp-fields.png
   :width: 300pt
   :alt: Create Trust Provider general fields
   :align: center
@@ -57,7 +57,7 @@ Viewing and Editing a Trust Provider
 
 When you click on or create a Trust Provider, you will be taken to a view with multiple tabs. Each tab contains information that you can fill out to help define and customize your Trust Provider.
 
-.. image:: /images/managementapp/edit-trust-provider.png
+.. image:: ../images/managementapp/edit-trust-provider.png
     :width: 300pt
     :alt: Edit trust provider
     :align: center 
@@ -70,7 +70,7 @@ Trust Providers General Tab
 
 The General tab of a Trust Provider contains the basic details that define the Trust Provider itself.
 
-.. image:: /images/managementapp/trust-provider-general-tab.png
+.. image:: ../images/managementapp/trust-provider-general-tab.png
    :width: 300pt
    :alt: Trust provider general tab
    :align: center
@@ -83,7 +83,7 @@ Trust Providers Onboarding Tab
 
 The Onboarding tab of a Trust Provider specifies how the Vivvo Trust Platform connects to a Trust Provider to onboard a citizen.
 
-.. image:: /images/managementapp/trust-provider-onboarding.png
+.. image:: ../images/managementapp/trust-provider-onboarding.png
    :width: 300pt
    :alt: Trust provider onboarding tab
    :align: center
@@ -97,7 +97,7 @@ The onboarding fields for a Trust Provider are:
 
 To add more arguments you can click the [**+ Add Argument**] button below the last argument.
 
-.. image:: /images/managementapp/trust-provider-add-argument.png
+.. image:: ../images/managementapp/trust-provider-add-argument.png
    :width: 300pt
    :alt: Add arguments to trust provider onboarding
    :align: center
@@ -110,7 +110,7 @@ Trust Providers Rules Tab
 
 The Rules tab of a Trust Provider specifies the Rules that this Trust Provider can fulfill.
 
-.. image:: /images/managementapp/trust-provider-rules.png
+.. image:: ../images/managementapp/trust-provider-rules.png
    :width: 300pt
    :alt: Trust provider rules tab
    :align: center
@@ -119,7 +119,7 @@ You can assign Rules to a Trust Provider by selecting a Rule from the dropdown a
 
 To add more Rules, you can click the [**+ Add Rule**] button below the last rule.
 
-.. image:: /images/managementapp/trust-provider-add-rule.png
+.. image:: ../images/managementapp/trust-provider-add-rule.png
    :width: 300pt
    :alt: Add rule to trust provider
    :align: center
@@ -132,7 +132,7 @@ Trust Providers Providing Bundles Tab
 
 The Providing Bundles tab of a Trust Provider specifies the Data Bundles that this Trust Provider can publish to subscribing services.
 
-.. image:: /images/managementapp/trust-provider-bundles.png
+.. image:: ../images/managementapp/trust-provider-bundles.png
    :width: 300pt
    :alt: Trust provider providing bundles tab
    :align: center
@@ -146,7 +146,7 @@ The data bundle fields for a Trust Provider are:
 1.	**Data Bundle Type**: The type of updates to push to clients. Subscribing services will reference this type.
 2.	**Notify Url**: The url (must be https) to push data bundles to.
 
-.. image:: /images/managementapp/data-bundle-fields-tp.png
+.. image:: ../images/managementapp/data-bundle-fields-tp.png
    :width: 300pt
    :alt: Trust provider data bundle fields
    :align: center
@@ -156,7 +156,7 @@ The data bundle fields for a Trust Provider are:
 2.	The notifiy url must be of type HTTPS.
 3.	Currently you can only add one bundle for a particular type.
 
-.. image:: /images/managementapp/add-data-bundle-tp.png
+.. image:: ../images/managementapp/add-data-bundle-tp.png
    :width: 300pt
    :alt: Add data bundle to trust provider
    :align: center
@@ -169,7 +169,7 @@ Removing a Trust Provider
 
 When you are on the **General** tab, click the [**Edit**] button.
 
-.. image:: /images/managementapp/remove-trust-provider.png
+.. image:: ../images/managementapp/remove-trust-provider.png
   :width: 400pt
   :alt: Remove trust provider
   :align: center

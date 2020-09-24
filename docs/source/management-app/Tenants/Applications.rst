@@ -18,7 +18,7 @@ On this page, you are able to filter the displayed list of Applications by their
 .. note::
     Users that have only the “READ Applications” role will not be able to create, modify, or delete any Applications.
 
-.. image:: /images/managementapp/view-all-apps.png
+.. image:: ../images/managementapp/view-all-apps.png
    :width: 300pt
    :alt: View all applications
    :align: center 
@@ -29,7 +29,7 @@ Creating Applications
 
 When you need to set up a new Application, you can click the [+ Create] button in the top right of the initial Application listing page.
 
-.. image:: /images/managementapp/create-app.png
+.. image:: ../images/managementapp/create-app.png
    :width: 300pt
    :alt: Create an application
    :align: center 
@@ -38,7 +38,7 @@ This will bring you to a new view where you will be asked to fill out only the v
 
 For Applications, the only field required is the name of your new Application, and the Organization it belongs to.
 
-.. image:: /images/managementapp/create-app-fields.png
+.. image:: ../images/managementapp/create-app-fields.png
    :width: 300pt
    :alt: Create applictaion (fields)
    :align: center 
@@ -49,7 +49,7 @@ Clicking the [**Save**] button will then attempt to make a new Application with 
 
 Upon success, you will be shown two values: your Client ID and Client Secret. Ensure that you save your Client Secret somewhere secure, as you will not be able to see it again after leaving this page.
 
-.. image:: /images/managementapp/client-id-secret.png
+.. image:: ../images/managementapp/client-id-secret.png
    :width: 300pt
    :alt: Client ID and client secret
    :align: center 
@@ -62,7 +62,7 @@ Editing an Application
 
 When you click on or create an Application, you will be taken to a view with multiple tabs. Each tab contains information that you can fill out to help define and customize your Application.
 
-.. image:: /images/managementapp/edit-app.png
+.. image:: ../images/managementapp/edit-app.png
    :width: 300pt
    :alt: Edit Applications
    :align: center 
@@ -83,7 +83,7 @@ On this page, you are able to change the name of the Application, set a homepage
     
     This is done to ensure that data cannot be cross-referenced and compiled to form a single profile on an individual.
 
-.. image:: /images/managementapp/app-general-tab.png
+.. image:: ../images/managementapp/app-general-tab.png
    :width: 300pt
    :alt: Applications general tab
    :align: center  
@@ -100,7 +100,7 @@ To link a Service Card, click the [**Edit**] button, then the [**+ Add Service C
 
 If you have the permissions to do so, clicking the blue icon on a Service Card will take you to that Service Card’s page.
 
-.. image:: /images/managementapp/app-service-cards-tab.png
+.. image:: ../images/managementapp/app-service-cards-tab.png
    :width: 300pt
    :alt: Application service cards tab
    :align: center 
@@ -117,7 +117,7 @@ Application Policy Tab
 Applications, like both Organizations and Service Cards, are Policy holders. Policies applied to an Application apply to all Service Cards that belong to the Application.
 A Policy can be chosen by navigating to the Policies tab and clicking the [**Edit**] button.
 
-.. image:: /images/managementapp/app-policy-tab.png
+.. image:: ../images/managementapp/app-policy-tab.png
    :width: 300pt
    :alt: Application policy tab
    :align: center 
@@ -133,7 +133,7 @@ Some services require more advanced authentication that is provided by the host 
 
 To add a SAML configuration for your Application, click the [**Edit**] and then the [**+ Add Config**] buttons. From here, you may upload the valid SAML metadata needed to authenticate with the downstream services.
 
-.. image:: /images/managementapp/app-provider-config-tab.png
+.. image:: ../images/managementapp/app-provider-config-tab.png
    :width: 300pt
    :alt: Application provider Configuration tab
    :align: center 

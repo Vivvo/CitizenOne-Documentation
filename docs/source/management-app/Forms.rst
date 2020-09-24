@@ -15,7 +15,7 @@ The initial Form Builder page displays a list of all of the Forms that have been
 
 On this page, you are able to click on a Form in the list for a more detailed view or create a new Form.
 
-.. image:: /images/managementapp/view-forms.png
+.. image:: ../images/managementapp/view-forms.png
    :width: 300pt
    :alt: View all forms
    :align: center 
@@ -26,7 +26,7 @@ Creating Forms
 
 When a new form needs to be created, click the [**+ Create Form**] button.
 
-.. image:: /images/managementapp/create-form.png
+.. image:: ../images/managementapp/create-form.png
    :width: 300pt
    :alt: Create form
    :align: center 
@@ -49,49 +49,49 @@ A control/field is how a user will enter information on the form. You can choose
 **Form Structure** | Step | Formatted Text
 
 
-.. image:: /images/managementapp/form-structure-control.png
+.. image:: ../images/managementapp/form-structure-control.png
    :width: 200pt
    :alt: Form structure controls
    :align: center 
 
 **Text Controls** | Input | Multi Line Input | Password
 
-.. image:: /images/managementapp/text-control.png
+.. image:: ../images/managementapp/text-control.png
    :width: 200pt
    :alt: Text controls on forms
    :align: center 
 
 **Typed Controls** | Number | Email Address | Phone Number
 
-.. image:: /images/managementapp/typed-control.png
+.. image:: ../images/managementapp/typed-control.png
    :width: 200pt
    :alt: Typed controls on forms
    :align: center 
 
 **Date and Time Controls** | Date | Type | Date and Time
 
-.. image:: /images/managementapp/date-time-control.png
+.. image:: ../images/managementapp/date-time-control.png
    :width: 200pt
    :alt: Date and time controls on forms
    :align: center 
 
 **Selection Controls** | Dropdown | Radio Buttons | Checkboxes | Yes/No Question
 
-.. image:: /images/managementapp/selection-control.png
+.. image:: ../images/managementapp/selection-control.png
    :width: 200pt
    :alt: Selection controls on forms
    :align: center 
 
 **Buttons** | Button | Link
 
-.. image:: /images/managementapp/button-control.png
+.. image:: ../images/managementapp/button-control.png
    :width: 200pt
    :alt: Button control on forms
    :align: center 
 
 **Speciality** | QR Code | Hidden Field
 
-.. image:: /images/managementapp/specialty-control.png
+.. image:: ../images/managementapp/specialty-control.png
    :width: 200pt
    :alt: Specialty control on forms
    :align: center 
@@ -100,7 +100,7 @@ You can add controls to the forms when doing the following:
 
 1.	Creating a step: Forms in the Vivvo Trust Platform can be multi-step forms i.e. each Step control relates to a step in a form.
     
-    .. image:: /images/managementapp/create-step.png
+    .. image:: ../images/managementapp/create-step.png
             :width: 300pt
             :alt: Create step control on form
             :align: center 
@@ -108,21 +108,21 @@ You can add controls to the forms when doing the following:
 2.	Adding Fields to the step:
     •	First, select a control on a left side panel
 
-        .. image:: /images/managementapp/select-control.png
+        .. image:: ../images/managementapp/select-control.png
             :width: 200pt
             :alt: Select form control
             :align: center 
 
     •	Then, edit the chosen control
         
-        .. image:: /images/managementapp/edit-form-control.png
+        .. image:: ../images/managementapp/edit-form-control.png
             :width: 300pt
             :alt: Edit form control
             :align: center 
 
     Based on the chosen field, the attributes can also be edited.
     
-    .. image:: /images/managementapp/form-attribute.png
+    .. image:: ../images/managementapp/form-attribute.png
             :width: 300pt
             :alt: Edit form attributes
             :align: center 
@@ -135,7 +135,7 @@ Deleting Forms
 
 Check the box beside the form you want to delete and click the garbage icon at the top checkbox column in the table.
  
-.. image:: /images/managementapp/delete-form.png
+.. image:: ../images/managementapp/delete-form.png
             :width: 300pt
             :alt: Delete forms
             :align: center 

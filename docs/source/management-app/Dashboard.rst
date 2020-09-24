@@ -4,7 +4,7 @@ Dashboard
 
 After logging in, you’ll land on the dashboard with the available features of the management app on the left vertical sidebar menu. 
 
-.. image:: images/Dashboard/Dashboard.png
+.. image:: ../images/managementapp/Dashboard.png
    :width: 100pt
    :alt: Dashboard sidebar
    :align: center 
@@ -17,7 +17,7 @@ There may be four metrics shown on the Dashboard (depending on the specific orga
 Identities tab
 ****************
 
-.. image:: images/Dashboard/Identities_tab.png
+.. image:: ../images/managementapp/Identities_tab.png
    :width: 400pt
    :alt: Identities tab
    :align: center 
@@ -28,7 +28,7 @@ The Identities page shows the number of identities created on that instance of t
 Applications tab
 ********************
 
-.. image:: images/Dashboard/Applications_tab.png
+.. image:: ../images/managementapp/Applications_tab.png
    :width: 400pt
    :alt: Applications tab
    :align: center 
@@ -39,7 +39,7 @@ The Applications page shows the number of applications created on that instance 
 Organizations tab
 *********************
 
-.. image:: images/Dashboard/Organizations_tab.png
+.. image:: ../images/managementapp/Organizations_tab.png
    :width: 400pt
    :alt: Organizations tab dashboard
    :align: center 
@@ -50,7 +50,7 @@ The Organizations page shows the number of organizations created on that instanc
 Businesses tab
 ****************
 
-.. image:: images/Dashboard/Businesses_tab.png
+.. image:: ../images/managementapp/Businesses_tab.png
    :width: 400pt
    :alt: Businesses tab dashboard
    :align: center 

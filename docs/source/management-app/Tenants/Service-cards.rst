@@ -19,7 +19,7 @@ On this page, you are able to filter the displayed list of Service Cards by thei
 .. note::
     Users that have been granted only the “READ Service Cards” role will not be able to create new Service Cards or modify existing ones.
 
-.. image:: /images/managementapp/view-all-service-cards.png
+.. image:: ../images/managementapp/view-all-service-cards.png
    :width: 300pt
    :alt: View all service cards
    :align: center 
@@ -30,7 +30,7 @@ Creating Service Cards
 
 When you’ve determined that a new Service Card is needed, you can click the [**+ Create**] button in the top right of the Service Card listing page.
 
-.. image:: /images/managementapp/create-service-card.png
+.. image:: ../images/managementapp/create-service-card.png
    :width: 300pt
    :alt: Create s service card
    :align: center 
@@ -64,7 +64,7 @@ The general fields for the details of a Service Card are:
 3.	**Description**: An optional description that appears on the service card
 4.	**Pilot**: If set, Pilot Mode will remove the service card from the service catalog, but remain available through direct access
 
-.. image:: /images/managementapp/service-card-details.png
+.. image:: ../images/managementapp/service-card-details.png
    :width: 300pt
    :alt: Service card details
    :align: center 
@@ -83,7 +83,7 @@ The steps below describe how to add static Tasks.
 Adding a Service Card Task
 ---------------------------
 
-.. image:: /images/managementapp/service-card-tasks.png
+.. image:: ../images/managementapp/service-card-tasks.png
    :width: 300pt
    :alt: Service card tasks
    :align: center 
@@ -101,7 +101,7 @@ Reordering Service Card Tasks
 
 The Service Card Tasks can be reordered by dragging the Task.
 
-.. image:: /images/managementapp/reorder-service-card-tasks.png
+.. image:: ../images/managementapp/reorder-service-card-tasks.png
    :width: 300pt
    :alt: Reorder service card tasks
    :align: center 
@@ -112,7 +112,7 @@ Removing Service Card Tasks
 
 You can remove a Service Card Task by clicking the red [**X**] button on the top right corner.
 
- .. image:: /images/managementapp/remove-service-card-task.png
+ .. image:: ../images/managementapp/remove-service-card-task.png
    :width: 300pt
    :alt: Remove service card task
    :align: center 
@@ -129,7 +129,7 @@ A Service Card will inherit the Policy(ies) set at the Application, Organization
 
 If a Policy should be set for the specific Service Card, select one from the drop-down.
 
-.. image:: /images/managementapp/service-card-policy.png
+.. image:: ../images/managementapp/service-card-policy.png
    :width: 300pt
    :alt: Service card policy
    :align: center 
@@ -144,7 +144,7 @@ Service Card Review
 
 The Service Card Review tab will show all Service Card information including basic Details, Pilot Mode, Tasks and the Policy. If any information needs to be changed, click the [**Back**] button to go to previous tabs and correct the information.
 
-.. image:: /images/managementapp/service-card-review.png
+.. image:: ../images/managementapp/service-card-review.png
    :width: 300pt
    :alt: Service card review
    :align: center 
@@ -174,7 +174,7 @@ Linking Forms to Service Cards
 
 The Service Card Form tab allows you to link a Form to a Service Card causing the Form to appear as a Task on the Service Card.
 
-.. image:: /images/managementapp/link-form-service-card.png
+.. image:: ../images/managementapp/link-form-service-card.png
    :width: 300pt
    :alt: Link forms to service cards
    :align: center 
@@ -194,7 +194,7 @@ Service Card Contacts
 
 The Service Card Contacts tab allows you to add relevant contact information about the Service Card.
 
-.. image:: /images/managementapp/service-card-contacts.png
+.. image:: ../images/managementapp/service-card-contacts.png
    :width: 300pt
    :alt: Service-card-contacts
    :align: center 
@@ -203,7 +203,7 @@ Clicking [**Edit**] will enable the fields in the view for change. You can speci
 
 The contact information entered will be shown on the back of the service card.
  
-.. image:: /images/managementapp/back-service-card.png
+.. image:: ../images/managementapp/back-service-card.png
    :width: 300pt
    :alt: Back of service card
    :align: center 
@@ -214,7 +214,7 @@ Linking Service Cards to Applications
 
 The Service Card Contacts tab allows you to view which Application(s) are attached to a Service Card.
  
-.. image:: /images/managementapp/link-service-card-app.png
+.. image:: ../images/managementapp/link-service-card-app.png
    :width: 300pt
    :alt: Link service card to application
    :align: center 

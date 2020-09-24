@@ -13,14 +13,14 @@ The app has a lot of features which may differ from one organization’s instanc
 Logging in to the Management App
 ********************************
 
-.. image:: /images/login_to_management_app.png
+.. image:: ../images/login_to_management_app.png
    :width: 400pt
    :alt: Login to the management app
    :align: center 
 
 A registered user can login to the management app after activating the account. The user can login using the username entered during registration or use any verified email address added to the user’s account. After supplying a username or verified email address along with the correct password, the user logs in by clicking the [**Sign In**] button.
 
-.. image:: /images/Profile_button.png
+.. image:: ../images/Profile_button.png
    :width: 150pt
    :alt: Profile button on header
    :align: center 
@@ -34,7 +34,7 @@ The user can also navigate using the profile button located in the header of the
 
 There are also 5 links on the footer of the Dashboard:
 
-.. image:: /images/Footer.png
+.. image:: ../images/Footer.png
    :width: 300pt
    :alt: Footer
    :align: center 
