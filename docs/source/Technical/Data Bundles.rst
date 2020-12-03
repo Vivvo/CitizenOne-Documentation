@@ -17,7 +17,7 @@ If an Identity updates their bank data in App A, it can send a banking
 data bundle to CitizenOne where the bundle is then sent to any applications
 that the Identity has given consent to watch their banking data.
 
-If App B has a policy that also wants baking data, and the Identity has
+If App B has a policy that also wants banking data, and the Identity has
 consented, the bundle will be encrypted using a public key attached to
 the policy on App B, where the private key is also owned by App B.
 When they receive it, they will then be able to decrypt the Bundle's `key`, and

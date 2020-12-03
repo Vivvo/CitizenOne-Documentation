@@ -31,7 +31,7 @@ If the information entered by the administrator matches a profile, the citizenâ€
 
 Edit citizen details is able to reset password of the citizen, a TOTP (Time-based One Time Password) available within 10 minutes will be created for the citizen, 
 the citizen has to use the TOTP to login and reset password in 10 minutes. 
-The TOTP is only able to be created by admin to support end users when email of end users is unavailable, otherwise Forget Password should be uesed by end users to reset their password  by themself.
+The TOTP is only able to be created by admin to support end users when email of end users is unavailable, otherwise Forget Password should be used by end users to reset their password  by themself.
 
 1. Clicking the [**Edit**] button 
 
