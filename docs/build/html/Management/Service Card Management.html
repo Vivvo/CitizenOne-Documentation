@@ -1,0 +1,410 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Service Card Management &mdash; CitizenOne 0.0.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Rule Management" href="Rule%20Management.html" />
+    <link rel="prev" title="Application Management" href="Application%20Management.html" />
+    <link href="../_static/style.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> CitizenOne
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">The CitizenOne Platform</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Tenants.html">Tenants</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Organizations.html">Organizations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Applications.html">Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Service%20Cards.html">Service Cards</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Rules.html">Rules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Providers.html">Trust Providers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Policies.html">Policies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Email%20Templates.html">Email Templates</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Eeze</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Eeze.html">Accessing CitizenOne Service Cards</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Managing CitizenOne</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="CitizenOne%20Support.html">CitizenOne Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Creating%20Service%20Cards.html">Creating a Service Card</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Organization%20Management.html">Organization Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Application%20Management.html">Application Management</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Service Card Management</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#viewing-all-service-cards">Viewing All Service Cards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#creating-service-cards">Creating Service Cards</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#service-card-details">Service Card Details</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#service-card-tasks">Service Card Tasks</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#adding-a-service-card-task">Adding a Service Card Task</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#reordering-service-card-tasks">Reordering Service Card Tasks</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#removing-service-card-tasks">Removing Service Card Tasks</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#service-card-policy">Service Card Policy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#service-card-review">Service Card Review</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#viewing-and-editing-a-service-card">Viewing and Editing a Service Card</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#linking-forms-to-service-cards">Linking Forms to Service Cards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#service-card-contacts">Service Card Contacts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#linking-service-cards-to-applications">Linking Service Cards to Applications</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Rule%20Management.html">Rule Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Provider%20Management.html">Trust Provider Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Policy%20Management.html">Policy Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Platform%20Configuration.html">Platform Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Layouts.html">Layout Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Form%20Builder/Form%20Management.html">Form Management</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Technical Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Technical/Authentication.html">Authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Technical/Authentication.html#multi-factor-authentication">Multi-factor Authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Technical/Data%20Bundles.html">Data Bundles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Technical/DynamicIdentityProviders.html">Dynamic Identity Providers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Technical/Feature%20Toggles.html">Feature Toggles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Technical/Federation.html">Federation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Technical/MFA%20Rule%20Evaluation.html">MFA Rule Evaluation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Technical/OpenID%20Connect.html">OpenID Connect (OIDC)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Technical/PolicyHierarchy.html">Policy Hierarchy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Technical/SAML.html">SAML</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Technical/Splunk%20Service.html">Splunk Service</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Templates/index.html">Vivvo Templates Documentation</a></li>
+</ul>
+<p class="caption"><span class="caption-text">General Information</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Contact.html">Contact</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">CitizenOne</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Service Card Management</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/Management/Service Card Management.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="service-card-management">
+<span id="id1"></span><h1>Service Card Management<a class="headerlink" href="#service-card-management" title="Permalink to this headline">¶</a></h1>
+<p>Service Cards are the way in which citizens access digital services through CitizenOne.</p>
+<p>The CitizenOne Management application allows you to manage the services being offered by configuring service cards.</p>
+<p>The list of all available Service Cards can be accessed by clicking [<strong>Service Cards</strong>] under the
+[<strong>Tenants</strong>] tab of the sidebar.</p>
+<a class="reference internal image-reference" href="../_images/sidebar5.png"><img alt="Sidebar with the Organizations tab selected" class="align-center" src="../_images/sidebar5.png" style="width: 100pt;" /></a>
+<div class="section" id="viewing-all-service-cards">
+<span id="viewing-service-cards"></span><h2>Viewing All Service Cards<a class="headerlink" href="#viewing-all-service-cards" title="Permalink to this headline">¶</a></h2>
+<p>The initial Service Cards page displays a list of all Service Cards
+that have been created for your instance of CitizenOne. They appear as cards to show how they will appear on a citizen’s dashboard page.</p>
+<p>From this page, you are able to filter the displayed list of Service Cards by their name,
+click on a Service Card in the list for a more detailed view, or create a new Service Card.</p>
+<p>If you have only been granted “READ” access to Service Cards, you will not be able to create new Service Cards,
+nor will you be able to modify existing Service Cards.</p>
+<a class="reference internal image-reference" href="../_images/servicecard-view.png"><img alt="List of Service Cards in CitizenOne" class="align-center" src="../_images/servicecard-view.png" style="width: 500pt;" /></a>
+</div>
+<div class="section" id="creating-service-cards">
+<span id="id2"></span><h2>Creating Service Cards<a class="headerlink" href="#creating-service-cards" title="Permalink to this headline">¶</a></h2>
+<p>When you’ve determined that a new Service Card is needed, you can click the [<strong>+ Create</strong>] button
+in the top right of the Service Card listing page.</p>
+<a class="reference internal image-reference" href="../_images/servicecard-create-button.png"><img alt="Creating a new Service Card" class="align-center" src="../_images/servicecard-create-button.png" style="width: 500pt;" /></a>
+<div class="line-block">
+<div class="line">The tabs for a new Service Card are:</div>
+<div class="line"><strong>Details</strong>: The basic information of the Service Card</div>
+<div class="line"><strong>Tasks</strong>: The tasks the citizen can complete for the Service Card</div>
+<div class="line"><strong>Policy</strong>: The policy of the Service Card</div>
+<div class="line"><strong>Review</strong>: Reviewing all Service Card information before creating</div>
+</div>
+<div class="section" id="service-card-details">
+<span id="id3"></span><h3>Service Card Details<a class="headerlink" href="#service-card-details" title="Permalink to this headline">¶</a></h3>
+<p>The general fields for the details of a Service Card are:</p>
+<ol class="arabic simple">
+<li><p><strong>Title</strong>: The title of the service card</p></li>
+<li><p><strong>Service Card Type</strong>: The type of Service Card, typically Personal or Business, that determines if the Service Card is accessible by citizens or businesses</p></li>
+<li><p><strong>Description</strong>: An optional description that appears on the service card</p></li>
+<li><p><strong>Pilot</strong>: If set, Pilot Mode will remove the service card from the service catalog, but remain available through direct access</p></li>
+</ol>
+<a class="reference internal image-reference" href="../_images/servicecard-create-details.png"><img alt="Viewing general information about a Service Card" class="align-center" src="../_images/servicecard-create-details.png" style="width: 500pt;" /></a>
+<p>Clicking [<strong>Next</strong>] will take you to the Tasks tab.</p>
+</div>
+<div class="section" id="service-card-tasks">
+<h3>Service Card Tasks<a class="headerlink" href="#service-card-tasks" title="Permalink to this headline">¶</a></h3>
+<p>Tasks can be added to Service Cards in two ways. The first way is to add static Tasks that are always displayed and accessible to all users.
+The second way is through dynamic Tasks set on a Policy. This is defined by specifying an API endpoint that CitizenOne will use to call out to the application and retrieve a set of Tasks specific to the user accessing the Service Card.</p>
+<p>Below describes how to add static Tasks.</p>
+<div class="section" id="adding-a-service-card-task">
+<span id="service-card-add-task"></span><h4>Adding a Service Card Task<a class="headerlink" href="#adding-a-service-card-task" title="Permalink to this headline">¶</a></h4>
+<a class="reference internal image-reference" href="../_images/servicecard-create-tasks.png"><img alt="Creating a new Task for a Service Card" class="align-center" src="../_images/servicecard-create-tasks.png" style="width: 500pt;" /></a>
+<p>The general fields for a Task are:</p>
+<ol class="arabic simple">
+<li><p><strong>Title</strong>: The title of the Service Card Task</p></li>
+<li><p><strong>Description</strong>: An optional description that appears below the Task Title</p></li>
+<li><p><strong>Callout URL</strong>: The navigation link to send the user for this Task</p></li>
+<li><p><strong>Style</strong>: The service card background color, ‘Primary’, ‘Second’, ‘Danger’, ‘Warning’ and ‘info’</p></li>
+</ol>
+</div>
+<div class="section" id="reordering-service-card-tasks">
+<span id="service-card-reorder-tasks"></span><h4>Reordering Service Card Tasks<a class="headerlink" href="#reordering-service-card-tasks" title="Permalink to this headline">¶</a></h4>
+<p>The Service Card Tasks are able to be reordered through draging the Task.</p>
+<a class="reference internal image-reference" href="../_images/servicecard-tasks-reordering.png"><img alt="Reordering Tasks for a Service Card" class="align-center" src="../_images/servicecard-tasks-reordering.png" style="width: 500pt;" /></a>
+</div>
+<div class="section" id="removing-service-card-tasks">
+<span id="service-card-removing-tasks"></span><h4>Removing Service Card Tasks<a class="headerlink" href="#removing-service-card-tasks" title="Permalink to this headline">¶</a></h4>
+<p>You can remove a Service Card Task by clicking the red [<strong>X</strong>] button on right top corner.</p>
+<a class="reference internal image-reference" href="../_images/servicecard-tasks-remove.png"><img alt="Removing Tasks on a Service Card" class="align-center" src="../_images/servicecard-tasks-remove.png" style="width: 500pt;" /></a>
+<p>Clicking [<strong>Back</strong>] will take you back to the Details tab.</p>
+<p>Clicking [<strong>Next</strong>] will take you to the Policy tab.</p>
+</div>
+</div>
+<div class="section" id="service-card-policy">
+<span id="id4"></span><h3>Service Card Policy<a class="headerlink" href="#service-card-policy" title="Permalink to this headline">¶</a></h3>
+<p>A Service Card will inherit the Policy(ies) set at the Application, Organization and Tenant level associated with the Service Card, if they exist. Optionally, you can also set a Policy at the Service Card level.</p>
+<p>If a Policy should be set for the specific Service Card, select one from the drop-down.</p>
+<a class="reference internal image-reference" href="../_images/servicecard-create-policy.png"><img alt="Setting a Policy on a Service Card" class="align-center" src="../_images/servicecard-create-policy.png" style="width: 500pt;" /></a>
+<p>Clicking [<strong>Back</strong>] will take you back to the Tasks tab.</p>
+<p>Clicking [<strong>Next</strong>] will take you to the Review tab.</p>
+</div>
+<div class="section" id="service-card-review">
+<span id="id5"></span><h3>Service Card Review<a class="headerlink" href="#service-card-review" title="Permalink to this headline">¶</a></h3>
+<p>The Service Card Review tab will show all Service Card information including basic Details, Pilot Mode, Tasks and the Policy, if any information needs to be changed, click the [<strong>Back</strong>] button to go to previous tabs and correct the information.</p>
+<a class="reference internal image-reference" href="../_images/servicecard-create-review.png"><img alt="Reviewing the new Service Card" class="align-center" src="../_images/servicecard-create-review.png" style="width: 500pt;" /></a>
+<p>Clicking [<strong>Back</strong>] will take you back to the Policy tab.</p>
+<p>Clicking [<strong>Confirm</strong>] will create the Service Card, and you will be taken to the new Service Card’s details page.</p>
+</div>
+</div>
+<div class="section" id="viewing-and-editing-a-service-card">
+<span id="viewing-editing-service-card"></span><h2>Viewing and Editing a Service Card<a class="headerlink" href="#viewing-and-editing-a-service-card" title="Permalink to this headline">¶</a></h2>
+<p>When you click on or create a Service Card, you will be taken to a view with multiple tabs.
+Each tab contains information that you can fill out to help define and customize the Service Card.</p>
+<p>The Details, Tasks and Policy tasks show the relevant Service Card information and can be edited in a similar way described in the <a class="reference internal" href="#creating-service-cards"><span class="std std-ref">Created Service Cards</span></a> section of this page.</p>
+<div class="line-block">
+<div class="line">Additional tabs that can be accessed that provide further customization of a Service Card. These are:</div>
+<div class="line"><strong>Forms</strong>: Link a Form to be accessed through a Task on the Service Card</div>
+<div class="line"><strong>Contacts</strong>: Contact Information for the Service Card</div>
+<div class="line"><strong>Applications</strong>: Application(s) associated with the Service Card</div>
+</div>
+</div>
+<div class="section" id="linking-forms-to-service-cards">
+<span id="service-card-linking-forms"></span><h2>Linking Forms to Service Cards<a class="headerlink" href="#linking-forms-to-service-cards" title="Permalink to this headline">¶</a></h2>
+<p>The Service Card Form tab allows you to link a Form to a Service Card causing the Form to appear as a Task on the Service Card.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/service-card-form-management.png"><img alt="Setting a form on a Service Card" class="align-center" src="../_images/service-card-form-management.png" style="width: 500pt;" /></a>
+</div></blockquote>
+<p>Clicking [<strong>Edit</strong>] will enable the fields in the view for change. You can specify information for one or more contacts using the fields shown. Ensure your changes are saved before navigating away from the page.</p>
+<p>In order to link a Form to a service card you need to:</p>
+<ol class="arabic simple">
+<li><p>Make sure the service card is <a class="reference internal" href="Application%20Management.html#application-service-cards"><span class="std std-ref">Connected to an Application</span></a></p></li>
+<li><p>Make sure that the service card <a class="reference internal" href="Application%20Management.html#application-policy"><span class="std std-ref">Application has a Policy</span></a></p></li>
+<li><p><a class="reference internal" href="../Form%20Builder/Form%20Management.html#creating-forms"><span class="std std-ref">Create a form</span></a> in the same Organization and Application that is linked to the Service Card</p></li>
+<li><p>Navigate to the Form tab for your Service Card and select the Form from the list</p></li>
+</ol>
+</div>
+<div class="section" id="service-card-contacts">
+<span id="id6"></span><h2>Service Card Contacts<a class="headerlink" href="#service-card-contacts" title="Permalink to this headline">¶</a></h2>
+<p>The Service Card Contacts tab allows you to add relevant contact information about the Service Card.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/contact-information.png"><img alt="Contact Information for the Service Card" class="align-center" src="../_images/contact-information.png" style="width: 500pt;" /></a>
+</div></blockquote>
+<p>Clicking [<strong>Edit</strong>] will enable the fields in the view for change. You can specify information for one or more contacts using the fields shown. Ensure your changes are saved before navigating away from the page.</p>
+<p>The contact information entered will be shown on the back of the service card.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/service-card-contacts.png"><img alt="Service Card contact information" class="align-center" src="../_images/service-card-contacts.png" style="width: 500pt;" /></a>
+</div></blockquote>
+</div>
+<div class="section" id="linking-service-cards-to-applications">
+<span id="service-card-linking-applications"></span><h2>Linking Service Cards to Applications<a class="headerlink" href="#linking-service-cards-to-applications" title="Permalink to this headline">¶</a></h2>
+<p>The Service Card Contacts tab allows you to view which Application(s) are attached to a Service Card.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../_images/applications.png"><img alt="Linking a Service Card to an Application" class="align-center" src="../_images/applications.png" style="width: 500pt;" /></a>
+</div></blockquote>
+<p>You cannot link or unlink Applications from Service Cards on this page. However, clicking the <strong>click here</strong> link will take you to the Applications page where you can add or remove Service Cards to/from Applications.
+For more details see the <a class="reference internal" href="Application%20Management.html#application-service-cards"><span class="std std-ref">Application Service Cards Tab</span></a>.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Rule%20Management.html" class="btn btn-neutral float-right" title="Rule Management" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Application%20Management.html" class="btn btn-neutral float-left" title="Application Management" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2021, Vivvo
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

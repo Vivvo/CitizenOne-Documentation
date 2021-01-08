@@ -1,0 +1,243 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Template Structure &#8212; Templates 0.1 documentation</title>
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/nature.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/graphviz.css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Tools to Manage Templates" href="tools.html" />
+    <link rel="prev" title="Using the Tempate System" href="using-the-templates.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="tools.html" title="Tools to Manage Templates"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="using-the-templates.html" title="Using the Tempate System"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Templates 0.1 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Template Structure</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="template-structure">
+<h1>Template Structure<a class="headerlink" href="#template-structure" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="assets">
+<h2>Assets<a class="headerlink" href="#assets" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>icons - we used font awesome ([learn more here](<a class="reference external" href="https://fontawesome.com/how-to-use/on-the-web/referencing-icons/basic-use">https://fontawesome.com/how-to-use/on-the-web/referencing-icons/basic-use</a>)), free icon library, but we did’t find all needed icons there as such we have added missing icons to this folder as .svg</p></li>
+<li><p>images - all images used in a project are contained here (logo etc.)</p></li>
+<li><p>Sass - all SCSS styles are here</p></li>
+</ul>
+</div>
+<div class="section" id="pages">
+<h2>Pages<a class="headerlink" href="#pages" title="Permalink to this headline">¶</a></h2>
+<p>This folder contains main pages:
+* <cite>index</cite> login
+* <cite>create-account</cite> registration
+* <cite>reset-password</cite> forgot password
+* <cite>reset-password-confirmation</cite>
+* <cite>dashboard</cite> (my services)
+* <cite>service-add</cite> (search and link services)
+* <cite>service-linker</cite> (steps for linking the service)
+* <cite>service-onboard</cite> (service onboarding)
+* <cite>service-card-back</cite> (service card page for the linked service)
+* <cite>profile</cite></p>
+</div>
+<div class="section" id="includes">
+<h2>Includes<a class="headerlink" href="#includes" title="Permalink to this headline">¶</a></h2>
+<p>Includes are small html components that we’re importing to the pages. For example <cite>header</cite> is one of them,
+it makes the code easier to maintain. Include is imported to the page, and when we want to make some changes,
+we can just modify an include and the change will be visible on any page where the include is imported</p>
+<p>Each page has a js function that loads all needed includes to the page:</p>
+<div class="highlight-javascript notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#dashboard-navigation&quot;</span><span class="p">).</span><span class="nx">load</span><span class="p">(</span><span class="s2">&quot;../includes/dashboard-navigation.html&quot;</span><span class="p">);</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;.serviceCard&quot;</span><span class="p">).</span><span class="nx">load</span><span class="p">(</span><span class="s2">&quot;../includes/service-card.html&quot;</span><span class="p">);</span>
+  <span class="p">});</span>
+</pre></div>
+</td></tr></table></div>
+<p>and <cite>&lt;div&gt;</cite> element inside <cite>html</cite>, id will match includes name:</p>
+<div class="highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span> <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;dashboard-navigation&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="section" id="scss">
+<h2>SCSS<a class="headerlink" href="#scss" title="Permalink to this headline">¶</a></h2>
+<p>Each page and include has its SCSS, so it makes it easy to maintain. SCSS files name match the HTML name:  <cite>invoices.html = invoices.scss</cite>.
+You’ll also see a few files that are not matching any HTML file:
+* <cite>index.scss</cite> - this file is used to compile correct SCSS files, if you create a new SCSS you need to import, the stylesheet here, <a class="reference external" href="mailto:as`&#37;&#52;&#48;import">as`<span>&#64;</span>import</a> “invoices”;` (use the name, .scss extension is not needed)
+* <cite>variables.scss</cite> sass allows to use variables:  ex <cite>$body-color: #20354E;</cite> - defines body text color, if we change it</p>
+<dl class="simple">
+<dt>it will update the colour in each place that was used</dt><dd><ul class="simple">
+<li><p><cite>$body-color</cite> - body text color</p></li>
+<li><p><cite>$heading-color</cite> - heading color</p></li>
+<li><p><cite>$theme-primary</cite> - used for primary color (background in a primary button, border in a secondary button)</p></li>
+<li><p><cite>$theme-red</cite> - error messages background</p></li>
+<li><p><cite>$theme-green</cite> - success messages</p></li>
+<li><p><cite>$theme-primary-dark</cite> - hover state for buttons</p></li>
+<li><p><cite>$theme-primary-grey</cite> - disabled elements</p></li>
+<li><p><cite>$theme-background</cite> - background color</p></li>
+<li><p><cite>$theme-light-grey</cite> - used as a background for some elements (ex. Create Account &gt; Terms of Use)</p></li>
+<li><p><cite>$theme-light-grey</cite> - used for borders</p></li>
+</ul>
+</dd>
+</dl>
+<ul class="simple">
+<li><p>we used the bootstrap (free and open-source CSS framework - [read more](<a class="reference external" href="https://getbootstrap.com/docs/4.0/getting-started/introduction/">https://getbootstrap.com/docs/4.0/getting-started/introduction/</a>)), but we overwrite bootstrap styles, and the changes are in a <cite>global.scss</cite></p></li>
+<li><p>practical custom styles (that are NOT bootstrap overwrites) are defined in  <cite>helpers.html</cite> (e.g. layout stylings for pages, forms…)</p></li>
+<li><p>long and/or complex stylings of components should have their own stylesheet such as tables <cite>tables.scss</cite> or modals…</p></li>
+</ul>
+<dl>
+<dt>SCSS files are organized from top to the bottom, the best practice, to make any changes, is to find the right spot in a document, for example</dt><dd><p><cite>service-card.scss</cite> structure : .service-card; .card-title; .card-notification; .card-body;</p>
+<p>We followed a few rules in SCSS, they make the code easier to read and to maintain. They’re best practices, but they’re not breaking the code.</p>
+</dd>
+</dl>
+<div class="highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11</pre></div></td><td class="code"><div class="highlight"><pre><span></span>.card-title {
+     display: flex; (flexbox)
+     align-items: baseline; (flexbox)
+     justify-content: space-between; (flexbox)
+     width: 12em; (width)
+     height: 12em; (height)
+     margin-bottom: 0.5em; (margin)
+     padding: 0; (padding)
+     background: transparent; (other)
+     border: none; (other)
+ }
+</pre></div>
+</td></tr></table></div>
+<p>Not all declarations will always  be present, but the main rule is to keep flexbox declarations
+at the top (flex, width, height, margin, padding), and another styling lower in a block.</p>
+</div>
+<div class="section" id="webpack">
+<h2>Webpack<a class="headerlink" href="#webpack" title="Permalink to this headline">¶</a></h2>
+<p>he code needs to be watched by Webpack, a new page must be added to the webpack.config.js, there is no need to add includes to the Webpack, when you open Webpack you’ll see that each page is added there. You can copy the piece of code below, replace test with the name of the new HTML page and paste it to the webpack.config.js (currently line 102)</p>
+<div class="highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span>new HtmlWebPackPlugin({
+   template: &#39;./pages/test.html&#39;,
+   filename: &#39;./test.html&#39;,
+ }),
+</pre></div>
+</td></tr></table></div>
+<p>webpack will be watching created file.</p>
+<div class="section" id="git-ignore">
+<h3>Git-ignore<a class="headerlink" href="#git-ignore" title="Permalink to this headline">¶</a></h3>
+<p>In the project root there is a hidden file called <strong>.git-ignore</strong>, in this file are a list of files that will not be committed back to the source code repo when done.</p>
+<div class="highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span>dist
+node_modules
+.idea
+yarn.lock
+</pre></div>
+</td></tr></table></div>
+</div>
+</div>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Template Structure</a><ul>
+<li><a class="reference internal" href="#assets">Assets</a></li>
+<li><a class="reference internal" href="#pages">Pages</a></li>
+<li><a class="reference internal" href="#includes">Includes</a></li>
+<li><a class="reference internal" href="#scss">SCSS</a></li>
+<li><a class="reference internal" href="#webpack">Webpack</a><ul>
+<li><a class="reference internal" href="#git-ignore">Git-ignore</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="using-the-templates.html"
+                        title="previous chapter">Using the Tempate System</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="tools.html"
+                        title="next chapter">Tools to Manage Templates</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/project_structure.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="tools.html" title="Tools to Manage Templates"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="using-the-templates.html" title="Using the Tempate System"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Templates 0.1 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Template Structure</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2021, Vivvo.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.4.0.
+    </div>
+  </body>
+</html>

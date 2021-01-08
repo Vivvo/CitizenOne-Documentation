@@ -1,0 +1,373 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>SAML &mdash; CitizenOne 0.0.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Splunk Service" href="Splunk%20Service.html" />
+    <link rel="prev" title="Policy Hierarchy" href="PolicyHierarchy.html" />
+    <link href="../_static/style.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> CitizenOne
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">The CitizenOne Platform</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Tenants.html">Tenants</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Organizations.html">Organizations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Applications.html">Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Service%20Cards.html">Service Cards</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Rules.html">Rules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Providers.html">Trust Providers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Policies.html">Policies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Email%20Templates.html">Email Templates</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Eeze</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Eeze.html">Accessing CitizenOne Service Cards</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Managing CitizenOne</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Management/CitizenOne%20Support.html">CitizenOne Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Management/Creating%20Service%20Cards.html">Creating a Service Card</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Management/Organization%20Management.html">Organization Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Management/Application%20Management.html">Application Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Management/Service%20Card%20Management.html">Service Card Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Management/Rule%20Management.html">Rule Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Management/Provider%20Management.html">Trust Provider Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Management/Policy%20Management.html">Policy Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Management/Platform%20Configuration.html">Platform Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Management/Layouts.html">Layout Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Form%20Builder/Form%20Management.html">Form Management</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Technical Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Authentication.html">Authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Authentication.html#multi-factor-authentication">Multi-factor Authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Data%20Bundles.html">Data Bundles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DynamicIdentityProviders.html">Dynamic Identity Providers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Feature%20Toggles.html">Feature Toggles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Federation.html">Federation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MFA%20Rule%20Evaluation.html">MFA Rule Evaluation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="OpenID%20Connect.html">OpenID Connect (OIDC)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PolicyHierarchy.html">Policy Hierarchy</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">SAML</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#single-logout-slo">Single Logout (SLO)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#idp-initiated">IdP Initiated</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sp-initiated">SP Initiated</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#reference">Reference</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#identity-assurance-profiles">Identity Assurance Profiles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#saml-attribute-mapping">SAML Attribute Mapping</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#adding-new-attributes">Adding new attributes</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Splunk%20Service.html">Splunk Service</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Templates/index.html">Vivvo Templates Documentation</a></li>
+</ul>
+<p class="caption"><span class="caption-text">General Information</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Contact.html">Contact</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">CitizenOne</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>SAML</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/Technical/SAML.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="saml">
+<h1>SAML<a class="headerlink" href="#saml" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="single-logout-slo">
+<h2>Single Logout (SLO)<a class="headerlink" href="#single-logout-slo" title="Permalink to this headline">¶</a></h2>
+<p>SLO allows your users to sign out of all the applications they signed in to as well as CitizenOne™ at the same time. This is great from a security perspective, but it can be confusing from the user’s perspective and is fragile since it is entirely browser based and it is possible for the user to get stuck on an application that doesn’t handle the SLO request properly.</p>
+<p>SLO can be initiated by the IdP or one of the SPs. The resulting requests to CitizenOne™ and the overall flow change slightly depending which one you use.</p>
+<div class="section" id="idp-initiated">
+<h3>IdP Initiated<a class="headerlink" href="#idp-initiated" title="Permalink to this headline">¶</a></h3>
+<p>You can trigger an IdP initiated logout by redirecting the user’s browser to: <strong>https://{{CITIZEN_ONE_DOMAIN}}/fed/saml2/logout</strong>. You should <strong>not</strong> log the user out of your SP application prior to making this request. This is the flow that gets triggered if the user clicks the logout button in CitizenOne™.</p>
+<p>An IdP Initiated request will tell all SPs with active sessions to logout by redirecting the user’s browser to their SingleLogoutService endpoint with a SAML LogoutRequest and waiting for a SAML LogoutResponse at its SingleLogoutService endpoint. Each SP will be logged out before login the user out of CitizenOne™ and redirecting to the login page.</p>
+<a class="reference internal image-reference" href="../_images/idp-initiated-single-logout.png"><img alt="../_images/idp-initiated-single-logout.png" class="align-left" src="../_images/idp-initiated-single-logout.png" style="width: 500pt;" /></a>
+</div>
+<div class="section" id="sp-initiated">
+<h3>SP Initiated<a class="headerlink" href="#sp-initiated" title="Permalink to this headline">¶</a></h3>
+<p>Your SP can initiate the SLO flow by making a SAML LogoutRequest to CitizenOne™’s SingleLogoutService endpoint: <strong>https://{{CITIZEN_ONE_DOMAIN}}/fed/saml2/idpSingleLogout</strong>. You should <strong>not</strong> log the user out of your SP application prior to making this request.</p>
+<p>An SP Initiated request will tell all SPs with active sessions other than the one that initiated the request to logout by redirecting the user’s browser to their SingleLogoutService endpoint with a SAML LogoutRequest and waiting for a SAML LogoutResponse at its SingleLogoutService endpoint. Once every other SP application is logged out, the IdP will send a SAML LogoutResponse to the SP that initiated the logout flow. At this point it is up to the SP application to decide if it should redirect to a landing page of their own or to the CitizenOne™ login page.</p>
+<a class="reference internal image-reference" href="../_images/sp-initiated-single-logout.png"><img alt="../_images/sp-initiated-single-logout.png" class="align-left" src="../_images/sp-initiated-single-logout.png" style="width: 500pt;" /></a>
+</div>
+<div class="section" id="reference">
+<h3>Reference<a class="headerlink" href="#reference" title="Permalink to this headline">¶</a></h3>
+<dl class="simple">
+<dt>SAML Single Logout</dt><dd><p>See section 3.7 of the <a class="reference external" href="https://docs.oasis-open.org/security/saml/v2.0/saml-core-2.0-os.pdf">SAML Core 2.0 Oasis Standard</a>.</p>
+</dd>
+<dt>LogoutRequest</dt><dd><p>See section 3.7.1 of the <a class="reference external" href="https://docs.oasis-open.org/security/saml/v2.0/saml-core-2.0-os.pdf">SAML Core 2.0 Oasis Standard</a></p>
+</dd>
+<dt>LogoutResponse</dt><dd><p>See section 3.7.2 of the <a class="reference external" href="https://docs.oasis-open.org/security/saml/v2.0/saml-core-2.0-os.pdf">SAML Core 2.0 Oasis Standard</a></p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="section" id="identity-assurance-profiles">
+<h2>Identity Assurance Profiles<a class="headerlink" href="#identity-assurance-profiles" title="Permalink to this headline">¶</a></h2>
+<p>CitizenOne™’s SAML Identity Provider supports an extension for parties using SAML to exchange information regarding identity assurance. First, it provides guidelines for the definition of SAML Authentication Context [SAMLAC] classes corresponding to different assurance criteria – thereby allowing the corresponding URIs for those assurance-based classes to be inserted within authentication requests and responses. Secondly, it defines a SAML attribute profile that may be used to represent the certification status of an issuer of authentication statements (i.e., an Identity Provider) regarding its conformance with the requirements of an identity assurance framework.</p>
+<p>The full extension specification can be found here: <a class="reference external" href="https://docs.oasis-open.org/security/saml/Post2.0/sstc-saml-assurance-profile.html">https://docs.oasis-open.org/security/saml/Post2.0/sstc-saml-assurance-profile.html</a></p>
+<p>CitizenOne™’s SAML Identity Provider places the &lt;saml:Attribute&gt; element in the IdP’s &lt;md:EntityDescriptor&gt; to indicate that the practices of the IdP have been certified as conformant with the requirements of the stated LOA. A party relying on this metadata could use this value as input to policy as to whether to accept SAML authentication assertions from this IdP. For example:</p>
+<div class="highlight-XML notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;Extensions&gt;</span>
+    <span class="nt">&lt;attr:EntityAttributes&gt;</span>
+        <span class="nt">&lt;saml:Attribute</span> <span class="na">Name=</span><span class="s">&quot;urn:oasis:names:tc:SAML:attribute:assurance-certification&quot;</span> <span class="na">NameFormat=</span><span class="s">&quot;urn:oasis:names:tc:SAML:2.0:attrname-format:uri&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;saml:AttributeValue&gt;</span>https://schemas.vivvocloud.com/assurance/loa3<span class="nt">&lt;/saml:AttributeValue&gt;</span>
+        <span class="nt">&lt;/saml:Attribute&gt;</span>
+    <span class="nt">&lt;/attr:EntityAttributes&gt;</span>
+<span class="nt">&lt;/Extensions&gt;</span>
+</pre></div>
+</div>
+<p>When an assertion is provided for a user who has achieved a certain LOA, the <strong>urn:oasis:names:tc:SAML:attribute:assurance-certification</strong> attribute will be included, e.g.:</p>
+<div class="highlight-XML notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;saml:Attribute</span> <span class="na">Name=</span><span class="s">&quot;urn:oasis:names:tc:SAML:attribute:assurance-certification&quot;</span> <span class="na">NameFormat=</span><span class="s">&quot;urn:oasis:names:tc:SAML:2.0:attrname-format:uri&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;saml:AttributeValue</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;xs:string&quot;</span><span class="nt">&gt;</span>
+        https://schemas.vivvocloud.com/assurance/loa3
+    <span class="nt">&lt;/saml:AttributeValue&gt;</span>
+<span class="nt">&lt;/saml:Attribute&gt;</span>
+</pre></div>
+</div>
+<p>The following schemas are provided which link to the trust framework that CitizenOne™ adhere’s to, the Pan-Canadian Trust Framework’s Verified Person Profile:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://schemas.vivvocloud.com/assurance/loa1">https://schemas.vivvocloud.com/assurance/loa1</a></p></li>
+<li><p><a class="reference external" href="https://schemas.vivvocloud.com/assurance/loa2">https://schemas.vivvocloud.com/assurance/loa2</a></p></li>
+<li><p><a class="reference external" href="https://schemas.vivvocloud.com/assurance/loa3">https://schemas.vivvocloud.com/assurance/loa3</a></p></li>
+</ul>
+</div>
+<div class="section" id="saml-attribute-mapping">
+<h2>SAML Attribute Mapping<a class="headerlink" href="#saml-attribute-mapping" title="Permalink to this headline">¶</a></h2>
+<p>SAML contains attributes in the SamlAttributeStatement structure that we map to CitizenOne™’s Identity.  Here is a sample AttributeStatement:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;saml:AttributeStatement</span> <span class="na">xmlns:xs=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema&quot;</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;saml:Attribute</span> <span class="na">Name=</span><span class="s">&quot;http://schemas.auth0.com/email_verified&quot;</span> <span class="na">NameFormat=</span><span class="s">&quot;urn:oasis:names:tc:SAML:2.0:attrname-format:uri&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;saml:AttributeValue</span> <span class="na">xsi:type=</span><span class="s">&quot;xs:boolean&quot;</span><span class="nt">&gt;</span>false<span class="nt">&lt;/saml:AttributeValue&gt;</span>
+        <span class="nt">&lt;/saml:Attribute&gt;</span>
+        <span class="nt">&lt;saml:Attribute</span> <span class="na">Name=</span><span class="s">&quot;http://schemas.auth0.com/nickname&quot;</span> <span class="na">NameFormat=</span><span class="s">&quot;urn:oasis:names:tc:SAML:2.0:attrname-format:uri&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;saml:AttributeValue</span> <span class="na">xsi:type=</span><span class="s">&quot;xs:string&quot;</span><span class="nt">&gt;</span>testy<span class="nt">&lt;/saml:AttributeValue&gt;</span>
+        <span class="nt">&lt;/saml:Attribute&gt;</span>
+        <span class="nt">&lt;saml:Attribute</span> <span class="na">Name=</span><span class="s">&quot;http://schemas.auth0.com/picture&quot;</span> <span class="na">NameFormat=</span><span class="s">&quot;urn:oasis:names:tc:SAML:2.0:attrname-format:uri&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;saml:AttributeValue</span> <span class="na">xsi:type=</span><span class="s">&quot;xs:string&quot;</span><span class="nt">&gt;</span> https://s.gravatar.com/avatar/16f3771e3e92248287dce288b6d871ba?s=480<span class="ni">&amp;amp;</span>r=pg<span class="ni">&amp;amp;</span>d=https%3A%2F%2Fcdn.auth0.com%2Favatars%2Fte.png<span class="nt">&lt;/saml:AttributeValue&gt;</span>
+        <span class="nt">&lt;/saml:Attribute&gt;</span>
+        <span class="nt">&lt;saml:Attribute</span> <span class="na">Name=</span><span class="s">&quot;http://schemas.auth0.com/updated_at&quot;</span> <span class="na">NameFormat=</span><span class="s">&quot;urn:oasis:names:tc:SAML:2.0:attrname-format:uri&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;saml:AttributeValue</span> <span class="na">xsi:type=</span><span class="s">&quot;xs:anyType&quot;</span><span class="nt">&gt;</span>Tue Feb 11 2020 20:05:41 GMT+0000 (Coordinated Universal Time)<span class="nt">&lt;/saml:AttributeValue&gt;</span>
+        <span class="nt">&lt;/saml:Attribute&gt;</span>
+<span class="nt">&lt;/saml:AttributeStatement&gt;</span>
+</pre></div>
+</div>
+<p>SAML allows attributes to have a FriendlyName and Name associated with each Attribute. Different IdPs use different attribute schemas which makes adding new SAML IdPs troublesome because
+code must change in order to accommodate any attributes not accounted for.</p>
+<p>In order to solve this problem we have decided to do the following:</p>
+<ol class="arabic simple">
+<li><p>Add an saml_to_attribute_map table which maintains a mapping of known SAML attributes to where they fit in the CitizenOne™ profile. The schema is defined as:</p></li>
+</ol>
+<div class="highlight-SQL notranslate"><div class="highlight"><pre><span></span><span class="n">saml_assertion_name_id</span> <span class="nb">int</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span> <span class="k">not</span> <span class="k">null</span> <span class="n">AUTO_INCREMENT</span><span class="p">,</span>
+    <span class="n">attribute</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span> <span class="k">not</span> <span class="k">null</span><span class="p">,</span>
+    <span class="n">attribute_name</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span> <span class="k">not</span> <span class="k">null</span><span class="p">,</span>
+    <span class="n">identity_dto_attribute</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span> <span class="k">not</span> <span class="k">null</span><span class="p">,</span>
+    <span class="k">PRIMARY</span> <span class="k">KEY</span> <span class="p">(</span><span class="n">saml_assertion_name_id</span><span class="p">)</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>For every attribute in the attribute statement, see if we have defined a mapping to the CitizenOne™ profile.</p></li>
+</ol>
+<div class="section" id="adding-new-attributes">
+<h3>Adding new attributes<a class="headerlink" href="#adding-new-attributes" title="Permalink to this headline">¶</a></h3>
+<p>Adding new attributes are as simple as:</p>
+<ol class="arabic simple">
+<li><p>Adding a row to <em>saml_assertion_name_id</em></p></li>
+<li><p>Restarting the <em>vivvo-sp</em> micro-service.</p></li>
+</ol>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Splunk%20Service.html" class="btn btn-neutral float-right" title="Splunk Service" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="PolicyHierarchy.html" class="btn btn-neutral float-left" title="Policy Hierarchy" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2021, Vivvo
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

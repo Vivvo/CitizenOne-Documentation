@@ -1,0 +1,127 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Style Sheets &#8212; Templates 0.1 documentation</title>
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/nature.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/graphviz.css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Tools to Manage Templates" href="tools.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="tools.html" title="Tools to Manage Templates"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Templates 0.1 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Style Sheets</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="style-sheets">
+<h1>Style Sheets<a class="headerlink" href="#style-sheets" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>We styled the project using SCSS. SCSS is the premier CSS extension language and it’s completely compatible with all versions of CSS. SCSS provides the ability to write maintainable, reusable, and extensible code, ultimately meaning that code is faster to develop and better structured than plain CSS. The main advantage of using SCSS is the ability to use programming functionality such as variables, functions, inheritance, and operators. The benefits of these functionalities are that the code is displayed more logically, making it easier to manage. SCSS is not read by the browser, it must be compiled to CSS. There are various automated options to do that and we chose Webpack. Webpack processes SASS code and transforms it into CSS. We can give it a large number of files (as you can see in the SASS folder) and it generates a single file. To preview the project the files need to be compiled. Use yarn (package manager) to compile and preview the project.</p>
+</div>
+<div class="section" id="steps-to-run-the-templates">
+<h2>Steps to run the Templates<a class="headerlink" href="#steps-to-run-the-templates" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><p>open the terminal and install yarn (make sure you’re in the projects directory): <cite>yarn install</cite></p></li>
+<li><p>run yarn: <cite>yarn start</cite></p></li>
+<li><p>if the process was successful you’ll see <cite>Compiled successfully.</cite> in a terminal</p></li>
+<li><p>now you can preview the project in the browser:
+* login page: <a class="reference external" href="http://localhost:9000/">http://localhost:9000/</a>
+* dashboard (my services): <a class="reference external" href="http://localhost:9000/dashboard.html">http://localhost:9000/dashboard.html</a>
+* my profile: <a class="reference external" href="http://localhost:9000/profile.html">http://localhost:9000/profile.html</a></p></li>
+<li><dl class="simple">
+<dt>you can make changes to the project and you’ll see your updates in a browser after refresh</dt><dd><ul class="simple">
+<li><p>if you can’t see your changes, check if <cite>yarn</cite> is still running</p></li>
+<li><p>you can restart the process by clicking <cite>ctrl+c</cite> (stops the process) and next <cite>yarn start</cite></p></li>
+<li><p>sometimes the browser needs a hard refresh: hold <cite>shift</cite> + click <cite>refresh</cite> (in a browser)</p></li>
+<li><p>stop <cite>yarn</cite> when you’re done work (<cite>ctr + c</cite>)</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ol>
+</div>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Style Sheets</a><ul>
+<li><a class="reference internal" href="#introduction">Introduction</a></li>
+<li><a class="reference internal" href="#steps-to-run-the-templates">Steps to run the Templates</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="tools.html"
+                        title="previous chapter">Tools to Manage Templates</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/styles.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="tools.html" title="Tools to Manage Templates"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Templates 0.1 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Style Sheets</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2021, Vivvo.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.4.0.
+    </div>
+  </body>
+</html>

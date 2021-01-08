@@ -1,0 +1,301 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>OpenID Connect (OIDC) &mdash; CitizenOne 0.0.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Policy Hierarchy" href="PolicyHierarchy.html" />
+    <link rel="prev" title="MFA Rule Evaluation" href="MFA%20Rule%20Evaluation.html" />
+    <link href="../_static/style.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> CitizenOne
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">The CitizenOne Platform</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Tenants.html">Tenants</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Organizations.html">Organizations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Applications.html">Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Service%20Cards.html">Service Cards</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Rules.html">Rules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Providers.html">Trust Providers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Policies.html">Policies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Email%20Templates.html">Email Templates</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Eeze</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Eeze.html">Accessing CitizenOne Service Cards</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Managing CitizenOne</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Management/CitizenOne%20Support.html">CitizenOne Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Management/Creating%20Service%20Cards.html">Creating a Service Card</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Management/Organization%20Management.html">Organization Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Management/Application%20Management.html">Application Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Management/Service%20Card%20Management.html">Service Card Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Management/Rule%20Management.html">Rule Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Management/Provider%20Management.html">Trust Provider Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Management/Policy%20Management.html">Policy Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Management/Platform%20Configuration.html">Platform Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Management/Layouts.html">Layout Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Form%20Builder/Form%20Management.html">Form Management</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Technical Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Authentication.html">Authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Authentication.html#multi-factor-authentication">Multi-factor Authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Data%20Bundles.html">Data Bundles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DynamicIdentityProviders.html">Dynamic Identity Providers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Feature%20Toggles.html">Feature Toggles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Federation.html">Federation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MFA%20Rule%20Evaluation.html">MFA Rule Evaluation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">OpenID Connect (OIDC)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#citizenone-as-an-identity-provider-idp">CitizenOne™ as an Identity Provider (IdP)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#citizenone-as-a-relying-party-rp">CitizenOne™ as a Relying Party (RP)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="PolicyHierarchy.html">Policy Hierarchy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SAML.html">SAML</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Splunk%20Service.html">Splunk Service</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Templates/index.html">Vivvo Templates Documentation</a></li>
+</ul>
+<p class="caption"><span class="caption-text">General Information</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Contact.html">Contact</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">CitizenOne</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>OpenID Connect (OIDC)</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/Technical/OpenID Connect.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="openid-connect-oidc">
+<h1>OpenID Connect (OIDC)<a class="headerlink" href="#openid-connect-oidc" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="citizenone-as-an-identity-provider-idp">
+<h2>CitizenOne™ as an Identity Provider (IdP)<a class="headerlink" href="#citizenone-as-an-identity-provider-idp" title="Permalink to this headline">¶</a></h2>
+<p>CitizenOne™ is ready out of the box to provide OIDC federation. To use CitizenOne™ as an IdP you need to configure an application and service card and attach a policy. Please refer to <a class="reference internal" href="../Management/Creating%20Service%20Cards.html#createservicecard"><span class="std std-ref">Creating a Service Card</span></a> for more information.</p>
+<p>We have published a very simple NodeJS application that you can use to test your OIDC configuration: <a class="reference external" href="https://github.com/Vivvo/passport-oidc-example">Passport OIDC Example</a>.</p>
+<p>The Passport OIDC Example application requires the following configuration. This is fairly standard configuration for an OIDC Relying Party.</p>
+<div class="highlight-JSON notranslate"><div class="highlight"><pre><span></span>{
+    issuer: &#39;https://{{CITIZEN_ONE_DOMAIN}}/&#39;,
+    authorizationURL: &#39;https://{{CITIZEN_ONE_DOMAIN}}/oauth/v2/authorize&#39;,
+    tokenURL: &#39;https://{{CITIZEN_ONE_DOMAIN}}/oauth/v2/token&#39;,
+    userInfoURL: &#39;https://{{CITIZEN_ONE_DOMAIN}}/oauth/v2/userinfo&#39;,
+    clientID: &#39;41209adf-45e9-4d1b-8720-8c6a1e680ceb&#39;,
+    clientSecret: &#39;d18a3ba5-e7be-4da6-857d-333e5cf6e794&#39;,
+    callbackURL: &#39;https://{{RELYING_PARTY_CALLBACK_URL}}&#39;,
+    scope: &#39;openid profile email phone address&#39;
+}
+</pre></div>
+</div>
+<p>The URLs that contain {{CITIZEN_ONE_DOMAIN}} (<strong>issuer, authorizationURL, and tokenURL</strong>) will be consistent across all instances of CitizenOne™ - just inject your CitizenOne™ domain.</p>
+<p>The <strong>clientID</strong> and <strong>clientSecret</strong> are generated by CitizenOne™ and can be found in the application section in the management application. The clientID is like your application’s username while the clientSecret is like your application’s password. Since it is like a password, we only store a hashed version of it and cannot recover it for you. You can generate a new one at any time in the management application. Please note that generating a new clientSecret will immediately invalidate the old one.</p>
+<a class="reference internal image-reference" href="../_images/application-credentials.png"><img alt="../_images/application-credentials.png" class="align-left" src="../_images/application-credentials.png" style="width: 500pt;" /></a>
+<p>The <strong>callbackURL</strong> comes from your relying party and must be configured as a “Redirect URL” for the application in the management application.</p>
+<a class="reference internal image-reference" href="../_images/application-redirect-url.png"><img alt="../_images/application-redirect-url.png" class="align-left" src="../_images/application-redirect-url.png" style="width: 500pt;" /></a>
+<p>The <strong>scopes</strong> that are available to your Relying Party application are the consent scopes that are attached to the policy attached to your application, organization and/or tenant:</p>
+<a class="reference internal image-reference" href="../_images/consent-scopes.png"><img alt="../_images/consent-scopes.png" class="align-left" src="../_images/consent-scopes.png" style="width: 500pt;" /></a>
+</div>
+<div class="section" id="citizenone-as-a-relying-party-rp">
+<h2>CitizenOne™ as a Relying Party (RP)<a class="headerlink" href="#citizenone-as-a-relying-party-rp" title="Permalink to this headline">¶</a></h2>
+<p>It is possible to configure CitizenOne™ as an OIDC relying party to an external IdP however this is not currently possible through the management application. To configure your IdP we will need the following data:</p>
+<ul class="simple">
+<li><p><strong>issuer</strong> - the issuer identifier for your IdP. OIDC supports multiple Issuers per Host and Port combination. The issuer configured MUST exactly match the value of <strong>iss</strong> in the ID Token.</p></li>
+<li><p><strong>clientID</strong> - the client id CitizenOne™ will use to make requests to your IdP</p></li>
+<li><p><strong>clientSecret</strong> - the client secret CitizenOne™ will use to make requests to your IdP</p></li>
+<li><p><strong>scope</strong> - the scopes that we should request - this will impact what data gets populated in the user’s CitizenOne™ profile after successfully authenticating</p></li>
+<li><p><strong>authorizationURL</strong> - your IdP’s <a class="reference external" href="https://openid.net/specs/openid-connect-core-1_0.html#AuthorizationEndpoint">authorization URL</a></p></li>
+<li><p><strong>tokenURL</strong> - your IdP’s <a class="reference external" href="https://openid.net/specs/openid-connect-core-1_0.html#TokenEndpoint">token URL</a></p></li>
+<li><p><strong>userInfoURL</strong> - your IdP’s <a class="reference external" href="https://openid.net/specs/openid-connect-core-1_0.html#UserInfo">userinfo URL</a></p></li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="PolicyHierarchy.html" class="btn btn-neutral float-right" title="Policy Hierarchy" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="MFA%20Rule%20Evaluation.html" class="btn btn-neutral float-left" title="MFA Rule Evaluation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2021, Vivvo
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

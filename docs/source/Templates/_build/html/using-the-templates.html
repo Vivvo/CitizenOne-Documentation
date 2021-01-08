@@ -1,0 +1,1084 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Using the Tempate System &#8212; Templates 0.1 documentation</title>
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/nature.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/graphviz.css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Template Structure" href="project_structure.html" />
+    <link rel="prev" title="System Structure" href="system-structure.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="project_structure.html" title="Template Structure"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="system-structure.html" title="System Structure"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Templates 0.1 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Using the Tempate System</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="using-the-tempate-system">
+<h1>Using the Tempate System<a class="headerlink" href="#using-the-tempate-system" title="Permalink to this headline">¶</a></h1>
+<p>Vivvo uses github source control.  Our developers work with your UI/UX team to replace placeholder information with system tagging.  The workflow to achieve this is as follows:</p>
+<div class="graphviz"><img src="_images/graphviz-f9d293bf739f5bfa5163305bda27ae73e3e0421a.png" alt="digraph Workflow {
+position=center
+node [shape=plaintext]
+labelloc = &quot;t&quot;;
+   &quot;clone the repository to your local machine&quot; -&gt; &quot;create a feature branch&quot; -&gt; &quot;make your edits&quot; -&gt; &quot;commit the new branch to source control&quot; -&gt; &quot;create a pull request&quot; [color=blue]
+}" class="graphviz" /></div>
+<p>Using the github tools:</p>
+<div class="highlight-HTML notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="highlight"><pre><span></span>git clone https://github.com/Vivvo/{{your template registry}}
+cd {{your template registry}}
+git checkout -b &quot;template changes&quot;
+# make your edits
+git add **
+git commit -m &quot;edits to html and style&quot;
+git push
+</pre></div>
+</td></tr></table></div>
+<p>Tagging reffers to adding logic that will add the right context to the page.   In your templates, your placeholder information may say “Jane Doe”, and the Vivvo developers will replace this with {{ profile.FirstName profile.LastName }} for example.</p>
+<p>Your template before tagging will look like this:</p>
+<div class="highlight-HTML notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13</pre></div></td><td class="code"><div class="highlight"><pre><span></span> <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot; row col-lg-4 ml-1&quot;</span><span class="p">&gt;</span>
+                 <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Welcome to your Account Login Tom Sawyer <span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+                 <span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>Your portal to personalized, simple and secure service.<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+             <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+             <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;card col-lg-4 mt-5&quot;</span><span class="p">&gt;</span>
+                 <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;card-body contact-box&quot;</span><span class="p">&gt;</span>
+                     <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+                         <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;ml-4 mb-4&quot;</span><span class="p">&gt;</span>
+                             <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>Questions Contact Us: <span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+                             <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
+                             <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+                         <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+                     <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</td></tr></table></div>
+<p>And after the tagging is added</p>
+<div class="highlight-HTML notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13</pre></div></td><td class="code"><div class="highlight"><pre><span></span> <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot; row col-lg-4 ml-1&quot;</span><span class="p">&gt;</span>
+                 <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Welcome to your Account Login {{ .me.FirstName .me.LastName }} <span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+                 <span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>Your portal to personalized, simple and secure service.<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+             <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+             <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;card col-lg-4 mt-5&quot;</span><span class="p">&gt;</span>
+                 <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;card-body contact-box&quot;</span><span class="p">&gt;</span>
+                     <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+                         <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;ml-4 mb-4&quot;</span><span class="p">&gt;</span>
+                             <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>Questions Contact Us: <span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+                             <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
+                             <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+                         <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+                     <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</td></tr></table></div>
+<p>The .me part of the tag is a data object that is created from the controller.  Data objects can be a single object, an object with embedded objects or a list.  The .me for example is an object instantiated in the controller and attached to a view argument called “me”.  The me object represents the user in context, and attributes of the user can be displayed by accessors such as:</p>
+<ul class="simple">
+<li><p>.me.FirstName</p></li>
+<li><p>.me.Address[0].Street</p></li>
+<li><p>.me.Phone[0].number</p></li>
+</ul>
+<p>As examples.</p>
+<p>Data objects that are available to views are found below.  Not all objects are available to all pages, but rather exposed to the relevant page. (e.g. profile objects are exposed to the profile pages, and service card objects are exposed to service card pages.  Objects the templates can be found in <a class="reference internal" href="#appendix-a">Appendix A</a></p>
+<p>Vivvo makes use of default template functions defined in the <a class="reference external" href="https://revel.github.io/manual/templates.html">https://revel.github.io/manual/templates.html</a> webpage, and we create some custom ones for rendering special blocks.  Examples are found in <a class="reference internal" href="#appendix-b">Appendix B</a></p>
+<div class="section" id="appendix-a">
+<h2>Appendix A<a class="headerlink" href="#appendix-a" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-go notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>  1
+  2
+  3
+  4
+  5
+  6
+  7
+  8
+  9
+ 10
+ 11
+ 12
+ 13
+ 14
+ 15
+ 16
+ 17
+ 18
+ 19
+ 20
+ 21
+ 22
+ 23
+ 24
+ 25
+ 26
+ 27
+ 28
+ 29
+ 30
+ 31
+ 32
+ 33
+ 34
+ 35
+ 36
+ 37
+ 38
+ 39
+ 40
+ 41
+ 42
+ 43
+ 44
+ 45
+ 46
+ 47
+ 48
+ 49
+ 50
+ 51
+ 52
+ 53
+ 54
+ 55
+ 56
+ 57
+ 58
+ 59
+ 60
+ 61
+ 62
+ 63
+ 64
+ 65
+ 66
+ 67
+ 68
+ 69
+ 70
+ 71
+ 72
+ 73
+ 74
+ 75
+ 76
+ 77
+ 78
+ 79
+ 80
+ 81
+ 82
+ 83
+ 84
+ 85
+ 86
+ 87
+ 88
+ 89
+ 90
+ 91
+ 92
+ 93
+ 94
+ 95
+ 96
+ 97
+ 98
+ 99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">type</span> <span class="nx">ConsentModel</span> <span class="kd">struct</span> <span class="p">{</span>
+     <span class="nx">HasConsent</span>  <span class="kt">bool</span>     <span class="s">`json:&quot;hasConsent&quot;`</span>
+     <span class="nx">Scopes</span>      <span class="p">[]</span><span class="kt">string</span> <span class="s">`json:&quot;scopes&quot;`</span>
+     <span class="nx">ExpiresOn</span>   <span class="kt">string</span>   <span class="s">`json:&quot;expiresOn&quot;`</span>
+     <span class="nx">CreatedDate</span> <span class="kt">string</span>   <span class="s">`json:&quot;createdDate&quot;`</span>
+ <span class="p">}</span>
+
+ <span class="kd">type</span> <span class="nx">GrantedConsentModel</span> <span class="kd">struct</span> <span class="p">{</span>
+     <span class="nx">ServiceCardId</span>     <span class="kt">string</span>   <span class="s">`json:&quot;serviceCardId&quot;`</span>
+     <span class="nx">PolicyId</span>          <span class="kt">string</span>   <span class="s">`json:&quot;policyId&quot;`</span>
+     <span class="nx">consentExpiryDate</span> <span class="kt">string</span>   <span class="s">`json:&quot;consentExpiryDate&quot;`</span>
+     <span class="nx">Scopes</span>            <span class="p">[]</span><span class="kt">string</span> <span class="s">`json:&quot;scopes&quot;`</span>
+ <span class="p">}</span>
+
+ <span class="kd">type</span> <span class="nx">IdentityServiceCard</span> <span class="kd">struct</span> <span class="p">{</span>
+     <span class="nx">IdentityServiceCardId</span> <span class="kt">int64</span>        <span class="s">`json:&quot;identityServiceCardId&quot;`</span>
+     <span class="nx">IdentityId</span>            <span class="kt">string</span>       <span class="s">`json:&quot;identityId&quot;`</span>
+     <span class="nx">ServiceCardId</span>         <span class="kt">string</span>       <span class="s">`json:&quot;serviceCardId&quot;`</span>
+     <span class="nx">SortOrder</span>             <span class="kt">int64</span>        <span class="s">`json:&quot;sortOrder&quot;`</span>
+     <span class="nx">FatServiceCard</span>        <span class="o">*</span><span class="nx">ServiceCard</span> <span class="s">`json:&quot;serviceCard&quot;`</span>
+     <span class="nx">LightServiceCard</span>      <span class="o">*</span><span class="nx">ServiceCard</span> <span class="s">`json:&quot;lightServiceCard&quot;`</span>
+     <span class="nx">NotificationCount</span>     <span class="kt">int</span>          <span class="s">`json:&quot;notificationCount&quot;`</span>
+ <span class="p">}</span>
+
+ <span class="kd">type</span> <span class="nx">MaintenanceMessage</span> <span class="kd">struct</span> <span class="p">{</span>
+     <span class="nx">MaintenanceId</span> <span class="kt">int</span>    <span class="s">`json:&quot;maintenanceId&quot;`</span>
+     <span class="nx">Title</span>         <span class="kt">string</span> <span class="s">`json:&quot;title&quot;`</span>
+     <span class="nx">Details</span>       <span class="kt">string</span> <span class="s">`json:&quot;details&quot;`</span>
+     <span class="nx">StartDate</span>     <span class="kt">string</span> <span class="s">`json:&quot;startDate&quot;`</span>
+     <span class="nx">EndDate</span>       <span class="kt">string</span> <span class="s">`json:&quot;endDate&quot;`</span>
+ <span class="p">}</span>
+
+ <span class="kd">type</span> <span class="nx">Me</span> <span class="kd">struct</span> <span class="p">{</span>
+     <span class="nx">Identity</span>           <span class="nx">Identity</span> <span class="s">`json:&quot;identity&quot;`</span>
+     <span class="nx">Business</span>           <span class="kt">string</span>   <span class="s">`json:&quot;business,omitempty&quot;`</span>
+     <span class="nx">HasBusinessConnect</span> <span class="kt">bool</span>     <span class="s">`json:&quot;hasBusinessConnect,omitempty&quot;`</span>
+     <span class="nx">RedirectUrls</span>       <span class="p">[]</span><span class="nx">Link</span>   <span class="s">`json:&quot;links,omitempty&quot;`</span>
+ <span class="p">}</span>
+
+ <span class="kd">type</span> <span class="nx">Identity</span> <span class="kd">struct</span> <span class="p">{</span>
+     <span class="nx">IdentityId</span>               <span class="kt">string</span>                    <span class="s">`json:&quot;identityId&quot;`</span>
+     <span class="nx">FirstName</span>                <span class="kt">string</span>                    <span class="s">`json:&quot;firstName&quot;`</span>
+     <span class="nx">LastName</span>                 <span class="kt">string</span>                    <span class="s">`json:&quot;lastName&quot;`</span>
+     <span class="nx">MiddleName</span>               <span class="kt">string</span>                    <span class="s">`json:&quot;middleName&quot;`</span>
+     <span class="nx">UserName</span>                 <span class="kt">string</span>                    <span class="s">`json:&quot;userName&quot;`</span>
+     <span class="nx">Salutation</span>               <span class="kt">string</span>                    <span class="s">`json:&quot;salutation,omitempty&quot;`</span>
+     <span class="nx">DateOfBirth</span>              <span class="kt">string</span>                    <span class="s">`json:&quot;dateOfBirth,omitempty&quot;`</span>
+     <span class="nx">SupportCode</span>              <span class="kt">string</span>                    <span class="s">`json:&quot;supportCode,omitempty&quot;`</span>
+     <span class="nx">AssuranceLevel</span>           <span class="nx">AssuranceLevel</span>            <span class="s">`json:&quot;assuranceLevel&quot;`</span>
+     <span class="nx">Emails</span>                   <span class="p">[]</span><span class="nx">Email</span>                   <span class="s">`json:&quot;emails&quot;`</span>
+     <span class="nx">Phones</span>                   <span class="p">[]</span><span class="nx">Phone</span>                   <span class="s">`json:&quot;phones&quot;`</span>
+     <span class="nx">Addresses</span>                <span class="p">[]</span><span class="nx">Address</span>                 <span class="s">`json:&quot;addresses&quot;`</span>
+     <span class="nx">SecondaryAuthentications</span> <span class="p">[]</span><span class="nx">SecondaryAuthentication</span> <span class="s">`json:&quot;secondaryAuthentication&quot;`</span>
+     <span class="nx">ExternalIdentifiers</span>      <span class="p">[]</span><span class="nx">ExternalIdentifiers</span>     <span class="s">`json:&quot;externalIdentifiers&quot;`</span>
+ <span class="p">}</span>
+
+ <span class="kd">type</span> <span class="nx">ExternalIdentifiers</span> <span class="kd">struct</span> <span class="p">{</span>
+     <span class="nx">Name</span>     <span class="kt">string</span> <span class="s">`json:&quot;name&quot;`</span>
+     <span class="nx">Value</span>    <span class="kt">string</span> <span class="s">`json:&quot;value&quot;`</span>
+     <span class="nx">Provider</span> <span class="kt">string</span> <span class="s">`json:&quot;provider&quot;`</span>
+ <span class="p">}</span>
+
+ <span class="kd">type</span> <span class="nx">SecondaryAuthentication</span> <span class="kd">struct</span> <span class="p">{</span>
+     <span class="nx">SecondaryAuthenticationId</span>     <span class="kt">int</span>    <span class="s">`json:&quot;secondaryAuthenticationId&quot;`</span>
+     <span class="nx">SecondaryAuthenticationType</span>   <span class="kt">string</span> <span class="s">`json:&quot;secondaryAuthenticationType&quot;`</span>
+     <span class="nx">SecondaryAuthenticationStatus</span> <span class="kt">string</span> <span class="s">`json:&quot;secondaryAuthenticationStatus&quot;`</span>
+     <span class="nx">IdentityId</span>                    <span class="kt">string</span> <span class="s">`json:&quot;identityId&quot;`</span>
+     <span class="nx">PhoneId</span>                       <span class="kt">int</span>    <span class="s">`json:&quot;phoneId&quot;`</span>
+     <span class="nx">Url</span>                           <span class="kt">string</span> <span class="s">`json:&quot;url&quot;`</span>
+     <span class="nx">IsGlobal</span>                      <span class="kt">bool</span>   <span class="s">`json:&quot;isGlobal&quot;`</span>
+ <span class="p">}</span>
+
+ <span class="kd">type</span> <span class="nx">AssuranceLevel</span> <span class="kd">struct</span> <span class="p">{</span>
+     <span class="nx">Level</span>         <span class="kt">int</span>           <span class="s">`json:&quot;level&quot;`</span>
+     <span class="nx">ClaimProvider</span> <span class="nx">ClaimProvider</span> <span class="s">`json:&quot;claimProvider&quot;`</span>
+     <span class="nx">IdentityId</span>    <span class="kt">string</span>        <span class="s">`json:&quot;identityId&quot;`</span>
+ <span class="p">}</span>
+
+ <span class="kd">type</span> <span class="nx">ClaimProvider</span> <span class="kd">struct</span> <span class="p">{</span>
+     <span class="nx">ClaimProviderId</span>      <span class="kt">int</span>      <span class="s">`json:&quot;claimProviderId&quot;`</span>
+     <span class="nx">Name</span>                 <span class="kt">string</span>   <span class="s">`json:&quot;name&quot;`</span>
+     <span class="nx">Description</span>          <span class="kt">string</span>   <span class="s">`json:&quot;description&quot;`</span>
+     <span class="nx">OnboardingIdentifier</span> <span class="kt">string</span>   <span class="s">`json:&quot;onBoardingIdentifier&quot;`</span>
+     <span class="nx">BaseUrl</span>              <span class="kt">string</span>   <span class="s">`json:&quot;baseUrl&quot;`</span>
+     <span class="nx">OnboardingParams</span>     <span class="p">[]</span><span class="kt">string</span> <span class="s">`json:&quot;onboardingParams&quot;`</span>
+     <span class="nx">Loa</span>                  <span class="kt">int</span>      <span class="s">`json:&quot;loa&quot;`</span>
+     <span class="nx">OnboardingPath</span>       <span class="kt">string</span>   <span class="s">`json:&quot;onboardingPath&quot;`</span>
+     <span class="nx">LogoUrl</span>              <span class="kt">string</span>   <span class="s">`json:&quot;logoUrl&quot;`</span>
+     <span class="nx">Prerequisites</span>        <span class="p">[]</span><span class="kt">string</span> <span class="s">`json:&quot;prerequisites&quot;`</span>
+ <span class="p">}</span>
+
+ <span class="kd">type</span> <span class="nx">Link</span> <span class="kd">struct</span> <span class="p">{</span>
+     <span class="nx">Name</span> <span class="kt">string</span> <span class="s">`json:&quot;name&quot;`</span>
+     <span class="nx">URL</span>  <span class="kt">string</span> <span class="s">`json:&quot;url&quot;`</span>
+ <span class="p">}</span>
+
+ <span class="kd">type</span> <span class="nx">Notification</span> <span class="kd">struct</span> <span class="p">{</span>
+     <span class="nx">NotificationId</span>   <span class="kt">int64</span>  <span class="s">`json:&quot;notificationId&quot;`</span>
+     <span class="nx">ApplicationName</span>  <span class="kt">string</span> <span class="s">`json:&quot;applicationName&quot;`</span>
+     <span class="nx">OrganizationName</span> <span class="kt">string</span> <span class="s">`json:&quot;organizationName&quot;`</span>
+     <span class="nx">Subject</span>          <span class="kt">string</span> <span class="s">`json:&quot;subject&quot;`</span>
+     <span class="nx">Body</span>             <span class="kt">string</span> <span class="s">`json:&quot;body&quot;`</span>
+     <span class="nx">NotificationDate</span> <span class="kt">string</span> <span class="s">`json:&quot;notificationDate&quot;`</span>
+     <span class="nx">Status</span>           <span class="kt">string</span> <span class="s">`json:&quot;status&quot;`</span>
+     <span class="nx">FolderType</span>       <span class="kt">string</span> <span class="s">`json:&quot;folderType&quot;`</span>
+     <span class="nx">ReferenceNumber</span>  <span class="kt">string</span> <span class="s">`json:&quot;referenceNumber&quot;`</span>
+     <span class="nx">Recipient</span>        <span class="kt">string</span> <span class="s">`json:&quot;recipient&quot;`</span>
+ <span class="p">}</span>
+
+ <span class="kd">type</span> <span class="nx">PolicyCallback</span> <span class="kd">struct</span> <span class="p">{</span>
+     <span class="nx">PolicyCallbackId</span>    <span class="kt">int64</span>  <span class="s">`json:&quot;policyCallbackId,omitempty&quot;`</span>
+     <span class="nx">PolicyId</span>            <span class="kt">string</span> <span class="s">`json:&quot;policyId,omitempty&quot;`</span>
+     <span class="nx">RevisionNum</span>         <span class="kt">int64</span>  <span class="s">`json:&quot;revisionNum,omitempty&quot;`</span>
+     <span class="nx">DataBundleType</span>      <span class="kt">string</span> <span class="s">`json:&quot;dataBundleType,omitempty&quot;`</span>
+     <span class="nx">Url</span>                 <span class="kt">string</span> <span class="s">`json:&quot;url,omitempty&quot;`</span>
+     <span class="nx">ConsentScopeGranted</span> <span class="kt">bool</span>   <span class="s">`json:&quot;consentScopeGenerated,omitempty&quot;`</span>
+ <span class="p">}</span>
+
+ <span class="kd">type</span> <span class="nx">Policy</span> <span class="kd">struct</span> <span class="p">{</span>
+     <span class="nx">PolicyId</span>          <span class="kt">string</span>         <span class="s">`json:&quot;policyId&quot;`</span>
+     <span class="nx">Name</span>              <span class="kt">string</span>         <span class="s">`json:&quot;name&quot;`</span>
+     <span class="nx">Description</span>       <span class="kt">string</span>         <span class="s">`json:&quot;description,omitempty&quot;`</span>
+     <span class="nx">PublicKey</span>         <span class="kt">string</span>         <span class="s">`json:&quot;publicKey,omitempty&quot;`</span>
+     <span class="nx">DefaultExpiryDays</span> <span class="kt">int</span>            <span class="s">`json:&quot;defaultExpiryDays,omitempty&quot;`</span>
+     <span class="nx">ActiveRevision</span>    <span class="nx">PolicyRevision</span> <span class="s">`json:&quot;activeRevision,omitempty&quot;`</span>
+ <span class="p">}</span>
+
+ <span class="kd">type</span> <span class="nx">PolicyRevision</span> <span class="kd">struct</span> <span class="p">{</span>
+     <span class="nx">PolicyId</span>    <span class="kt">string</span>           <span class="s">`json:&quot;policyId,omitempty&quot;`</span>
+     <span class="nx">RevisionNum</span> <span class="kt">int</span>              <span class="s">`json:&quot;revisionNum,omitempty&quot;`</span>
+     <span class="nx">PolicyText</span>  <span class="kt">string</span>           <span class="s">`json:&quot;policyText,omitempty&quot;`</span>
+     <span class="nx">IsActive</span>    <span class="kt">bool</span>             <span class="s">`json:&quot;isActive,omitempty&quot;`</span>
+     <span class="nx">CreatedDate</span> <span class="kt">string</span>           <span class="s">`json:&quot;createdDate,omitempty&quot;`</span>
+     <span class="nx">Callbacks</span>   <span class="p">[]</span><span class="nx">PolicyCallback</span> <span class="s">`json:&quot;callbacks,omitempty&quot;`</span>
+     <span class="nx">Scopes</span>      <span class="p">[]</span><span class="nx">PolicyScope</span>    <span class="s">`json:&quot;scopes,omitempty&quot;`</span>
+     <span class="nx">Rules</span>       <span class="p">[]</span><span class="nx">PolicyRule</span>     <span class="s">`json:&quot;rules,omitempty&quot;`</span>
+ <span class="p">}</span>
+
+ <span class="kd">type</span> <span class="nx">PolicyRule</span> <span class="kd">struct</span> <span class="p">{</span>
+     <span class="nx">PolicyRuleId</span>   <span class="kt">int64</span>    <span class="s">`json:&quot;policyRuleId,omitempty&quot;`</span>
+     <span class="nx">PolicyId</span>       <span class="kt">string</span>   <span class="s">`json:&quot;policyId,omitempty&quot;`</span>
+     <span class="nx">RevisionNum</span>    <span class="kt">int64</span>    <span class="s">`json:&quot;revisionNum,omitempty&quot;`</span>
+     <span class="nx">PolicyRuleType</span> <span class="kt">string</span>   <span class="s">`json:&quot;policyRuleType,omitempty&quot;`</span>
+     <span class="nx">RuleId</span>         <span class="kt">int64</span>    <span class="s">`json:&quot;ruleId,omitempty&quot;`</span>
+     <span class="nx">Args</span>           <span class="p">[]</span><span class="kt">string</span> <span class="s">`json:&quot;args,omitempty&quot;`</span>
+ <span class="p">}</span>
+
+ <span class="kd">type</span> <span class="nx">PolicyScope</span> <span class="kd">struct</span> <span class="p">{</span>
+     <span class="nx">PolicyScopeId</span>  <span class="kt">int64</span>    <span class="s">`json:&quot;policyScopeId,omitempty&quot;`</span>
+     <span class="nx">PolicyId</span>       <span class="kt">string</span>   <span class="s">`json:&quot;policyId,omitempty&quot;`</span>
+     <span class="nx">RevisionNum</span>    <span class="kt">int64</span>    <span class="s">`json:&quot;revisionNum,omitempty&quot;`</span>
+     <span class="nx">Value</span>          <span class="kt">string</span>   <span class="s">`json:&quot;value,omitempty&quot;`</span>
+     <span class="nx">Description</span>    <span class="kt">string</span>   <span class="s">`json:&quot;description,omitempty&quot;`</span>
+     <span class="nx">Tag</span>            <span class="kt">string</span>   <span class="s">`json:&quot;tag,omitempty&quot;`</span>
+     <span class="nx">Reason</span>         <span class="kt">string</span>   <span class="s">`json:&quot;reason,omitempty&quot;`</span>
+     <span class="nx">IsRequired</span>     <span class="kt">bool</span>     <span class="s">`json:&quot;isRequired,omitempty&quot;`</span>
+     <span class="nx">Consented</span>      <span class="kt">bool</span>     <span class="s">`json:&quot;consented,omitempty&quot;`</span>
+     <span class="nx">IncludedFields</span> <span class="p">[]</span><span class="kt">string</span> <span class="s">`json:&quot;includedFields,omitempty&quot;`</span>
+ <span class="p">}</span>
+
+ <span class="kd">type</span> <span class="nx">Address</span> <span class="kd">struct</span> <span class="p">{</span>
+     <span class="nx">AddressId</span>    <span class="kt">int</span>    <span class="s">`json:&quot;addressId,omitempty&quot;`</span>
+     <span class="nx">IdentityId</span>   <span class="kt">string</span> <span class="s">`json:&quot;identityId&quot;`</span>
+     <span class="nx">AddressType</span>  <span class="kt">string</span> <span class="s">`json:&quot;addressType&quot;`</span>
+     <span class="nx">PersonaType</span>  <span class="kt">string</span> <span class="s">`json:&quot;personaType&quot;`</span>
+     <span class="nx">AddressLine1</span> <span class="kt">string</span> <span class="s">`json:&quot;addressLine1&quot;`</span>
+     <span class="nx">AddressLine2</span> <span class="kt">string</span> <span class="s">`json:&quot;addressLine2&quot;`</span>
+     <span class="nx">City</span>         <span class="kt">string</span> <span class="s">`json:&quot;city&quot;`</span>
+     <span class="nx">ProvinceCode</span> <span class="kt">string</span> <span class="s">`json:&quot;provinceCode&quot;`</span>
+     <span class="nx">PostalCode</span>   <span class="kt">string</span> <span class="s">`json:&quot;postalCode&quot;`</span>
+     <span class="nx">CountryCode</span>  <span class="kt">string</span> <span class="s">`json:&quot;countryCode&quot;`</span>
+     <span class="nx">IsPrimary</span>    <span class="kt">bool</span>   <span class="s">`json:&quot;isPrimary&quot;`</span>
+ <span class="p">}</span>
+
+ <span class="kd">type</span> <span class="nx">Phone</span> <span class="kd">struct</span> <span class="p">{</span>
+     <span class="nx">PhoneId</span>         <span class="kt">int</span>    <span class="s">`json:&quot;phoneId&quot;`</span>
+     <span class="nx">IdentityId</span>      <span class="kt">string</span> <span class="s">`json:&quot;identityId&quot;`</span>
+     <span class="nx">PhoneType</span>       <span class="kt">string</span> <span class="s">`json:&quot;phoneType&quot;`</span>
+     <span class="nx">CountryCallCode</span> <span class="kt">string</span> <span class="s">`json:&quot;countryCallCode&quot;`</span>
+     <span class="nx">CountryCode</span>     <span class="kt">string</span> <span class="s">`json:&quot;countryCode&quot;`</span>
+     <span class="nx">PhoneNumber</span>     <span class="kt">string</span> <span class="s">`json:&quot;phoneNumber&quot;`</span>
+     <span class="nx">Extension</span>       <span class="kt">string</span> <span class="s">`json:&quot;extension&quot;`</span>
+     <span class="nx">IsPrimary</span>       <span class="kt">bool</span>   <span class="s">`json:&quot;isPrimary&quot;`</span>
+     <span class="nx">IsMfa</span>           <span class="kt">bool</span>   <span class="s">`json:&quot;isMfa&quot;`</span>
+     <span class="nx">Verified</span>        <span class="kt">bool</span>   <span class="s">`json:&quot;verified&quot;`</span>
+ <span class="p">}</span>
+
+ <span class="kd">type</span> <span class="nx">Email</span> <span class="kd">struct</span> <span class="p">{</span>
+     <span class="nx">EmailId</span>      <span class="kt">int</span>    <span class="s">`json:&quot;emailId&quot;`</span>
+     <span class="nx">EmailAddress</span> <span class="kt">string</span> <span class="s">`json:&quot;emailAddress&quot;`</span>
+     <span class="nx">IsPrimary</span>    <span class="kt">bool</span>   <span class="s">`json:&quot;isPrimary&quot;`</span>
+     <span class="nx">IsVerified</span>   <span class="kt">bool</span>   <span class="s">`json:&quot;isVerified&quot;`</span>
+     <span class="nx">IdentityId</span>   <span class="kt">string</span> <span class="s">`json:&quot;identityId&quot;`</span>
+ <span class="p">}</span>
+
+ <span class="kd">type</span> <span class="nx">Register</span> <span class="kd">struct</span> <span class="p">{</span>
+     <span class="nx">FirstName</span>         <span class="kt">string</span> <span class="s">`json:&quot;firstName&quot;`</span>
+     <span class="nx">MiddleName</span>        <span class="kt">string</span> <span class="s">`json:&quot;middleName&quot;`</span>
+     <span class="nx">LastName</span>          <span class="kt">string</span> <span class="s">`json:&quot;lastName&quot;`</span>
+     <span class="nx">Email</span>             <span class="kt">string</span> <span class="s">`json:&quot;email&quot;`</span>
+     <span class="nx">UserName</span>          <span class="kt">string</span> <span class="s">`json:&quot;userName&quot;`</span>
+     <span class="nx">Password</span>          <span class="kt">string</span> <span class="s">`json:&quot;password&quot;`</span>
+     <span class="nx">SupportCode</span>       <span class="kt">string</span> <span class="s">`json:&quot;supportCode&quot;`</span>
+     <span class="nx">GotoUrl</span>           <span class="kt">string</span> <span class="s">`json:&quot;goToUrl&quot;`</span>
+     <span class="nx">TermsOfUse</span>        <span class="kt">string</span> <span class="s">`json:&quot;termsOfUse&quot;`</span>
+     <span class="nx">CreatedDate</span>       <span class="kt">string</span> <span class="s">`json:&quot;createdDate&quot;`</span>
+     <span class="nx">RecaptchaResponse</span> <span class="kt">string</span> <span class="s">`json:&quot;recaptchaResponse&quot;`</span>
+     <span class="nx">ProviderId</span>        <span class="kt">string</span> <span class="s">`json:&quot;providerId&quot;`</span>
+ <span class="p">}</span>
+
+ <span class="kd">type</span> <span class="nx">ServiceCardApplication</span> <span class="kd">struct</span> <span class="p">{</span>
+     <span class="nx">ApplicationId</span> <span class="kt">int</span>                     <span class="s">`json:&quot;applicationId&quot;`</span>
+     <span class="nx">Name</span>          <span class="kt">string</span>                  <span class="s">`json:&quot;name&quot;`</span>
+     <span class="nx">Organization</span>  <span class="nx">ServiceCardOrganization</span> <span class="s">`json:&quot;organization&quot;`</span>
+     <span class="nx">PolicyId</span>      <span class="kt">string</span>                  <span class="s">`json:&quot;policyId&quot;`</span>
+ <span class="p">}</span>
+
+ <span class="kd">type</span> <span class="nx">ServiceCardCallback</span> <span class="kd">struct</span> <span class="p">{</span>
+     <span class="nx">Files</span>   <span class="p">[]</span><span class="nx">gosdkModels</span><span class="p">.</span><span class="nx">ServiceCardFileDto</span>  <span class="s">`json:&quot;files&quot;`</span>
+     <span class="nx">Labels</span>  <span class="p">[]</span><span class="nx">gosdkModels</span><span class="p">.</span><span class="nx">ServiceCardLabelDto</span> <span class="s">`json:&quot;labels&quot;`</span>
+     <span class="nx">Actions</span> <span class="p">[]</span><span class="nx">gosdkModels</span><span class="p">.</span><span class="nx">ServiceCardTaskDto</span>  <span class="s">`json:&quot;actions&quot;`</span>
+ <span class="p">}</span>
+
+ <span class="kd">type</span> <span class="nx">ServiceCardContact</span> <span class="kd">struct</span> <span class="p">{</span>
+     <span class="nx">FirstName</span>       <span class="kt">string</span>                      <span class="s">`json:&quot;firstName,omitempty&quot;`</span>
+     <span class="nx">LastName</span>        <span class="kt">string</span>                      <span class="s">`json:&quot;lastName,omitempty&quot;`</span>
+     <span class="nx">Prefix</span>          <span class="kt">string</span>                      <span class="s">`json:&quot;prefix,omitempty&quot;`</span>
+     <span class="nx">Suffix</span>          <span class="kt">string</span>                      <span class="s">`json:&quot;suffix,omitempty&quot;`</span>
+     <span class="nx">Title</span>           <span class="kt">string</span>                      <span class="s">`json:&quot;title,omitempty&quot;`</span>
+     <span class="nx">EntityId</span>        <span class="kt">string</span>                      <span class="s">`json:&quot;entityId,omitempty&quot;`</span>
+     <span class="nx">Phone</span>           <span class="nx">ServiceCardContactPhone</span>     <span class="s">`json:&quot;phone,omitempty&quot;`</span>
+     <span class="nx">Phone2</span>          <span class="nx">ServiceCardContactPhone</span>     <span class="s">`json:&quot;phone2,omitempty&quot;`</span>
+     <span class="nx">Fax</span>             <span class="nx">ServiceCardContactPhone</span>     <span class="s">`json:&quot;fax,omitempty&quot;`</span>
+     <span class="nx">Email</span>           <span class="kt">string</span>                      <span class="s">`json:&quot;email,omitempty&quot;`</span>
+     <span class="nx">Url</span>             <span class="kt">string</span>                      <span class="s">`json:&quot;url,omitempty&quot;`</span>
+     <span class="nx">MailingAddress</span>  <span class="nx">ServiceCardAddress</span>          <span class="s">`json:&quot;mailingAddress,omitempty&quot;`</span>
+     <span class="nx">PhysicalAddress</span> <span class="nx">ServiceCardAddress</span>          <span class="s">`json:&quot;physicalAddress,omitempty&quot;`</span>
+     <span class="nx">PhotoUrl</span>        <span class="kt">string</span>                      <span class="s">`json:&quot;photoUrl,omitempty&quot;`</span>
+     <span class="nx">Type</span>            <span class="kt">string</span>                      <span class="s">`json:&quot;type,omitempty&quot;`</span>
+     <span class="nx">OrgUnit</span>         <span class="nx">ServiceCardOrganizationUnit</span> <span class="s">`json:&quot;orgUnit,omitempty&quot;`</span>
+ <span class="p">}</span>
+
+ <span class="kd">type</span> <span class="nx">ServiceCardContactList</span> <span class="kd">struct</span> <span class="p">{</span>
+     <span class="nx">CtaTitle</span>     <span class="kt">string</span> <span class="s">`json:&quot;ctaTitle,omitempty&quot;`</span>
+     <span class="nx">CtaUrl</span>       <span class="kt">string</span> <span class="s">`json:&quot;ctaUrl,omitempty&quot;`</span>
+     <span class="nx">ContactTitle</span> <span class="kt">string</span> <span class="s">`json:&quot;contactTitle,omitempty&quot;`</span>
+     <span class="nx">Contacts</span>     <span class="p">[]</span><span class="nx">ServiceCardContact</span>
+ <span class="p">}</span>
+
+ <span class="kd">type</span> <span class="nx">ServiceCardContactPhone</span> <span class="kd">struct</span> <span class="p">{</span>
+     <span class="nx">Prefix</span>    <span class="kt">string</span> <span class="s">`json:&quot;prefix,omitempty&quot;`</span>
+     <span class="nx">Number</span>    <span class="kt">string</span> <span class="s">`json:&quot;number,omitempty&quot;`</span>
+     <span class="nx">Extension</span> <span class="kt">string</span> <span class="s">`json:&quot;extension,omitempty&quot;`</span>
+     <span class="nx">Note</span>      <span class="kt">string</span> <span class="s">`json:&quot;note,omitempty&quot;`</span>
+ <span class="p">}</span>
+
+ <span class="kd">type</span> <span class="nx">ServiceCardAddress</span> <span class="kd">struct</span> <span class="p">{</span>
+     <span class="nx">Line</span>       <span class="kt">string</span> <span class="s">`json:&quot;line,omitempty&quot;`</span>
+     <span class="nx">City</span>       <span class="kt">string</span> <span class="s">`json:&quot;city,omitempty&quot;`</span>
+     <span class="nx">Province</span>   <span class="kt">string</span> <span class="s">`json:&quot;province,omitempty&quot;`</span>
+     <span class="nx">Country</span>    <span class="kt">string</span> <span class="s">`json:&quot;country,omitempty&quot;`</span>
+     <span class="nx">PostalCode</span> <span class="kt">string</span> <span class="s">`json:&quot;postalCode,omitempty&quot;`</span>
+ <span class="p">}</span>
+
+ <span class="kd">type</span> <span class="nx">ServiceCardOrganizationUnit</span> <span class="kd">struct</span> <span class="p">{</span>
+     <span class="nx">Name</span>            <span class="kt">string</span>                  <span class="s">`json:&quot;name,omitempty&quot;`</span>
+     <span class="nx">EntityId</span>        <span class="kt">string</span>                  <span class="s">`json:&quot;entityId,omitempty&quot;`</span>
+     <span class="nx">Phone</span>           <span class="nx">ServiceCardContactPhone</span> <span class="s">`json:&quot;phone,omitempty&quot;`</span>
+     <span class="nx">Phone2</span>          <span class="nx">ServiceCardContactPhone</span> <span class="s">`json:&quot;phone2,omitempty&quot;`</span>
+     <span class="nx">Fax</span>             <span class="nx">ServiceCardContactPhone</span> <span class="s">`json:&quot;fax,omitempty&quot;`</span>
+     <span class="nx">Email</span>           <span class="kt">string</span>                  <span class="s">`json:&quot;email,omitempty&quot;`</span>
+     <span class="nx">Url</span>             <span class="kt">string</span>                  <span class="s">`json:&quot;url,omitempty&quot;`</span>
+     <span class="nx">MailingAddress</span>  <span class="nx">ServiceCardAddress</span>      <span class="s">`json:&quot;mailingAddress,omitempty&quot;`</span>
+     <span class="nx">PhysicalAddress</span> <span class="nx">ServiceCardAddress</span>      <span class="s">`json:&quot;physicalAddress,omitempty&quot;`</span>
+     <span class="nx">PhotoUrl</span>        <span class="kt">string</span>                  <span class="s">`json:&quot;photoUrl,omitempty&quot;`</span>
+     <span class="nx">Type</span>            <span class="kt">string</span>                  <span class="s">`json:&quot;type,omitempty&quot;`</span>
+ <span class="p">}</span>
+
+ <span class="kd">type</span> <span class="nx">ServiceCardAdditionalDetails</span> <span class="kd">struct</span> <span class="p">{</span>
+     <span class="nx">ActionTitle</span> <span class="kt">string</span> <span class="s">`json:&quot;actionTitle,omitempty&quot;`</span>
+     <span class="nx">Description</span> <span class="kt">string</span> <span class="s">`json:&quot;description,omitempty&quot;`</span>
+     <span class="nx">Url</span>         <span class="kt">string</span> <span class="s">`json:&quot;url,omitempty&quot;`</span>
+ <span class="p">}</span>
+
+ <span class="kd">type</span> <span class="nx">ServiceCard</span> <span class="kd">struct</span> <span class="p">{</span>
+
+     <span class="c1">//The following are required for both ServiceCardDto and LightServiceCardDto</span>
+     <span class="nx">IsPilot</span>           <span class="kt">bool</span>   <span class="s">`json:&quot;isPilot&quot;`</span>
+     <span class="nx">AutomationEnabled</span> <span class="kt">bool</span>   <span class="s">`json:&quot;automationEnabled&quot;`</span>
+     <span class="nx">ServiceCardId</span>     <span class="kt">string</span> <span class="s">`json:&quot;serviceCardId&quot;`</span>
+     <span class="nx">Title</span>             <span class="kt">string</span> <span class="s">`json:&quot;title&quot;`</span>
+     <span class="nx">ShortDescription</span>  <span class="kt">string</span> <span class="s">`json:&quot;shortDescription&quot;`</span>
+     <span class="nx">AdditionalDetail</span>  <span class="kt">string</span> <span class="s">`json:&quot;additionalDetail&quot;`</span>
+     <span class="nx">ServiceCardType</span>   <span class="kt">string</span> <span class="s">`json:&quot;serviceCardType&quot;`</span>
+
+     <span class="c1">//The following are not required and are a part of ServiceCardDto</span>
+     <span class="nx">Saved</span>                    <span class="kt">bool</span>                       <span class="s">`json:&quot;saved,omitempty&quot;`</span>
+     <span class="nx">ActivePolicy</span>             <span class="nx">Policy</span>                     <span class="s">`json:&quot;activePolicy,omitempty&quot;`</span>
+     <span class="nx">BasicContentCallbackUrls</span> <span class="p">[]</span><span class="kt">string</span>                   <span class="s">`json:&quot;basicContentCallbackUrls,omitempty&quot;`</span>
+     <span class="nx">Applications</span>             <span class="p">[]</span><span class="nx">ServiceCardApplication</span>   <span class="s">`json:&quot;applications,omitempty&quot;`</span>
+     <span class="nx">Tasks</span>                    <span class="p">[]</span><span class="nx">gosdk</span><span class="p">.</span><span class="nx">ServiceCardTaskDto</span> <span class="s">`json:&quot;tasks,omitempty&quot;`</span>
+ <span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="section" id="appendix-b">
+<h2>Appendix B<a class="headerlink" href="#appendix-b" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-go notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>  1
+  2
+  3
+  4
+  5
+  6
+  7
+  8
+  9
+ 10
+ 11
+ 12
+ 13
+ 14
+ 15
+ 16
+ 17
+ 18
+ 19
+ 20
+ 21
+ 22
+ 23
+ 24
+ 25
+ 26
+ 27
+ 28
+ 29
+ 30
+ 31
+ 32
+ 33
+ 34
+ 35
+ 36
+ 37
+ 38
+ 39
+ 40
+ 41
+ 42
+ 43
+ 44
+ 45
+ 46
+ 47
+ 48
+ 49
+ 50
+ 51
+ 52
+ 53
+ 54
+ 55
+ 56
+ 57
+ 58
+ 59
+ 60
+ 61
+ 62
+ 63
+ 64
+ 65
+ 66
+ 67
+ 68
+ 69
+ 70
+ 71
+ 72
+ 73
+ 74
+ 75
+ 76
+ 77
+ 78
+ 79
+ 80
+ 81
+ 82
+ 83
+ 84
+ 85
+ 86
+ 87
+ 88
+ 89
+ 90
+ 91
+ 92
+ 93
+ 94
+ 95
+ 96
+ 97
+ 98
+ 99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136</pre></div></td><td class="code"><div class="highlight"><pre><span></span>     <span class="nx">revel</span><span class="p">.</span><span class="nx">TemplateFuncs</span><span class="p">[</span><span class="s">&quot;generic&quot;</span><span class="p">]</span> <span class="p">=</span> <span class="kd">func</span><span class="p">(</span><span class="nx">obj</span> <span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">string</span><span class="p">)</span> <span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kd">interface</span><span class="p">{}</span> <span class="p">{</span>
+             <span class="nx">ret</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">(</span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kd">interface</span><span class="p">{})</span>
+             <span class="k">for</span> <span class="nx">key</span><span class="p">,</span> <span class="nx">val</span> <span class="o">:=</span> <span class="k">range</span> <span class="nx">obj</span> <span class="p">{</span>
+                     <span class="nx">ret</span><span class="p">[</span><span class="nx">key</span><span class="p">]</span> <span class="p">=</span> <span class="nx">val</span>
+             <span class="p">}</span>
+             <span class="k">return</span> <span class="nx">ret</span>
+     <span class="p">}</span>
+
+     <span class="nx">revel</span><span class="p">.</span><span class="nx">TemplateFuncs</span><span class="p">[</span><span class="s">&quot;json&quot;</span><span class="p">]</span> <span class="p">=</span> <span class="kd">func</span><span class="p">(</span><span class="nx">f</span> <span class="kd">interface</span><span class="p">{})</span> <span class="kt">string</span> <span class="p">{</span>
+             <span class="nx">s</span><span class="p">,</span> <span class="nx">_</span> <span class="o">:=</span> <span class="nx">json</span><span class="p">.</span><span class="nx">MarshalIndent</span><span class="p">(</span><span class="nx">f</span><span class="p">,</span> <span class="s">&quot;&quot;</span><span class="p">,</span> <span class="s">&quot;    &quot;</span><span class="p">)</span>
+             <span class="k">return</span> <span class="nb">string</span><span class="p">(</span><span class="nx">s</span><span class="p">)</span>
+     <span class="p">}</span>
+
+     <span class="nx">revel</span><span class="p">.</span><span class="nx">TemplateFuncs</span><span class="p">[</span><span class="s">&quot;doesFileDtoHaveFiles&quot;</span><span class="p">]</span> <span class="p">=</span> <span class="kd">func</span><span class="p">(</span><span class="nx">f</span> <span class="p">[]</span><span class="nx">gosdkModels</span><span class="p">.</span><span class="nx">ServiceCardFileDto</span><span class="p">)</span> <span class="kt">bool</span> <span class="p">{</span>
+             <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="nx">f</span><span class="p">)</span> <span class="p">&lt;</span> <span class="mi">0</span> <span class="p">{</span>
+                     <span class="k">return</span> <span class="kc">true</span>
+             <span class="p">}</span>
+             <span class="k">return</span> <span class="kc">false</span>
+     <span class="p">}</span>
+
+     <span class="nx">revel</span><span class="p">.</span><span class="nx">TemplateFuncs</span><span class="p">[</span><span class="s">&quot;translate&quot;</span><span class="p">]</span> <span class="p">=</span> <span class="kd">func</span><span class="p">(</span><span class="nx">viewArgs</span> <span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kd">interface</span><span class="p">{},</span> <span class="nx">key</span> <span class="kt">string</span><span class="p">)</span> <span class="kt">string</span> <span class="p">{</span>
+             <span class="nx">lang</span><span class="p">,</span> <span class="nx">ok</span> <span class="o">:=</span> <span class="nx">viewArgs</span><span class="p">[</span><span class="nx">revel</span><span class="p">.</span><span class="nx">CurrentLocaleViewArg</span><span class="p">].(</span><span class="kt">string</span><span class="p">)</span>
+             <span class="k">if</span> <span class="p">!</span><span class="nx">ok</span> <span class="p">{</span>
+                     <span class="nx">revel</span><span class="p">.</span><span class="nx">AppLog</span><span class="p">.</span><span class="nx">Warnf</span><span class="p">(</span><span class="s">&quot;unable to determine language, %s&quot;</span><span class="p">,</span> <span class="nx">viewArgs</span><span class="p">)</span>
+                     <span class="nx">lang</span> <span class="p">=</span> <span class="s">&quot;en&quot;</span>
+             <span class="p">}</span>
+
+             <span class="k">return</span> <span class="nx">language</span><span class="p">.</span><span class="nx">Service</span><span class="p">.</span><span class="nx">GetByKeyAndLang</span><span class="p">(</span><span class="nx">lang</span><span class="p">,</span> <span class="nx">key</span><span class="p">)</span>
+     <span class="p">}</span>
+
+     <span class="nx">revel</span><span class="p">.</span><span class="nx">TemplateFuncs</span><span class="p">[</span><span class="s">&quot;map&quot;</span><span class="p">]</span> <span class="p">=</span> <span class="kd">func</span><span class="p">(</span><span class="nx">obj</span> <span class="kd">interface</span><span class="p">{})</span> <span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kd">interface</span><span class="p">{}</span> <span class="p">{</span>
+             <span class="k">return</span> <span class="nx">structs</span><span class="p">.</span><span class="nx">Map</span><span class="p">(</span><span class="nx">obj</span><span class="p">)</span>
+     <span class="p">}</span>
+
+     <span class="nx">revel</span><span class="p">.</span><span class="nx">TemplateFuncs</span><span class="p">[</span><span class="s">&quot;url_for&quot;</span><span class="p">]</span> <span class="p">=</span> <span class="kd">func</span><span class="p">(</span><span class="nx">url</span> <span class="kt">string</span><span class="p">)</span> <span class="kt">string</span> <span class="p">{</span>
+             <span class="k">return</span> <span class="nx">utils</span><span class="p">.</span><span class="nx">UrlFor</span><span class="p">(</span><span class="nx">url</span><span class="p">)</span>
+     <span class="p">}</span>
+
+     <span class="nx">revel</span><span class="p">.</span><span class="nx">TemplateFuncs</span><span class="p">[</span><span class="s">&quot;changeLanguage&quot;</span><span class="p">]</span> <span class="p">=</span> <span class="kd">func</span><span class="p">(</span><span class="nx">url</span><span class="p">,</span> <span class="nx">currentLocale</span><span class="p">,</span> <span class="nx">targetLocale</span> <span class="kt">string</span><span class="p">)</span> <span class="kt">string</span> <span class="p">{</span>
+             <span class="k">return</span> <span class="nx">strings</span><span class="p">.</span><span class="nx">Replace</span><span class="p">(</span><span class="nx">url</span><span class="p">,</span> <span class="nx">fmt</span><span class="p">.</span><span class="nx">Sprintf</span><span class="p">(</span><span class="s">&quot;/%s/&quot;</span><span class="p">,</span> <span class="nx">currentLocale</span><span class="p">),</span> <span class="nx">fmt</span><span class="p">.</span><span class="nx">Sprintf</span><span class="p">(</span><span class="s">&quot;/%s/&quot;</span><span class="p">,</span> <span class="nx">targetLocale</span><span class="p">),</span> <span class="mi">1</span><span class="p">)</span>
+     <span class="p">}</span>
+
+     <span class="nx">revel</span><span class="p">.</span><span class="nx">TemplateFuncs</span><span class="p">[</span><span class="s">&quot;tmpl&quot;</span><span class="p">]</span> <span class="p">=</span> <span class="kd">func</span><span class="p">(</span><span class="nx">parentContext</span> <span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kd">interface</span><span class="p">{},</span> <span class="nx">args</span> <span class="o">...</span><span class="kd">interface</span><span class="p">{})</span> <span class="kd">interface</span><span class="p">{}</span> <span class="p">{</span>
+             <span class="kd">var</span> <span class="nx">templateName</span> <span class="p">=</span> <span class="s">&quot;&quot;</span>
+
+             <span class="kd">var</span> <span class="nx">viewArgs</span> <span class="kd">interface</span><span class="p">{}</span>
+             <span class="k">switch</span> <span class="nb">len</span><span class="p">(</span><span class="nx">args</span><span class="p">)</span> <span class="p">{</span>
+             <span class="k">case</span> <span class="mi">0</span><span class="p">:</span>
+                     <span class="nx">revel</span><span class="p">.</span><span class="nx">AppLog</span><span class="p">.</span><span class="nx">Errorf</span><span class="p">(</span><span class="s">&quot;tmpl: No arguments passed to template call&quot;</span><span class="p">)</span>
+             <span class="k">case</span> <span class="mi">1</span><span class="p">:</span>
+                     <span class="nx">templateName</span> <span class="p">=</span> <span class="nx">args</span><span class="p">[</span><span class="mi">0</span><span class="p">].(</span><span class="kt">string</span><span class="p">)</span>
+             <span class="k">default</span><span class="p">:</span>
+                     <span class="nx">templateName</span> <span class="p">=</span> <span class="nx">args</span><span class="p">[</span><span class="mi">0</span><span class="p">].(</span><span class="kt">string</span><span class="p">)</span>
+                     <span class="nx">viewArgs</span> <span class="p">=</span> <span class="nx">args</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+                     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="nx">args</span><span class="p">)</span> <span class="p">&gt;</span> <span class="mi">3</span> <span class="p">{</span>
+                             <span class="nx">revel</span><span class="p">.</span><span class="nx">AppLog</span><span class="p">.</span><span class="nx">Errorf</span><span class="p">(</span><span class="s">&quot;tmpl: Received more parameters then needed for&quot;</span><span class="p">,</span> <span class="s">&quot;template&quot;</span><span class="p">,</span> <span class="nx">templateName</span><span class="p">)</span>
+                     <span class="p">}</span>
+             <span class="p">}</span>
+
+             <span class="nx">viewArgsMap</span><span class="p">,</span> <span class="nx">ok</span> <span class="o">:=</span> <span class="nx">viewArgs</span><span class="p">.(</span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kd">interface</span><span class="p">{})</span>
+             <span class="k">if</span> <span class="p">!</span><span class="nx">ok</span> <span class="p">{</span>
+                     <span class="nx">fmt</span><span class="p">.</span><span class="nx">Printf</span><span class="p">(</span><span class="s">&quot;viewArgs is type %T, %+v&quot;</span><span class="p">,</span> <span class="nx">viewArgs</span><span class="p">,</span> <span class="nx">viewArgs</span><span class="p">)</span>
+                     <span class="nx">revel</span><span class="p">.</span><span class="nx">AppLog</span><span class="p">.</span><span class="nx">Error</span><span class="p">(</span><span class="s">&quot;tmpl: failed to convert to map&quot;</span><span class="p">,</span> <span class="s">&quot;name&quot;</span><span class="p">,</span> <span class="nx">templateName</span><span class="p">,</span> <span class="s">&quot;err&quot;</span><span class="p">,</span> <span class="nx">viewArgs</span><span class="p">)</span>
+             <span class="p">}</span>
+             <span class="k">for</span> <span class="nx">_</span><span class="p">,</span> <span class="nx">key</span> <span class="o">:=</span> <span class="k">range</span> <span class="p">[]</span><span class="kt">string</span><span class="p">{</span><span class="s">&quot;_csrftoken&quot;</span><span class="p">,</span> <span class="s">&quot;currentLocale&quot;</span><span class="p">,</span> <span class="s">&quot;errors&quot;</span><span class="p">,</span> <span class="s">&quot;flash&quot;</span><span class="p">}</span> <span class="p">{</span>
+                     <span class="k">if</span> <span class="nx">val</span><span class="p">,</span> <span class="nx">ok</span> <span class="o">:=</span> <span class="nx">parentContext</span><span class="p">[</span><span class="nx">key</span><span class="p">];</span> <span class="nx">ok</span> <span class="p">{</span>
+                             <span class="nx">viewArgsMap</span><span class="p">[</span><span class="nx">key</span><span class="p">]</span> <span class="p">=</span> <span class="nx">val</span>
+                     <span class="p">}</span>
+             <span class="p">}</span>
+
+             <span class="kd">var</span> <span class="nx">buf</span> <span class="nx">bytes</span><span class="p">.</span><span class="nx">Buffer</span>
+             <span class="nx">tmpl</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">revel</span><span class="p">.</span><span class="nx">MainTemplateLoader</span><span class="p">.</span><span class="nx">Template</span><span class="p">(</span><span class="nx">templateName</span><span class="p">)</span>
+             <span class="k">if</span> <span class="nx">err</span> <span class="o">==</span> <span class="kc">nil</span> <span class="p">{</span>
+                     <span class="nx">err</span> <span class="p">=</span> <span class="nx">tmpl</span><span class="p">.</span><span class="nx">Render</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">buf</span><span class="p">,</span> <span class="nx">viewArgsMap</span><span class="p">)</span>
+                     <span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+                             <span class="nx">revel</span><span class="p">.</span><span class="nx">AppLog</span><span class="p">.</span><span class="nx">Error</span><span class="p">(</span><span class="s">&quot;tmpl: Failed to render&quot;</span><span class="p">,</span> <span class="s">&quot;name&quot;</span><span class="p">,</span> <span class="nx">templateName</span><span class="p">,</span> <span class="s">&quot;error&quot;</span><span class="p">,</span> <span class="nx">err</span><span class="p">)</span>
+                     <span class="p">}</span>
+             <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                     <span class="nx">revel</span><span class="p">.</span><span class="nx">AppLog</span><span class="p">.</span><span class="nx">Error</span><span class="p">(</span><span class="s">&quot;i18ntemplate: Failed to render i18ntemplate &quot;</span><span class="p">,</span> <span class="s">&quot;name&quot;</span><span class="p">,</span> <span class="nx">templateName</span><span class="p">,</span> <span class="s">&quot;error&quot;</span><span class="p">,</span> <span class="nx">err</span><span class="p">)</span>
+             <span class="p">}</span>
+             <span class="k">return</span> <span class="nx">template</span><span class="p">.</span><span class="nx">HTML</span><span class="p">(</span><span class="nx">buf</span><span class="p">.</span><span class="nx">String</span><span class="p">())</span>
+     <span class="p">}</span>
+
+     <span class="nx">revel</span><span class="p">.</span><span class="nx">TemplateFuncs</span><span class="p">[</span><span class="s">&quot;html&quot;</span><span class="p">]</span> <span class="p">=</span> <span class="kd">func</span><span class="p">(</span><span class="nx">t</span> <span class="kt">string</span><span class="p">)</span> <span class="nx">template</span><span class="p">.</span><span class="nx">HTML</span> <span class="p">{</span>
+             <span class="k">return</span> <span class="nx">template</span><span class="p">.</span><span class="nx">HTML</span><span class="p">(</span><span class="nx">t</span><span class="p">)</span>
+     <span class="p">}</span>
+
+     <span class="nx">revel</span><span class="p">.</span><span class="nx">TemplateFuncs</span><span class="p">[</span><span class="s">&quot;formatPhoneNumber&quot;</span><span class="p">]</span> <span class="p">=</span> <span class="kd">func</span><span class="p">(</span><span class="nx">t</span> <span class="kt">string</span><span class="p">)</span> <span class="kt">string</span> <span class="p">{</span>
+             <span class="k">return</span> <span class="s">&quot;(&quot;</span> <span class="o">+</span> <span class="nb">string</span><span class="p">(</span><span class="nx">t</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">])</span> <span class="o">+</span> <span class="s">&quot;) &quot;</span> <span class="o">+</span> <span class="nb">string</span><span class="p">(</span><span class="nx">t</span><span class="p">[</span><span class="mi">3</span><span class="p">:</span><span class="mi">6</span><span class="p">])</span> <span class="o">+</span> <span class="s">&quot;-&quot;</span> <span class="o">+</span> <span class="nb">string</span><span class="p">(</span><span class="nx">t</span><span class="p">[</span><span class="mi">6</span><span class="p">:</span><span class="mi">10</span><span class="p">])</span>
+     <span class="p">}</span>
+
+     <span class="nx">revel</span><span class="p">.</span><span class="nx">TemplateFuncs</span><span class="p">[</span><span class="s">&quot;extractParams&quot;</span><span class="p">]</span> <span class="p">=</span> <span class="kd">func</span><span class="p">(</span><span class="nx">p</span> <span class="p">[]</span><span class="nx">gosdkModels</span><span class="p">.</span><span class="nx">ServiceCardTaskDto</span><span class="p">,</span> <span class="nx">csrf_token</span> <span class="nx">template</span><span class="p">.</span><span class="nx">HTML</span><span class="p">)</span> <span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kd">interface</span><span class="p">{}</span> <span class="p">{</span>
+             <span class="nx">revel</span><span class="p">.</span><span class="nx">AppLog</span><span class="p">.</span><span class="nx">Debugf</span><span class="p">(</span><span class="s">&quot;adding csfr_token to form submission %v&quot;</span><span class="p">,</span> <span class="nx">csrf_token</span><span class="p">)</span>
+             <span class="nx">revel</span><span class="p">.</span><span class="nx">AppLog</span><span class="p">.</span><span class="nx">Debugf</span><span class="p">(</span><span class="s">&quot;Vivvo-Test %+v&quot;</span><span class="p">,</span> <span class="nx">p</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">Params</span><span class="p">)</span>
+             <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="nx">p</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">Params</span><span class="p">)</span> <span class="p">&gt;</span> <span class="mi">0</span> <span class="p">{</span>
+                     <span class="nx">p</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">Params</span><span class="p">[</span><span class="s">&quot;csrf_token&quot;</span><span class="p">]</span> <span class="p">=</span> <span class="nx">csrf_token</span>
+                     <span class="k">return</span> <span class="nx">p</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">Params</span>
+             <span class="p">}</span>
+             <span class="k">return</span> <span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kd">interface</span><span class="p">{}{</span>
+                     <span class="s">&quot;csrf_token&quot;</span><span class="p">:</span> <span class="nx">csrf_token</span><span class="p">,</span>
+             <span class="p">}</span>
+     <span class="p">}</span>
+
+     <span class="nx">revel</span><span class="p">.</span><span class="nx">TemplateFuncs</span><span class="p">[</span><span class="s">&quot;formatTime&quot;</span><span class="p">]</span> <span class="p">=</span> <span class="kd">func</span><span class="p">(</span><span class="nx">t</span> <span class="kt">string</span><span class="p">)</span> <span class="kt">string</span> <span class="p">{</span>
+             <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="nx">t</span><span class="p">)</span> <span class="p">&gt;</span> <span class="mi">0</span> <span class="p">{</span>
+                     <span class="nx">t</span> <span class="p">=</span> <span class="nx">t</span><span class="p">[:</span><span class="nx">strings</span><span class="p">.</span><span class="nx">IndexByte</span><span class="p">(</span><span class="nx">t</span><span class="p">,</span> <span class="sc">&#39;.&#39;</span><span class="p">)]</span> <span class="o">+</span> <span class="s">&quot;Z&quot;</span>
+             <span class="p">}</span>
+
+             <span class="nx">formatedTime</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">time</span><span class="p">.</span><span class="nx">Parse</span><span class="p">(</span><span class="nx">time</span><span class="p">.</span><span class="nx">RFC3339</span><span class="p">,</span> <span class="nx">t</span><span class="p">)</span>
+             <span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+                     <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">err</span><span class="p">.</span><span class="nx">Error</span><span class="p">())</span>
+                     <span class="k">return</span> <span class="nx">t</span>
+             <span class="p">}</span>
+             <span class="k">return</span> <span class="nx">formatedTime</span><span class="p">.</span><span class="nx">Format</span><span class="p">(</span><span class="s">&quot;02-Jan-06 15:04:05&quot;</span><span class="p">)</span>
+     <span class="p">}</span>
+
+     <span class="nx">revel</span><span class="p">.</span><span class="nx">TemplateFuncs</span><span class="p">[</span><span class="s">&quot;sortAndReverseMap&quot;</span><span class="p">]</span> <span class="p">=</span> <span class="kd">func</span><span class="p">(</span><span class="nx">m</span> <span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">string</span><span class="p">)</span> <span class="o">*</span><span class="nx">slicemultimap</span><span class="p">.</span><span class="nx">MultiMap</span> <span class="p">{</span>
+             <span class="nx">s</span> <span class="o">:=</span> <span class="nx">slicemultimap</span><span class="p">.</span><span class="nx">New</span><span class="p">()</span>
+             <span class="nx">r</span> <span class="o">:=</span> <span class="nx">slicemultimap</span><span class="p">.</span><span class="nx">New</span><span class="p">()</span>
+
+             <span class="k">for</span> <span class="nx">key</span><span class="p">,</span> <span class="nx">value</span> <span class="o">:=</span> <span class="k">range</span> <span class="nx">m</span> <span class="p">{</span>
+                     <span class="nx">s</span><span class="p">.</span><span class="nx">Put</span><span class="p">(</span><span class="nx">value</span><span class="p">,</span> <span class="nx">key</span><span class="p">)</span>
+             <span class="p">}</span>
+             <span class="kd">var</span> <span class="nx">keys</span> <span class="p">[]</span><span class="kt">string</span>
+             <span class="k">for</span> <span class="nx">_</span><span class="p">,</span> <span class="nx">key</span> <span class="o">:=</span> <span class="k">range</span> <span class="nx">s</span><span class="p">.</span><span class="nx">Keys</span><span class="p">()</span> <span class="p">{</span>
+                     <span class="nx">keys</span> <span class="p">=</span> <span class="nb">append</span><span class="p">(</span><span class="nx">keys</span><span class="p">,</span> <span class="nx">key</span><span class="p">.(</span><span class="kt">string</span><span class="p">))</span>
+             <span class="p">}</span>
+             <span class="nx">sort</span><span class="p">.</span><span class="nx">Strings</span><span class="p">(</span><span class="nx">keys</span><span class="p">)</span>
+             <span class="k">for</span> <span class="nx">_</span><span class="p">,</span> <span class="nx">k</span> <span class="o">:=</span> <span class="k">range</span> <span class="nx">keys</span> <span class="p">{</span>
+                     <span class="nx">value</span><span class="p">,</span> <span class="nx">ok</span> <span class="o">:=</span> <span class="nx">s</span><span class="p">.</span><span class="nx">Get</span><span class="p">(</span><span class="nx">k</span><span class="p">)</span>
+                     <span class="k">if</span> <span class="nx">ok</span> <span class="p">{</span>
+                             <span class="nx">r</span><span class="p">.</span><span class="nx">Put</span><span class="p">(</span><span class="nx">k</span><span class="p">,</span> <span class="nx">value</span><span class="p">)</span>
+                     <span class="p">}</span>
+             <span class="p">}</span>
+             <span class="k">return</span> <span class="nx">r</span>
+     <span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Using the Tempate System</a><ul>
+<li><a class="reference internal" href="#appendix-a">Appendix A</a></li>
+<li><a class="reference internal" href="#appendix-b">Appendix B</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="system-structure.html"
+                        title="previous chapter">System Structure</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="project_structure.html"
+                        title="next chapter">Template Structure</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/using-the-templates.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="project_structure.html" title="Template Structure"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="system-structure.html" title="System Structure"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Templates 0.1 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Using the Tempate System</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2021, Vivvo.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.4.0.
+    </div>
+  </body>
+</html>

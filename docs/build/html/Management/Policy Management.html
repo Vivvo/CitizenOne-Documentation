@@ -1,0 +1,392 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Policy Management &mdash; CitizenOne 0.0.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Platform Configuration" href="Platform%20Configuration.html" />
+    <link rel="prev" title="Trust Provider Management" href="Provider%20Management.html" />
+    <link href="../_static/style.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> CitizenOne
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">The CitizenOne Platform</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Tenants.html">Tenants</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Organizations.html">Organizations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Applications.html">Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Service%20Cards.html">Service Cards</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Rules.html">Rules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Providers.html">Trust Providers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Policies.html">Policies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Email%20Templates.html">Email Templates</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Eeze</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Eeze.html">Accessing CitizenOne Service Cards</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Managing CitizenOne</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="CitizenOne%20Support.html">CitizenOne Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Creating%20Service%20Cards.html">Creating a Service Card</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Organization%20Management.html">Organization Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Application%20Management.html">Application Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Service%20Card%20Management.html">Service Card Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Rule%20Management.html">Rule Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Provider%20Management.html">Trust Provider Management</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Policy Management</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#viewing-all-policies">Viewing All Policies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#creating-a-policy">Creating a Policy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#viewing-and-editing-a-policy">Viewing and Editing a Policy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#organization-general-tab">Organization General Tab</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#policy-revisions-tab">Policy Revisions Tab</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#base">1. Base</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#text">2. Text</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#data-bundles">3. Data Bundles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#scopes">4. Scopes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#rules">5. Rules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#review">5. Review</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#policy-public-key-tab">Policy Public Key Tab</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Platform%20Configuration.html">Platform Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Layouts.html">Layout Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Form%20Builder/Form%20Management.html">Form Management</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Technical Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Technical/Authentication.html">Authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Technical/Authentication.html#multi-factor-authentication">Multi-factor Authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Technical/Data%20Bundles.html">Data Bundles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Technical/DynamicIdentityProviders.html">Dynamic Identity Providers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Technical/Feature%20Toggles.html">Feature Toggles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Technical/Federation.html">Federation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Technical/MFA%20Rule%20Evaluation.html">MFA Rule Evaluation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Technical/OpenID%20Connect.html">OpenID Connect (OIDC)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Technical/PolicyHierarchy.html">Policy Hierarchy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Technical/SAML.html">SAML</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Technical/Splunk%20Service.html">Splunk Service</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Templates/index.html">Vivvo Templates Documentation</a></li>
+</ul>
+<p class="caption"><span class="caption-text">General Information</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Contact.html">Contact</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">CitizenOne</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Policy Management</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/Management/Policy Management.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="policy-management">
+<span id="id1"></span><h1>Policy Management<a class="headerlink" href="#policy-management" title="Permalink to this headline">¶</a></h1>
+<p>Introduction to the Policy Management tab.</p>
+<p>The CitizenOne Management application allows you to manage the policies that exist inside CitizenOne.  Policies can then be assigned to an Organization, Application, and/or a Service Card to be presented to the citizen to accept prior to using a service.</p>
+<p>Policies assigned to an Organization will be displayed for all Service Cards linked to an Application belonging to the Organization.</p>
+<p>Policies assigned to an Application will be displayed for all Service Cards linked to the Application.</p>
+<p>The list of all available Policies can be accessed by clicking [<strong>Policies</strong>] under the
+[<strong>Tenants</strong>] tab of the sidebar.</p>
+<a class="reference internal image-reference" href="../_images/sidebar2.png"><img alt="Sidebar with the Policies tab selected" class="align-center" src="../_images/sidebar2.png" style="width: 100pt;" /></a>
+<div class="section" id="viewing-all-policies">
+<span id="viewing-policies"></span><h2>Viewing All Policies<a class="headerlink" href="#viewing-all-policies" title="Permalink to this headline">¶</a></h2>
+<p>The initial Policies page displays a list of all of the Policies
+that have been created for your instance of CitizenOne. Here, you can see an overview of the Policy, including the name, description and the number of revisions.</p>
+<p>From this page, you are able to filter the displayed list of Policies by their name,
+click on a Policy in the list for a more detailed view, or create a new Policy.</p>
+<p>If you have only been granted “READ” access to Policies, you will not be able to create new Policies,
+nor will you be able to modify existing Policies.</p>
+<a class="reference internal image-reference" href="../_images/policy-list.png"><img alt="List of Policies in CitizenOne" class="align-center" src="../_images/policy-list.png" style="width: 500pt;" /></a>
+</div>
+<div class="section" id="creating-a-policy">
+<span id="creating-policies"></span><h2>Creating a Policy<a class="headerlink" href="#creating-a-policy" title="Permalink to this headline">¶</a></h2>
+<p>When you’ve determined that a new Policy is needed, you can click the [<strong>+ Create</strong>] button
+in the top right of the Policies listing page.</p>
+<a class="reference internal image-reference" href="../_images/policy-create-tab.png"><img alt="Creating a new Policy" class="align-center" src="../_images/policy-create-tab.png" style="width: 500pt;" /></a>
+<p>This will bring you to a new view where you will be asked to fill out only the vital information
+needed to create the Policy. Any fields not seen here will be configurable after the Policy has
+successfully been created.</p>
+<p>For Policies, the required fields are:</p>
+<ol class="arabic simple">
+<li><p><strong>Name</strong>: The name of the policy that will be used to set the policy on an Organization, Application, and/or Service Card.</p></li>
+<li><p><strong>Description</strong>: A description of the Policy to help distinguish it from other policies.</p></li>
+<li><p><strong>RSA Public Key</strong>: If part of this policy is to get consent to subscribe to Data Bundle changes, specify the RSA Public Key in PEM format. If this does not apply, leave blank.</p></li>
+<li><p><strong>Default Consent Length in Days</strong>: If you would like to set a default value for the duration in which consent is granted, specify the number of days. Citizens can override this value when consenting to the policy. If no default is required, leave the field set to 0 or blank.</p></li>
+</ol>
+<a class="reference internal image-reference" href="../_images/policy-create-main.png"><img alt="Form to create a new Policy" class="align-center" src="../_images/policy-create-main.png" style="width: 500pt;" /></a>
+<p>Clicking the [<strong>Cancel</strong>] button will not save any changes you made to the form, and you will be taken back to the
+Policies listing page.</p>
+<p>Clicking the [<strong>Save</strong>] button will then attempt to make a new Policy, and you will be taken
+to the new Policy’s details page.</p>
+</div>
+<div class="section" id="viewing-and-editing-a-policy">
+<span id="viewing-editing-policies"></span><h2>Viewing and Editing a Policy<a class="headerlink" href="#viewing-and-editing-a-policy" title="Permalink to this headline">¶</a></h2>
+<p>When you click on or create a Policy, you will be taken to a view with multiple tabs.
+Each tab contains information that you can fill out to help define and customize your Policy.</p>
+<a class="reference internal image-reference" href="../_images/policy-create-tab.png"><img alt="Viewing Policy details" class="align-center" src="../_images/policy-create-tab.png" style="width: 500pt;" /></a>
+<p>Clicking on these tabs changes the view so if you are editing any forms on a page, ensure
+that you save any changes, or they will be lost on navigation.</p>
+</div>
+<div class="section" id="organization-general-tab">
+<span id="policy-general"></span><h2>Organization General Tab<a class="headerlink" href="#organization-general-tab" title="Permalink to this headline">¶</a></h2>
+<p>The General tab of a Policy contains the basic details that define the Policy itself.
+The fields that primarily define a Policy are its Name, Description and the Default Consent Length in Days.</p>
+<p>Clicking the [<strong>Edit</strong>] button will enable the fields in the view for change. Ensure your changes are saved before navigating away from the page.</p>
+</div>
+<div class="section" id="policy-revisions-tab">
+<span id="policy-revisions"></span><h2>Policy Revisions Tab<a class="headerlink" href="#policy-revisions-tab" title="Permalink to this headline">¶</a></h2>
+<p>The content of a policy is contained in a Revision. This allows CitizenOne to track the revision of a policy the user has consented to and prompt the citizen for consent if a new Revision is created for a policy.</p>
+<p>The Revisions tab of a Policy contains the history of Revisions for a policy as well as show the current active Revision.</p>
+<a class="reference internal image-reference" href="../_images/policy-create-manage-revision.png"><img alt="Viewing Policy Revision details" class="align-center" src="../_images/policy-create-manage-revision.png" style="width: 500pt;" /></a>
+<p>To create a new revision, click the [<strong>+ Create Revision</strong>] button. Creating a new Policy revision involves several steps</p>
+<div class="section" id="base">
+<h3>1. Base<a class="headerlink" href="#base" title="Permalink to this headline">¶</a></h3>
+<a class="reference internal image-reference" href="../_images/revision-create-main.png"><img alt="Creating a Policy Revision" class="align-center" src="../_images/revision-create-main.png" style="width: 500pt;" /></a>
+<p>Here, we can either create an entirely new revision or use a previous revision as a starting point to base our new revision off of.</p>
+<p>To create a new revision that isn’t based on a previous revision, click the [<strong>Create New Revision</strong>] button.</p>
+<p>To create a new revision based on a previous revision, click the [<strong>Create from Active Revision</strong>] button to base it on the currently active revision or select a revision from the list.</p>
+</div>
+<div class="section" id="text">
+<h3>2. Text<a class="headerlink" href="#text" title="Permalink to this headline">¶</a></h3>
+<a class="reference internal image-reference" href="../_images/revision-create-text.png"><img alt="Creating a Policy Revision text" class="align-center" src="../_images/revision-create-text.png" style="width: 500pt;" /></a>
+<p>If you chose to create a new revision that isn’t based on a previous revision, the Policy Text will be blank and need to be populated.</p>
+<p>If you chose to base the new revision on a previous revision, the previous revision’s text will be displayed and can be updated.</p>
+<p>Click the [<strong>Previous Step</strong>] button to go back to the Base step.</p>
+<p>Click the [<strong>Next Step</strong>] button to go to the Data Bundles step.</p>
+</div>
+<div class="section" id="data-bundles">
+<h3>3. Data Bundles<a class="headerlink" href="#data-bundles" title="Permalink to this headline">¶</a></h3>
+<a class="reference internal image-reference" href="../_images/policy-revision-data-bundle.png"><img alt="Creating a Policy Revision Data Bundle" class="align-center" src="../_images/policy-revision-data-bundle.png" style="width: 500pt;" /></a>
+<p>If you chose to base the new revision on a previous revision, the previous revision’s Data Bundles details will be displayed and can be updated.</p>
+<p>To add a new Data Bundle subscription, click the [<strong>+ Add Subscription</strong>] button. You will need to specify the Data Bundle Type the service wants to subscribe to receive changes as well as the URL of the API CitizenOne will send the Data Bundle to.</p>
+<p>You can also specify a URL to get a set of dynamic tasks from an application for a service card. This can also populate the status of an application as well as any relevant files the application wants to present to the citizen.</p>
+<p>Click the [<strong>Previous Step</strong>] button to go back to the Text step.</p>
+<p>Click the [<strong>Next Step</strong>] button to go to the Scopes step.</p>
+</div>
+<div class="section" id="scopes">
+<h3>4. Scopes<a class="headerlink" href="#scopes" title="Permalink to this headline">¶</a></h3>
+<a class="reference internal image-reference" href="../_images/revision-create-scopes.png"><img alt="Creating a Policy Revision Scopes" class="align-center" src="../_images/revision-create-scopes.png" style="width: 500pt;" /></a>
+<p>If you chose to base the new revision on a previous revision, the previous revision’s Scopes details will be displayed and can be updated.</p>
+<p>Scopes define what profile information and Data Bundles the application needs in order to use the service. Any Data Bundles defined in the previous step will automatically be added here.</p>
+<p>To add a new scope, click the [<strong>Add Consent Scope</strong>] button. Select the Scope the application needs like reading the phone number (“read:phone”), the reason why the application needs this and whether the citzen is required to accept it to use the service.</p>
+<p>Click the red [<strong>X</strong>] button to remove Scopes.</p>
+<p>Click the [<strong>Previous Step</strong>] button to go back to the Data Bundles step.</p>
+<p>Click the [<strong>Next Step</strong>] button to go to the Rules step.</p>
+</div>
+<div class="section" id="rules">
+<h3>5. Rules<a class="headerlink" href="#rules" title="Permalink to this headline">¶</a></h3>
+<a class="reference internal image-reference" href="../_images/revision-create-rule.png"><img alt="Creating a Policy Revision Data Bundle" class="align-center" src="../_images/revision-create-rule.png" style="width: 500pt;" /></a>
+<p>If you chose to base the new revision on a previous revision, the previous revision’s Rules will be displayed and can be updated.</p>
+<p>To add a new Rule the citizen needs to pass to use the service that has this Policy, click the [<strong>+ Add Rule</strong>] button. Select the Rule from the list of Rules available in your CitizenOne. If the rule has arguments, define the value that must be met.</p>
+<p>Click the red [<strong>X</strong>] button to remove Rules.</p>
+<p>Click the [<strong>Previous Step</strong>] button to go back to the Scopes step.</p>
+<p>Click the [<strong>Next Step</strong>] button to go to the Review step.</p>
+</div>
+<div class="section" id="review">
+<h3>5. Review<a class="headerlink" href="#review" title="Permalink to this headline">¶</a></h3>
+<a class="reference internal image-reference" href="../_images/revision-create-review.png"><img alt="Creating a Policy Revision Data Bundle" class="align-center" src="../_images/revision-create-review.png" style="width: 500pt;" /></a>
+<p>The Review step allows you to review the details of the Policy Revision before it is saved. Review the details to ensure the information is correct.</p>
+<p>If anything needs to be corrected, click the [<strong>Back</strong>] button to go back to previous steps and make the necessary corrections.</p>
+<p>Once everything is correct, click the <strong>Make Active</strong> checkbox if you want this Revision to be active immediately, and click the [<strong>Confirm</strong>] button to save the Revision.</p>
+</div>
+</div>
+<div class="section" id="policy-public-key-tab">
+<span id="id2"></span><h2>Policy Public Key Tab<a class="headerlink" href="#policy-public-key-tab" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference internal" href="../Technical/Data%20Bundles.html#data-bundles-scenario-1"><span class="std std-ref">Data Bundles</span></a> enable your services to recieve updates when your user’s data changes in another service. They allow your services to stay in sync without maintaining backchannel communication.</p>
+<p>All data bundles are end-to-end encrypted and require a Public Key to subscribe to data bundles. You can follow the commands given to assist you in generating an appropriate key.</p>
+<a class="reference internal image-reference" href="../_images/policy-public-key.png"><img alt="../_images/policy-public-key.png" class="align-left" src="../_images/policy-public-key.png" style="width: 500pt;" /></a>
+<p>It is the responsibility of the service as a data consumer to decrypt data bundles received using the private key pair to the public key you specified.</p>
+<p>Clicking the [<strong>Edit</strong>] button will enable the fields in the view for change. Ensure your changes are saved before navigating away from the page.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Platform%20Configuration.html" class="btn btn-neutral float-right" title="Platform Configuration" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Provider%20Management.html" class="btn btn-neutral float-left" title="Trust Provider Management" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2021, Vivvo
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

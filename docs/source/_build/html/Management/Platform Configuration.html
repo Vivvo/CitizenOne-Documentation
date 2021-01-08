@@ -1,0 +1,423 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Platform Configuration &mdash; CitizenOne 0.0.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Layout Management" href="Layouts.html" />
+    <link rel="prev" title="Policy Management" href="Policy%20Management.html" />
+    <link href="../_static/style.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> CitizenOne
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">The CitizenOne Platform</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Tenants.html">Tenants</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Organizations.html">Organizations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Applications.html">Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Service%20Cards.html">Service Cards</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Rules.html">Rules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Providers.html">Trust Providers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Policies.html">Policies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Email%20Templates.html">Email Templates</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Eeze</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Eeze.html">Accessing CitizenOne Service Cards</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Managing CitizenOne</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="CitizenOne%20Support.html">CitizenOne Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Creating%20Service%20Cards.html">Creating a Service Card</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Organization%20Management.html">Organization Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Application%20Management.html">Application Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Service%20Card%20Management.html">Service Card Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Rule%20Management.html">Rule Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Provider%20Management.html">Trust Provider Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Policy%20Management.html">Policy Management</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Platform Configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#platform-config-idp">Identity Providers</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#viewing-all-identity-providers">Viewing All Identity Providers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#configuring-a-new-identity-provider">Configuring a New Identity Provider</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#setting-up-an-identity-provider-with-saml-saml">Setting up an Identity Provider with SAML (saml)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#setting-up-an-identity-provider-openid-connect-oidc">Setting up an Identity Provider OpenID Connect (oidc)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#setting-up-a-passwordless-identity-provider-did-auth">Setting up a Passwordless Identity Provider (did-auth)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#setting-up-another-citizenone-instance-as-an-identity-provider-c1-deprecated">Setting up another CitizenOne instance as an Identity Provider (c1 - Deprecated)</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#platform-config-idp-login">Identity Providers on the Login Page</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#external-apis">External APIs</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Layouts.html">Layout Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Form%20Builder/Form%20Management.html">Form Management</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Technical Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Technical/Authentication.html">Authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Technical/Authentication.html#multi-factor-authentication">Multi-factor Authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Technical/Data%20Bundles.html">Data Bundles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Technical/DynamicIdentityProviders.html">Dynamic Identity Providers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Technical/Feature%20Toggles.html">Feature Toggles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Technical/Federation.html">Federation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Technical/MFA%20Rule%20Evaluation.html">MFA Rule Evaluation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Technical/OpenID%20Connect.html">OpenID Connect (OIDC)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Technical/PolicyHierarchy.html">Policy Hierarchy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Technical/SAML.html">SAML</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Technical/Splunk%20Service.html">Splunk Service</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Templates/index.html">Vivvo Templates Documentation</a></li>
+</ul>
+<p class="caption"><span class="caption-text">General Information</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Contact.html">Contact</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">CitizenOne</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Platform Configuration</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/Management/Platform Configuration.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="platform-configuration">
+<span id="id1"></span><h1>Platform Configuration<a class="headerlink" href="#platform-configuration" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="platform-config-idp">
+<span id="identity-providers"></span><h2>Identity Providers<a class="headerlink" href="#platform-config-idp" title="Permalink to this headline">¶</a></h2>
+<p>Identity Providers (IDPs) are external applications or systems that are able to provide the
+necessary details needed in order to sign users into CitizenOne, connecting the two
+accounts.</p>
+<p>For example, you can configure CitizenOne to sign in using Facebook, Google, or even
+another instance of CitizenOne, so long as the integration is set up on both sides.</p>
+<p>The list of all available Identity Providers can be accessed by clicking [<strong>Identity Providers</strong>] under the
+[<strong>Configuration</strong>] tab of the sidebar.</p>
+<a class="reference internal image-reference" href="../_images/identity-providers-nav.png"><img alt="Sidebar with the Identity Providers tab selected" class="align-center" src="../_images/identity-providers-nav.png" style="width: 100pt;" /></a>
+<div class="section" id="viewing-all-identity-providers">
+<span id="platform-config-viewing-idp"></span><h3>Viewing All Identity Providers<a class="headerlink" href="#viewing-all-identity-providers" title="Permalink to this headline">¶</a></h3>
+<p>The initial Identity Providers page displays a list of all of the Identity Providers
+that have been configured for your instance of CitizenOne. Here, you can see a list of IDPs, the federation strategy (SAML, OIDC, etc) and if the IDP is active.</p>
+<p>From this page, you are able to filter the displayed list of Identity Providers by their name,
+click on an Identity Provider in the list for a more detailed view, or configure a new Idenity Provider.</p>
+<a class="reference internal image-reference" href="../_images/identity-providers-list.png"><img alt="Viewing list of Identity Providers" class="align-center" src="../_images/identity-providers-list.png" style="width: 500pt;" /></a>
+</div>
+<div class="section" id="configuring-a-new-identity-provider">
+<span id="platform-config-configuring-idp"></span><h3>Configuring a New Identity Provider<a class="headerlink" href="#configuring-a-new-identity-provider" title="Permalink to this headline">¶</a></h3>
+<p>When you’ve determined that a new Identity Provider is needed to be configured, you can click the [<strong>+ Add Identity Provider</strong>] button
+in the top right of the Identity Providers listing page.</p>
+<a class="reference internal image-reference" href="../_images/identity-providers-create.png"><img alt="Configure a new Identity Providers" class="align-center" src="../_images/identity-providers-create.png" style="width: 500pt;" /></a>
+<p>This will bring you to a new view where you will be asked to fill out the vital information
+needed to configure the Identity Provider.</p>
+<p>The general fields that need to be set for every Identity Provider are:</p>
+<ol class="arabic simple">
+<li><p><strong>Enabled/Disabled</strong> toggle: When enabled, users will be able to sign in to CitizenOne using this IDP</p></li>
+<li><p><strong>Provider Strategy</strong>: The type of federation the IDP supports. Options include SAML, OIDC, and DID Auth</p></li>
+<li><p><strong>Provider Name</strong>: The name of the IDP</p></li>
+</ol>
+<p>Depending on the Provider Strategy selected, the remaining form to configure the IDP will change to capture the appropriate information to complete the configuration of the IDP.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you forget what any of the fields are for, you can hover over the small <cite>(i)</cite> next to the field labels to get a short description of each.</p>
+</div>
+<div class="section" id="setting-up-an-identity-provider-with-saml-saml">
+<span id="platform-config-configuring-idp-saml"></span><h4>Setting up an Identity Provider with SAML (saml)<a class="headerlink" href="#setting-up-an-identity-provider-with-saml-saml" title="Permalink to this headline">¶</a></h4>
+<p>Security Assertion Markup Language (SAML) is an open standard that allows Identity Providers to pass authorization credentials to Service Providers.
+SAML transactions use Extensible Markup Language (XML) for standardized communications between the identity provider and service providers. SAML is the link between the authentication of a user’s identity and the authorization to use a service.
+SAML enables Single-Sign On (SSO), a term that means users can log in once, and those same credentials can be reused to log into other service providers.</p>
+<a class="reference internal image-reference" href="../_images/new-saml-idp.png"><img alt="Configure a new Identity Providers with SAML" class="align-center" src="../_images/new-saml-idp.png" style="width: 500pt;" /></a>
+<p>The fields that need to be set for an Identity Provider with SAML are:</p>
+<ol class="arabic simple">
+<li><p><strong>Metadata URL</strong>: A URL to call out to to retrieve the Identity Provider’s SAML metdata.</p></li>
+<li><p><strong>SAML Metadata</strong>: The SAML metadata, with a valid EntityID, supplied by the Identity Provider. If a Metadata URL is specified, leave this field empty.</p></li>
+</ol>
+<p>Clicking the [<strong>Cancel</strong>] button will not save any changes you made to the form, and you will be taken back to the
+Identity Providers listing page.</p>
+<p>Clicking the [<strong>Save</strong>] button will then attempt to save the new Identity Provider, and you will be taken
+to the Identity Providers listing page.</p>
+</div>
+<div class="section" id="setting-up-an-identity-provider-openid-connect-oidc">
+<span id="platform-config-configuring-idp-oidc"></span><h4>Setting up an Identity Provider OpenID Connect (oidc)<a class="headerlink" href="#setting-up-an-identity-provider-openid-connect-oidc" title="Permalink to this headline">¶</a></h4>
+<p>OpenID Connect allows a range of clients, including Web-based, mobile, and JavaScript clients, to request and receive information about authenticated sessions and end-users.</p>
+<a class="reference internal image-reference" href="../_images/new-oidc-idp.png"><img alt="Configure a new Identity Providers with OIDC" class="align-center" src="../_images/new-oidc-idp.png" style="width: 500pt;" /></a>
+<p>The fields that need to be set for an Identity Provider with OpenID Connect are:</p>
+<ol class="arabic simple">
+<li><p><strong>OAuth2 Strategy</strong>: The desired OAuth provider</p></li>
+<li><p><strong>Issuer</strong>: The ‘issuer’ identifier of the Identity Provider</p></li>
+<li><p><strong>Client ID</strong>: The public Client ID or Application Key of the Provider application</p></li>
+<li><p><strong>Client Secret</strong>: The private Client Secret or API Key of the Provider application</p></li>
+<li><p><strong>Scope</strong>: The scopes that CitizenOne should request - this will impact what data gets populated in the user’s CitizenOne profile after successfully authenticating</p></li>
+<li><p><strong>Authorization URL</strong>: The User Agent is sent to the Authorization URL for Authentication and Authorization</p></li>
+<li><p><strong>Token URL</strong>: To obtain an Access Token, an ID Token, and optionally a Refresh Token, Client sends a Token Request to the Token URL to obtain a Token Response</p></li>
+<li><p><strong>User Info URL</strong>: The UserInfo URL is an OAuth 2.0 Protected Resource that returns Claims about the authenticated User</p></li>
+</ol>
+<p>Clicking the [<strong>Cancel</strong>] button will not save any changes you made to the form, and you will be taken back to the
+Identity Providers listing page.</p>
+<p>Clicking the [<strong>Save</strong>] button will then attempt to save the new Identity Provider, and you will be taken
+to the Identity Providers listing page.</p>
+<div class="section" id="social-login">
+<span id="platform-config-configuring-idp-oidc-social-media"></span><h5>Social Login<a class="headerlink" href="#social-login" title="Permalink to this headline">¶</a></h5>
+<p>Many modern Identity Providers have implemented their own proprietary OAuth2.0 based protocol with varying levels of similarity to OpenID Connect. Those that fully support OpenID Connect don’t need any special handling in CitizenOne and you can select <em>OpenID Connect</em> as the OAuth2 Strategy when setting it up. Google is an example of a social login provider that fully supports OIDC.</p>
+<p>As of right now, GitHub is the only proprietary social login provider that we support but we are working on supporting other social login providers. There is no extra information required to use GitHub, simply fill out the form and select <em>GitHub</em> as your OAuth2 Strategy.</p>
+</div>
+</div>
+<div class="section" id="setting-up-a-passwordless-identity-provider-did-auth">
+<span id="platform-config-configuring-idp-did-auth"></span><h4>Setting up a Passwordless Identity Provider (did-auth)<a class="headerlink" href="#setting-up-a-passwordless-identity-provider-did-auth" title="Permalink to this headline">¶</a></h4>
+<p>A Decentralized Identifier (DID) is a new type of identifier that is globally unique, resolveable with high
+availability, and cryptographically verifiable. DIDs are typically associated with cryptographic material, such as public keys, and service endpoints, for establishing secure communication channels.</p>
+<a class="reference internal image-reference" href="../_images/new-did-auth-idp.png"><img alt="Configure a new Identity Providers with did-auth" class="align-center" src="../_images/new-did-auth-idp.png" style="width: 500pt;" /></a>
+<p>The fields that need to be set for an Identity Provider with did-auth are:</p>
+<ol class="arabic simple">
+<li><p><strong>Client ID</strong>: The public Client ID or Application Key of the Provider application.</p></li>
+<li><p><strong>Client Secret</strong>: The private Client Secret or API Key of the Provider application.</p></li>
+<li><p><strong>Base URL</strong>: The host URL of the Identity Provider to verify the DID with.</p></li>
+</ol>
+</div>
+<div class="section" id="setting-up-another-citizenone-instance-as-an-identity-provider-c1-deprecated">
+<span id="platform-config-configuring-idp-c1"></span><h4>Setting up another CitizenOne instance as an Identity Provider (c1 - Deprecated)<a class="headerlink" href="#setting-up-another-citizenone-instance-as-an-identity-provider-c1-deprecated" title="Permalink to this headline">¶</a></h4>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This method of configuring CitizenOne as an Identity Provider is deprecated, and only remains to keep backwards compatability.</p>
+</div>
+</div>
+</div>
+<div class="section" id="platform-config-idp-login">
+<span id="identity-providers-on-the-login-page"></span><h3>Identity Providers on the Login Page<a class="headerlink" href="#platform-config-idp-login" title="Permalink to this headline">¶</a></h3>
+<p>To set up the link to an Identity Provider on the login page, click [<strong>Login Layout</strong>] under the
+[<strong>Configuration</strong>] tab of the sidebar.</p>
+<a class="reference internal image-reference" href="../_images/sidebar1.png"><img alt="Sidebar with the Login Layout selected" class="align-center" src="../_images/sidebar1.png" style="width: 100pt;" /></a>
+<p>For a full overview on this page, please see <a class="reference internal" href="Layouts.html#layout-management"><span class="std std-ref">Layout Management</span></a>. The documentation below is focused on managing the configured IDPs to display on the login page.</p>
+<a class="reference internal image-reference" href="../_images/login-layout.png"><img alt="Login Layout page" class="align-center" src="../_images/login-layout.png" style="width: 500pt;" /></a>
+<p>If the Identity Providers widget hasn’t been added to the login layout, click into the dropdown box at the top
+of the display, select “Identity Providers” and click the [<strong>+ Add Widget</strong>] button to add the
+“Identity Providers” widget to the layout.</p>
+<a class="reference internal image-reference" href="../_images/new-idp-widget.png"><img alt="Adding the IDP widget" class="align-center" src="../_images/new-idp-widget.png" style="width: 500pt;" /></a>
+<p>Once the Identity Provider widget has been added to the layout, you can begin adding IDPs.
+Click the [<strong>+ Identity Provider</strong>] to add an Identity Provider card to the widget.</p>
+<a class="reference internal image-reference" href="../_images/new-idp-card.png"><img alt="Adding a new IDP to login page" class="align-center" src="../_images/new-idp-card.png" style="width: 500pt;" /></a>
+<p>The fields that need to be set to display the Identity Provider on the login page are:</p>
+<ol class="arabic simple">
+<li><p><strong>Provider Width (Applies to ALL Identity Provider Cards)</strong>:  the width of each Provider card within the Identity Providers widget.</p></li>
+<li><p><strong>Identity Provider</strong>: The desired Identity Provider you wish to link to with this card. Only <cite>Enabled</cite> Identity Providers can be used.</p></li>
+<li><p><strong>Icon URL</strong>: A link to the image to be displayed at the top of the card.</p></li>
+<li><p><strong>Colour</strong>: The accent color of the Identity Provider card.</p></li>
+</ol>
+<p>As the fields are being filled in, you will be able to see a preview of the Provider’s card below in the layout preview.</p>
+<p>Changes to the layout do not save automatically. When you are done making changes to the layout, click the [<strong>Save All</strong>] button at the bottom of the page.</p>
+<p>If you have made changes to the layout and have not saved them yet, click the [<strong>Cancel All</strong>] button at the bottom of the page to go back to the last saved layout.</p>
+</div>
+</div>
+<div class="section" id="external-apis">
+<span id="platform-config-external-api"></span><h2>External APIs<a class="headerlink" href="#external-apis" title="Permalink to this headline">¶</a></h2>
+<p>The CitizenOne Management application allows you to set up and manage APIs that Applications may communicate with.
+The list of all available External APIs can be accessed by clicking [<strong>External APIs</strong>] under the
+[<strong>Configuration</strong>] tab of the sidebar.</p>
+<a class="reference internal image-reference" href="../_images/api-nav.png"><img alt="Sidebar with the External APIs tab selected" class="align-center" src="../_images/api-nav.png" style="width: 100pt;" /></a>
+<p>You’ll be presented with a list of external APIs currently configured.</p>
+<a class="reference internal image-reference" href="../_images/api-list.png"><img alt="List of External APIs configured in CitizenOne" class="align-center" src="../_images/api-list.png" style="width: 500pt;" /></a>
+<p>To add a new API to the platform, click the [<strong>+ Add API</strong>] button in the top right.
+You’ll be taken to the configuration page, where you can fill out the required fields
+with data pertaining to your API.</p>
+<a class="reference internal image-reference" href="../_images/api-new.png"><img alt="Configuring a new External API in CitizenOne" class="align-center" src="../_images/api-new.png" style="width: 500pt;" /></a>
+<p>The fields that need to be set to configure an external API are:</p>
+<ol class="arabic simple">
+<li><p><strong>Audience Name</strong>: Name given to the external API</p></li>
+<li><p><strong>Description</strong>: A brief description of the external API</p></li>
+<li><p><strong>URL</strong>: The URL of the API</p></li>
+</ol>
+<p>Once successfully created, you’ll be automatically navigated to the view page of the created API.</p>
+<a class="reference internal image-reference" href="../_images/api-view.png"><img alt="View details about the External API" class="align-center" src="../_images/api-view.png" style="width: 500pt;" /></a>
+<p>The next step is to add Applications that can access the external API. To add Applications, click the [<strong>Edit</strong>]
+button in the top right, to enter editing mode, where you may select which Applications to allow from the list on the right.</p>
+<a class="reference internal image-reference" href="../_images/api-edit.png"><img alt="Edit an External API" class="align-center" src="../_images/api-edit.png" style="width: 500pt;" /></a>
+<p>Once you are satisfied with your changes, click the [<strong>Save</strong>] button and your API will be updated.</p>
+<a class="reference internal image-reference" href="../_images/api-view-with-apps.png"><img alt="Updated External API" class="align-center" src="../_images/api-view-with-apps.png" style="width: 500pt;" /></a>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Layouts.html" class="btn btn-neutral float-right" title="Layout Management" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Policy%20Management.html" class="btn btn-neutral float-left" title="Policy Management" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2021, Vivvo
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

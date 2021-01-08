@@ -1,0 +1,380 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Trust Provider Management &mdash; CitizenOne 0.0.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Policy Management" href="Policy%20Management.html" />
+    <link rel="prev" title="Rule Management" href="Rule%20Management.html" />
+    <link href="../_static/style.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> CitizenOne
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">The CitizenOne Platform</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Tenants.html">Tenants</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Organizations.html">Organizations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Applications.html">Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Service%20Cards.html">Service Cards</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Rules.html">Rules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Providers.html">Trust Providers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Policies.html">Policies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Email%20Templates.html">Email Templates</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Eeze</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Eeze.html">Accessing CitizenOne Service Cards</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Managing CitizenOne</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="CitizenOne%20Support.html">CitizenOne Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Creating%20Service%20Cards.html">Creating a Service Card</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Organization%20Management.html">Organization Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Application%20Management.html">Application Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Service%20Card%20Management.html">Service Card Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Rule%20Management.html">Rule Management</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Trust Provider Management</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#viewing-all-trust-providers">Viewing All Trust Providers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#creating-trust-providers">Creating Trust Providers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#viewing-and-editing-a-trust-provider">Viewing and Editing a Trust Provider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#trust-providers-general-tab">Trust Providers General Tab</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#trust-providers-onbaording-tab">Trust Providers Onbaording Tab</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#trust-providers-rules-tab">Trust Providers Rules Tab</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#trust-providers-providing-bundles-tab">Trust Providers Providing Bundles Tab</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#removing-a-trust-provider">Removing a Trust Provider</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Policy%20Management.html">Policy Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Platform%20Configuration.html">Platform Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Layouts.html">Layout Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Form%20Builder/Form%20Management.html">Form Management</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Technical Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Technical/Authentication.html">Authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Technical/Authentication.html#multi-factor-authentication">Multi-factor Authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Technical/Data%20Bundles.html">Data Bundles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Technical/DynamicIdentityProviders.html">Dynamic Identity Providers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Technical/Feature%20Toggles.html">Feature Toggles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Technical/Federation.html">Federation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Technical/MFA%20Rule%20Evaluation.html">MFA Rule Evaluation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Technical/OpenID%20Connect.html">OpenID Connect (OIDC)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Technical/PolicyHierarchy.html">Policy Hierarchy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Technical/SAML.html">SAML</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Technical/Splunk%20Service.html">Splunk Service</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Templates/index.html">Vivvo Templates Documentation</a></li>
+</ul>
+<p class="caption"><span class="caption-text">General Information</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Contact.html">Contact</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">CitizenOne</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Trust Provider Management</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/Management/Provider Management.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="trust-provider-management">
+<span id="provider-management"></span><h1>Trust Provider Management<a class="headerlink" href="#trust-provider-management" title="Permalink to this headline">¶</a></h1>
+<p>Trust Providers are authoritative sources that can respond to requests to pass onboarding rules as well as provide <a class="reference internal" href="../Technical/Data%20Bundles.html#data-bundles"><span class="std std-ref">Data Bundles</span></a>.</p>
+<p>The list of all available Trust Providers can be accessed by clicking [<strong>Trust Providers</strong>] under the
+[<strong>Tenants</strong>] tab of the sidebar.</p>
+<a class="reference internal image-reference" href="../_images/sidebar3.png"><img alt="Sidebar with the Trust Providers tab selected" class="align-center" src="../_images/sidebar3.png" style="width: 100pt;" /></a>
+<div class="section" id="viewing-all-trust-providers">
+<span id="viewing-providers"></span><h2>Viewing All Trust Providers<a class="headerlink" href="#viewing-all-trust-providers" title="Permalink to this headline">¶</a></h2>
+<p>The initial Trust Providers page displays a list of all of the Trust Providers
+that have been created for your instance of CitizenOne.</p>
+<p>From this page, you are able to filter the displayed list of Trust Providers by their name,
+click on a Trust Provider in the list for a more detailed view, or create a new Trust Provider.</p>
+<p>If you have only been granted “READ” access to Trust Providers, you will not be able to create new Trust Providers,
+nor will you be able to modify existing Trust Providers.</p>
+<a class="reference internal image-reference" href="../_images/initial.png"><img alt="List of Trust Providers in CitizenOne" class="align-center" src="../_images/initial.png" style="width: 500pt;" /></a>
+</div>
+<div class="section" id="creating-trust-providers">
+<span id="creating-providers"></span><h2>Creating Trust Providers<a class="headerlink" href="#creating-trust-providers" title="Permalink to this headline">¶</a></h2>
+<p>When you’ve determined that a new Trust Provider is needed, you can click the [<strong>+ Create</strong>] button
+in the top right of the Trust Providers listing page.</p>
+<a class="reference internal image-reference" href="../_images/create1.png"><img alt="Creating a new Trust Provider" class="align-center" src="../_images/create1.png" style="width: 500pt;" /></a>
+<p>This will bring you to a new view where you will be asked to fill out only the vital information
+needed to create the Trust Provider. Any fields not seen here will be configurable after the Trust Provider has
+successfully been created.</p>
+<p>The general fields for a Trust Provider are:</p>
+<ol class="arabic simple">
+<li><p><strong>Name</strong>: The name of the trust provider</p></li>
+<li><p><strong>Description</strong>: The optional description of the trust provider</p></li>
+<li><p><strong>Level of Assurance</strong>: The level of assurance this trust provider provides (<a class="reference external" href="https://www.tbs-sct.gc.ca/pol/doc-eng.aspx?id=30678&amp;section=html">https://www.tbs-sct.gc.ca/pol/doc-eng.aspx?id=30678&amp;section=html</a>)</p></li>
+</ol>
+<a class="reference internal image-reference" href="../_images/create-1.png"><img alt="../_images/create-1.png" class="align-left" src="../_images/create-1.png" style="width: 500pt;" /></a>
+<p>Clicking the [<strong>Cancel</strong>] button will not save any changes you made to the form, and you will be taken back to the
+Trust Provider listing page.</p>
+<p>Clicking the [<strong>Create</strong>] button will then attempt to make a new Trust Provider, and you will be taken
+to the new Trust Provider’s details page.</p>
+</div>
+<div class="section" id="viewing-and-editing-a-trust-provider">
+<span id="viewing-editing-providers"></span><h2>Viewing and Editing a Trust Provider<a class="headerlink" href="#viewing-and-editing-a-trust-provider" title="Permalink to this headline">¶</a></h2>
+<p>When you click on or create a Trust Provider, you will be taken to a view with multiple tabs.
+Each tab contains information that you can fill out to help define and customize your Trust Provider.</p>
+<a class="reference internal image-reference" href="../_images/providers-tabs.png"><img alt="Viewing Organization details" class="align-center" src="../_images/providers-tabs.png" style="width: 500pt;" /></a>
+<p>Clicking on these tabs changes the view so if you are editing any forms on a page, ensure
+that you save any changes, or they will be lost on navigation.</p>
+</div>
+<div class="section" id="trust-providers-general-tab">
+<span id="providers-general"></span><h2>Trust Providers General Tab<a class="headerlink" href="#trust-providers-general-tab" title="Permalink to this headline">¶</a></h2>
+<p>The General tab of a Trust Provider contains the basic details that define the Trust Provider itself.</p>
+<a class="reference internal image-reference" href="../_images/default.png"><img alt="Viewing general information about a Trust Provider" class="align-center" src="../_images/default.png" style="width: 500pt;" /></a>
+<p>The general fields for a Trust Provider are:</p>
+<ol class="arabic simple">
+<li><p><strong>Name</strong>: The name of the trust provider</p></li>
+<li><p><strong>Description</strong>: The optional description of the trust provider</p></li>
+<li><p><strong>Level of Assurance</strong>: The level of assurance this trust provider provides (<a class="reference external" href="https://www.tbs-sct.gc.ca/pol/doc-eng.aspx?id=30678&amp;section=html">https://www.tbs-sct.gc.ca/pol/doc-eng.aspx?id=30678&amp;section=html</a>)</p></li>
+</ol>
+<p>Clicking the [<strong>Edit</strong>] button will enable the fields in the view for change. Ensure your changes are saved before navigating away from the page.</p>
+</div>
+<div class="section" id="trust-providers-onbaording-tab">
+<span id="providers-onboarding"></span><h2>Trust Providers Onbaording Tab<a class="headerlink" href="#trust-providers-onbaording-tab" title="Permalink to this headline">¶</a></h2>
+<p>The Onboarding tab of a Trust Provider specifies how CitizenOne connects to a Trust Provider to onboard a citizen.</p>
+<a class="reference internal image-reference" href="../_images/default1.png"><img alt="Viewing onboarding information about a Trust Provider" class="align-center" src="../_images/default1.png" style="width: 500pt;" /></a>
+<p>The onboarding fields for a Trust Provider are:</p>
+<ol class="arabic simple">
+<li><p><strong>Base Url</strong>: The base url for onboarding to the Trust Provider</p></li>
+<li><p><strong>Onboarding Path</strong>: The api path for sending the onboarding data from the form</p></li>
+<li><p><strong>Onboarding Form</strong>: The NoCode form for onboarding</p></li>
+<li><p><strong>Arguments</strong> (e.g., Argument 1, Argument 2) - Arguments to send to the onboarding form</p></li>
+</ol>
+<p><strong>Note:</strong> To add more arguments you can click the [<strong>+ Add Argument</strong>]
+button below the last argument.</p>
+<a class="reference internal image-reference" href="../_images/edit.png"><img alt="../_images/edit.png" class="align-left" src="../_images/edit.png" style="width: 500pt;" /></a>
+<p>Clicking the [<strong>Edit</strong>] button will enable the fields in the view for change. Ensure your changes are saved before navigating away from the page.</p>
+</div>
+<div class="section" id="trust-providers-rules-tab">
+<span id="providers-rules"></span><h2>Trust Providers Rules Tab<a class="headerlink" href="#trust-providers-rules-tab" title="Permalink to this headline">¶</a></h2>
+<p>The Rules tab of a Trust Provider specifies the Rules that this Trust Provider can fullfill.</p>
+<a class="reference internal image-reference" href="../_images/default2.png"><img alt="Viewing rules information about a Trust Provider" class="align-center" src="../_images/default2.png" style="width: 500pt;" /></a>
+<p>You can assign Rules to a Trust Provider by selecting a Rule from the dropdown and entering a description.</p>
+<p><strong>Note:</strong> To add more Rules you can click the [<strong>+ Add Rule</strong>]
+button below the last rule.</p>
+<a class="reference internal image-reference" href="../_images/edit1.png"><img alt="../_images/edit1.png" class="align-left" src="../_images/edit1.png" style="width: 500pt;" /></a>
+<p>Clicking the [<strong>Edit</strong>] button will enable the fields in the view for change. Ensure your changes are saved before navigating away from the page.</p>
+</div>
+<div class="section" id="trust-providers-providing-bundles-tab">
+<span id="providers-bundles"></span><h2>Trust Providers Providing Bundles Tab<a class="headerlink" href="#trust-providers-providing-bundles-tab" title="Permalink to this headline">¶</a></h2>
+<p>The Providing Bundles tab of a Trust Provider specifies the Data Bundles that this Trust Provider can publish to subscribing services.</p>
+<a class="reference internal image-reference" href="../_images/default3.png"><img alt="Viewing data bundles information about a Trust Provider" class="align-center" src="../_images/default3.png" style="width: 500pt;" /></a>
+<p><strong>Notes:</strong></p>
+<ol class="arabic simple">
+<li><p>If you would like to publish changes about your users, such as when their address or email changes, add those here.</p></li>
+<li><p>Data Bundles are encrypted if public key is provided on the policy.</p></li>
+<li><p>A more technical description can be found here: <a class="reference internal" href="../Technical/Data%20Bundles.html#data-bundles"><span class="std std-ref">Data Bundles</span></a>.</p></li>
+</ol>
+<p>The data bundle fields for a Trust Provider are:</p>
+<ol class="arabic simple">
+<li><p><strong>Data Bundle Type</strong>: The type of updates to push to clients. Subscribing services will reference this type.</p></li>
+<li><p><strong>Notify Url</strong>: The url (must be <strong>https</strong>) to push data bundles to.</p></li>
+</ol>
+<a class="reference internal image-reference" href="../_images/schema.png"><img alt="Defining data bundle schema for a Trust Provider" class="align-center" src="../_images/schema.png" style="width: 500pt;" /></a>
+<p><strong>Notes</strong>:</p>
+<ol class="arabic simple">
+<li><p>Clicking the [<strong>Eye</strong>] button will present you with the schema of the data bundle or allow you to define it if it hasn’t been defined yet.</p></li>
+<li><p>The notifiy url must be of type <strong>HTTPS</strong>.</p></li>
+<li><p>Currently you can only add one bundle for a particular type.</p></li>
+</ol>
+<a class="reference internal image-reference" href="../_images/edit2.png"><img alt="Editing a data bundle for a Trust Provider" class="align-center" src="../_images/edit2.png" style="width: 500pt;" /></a>
+<p>Clicking the [<strong>Edit</strong>] button will enable the fields in the view for change. Ensure your changes are saved before navigating away from the page.</p>
+</div>
+<div class="section" id="removing-a-trust-provider">
+<span id="removing-providers"></span><h2>Removing a Trust Provider<a class="headerlink" href="#removing-a-trust-provider" title="Permalink to this headline">¶</a></h2>
+<p>When you are on the General tab, click the [<strong>Edit</strong>] button.</p>
+<a class="reference internal image-reference" href="../_images/delete1.png"><img alt="Removing a Trust Provider" class="align-center" src="../_images/delete1.png" style="width: 500pt;" /></a>
+<p>Clicking the [<strong>Delete Provider</strong>] button will remove the Trust Provider from CitizenOne. When deleting a Trust Provider you must accept a confirmation asking whether you want to delete the Trust Provider.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Policy%20Management.html" class="btn btn-neutral float-right" title="Policy Management" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Rule%20Management.html" class="btn btn-neutral float-left" title="Rule Management" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2021, Vivvo
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,310 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Feature Toggles &mdash; CitizenOne 0.0.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Federation" href="Federation.html" />
+    <link rel="prev" title="Dynamic Identity Providers" href="DynamicIdentityProviders.html" />
+    <link href="../_static/style.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> CitizenOne
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">The CitizenOne Platform</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Tenants.html">Tenants</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Organizations.html">Organizations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Applications.html">Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Service%20Cards.html">Service Cards</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Rules.html">Rules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Providers.html">Trust Providers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Policies.html">Policies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Email%20Templates.html">Email Templates</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Eeze</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Eeze.html">Accessing CitizenOne Service Cards</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Managing CitizenOne</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Management/CitizenOne%20Support.html">CitizenOne Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Management/Creating%20Service%20Cards.html">Creating a Service Card</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Management/Organization%20Management.html">Organization Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Management/Application%20Management.html">Application Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Management/Service%20Card%20Management.html">Service Card Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Management/Rule%20Management.html">Rule Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Management/Provider%20Management.html">Trust Provider Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Management/Policy%20Management.html">Policy Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Management/Platform%20Configuration.html">Platform Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Management/Layouts.html">Layout Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Form%20Builder/Form%20Management.html">Form Management</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Technical Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Authentication.html">Authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Authentication.html#multi-factor-authentication">Multi-factor Authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Data%20Bundles.html">Data Bundles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DynamicIdentityProviders.html">Dynamic Identity Providers</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Feature Toggles</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#management-application">Management Application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#html-templates">HTML Templates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#typescript">Typescript</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#angular-routes">Angular Routes</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Federation.html">Federation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MFA%20Rule%20Evaluation.html">MFA Rule Evaluation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="OpenID%20Connect.html">OpenID Connect (OIDC)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PolicyHierarchy.html">Policy Hierarchy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SAML.html">SAML</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Splunk%20Service.html">Splunk Service</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Templates/index.html">Vivvo Templates Documentation</a></li>
+</ul>
+<p class="caption"><span class="caption-text">General Information</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Contact.html">Contact</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">CitizenOne</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Feature Toggles</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/Technical/Feature Toggles.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="feature-toggles">
+<h1>Feature Toggles<a class="headerlink" href="#feature-toggles" title="Permalink to this headline">¶</a></h1>
+<p>A feature toggle is a technique in software development that attempts to provide an alternative to maintaining multiple branches in source code, such that a software feature can be tested even before it is completed and ready for release. Feature toggle is used to hide, enable or disable the feature during runtime.</p>
+<div class="section" id="management-application">
+<h2>Management Application<a class="headerlink" href="#management-application" title="Permalink to this headline">¶</a></h2>
+<p>System Administrators have access to the Feature Toggles page. Here they can create new toggles, turn them on and off and assign them to users. An active toggle with no usernames is active for every user. Multiple usernames should be comma-delimited.</p>
+</div>
+<div class="section" id="html-templates">
+<h2>HTML Templates<a class="headerlink" href="#html-templates" title="Permalink to this headline">¶</a></h2>
+<p>Show different UI elements when a toggle is on/off.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&lt;toggles feature=&quot;my-feature-toggle&quot;&gt;
+    &lt;ng-template #active&gt;
+      &lt;!-- This is what the user sees when the toggle is active. --&gt;
+    &lt;/ng-template&gt;
+    &lt;ng-template #else&gt;
+      &lt;!-- This is what the user sees when the toggle is not active. --&gt;
+    &lt;/ng-template&gt;
+&lt;/toggles&gt;
+</pre></div>
+</div>
+</div>
+<div class="section" id="typescript">
+<h2>Typescript<a class="headerlink" href="#typescript" title="Permalink to this headline">¶</a></h2>
+<p>Execute different Angular Controller code if a toggle is on/off.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">this</span><span class="o">.</span><span class="n">toggleService</span><span class="o">.</span><span class="n">toggleWrapper</span><span class="p">(</span><span class="s1">&#39;my-feature-toggle&#39;</span><span class="p">,</span> <span class="p">():</span> <span class="n">Observable</span><span class="o">&lt;</span><span class="nb">any</span><span class="o">&gt;</span> <span class="o">=&gt;</span> <span class="p">{</span>
+          <span class="o">//</span> <span class="n">Run</span> <span class="n">this</span> <span class="n">function</span> <span class="k">if</span> <span class="n">the</span> <span class="n">toggle</span> <span class="ow">is</span> <span class="n">active</span>
+        <span class="p">},</span>
+        <span class="p">():</span> <span class="n">Observable</span><span class="o">&lt;</span><span class="nb">any</span><span class="o">&gt;</span> <span class="o">=&gt;</span> <span class="p">{</span>
+          <span class="o">//</span> <span class="n">Run</span> <span class="n">this</span> <span class="n">function</span> <span class="k">if</span> <span class="n">the</span> <span class="n">toggle</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">active</span>
+        <span class="p">}</span>
+      <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="angular-routes">
+<h2>Angular Routes<a class="headerlink" href="#angular-routes" title="Permalink to this headline">¶</a></h2>
+<p>Guard an angular route depending on if a toggle is on/off.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="n">path</span><span class="p">:</span> <span class="s1">&#39;featureToggles&#39;</span><span class="p">,</span>
+    <span class="n">pathMatch</span><span class="p">:</span> <span class="s1">&#39;full&#39;</span><span class="p">,</span>
+    <span class="n">component</span><span class="p">:</span> <span class="n">TogglesComponent</span><span class="p">,</span>
+    <span class="n">canActivate</span><span class="p">:</span> <span class="p">[</span><span class="n">HasAccessGuard</span><span class="p">,</span> <span class="n">FeatureToggleGuard</span><span class="p">],</span>
+    <span class="n">data</span><span class="p">:</span> <span class="p">{</span><span class="n">requiredRoles</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;SYSTEM_ADMIN&#39;</span><span class="p">],</span> <span class="n">feature</span><span class="p">:</span> <span class="s1">&#39;feature-toggles&#39;</span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Federation.html" class="btn btn-neutral float-right" title="Federation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="DynamicIdentityProviders.html" class="btn btn-neutral float-left" title="Dynamic Identity Providers" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2021, Vivvo
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

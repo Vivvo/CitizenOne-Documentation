@@ -1,0 +1,350 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Form Management &mdash; CitizenOne 0.0.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="&lt;no title&gt;" href="Form%20Responses.html" />
+    <link rel="prev" title="Layout Management" href="../Management/Layouts.html" />
+    <link href="../_static/style.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> CitizenOne
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">The CitizenOne Platform</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Tenants.html">Tenants</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Organizations.html">Organizations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Applications.html">Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Service%20Cards.html">Service Cards</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Rules.html">Rules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Providers.html">Trust Providers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Policies.html">Policies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Email%20Templates.html">Email Templates</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Eeze</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Eeze.html">Accessing CitizenOne Service Cards</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Managing CitizenOne</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../Management/CitizenOne%20Support.html">CitizenOne Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Management/Creating%20Service%20Cards.html">Creating a Service Card</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Management/Organization%20Management.html">Organization Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Management/Application%20Management.html">Application Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Management/Service%20Card%20Management.html">Service Card Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Management/Rule%20Management.html">Rule Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Management/Provider%20Management.html">Trust Provider Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Management/Policy%20Management.html">Policy Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Management/Platform%20Configuration.html">Platform Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Management/Layouts.html">Layout Management</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Form Management</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#viewing-all-forms">Viewing All Forms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#creating-forms">Creating Forms</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#adding-controls-fields-to-the-form">Adding Controls (Fields) to the form</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#viewing-forms">Viewing Forms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#deleting-forms">Deleting Forms</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Technical Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Technical/Authentication.html">Authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Technical/Authentication.html#multi-factor-authentication">Multi-factor Authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Technical/Data%20Bundles.html">Data Bundles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Technical/DynamicIdentityProviders.html">Dynamic Identity Providers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Technical/Feature%20Toggles.html">Feature Toggles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Technical/Federation.html">Federation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Technical/MFA%20Rule%20Evaluation.html">MFA Rule Evaluation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Technical/OpenID%20Connect.html">OpenID Connect (OIDC)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Technical/PolicyHierarchy.html">Policy Hierarchy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Technical/SAML.html">SAML</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Technical/Splunk%20Service.html">Splunk Service</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Templates/index.html">Vivvo Templates Documentation</a></li>
+</ul>
+<p class="caption"><span class="caption-text">General Information</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Contact.html">Contact</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">CitizenOne</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Form Management</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/Form Builder/Form Management.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="form-management">
+<span id="id1"></span><h1>Form Management<a class="headerlink" href="#form-management" title="Permalink to this headline">¶</a></h1>
+<p>CitizenOne features a robust No-Code Form Builder that allows forms to be created without the need to write and deploy code. Forms can be attached a Service Card allowing citizens to complete and submit the form.</p>
+<p>The list of all available Applications can be accessed by clicking [<strong>Form Builder</strong>] under the
+[<strong>Forms</strong>] tab of the sidebar.</p>
+<a class="reference internal image-reference" href="../_images/forms-sidebar.png"><img alt="Sidebar with the Form Builder tab selected" class="align-center" src="../_images/forms-sidebar.png" style="width: 100pt;" /></a>
+<div class="section" id="viewing-all-forms">
+<h2>Viewing All Forms<a class="headerlink" href="#viewing-all-forms" title="Permalink to this headline">¶</a></h2>
+<p>The initial Form Builder page displays a list of all of the Forms
+that have been created for your instance of CitizenOne.</p>
+<p>From this page, you are able to click on a Form in the list for a more detailed view, or create a new Form.</p>
+<a class="reference internal image-reference" href="../_images/createForm.png"><img alt="List of Forms in CitizenOne" class="align-center" src="../_images/createForm.png" style="width: 500pt;" /></a>
+</div>
+<div class="section" id="creating-forms">
+<span id="id2"></span><h2>Creating Forms<a class="headerlink" href="#creating-forms" title="Permalink to this headline">¶</a></h2>
+<p>When a new form needs to be created, click the [<strong>+ Create Form</strong>] button.</p>
+<a class="reference internal image-reference" href="../_images/3.png"><img alt="Create a new Form" class="align-center" src="../_images/3.png" style="width: 500pt;" /></a>
+<p>The fields in order to create a form are:
+1. <strong>Name</strong> - The name of the form
+2. <strong>Description</strong> - A brief description of the form
+3. <strong>Organization</strong> - The Organization that the form belongs to
+4. <strong>Application</strong> - The Application to tie it to in CitizenOne</p>
+<p>Clicking the [<strong>Submit</strong>] button will take you to a page to create the content on the form.</p>
+<div class="section" id="adding-controls-fields-to-the-form">
+<h3>Adding Controls (Fields) to the form<a class="headerlink" href="#adding-controls-fields-to-the-form" title="Permalink to this headline">¶</a></h3>
+<p>A control/field is how a user will enter information on the form.
+The current list of controls are:</p>
+<p><strong>Form Structure</strong> |
+Step | FormattedText</p>
+<a class="reference internal image-reference" href="../_images/formStructure.png"><img alt="../_images/formStructure.png" src="../_images/formStructure.png" style="width: 150pt;" /></a>
+<p><strong>Text Controls</strong> |
+Input | Multi Line Input | Password</p>
+<a class="reference internal image-reference" href="../_images/textControls.png"><img alt="../_images/textControls.png" src="../_images/textControls.png" style="width: 150pt;" /></a>
+<p><strong>Typed Controls</strong> |
+Number | Email Address | Phone Number</p>
+<a class="reference internal image-reference" href="../_images/typedControls.png"><img alt="../_images/typedControls.png" src="../_images/typedControls.png" style="width: 150pt;" /></a>
+<p><strong>Date And Time Controls</strong> |
+Date | Type | Date and Time</p>
+<a class="reference internal image-reference" href="../_images/dateTimeControls.png"><img alt="../_images/dateTimeControls.png" src="../_images/dateTimeControls.png" style="width: 150pt;" /></a>
+<p><strong>Selection Controls</strong> |
+Dropdown | Radio Buttons | Checkboxes | Yes/No Question</p>
+<a class="reference internal image-reference" href="../_images/selectionControls.png"><img alt="../_images/selectionControls.png" src="../_images/selectionControls.png" style="width: 150pt;" /></a>
+<p><strong>Buttons</strong> |
+Button | Link</p>
+<a class="reference internal image-reference" href="../_images/buttons.png"><img alt="../_images/buttons.png" src="../_images/buttons.png" style="width: 150pt;" /></a>
+<p><strong>Speciality</strong> |
+QR Code | Hidden Field</p>
+<a class="reference internal image-reference" href="../_images/specialty.png"><img alt="../_images/specialty.png" src="../_images/specialty.png" style="width: 150pt;" /></a>
+<p>Adding controls to the forms happens when doing the following:</p>
+<ol class="arabic simple">
+<li><p>Creating a step.  Forms in CitizenOne can be multi-step forms.  So each <strong>Step</strong> in a form relates to a step in a form.</p></li>
+</ol>
+<img alt="../_images/5.png" src="../_images/5.png" />
+<ol class="arabic simple" start="2">
+<li><p>Adding Fields to the step.</p></li>
+</ol>
+<ul class="simple">
+<li><p>Select control on a left side panel</p></li>
+</ul>
+<a class="reference internal image-reference" href="../_images/selectionControls.png"><img alt="../_images/selectionControls.png" src="../_images/selectionControls.png" style="width: 150pt;" /></a>
+<ul>
+<li><p>Edit choosen control</p>
+<blockquote>
+<div><img alt="../_images/addingControl.png" src="../_images/addingControl.png" />
+</div></blockquote>
+</li>
+</ul>
+<p>See the attributes for fields available here</p>
+<img alt="../_images/8a.png" src="../_images/8a.png" />
+<img alt="../_images/8b.png" src="../_images/8b.png" />
+<ol class="arabic simple" start="3">
+<li><p>Clicking the [<strong>Save</strong>] button.</p></li>
+</ol>
+</div>
+</div>
+<div class="section" id="viewing-forms">
+<span id="id3"></span><h2>Viewing Forms<a class="headerlink" href="#viewing-forms" title="Permalink to this headline">¶</a></h2>
+<p>Viewing forms happens on portal or on business server</p>
+</div>
+<div class="section" id="deleting-forms">
+<span id="id4"></span><h2>Deleting Forms<a class="headerlink" href="#deleting-forms" title="Permalink to this headline">¶</a></h2>
+<p>Check the box beside the form you want to delete and click the garbage icon at the top of the table.</p>
+<a class="reference internal image-reference" href="../_images/deleting.png"><img alt="../_images/deleting.png" src="../_images/deleting.png" style="width: 500pt;" /></a>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Form%20Responses.html" class="btn btn-neutral float-right" title="&lt;no title&gt;" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../Management/Layouts.html" class="btn btn-neutral float-left" title="Layout Management" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2021, Vivvo
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
