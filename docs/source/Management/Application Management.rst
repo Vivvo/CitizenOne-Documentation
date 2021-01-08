@@ -75,7 +75,7 @@ Clicking the [**Continue**] button will then take you to the new Applications's 
 .. _viewing_an_application:
 
 Viewing an Application
-*********************
+**********************
 
 When you click on or create an Application, you will be taken to a view with multiple tabs.
 Each tab contains information that you can fill out to help define and customize your Application.

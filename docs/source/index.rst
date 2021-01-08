@@ -5,11 +5,10 @@ CitizenOne is an e-services platform designed to help government manage the deli
 
 Guides
 ######
-######
 
 .. toctree::
    :caption: The CitizenOne Platform
-   :maxdepth: 2
+   :maxdepth: 1
 
    Tenants
    Organizations
@@ -19,10 +18,11 @@ Guides
    Providers
    Policies
    Email Templates
+   Templates
 
 .. toctree::
    :caption: Eeze
-   :maxdepth: 2
+   :maxdepth: 1
 
    Eeze
 
@@ -45,7 +45,7 @@ Guides
 
 .. toctree::
    :caption: Technical Documentation
-   :maxdepth: 2
+   :maxdepth: 1
 
    Technical/Authentication
    Technical/Data Bundles
@@ -56,13 +56,23 @@ Guides
    Technical/OpenID Connect
    Technical/PolicyHierarchy
    Technical/SAML
-   Technical/eHealthSplunkService
+   Technical/Splunk Service
+   Templates/index
+
+
 
 .. toctree::
    :caption: General Information
-   :maxdepth: 2
+   :maxdepth: 1
 
    Contact
+
+
+.. toctree::
+   :caption: Integration Guide
+   :maxdepth: 1
+
+    
 
 
 Indices and tables

@@ -1,4 +1,4 @@
-.. _policy_management:
+.. _policy_management: 
 
 Policy Management
 =================
@@ -22,7 +22,7 @@ The list of all available Policies can be accessed by clicking [**Policies**] un
 .. _viewing_policies:
 
 Viewing All Policies
-****************
+********************
 
 The initial Policies page displays a list of all of the Policies
 that have been created for your instance of CitizenOne. Here, you can see an overview of the Policy, including the name, description and the number of revisions.
