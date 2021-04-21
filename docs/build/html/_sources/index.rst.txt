@@ -48,6 +48,7 @@ Guides
    :maxdepth: 1
 
    Technical/Authentication
+   Technical/Integrations
    Technical/Data Bundles
    Technical/DynamicIdentityProviders
    Technical/Feature Toggles

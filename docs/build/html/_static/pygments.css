@@ -1,7 +1,7 @@
 pre { line-height: 125%; }
-td.linenos pre { color: #586e75; background-color: #073642; padding-left: 5px; padding-right: 5px; }
+td.linenos .normal { color: #586e75; background-color: #073642; padding-left: 5px; padding-right: 5px; }
 span.linenos { color: #586e75; background-color: #073642; padding-left: 5px; padding-right: 5px; }
-td.linenos pre.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+td.linenos .special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
 span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
 .highlight .hll { background-color: #073642 }
 .highlight { background: #002b36; color: #839496 }
@@ -27,7 +27,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 .highlight .gh { color: #839496; font-weight: bold } /* Generic.Heading */
 .highlight .gi { color: #859900 } /* Generic.Inserted */
 .highlight .go { color: #839496 } /* Generic.Output */
-.highlight .gp { color: #839496 } /* Generic.Prompt */
+.highlight .gp { color: #268bd2; font-weight: bold } /* Generic.Prompt */
 .highlight .gs { color: #839496; font-weight: bold } /* Generic.Strong */
 .highlight .gu { color: #839496; text-decoration: underline } /* Generic.Subheading */
 .highlight .gt { color: #268bd2 } /* Generic.Traceback */

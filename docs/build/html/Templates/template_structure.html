@@ -3,9 +3,9 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>Template Structure &mdash; CitizenOne 0.0.1 documentation</title>
   
@@ -17,7 +17,10 @@
 
   
   
+
   
+  
+
   
 
   
@@ -51,7 +54,7 @@
           
 
           
-            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> CitizenOne
+            <a href="../index.html" class="icon icon-home"> CitizenOne
           
 
           
@@ -169,6 +172,8 @@
 
 
 
+
+
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
@@ -180,7 +185,7 @@
     
       <li class="wy-breadcrumbs-aside">
         
-            
+          
             <a href="../_sources/Templates/template_structure.rst.txt" rel="nofollow"> View page source</a>
           
         
@@ -224,17 +229,17 @@
 it makes the code easier to maintain. Include is imported to the page, and when we want to make some changes,
 we can just modify an include and the change will be visible on any page where the include is imported</p>
 <p>Each page has a js function that loads all needed includes to the page:</p>
-<div class="highlight-javascript notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+<div class="highlight-javascript notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
     <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#dashboard-navigation&quot;</span><span class="p">).</span><span class="nx">load</span><span class="p">(</span><span class="s2">&quot;../includes/dashboard-navigation.html&quot;</span><span class="p">);</span>
     <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;.serviceCard&quot;</span><span class="p">).</span><span class="nx">load</span><span class="p">(</span><span class="s2">&quot;../includes/service-card.html&quot;</span><span class="p">);</span>
   <span class="p">});</span>
 </pre></div>
 </td></tr></table></div>
 <p>and <cite>&lt;div&gt;</cite> element inside <cite>html</cite>, id will match includes name:</p>
-<div class="highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span> <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;dashboard-navigation&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<div class="highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span> <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;dashboard-navigation&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 </pre></div>
 </td></tr></table></div>
 </div>
@@ -269,17 +274,17 @@ You’ll also see a few files that are not matching any HTML file:
 <p>We followed a few rules in SCSS, they make the code easier to read and to maintain. They’re best practices, but they’re not breaking the code.</p>
 </dd>
 </dl>
-<div class="highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11</pre></div></td><td class="code"><div class="highlight"><pre><span></span>.card-title {
+<div class="highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span>.card-title {
      display: flex; (flexbox)
      align-items: baseline; (flexbox)
      justify-content: space-between; (flexbox)
@@ -298,10 +303,10 @@ at the top (flex, width, height, margin, padding), and another styling lower in 
 <div class="section" id="webpack">
 <h2>Webpack<a class="headerlink" href="#webpack" title="Permalink to this headline">¶</a></h2>
 <p>he code needs to be watched by Webpack, a new page must be added to the webpack.config.js, there is no need to add includes to the Webpack, when you open Webpack you’ll see that each page is added there. You can copy the piece of code below, replace test with the name of the new HTML page and paste it to the webpack.config.js (currently line 102)</p>
-<div class="highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4</pre></div></td><td class="code"><div class="highlight"><pre><span></span>new HtmlWebPackPlugin({
+<div class="highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span>new HtmlWebPackPlugin({
    template: &#39;./pages/test.html&#39;,
    filename: &#39;./test.html&#39;,
  }),
@@ -311,10 +316,10 @@ at the top (flex, width, height, margin, padding), and another styling lower in 
 <div class="section" id="git-ignore">
 <h3>Git-ignore<a class="headerlink" href="#git-ignore" title="Permalink to this headline">¶</a></h3>
 <p>In the project root there is a hidden file called <strong>.git-ignore</strong>, in this file are a list of files that will not be committed back to the source code repo when done.</p>
-<div class="highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4</pre></div></td><td class="code"><div class="highlight"><pre><span></span>dist
+<div class="highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span>dist
 node_modules
 .idea
 yarn.lock
@@ -329,28 +334,25 @@ yarn.lock
            
           </div>
           <footer>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        
-        &copy; Copyright 2021, Vivvo
+        &#169; Copyright 2021, Vivvo.
 
     </p>
   </div>
     
     
     
-    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     
-    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
     
     provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 
