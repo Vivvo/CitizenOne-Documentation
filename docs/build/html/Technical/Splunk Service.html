@@ -130,7 +130,7 @@
 <li class="toctree-l1"><a class="reference internal" href="SAML.html">SAML</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Splunk Service</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#glossary">Glossary</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#abount-the-service">Abount the Service</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#about-the-service">About the Service</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../Templates/index.html">Vivvo Templates Documentation</a></li>
@@ -216,8 +216,8 @@
 <li><p><strong>AUDIT DATABASE:</strong> Holds all audited events in a given C1 instance.</p></li>
 </ul>
 </div>
-<div class="section" id="abount-the-service">
-<h2>Abount the Service<a class="headerlink" href="#abount-the-service" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="about-the-service">
+<h2>About the Service<a class="headerlink" href="#about-the-service" title="Permalink to this headline">¶</a></h2>
 <p>We created a service which pushes new logs to a Splunk instance. The service itself is fairly straightforward. It simply polls the Audit Database for new logs every 5 seconds. Upon a new log, the service wraps the logs into a Splunk Event Dto and forwards to a Splunk Event Collector. Of course all the communication TLS’d. Meaning, we communicate with the Splunk service via a certificate provided by customer. The call also needs a HEC key or token as authorization for token Splunk.</p>
 </div>
 </div>
