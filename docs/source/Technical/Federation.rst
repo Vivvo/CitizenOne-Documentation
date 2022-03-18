@@ -26,7 +26,7 @@ The CitizenOne IDP ( Identity Provider) service allows for modern protocols both
 
 CitizenOne keeps track of all the connected services and federated connections, so the user may transverse across services without having to re-authenticate.
 
-.. image:: images/idpsp.png
+.. image:: ../images/idpsp.png
    :width: 400pt
 
 The protocol chosen is a decision the provider or service provider.  This is usually influenced by the technology they generally use.  Supporting both federation protocols allows the flexibility of the organizations to pick which fits their organization best.
